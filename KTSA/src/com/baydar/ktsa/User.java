@@ -3,10 +3,8 @@ package com.baydar.ktsa;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-import com.baydar.ktsa.Place.Location;
+public class User implements Serializable {
 
-public class User implements Serializable{
-	
 	/**
 	 * 
 	 */
@@ -15,7 +13,9 @@ public class User implements Serializable{
 	private int num_checkins;
 	private int num_friends;
 	private boolean is_active;
-	private ArrayList<Checkin> checkins = new ArrayList<Checkin>(); 
+	private Location homeLocation;
+	private ArrayList<Checkin> checkins = new ArrayList<Checkin>();
+
 	public ArrayList<Checkin> getCheckins() {
 		return checkins;
 	}
@@ -23,63 +23,76 @@ public class User implements Serializable{
 	public void setCheckins(ArrayList<Checkin> checkins) {
 		this.checkins = checkins;
 	}
-	
-	public void addCheckin(Checkin checkin){
+
+	public void addCheckin(Checkin checkin) {
 		this.checkins.add(checkin);
 	}
 
-	public ArrayList<User> getFriends(){
+	public ArrayList<User> getFriends() {
 		return null;
 	}
-	
-	public boolean isVisitedPlace(Place place){
-		for(int i=0;i<this.checkins.size();i++){
-			if(this.checkins.get(i).getPlace()==place){
+
+	public boolean isVisitedPlace(Place place) {
+		for (int i = 0; i < this.checkins.size(); i++) {
+			if (this.checkins.get(i).getPlace() == place) {
 				return true;
 			}
 		}
 		return false;
 	}
-	
-	public boolean isVisitedCategory(Category category){
-		for(int i=0;i<this.checkins.size();i++){
-			if(this.checkins.get(i).getPlace().getCategory()==category){
+
+	public boolean isVisitedCategory(Category category) {
+		for (int i = 0; i < this.checkins.size(); i++) {
+			if (this.checkins.get(i).getPlace().getCategory() == category) {
 				return true;
 			}
 		}
 		return false;
 	}
-	
-	public ArrayList<Place> getVisitedPlaces(){
+
+	public ArrayList<Place> getVisitedPlaces() {
 		ArrayList<Place> visitedPlaces = new ArrayList<Place>();
-		for(int i=0;i<this.checkins.size();i++){
-			if(!visitedPlaces.contains(this.checkins.get(i).getPlace())){
+		for (int i = 0; i < this.checkins.size(); i++) {
+			if (!visitedPlaces.contains(this.checkins.get(i).getPlace())) {
 				visitedPlaces.add(this.checkins.get(i).getPlace());
 			}
 		}
 		return visitedPlaces;
 	}
-	
-	public ArrayList<Category> getVisitedCategories(){
+
+	public ArrayList<Category> getVisitedCategories() {
 		ArrayList<Category> visitedCategories = new ArrayList<Category>();
-		for(int i=0;i<this.checkins.size();i++){
-			if(!visitedCategories.contains(this.checkins.get(i).getPlace().getCategory())){
+		for (int i = 0; i < this.checkins.size(); i++) {
+			if (!visitedCategories.contains(this.checkins.get(i).getPlace().getCategory())) {
 				visitedCategories.add(this.checkins.get(i).getPlace().getCategory());
 			}
 		}
 		return visitedCategories;
 	}
-	
-	public ArrayList<Location> getVisitedLocations(){
+
+	public void calculateHomeLocation() {
+		double lat = 0;
+		double lon = 0;
+		for (int i = 0; i < checkins.size(); i++) {
+			lat += checkins.get(i).getPlace().getLat();
+			lon += checkins.get(i).getPlace().getLon();
+		}
+		lat = lat / checkins.size();
+		lon = lon / checkins.size();
+		this.setHomeLocation(new Location(lat, lon));
+
+	}
+
+	public ArrayList<Location> getVisitedLocations() {
 		ArrayList<Location> visitedLocations = new ArrayList<Location>();
-		for(int i=0;i<this.checkins.size();i++){
-			if(!visitedLocations.contains(this.checkins.get(i).getPlace().getLocation())){
+		for (int i = 0; i < this.checkins.size(); i++) {
+			if (!visitedLocations.contains(this.checkins.get(i).getPlace().getLocation())) {
 				visitedLocations.add(this.checkins.get(i).getPlace().getLocation());
 			}
 		}
 		return visitedLocations;
 	}
-	
+
 	public User(int id, int num_checkins, int num_friends) {
 		super();
 		this.id = id;
@@ -120,11 +133,16 @@ public class User implements Serializable{
 		this.is_active = is_active;
 	}
 
-	public User(){
-		
-	}
-	
-	
+	public User() {
 
+	}
+
+	public Location getHomeLocation() {
+		return homeLocation;
+	}
+
+	public void setHomeLocation(Location homeLocation) {
+		this.homeLocation = homeLocation;
+	}
 
 }

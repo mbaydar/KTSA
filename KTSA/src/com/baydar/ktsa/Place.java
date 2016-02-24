@@ -25,14 +25,14 @@ public class Place implements Serializable, Comparable {
 		this.name = name;
 	}
 
-	public Place(String id, int category_id, double lon, double lat, String name, int num_checkins) {
+	public Place(String id, int category_id, double lon, double lat, String name, int num_checkins, Location location) {
 		super();
 		this.id = id;
 		this.category_id = category_id;
 		this.lon = lon;
 		this.lat = lat;
 		this.name = name;
-		location = new Location();
+		this.location = location;
 		this.location.lat = lat;
 		this.location.lon = lon;
 		this.num_checkins = num_checkins;
@@ -96,15 +96,6 @@ public class Place implements Serializable, Comparable {
 
 	public void setLocation(Location location) {
 		this.location = location;
-	}
-
-	class Location implements Serializable {
-		/**
-		 * 
-		 */
-		private static final long serialVersionUID = -6323526392577371814L;
-		double lon;
-		double lat;
 	}
 
 	@Override

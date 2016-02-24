@@ -30,10 +30,20 @@ public class Main {
 		mostPopularPlace = getMostPopularPlace();
 		setMostPopularPlaces();
 		getPredictedCheckins();
-		makePredictions();
+		calculateUsersHomeLocations();
+		makePredictions(1);
 	}
 
-	private static void setMostPopularPlaces() {
+	public static void calculateUsersHomeLocations() {
+		for (User user : users.values()) {
+			user.calculateHomeLocation();
+			// System.out.println(user.getHomeLocation());
+		}
+
+	}
+
+	@SuppressWarnings("unchecked")
+	public static void setMostPopularPlaces() {
 		Collections.sort(placesArray);
 		for (int i = 0; i < mostPopularPlaces.length; i++) {
 			mostPopularPlaces[i] = placesArray.get(i);
@@ -41,34 +51,76 @@ public class Main {
 		}
 	}
 
-	public static void makePredictions() {
+	// choice = 1 popular, = 2 closest,
+	public static void makePredictions(int choice) {
 		int correctPredictions = 0;
-		for (int i = 0; i < predictedCheckins.size(); i++) {
-			for (int j = 0; j < mostPopularPlaces.length; j++) {
-				if (makePrediction(predictedCheckins.get(i),mostPopularPlaces[j])) {
+		if (choice == 1) {
+			for (int i = 0; i < predictedCheckins.size(); i++) {
+				if (popularPrediction(predictedCheckins.get(i))) {
+					correctPredictions++;
+				}
+			}
+		} else if (choice == 2) {
+			for (int i = 0; i < predictedCheckins.size(); i++) {
+				System.out.println(i);
+				if (closestPrediction(predictedCheckins.get(i), 10)) {
 					correctPredictions++;
 				}
 			}
 		}
 		System.out.println(correctPredictions);
 		System.out.println(predictedCheckins.size());
-		System.out.println((double)correctPredictions/predictedCheckins.size());
+		System.out.println((double) correctPredictions / predictedCheckins.size());
 	}
 
-	public static boolean makePrediction(Checkin predictedCheckin) {
-		if (predictedCheckin.getPlace().getId() == mostPopularPlace.getId()) {
-			return true;
-		} else
-			return false;
+	public static boolean popularPrediction(Checkin predictedCheckin) {
+		for (int j = 0; j < mostPopularPlaces.length; j++) {
+			if (predictedCheckin.getPlace().getId().equals(mostPopularPlaces[j].getId())) {
+				return true;
+			}
+		}
+		return false;
 	}
-	
-	public static boolean makePrediction(Checkin predictedCheckin, Place place) {
-		if (predictedCheckin.getPlace().getId() == place.getId()) {
-			return true;
-		} else
-			return false;
+
+	// Id equals control with equals not ==
+	public static boolean closestPrediction(Checkin predictedCheckin, int num) {
+		User user = users.get(predictedCheckin.getUser_id());
+		Place[] closestPlaces = getClosestPlaces(user, num);
+		for (int i = 0; i < num; i++) {
+			if (predictedCheckin.getPlace().getId().equals(closestPlaces[i].getId())) {
+				return true;
+			}
+		}
+		return false;
 	}
-	
+
+	public static Place[] getClosestPlaces(User user, int num) {
+		Place[] closestPlaces = new Place[num];
+		ArrayList<Pair> pairs = new ArrayList<Pair>();
+		for (Place place : places.values()) {
+			pairs.add(new Pair(place.getId(), user.getHomeLocation().getDistance(place.getLocation())));
+		}
+		Collections.sort(pairs);
+		for (int i = 0; i < num; i++) {
+			closestPlaces[i] = places.get(pairs.get(i).id);
+		}
+		return closestPlaces;
+	}
+
+	// public static boolean makePrediction(Checkin predictedCheckin) {
+	// if (predictedCheckin.getPlace().getId() == mostPopularPlace.getId()) {
+	// return true;
+	// } else
+	// return false;
+	// }
+	//
+	// public static boolean makePrediction(Checkin predictedCheckin, Place
+	// place) {
+	// if (predictedCheckin.getPlace().getId() == place.getId()) {
+	// return true;
+	// } else
+	// return false;
+	// }
 
 	public static Place getMostPopularPlace() {
 		Place mostPopular = null;
@@ -83,7 +135,7 @@ public class Main {
 	}
 
 	public static void getPredictedCheckins() {
-		int startMonth = 6;
+		int startMonth = 7;
 		Date startDate = new Date(111, startMonth, 20);
 		Date endDate = new Date(111, startMonth + 1, 20);
 		for (int i = 0; i < checkins.size(); i++) {
@@ -94,7 +146,7 @@ public class Main {
 	}
 
 	public static void getMonthlyCheckinNumber(int startMonth) {
-		Date startDate = new Date(110, startMonth, 20);
+		Date startDate = new Date(111, startMonth, 20);
 		Date endDate = new Date(111, startMonth + 1, 20);
 		int checkinCount = 0;
 		int userCount = 0;
@@ -200,7 +252,7 @@ public class Main {
 				// System.out.println("user_id = " + id);
 				//
 				// System.out.println();
-				Place place = new Place(id, category_id, lat, lon, name, num_checkins);
+				Place place = new Place(id, category_id, lat, lon, name, num_checkins, new Location(lat, lon));
 				place.setCategory(categories.get(category_id));
 				places.put(id, place);
 				placesArray.add(place);
