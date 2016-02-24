@@ -2,13 +2,13 @@ package com.baydar.ktsa;
 
 import java.io.Serializable;
 
-public class Place implements Serializable{
-	
+public class Place implements Serializable, Comparable {
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -7775869498773199481L;
-	private int id;
+	private String id;
 	private int category_id;
 	private int num_checkins;
 	private double lon;
@@ -16,7 +16,7 @@ public class Place implements Serializable{
 	private Category category;
 	private String name;
 	private Location location;
-	
+
 	public String getName() {
 		return name;
 	}
@@ -25,7 +25,7 @@ public class Place implements Serializable{
 		this.name = name;
 	}
 
-	public Place(int id, int category_id, double lon, double lat, String name, int num_checkins) {
+	public Place(String id, int category_id, double lon, double lat, String name, int num_checkins) {
 		super();
 		this.id = id;
 		this.category_id = category_id;
@@ -38,11 +38,11 @@ public class Place implements Serializable{
 		this.num_checkins = num_checkins;
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -78,8 +78,8 @@ public class Place implements Serializable{
 		this.lat = lat;
 	}
 
-	public Place(){
-		
+	public Place() {
+
 	}
 
 	public Category getCategory() {
@@ -89,7 +89,7 @@ public class Place implements Serializable{
 	public void setCategory(Category category) {
 		this.category = category;
 	}
-	
+
 	public Location getLocation() {
 		return location;
 	}
@@ -98,7 +98,7 @@ public class Place implements Serializable{
 		this.location = location;
 	}
 
-	class Location implements Serializable{
+	class Location implements Serializable {
 		/**
 		 * 
 		 */
@@ -106,7 +106,11 @@ public class Place implements Serializable{
 		double lon;
 		double lat;
 	}
-	
-	
+
+	@Override
+	public int compareTo(Object arg0) {
+		int numCount = ((Place) arg0).getNum_checkins();
+		return numCount - this.getNum_checkins();
+	}
 
 }
