@@ -7,6 +7,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
@@ -14,14 +15,15 @@ import java.util.HashMap;
 public class Main {
 
 	static HashMap<Integer, User> users = new HashMap<Integer, User>();
-	// HashMap<Integer, Place> places = new HashMap<Integer, Place>();
-	static HashMap<String, Place> places = new HashMap<String, Place>();
+	// HashMap<Integer, Place> places = new HashMap<Integer, Place>();	//gowalla
+	static HashMap<String, Place> places = new HashMap<String, Place>();	//foursquare
 	static HashMap<Integer, Category> categories = new HashMap<Integer, Category>();
 	static ArrayList<Checkin> checkins = new ArrayList<Checkin>();
 	static ArrayList<Checkin> predictedCheckins = new ArrayList<Checkin>();
 	static ArrayList<Place> placesArray = new ArrayList<Place>();
 	static Place mostPopularPlace;
 	static Place[] mostPopularPlaces = new Place[50];
+	static Place[] mostPopularNPlaces;
 
 	public static void main(String[] args) {
 		String database_name = "foursquare";
@@ -31,26 +33,46 @@ public class Main {
 		setMostPopularPlaces();
 		getPredictedCheckins();
 		calculateUsersHomeLocations();
-		makePredictions(1);
+		makePredictions(4);
 	}
 
+	// Users Home Locations Are Calculated
 	public static void calculateUsersHomeLocations() {
 		for (User user : users.values()) {
-			user.calculateHomeLocation();
+			// user.calculateHomeLocationByAvg();
+			user.calculateHomeLocationByFreq();
 			// System.out.println(user.getHomeLocation());
 		}
-
 	}
 
+	// Most Popular Places Are Setted
 	@SuppressWarnings("unchecked")
 	public static void setMostPopularPlaces() {
 		Collections.sort(placesArray);
 		for (int i = 0; i < mostPopularPlaces.length; i++) {
 			mostPopularPlaces[i] = placesArray.get(i);
-			System.out.println(placesArray.get(i).getNum_checkins());
 		}
 	}
 
+	@SuppressWarnings("unchecked")
+	public static void setMostPopularNPlaces(int size) {
+		Collections.sort(placesArray);
+		mostPopularNPlaces = new Place[size];
+		for (int i = 0; i < mostPopularNPlaces.length; i++) {
+			mostPopularNPlaces[i] = placesArray.get(i);
+		}
+	}
+
+	public static Place[] getMostPopularNPlaces(Place[] place, int size) {
+		Arrays.sort(place);
+		mostPopularNPlaces = new Place[size];
+		for (int i = 0; i < mostPopularNPlaces.length; i++) {
+			mostPopularNPlaces[i] = place[i];
+		}
+		return mostPopularNPlaces;
+	}
+
+	// Prediction Method
 	// choice = 1 popular, = 2 closest,
 	public static void makePredictions(int choice) {
 		int correctPredictions = 0;
@@ -67,12 +89,54 @@ public class Main {
 					correctPredictions++;
 				}
 			}
+		} else if (choice == 3) {
+			for (int i = 0; i < predictedCheckins.size(); i++) {
+				System.out.println(i);
+				if (closePopularPrediction(predictedCheckins.get(i), 1000, 10)) {
+					correctPredictions++;
+				}
+			}
+		} else if (choice == 4) {
+			setMostPopularNPlaces(1000);
+			for (int i = 0; i < predictedCheckins.size(); i++) {
+				System.out.println(i);
+				if (popularClosePrediction(predictedCheckins.get(i), 10)) {
+					correctPredictions++;
+				}
+			}
 		}
+
 		System.out.println(correctPredictions);
 		System.out.println(predictedCheckins.size());
 		System.out.println((double) correctPredictions / predictedCheckins.size());
 	}
 
+	// First find closest than popular
+	public static boolean closePopularPrediction(Checkin predictedCheckin, int closeNum, int popularNum) {
+		User user = users.get(predictedCheckin.getUser_id());
+		Place[] closestPlaces = getClosestPlaces(user, closeNum);
+		Place[] closePopularPlaces = getMostPopularNPlaces(closestPlaces, popularNum);
+		for (int i = 0; i < popularNum; i++) {
+			if (predictedCheckin.getPlace().getId().equals(closePopularPlaces[i].getId())) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	// First find populars than closest
+	public static boolean popularClosePrediction(Checkin predictedCheckin, int num) {
+		User user = users.get(predictedCheckin.getUser_id());
+		Place[] closestPlaces = getClosestNPlaces(user, num);
+		for (int i = 0; i < num; i++) {
+			if (predictedCheckin.getPlace().getId().equals(closestPlaces[i].getId())) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	// Popular Prediction Method
 	public static boolean popularPrediction(Checkin predictedCheckin) {
 		for (int j = 0; j < mostPopularPlaces.length; j++) {
 			if (predictedCheckin.getPlace().getId().equals(mostPopularPlaces[j].getId())) {
@@ -82,6 +146,7 @@ public class Main {
 		return false;
 	}
 
+	// Close Prediction Method
 	// Id equals control with equals not ==
 	public static boolean closestPrediction(Checkin predictedCheckin, int num) {
 		User user = users.get(predictedCheckin.getUser_id());
@@ -94,11 +159,27 @@ public class Main {
 		return false;
 	}
 
+	// Closest Places For All Places Returned
 	public static Place[] getClosestPlaces(User user, int num) {
 		Place[] closestPlaces = new Place[num];
 		ArrayList<Pair> pairs = new ArrayList<Pair>();
 		for (Place place : places.values()) {
 			pairs.add(new Pair(place.getId(), user.getHomeLocation().getDistance(place.getLocation())));
+		}
+		Collections.sort(pairs);
+		for (int i = 0; i < num; i++) {
+			closestPlaces[i] = places.get(pairs.get(i).id);
+		}
+		return closestPlaces;
+	}
+
+	// Closest Places For N Places Returned
+	public static Place[] getClosestNPlaces(User user, int num) {
+		Place[] closestPlaces = new Place[num];
+		ArrayList<Pair> pairs = new ArrayList<Pair>();
+		for (int i = 0; i < mostPopularNPlaces.length; i++) {
+			pairs.add(new Pair(mostPopularNPlaces[i].getId(),
+					user.getHomeLocation().getDistance(mostPopularNPlaces[i].getLocation())));
 		}
 		Collections.sort(pairs);
 		for (int i = 0; i < num; i++) {
@@ -122,6 +203,7 @@ public class Main {
 	// return false;
 	// }
 
+	// Most Popular Place Returned
 	public static Place getMostPopularPlace() {
 		Place mostPopular = null;
 		int mostCount = 0;
@@ -134,6 +216,7 @@ public class Main {
 		return mostPopular;
 	}
 
+	// Checkins which is going to be predicted
 	public static void getPredictedCheckins() {
 		int startMonth = 7;
 		Date startDate = new Date(111, startMonth, 20);
@@ -145,6 +228,7 @@ public class Main {
 		}
 	}
 
+	// Monthly checkin number calculated
 	public static void getMonthlyCheckinNumber(int startMonth) {
 		Date startDate = new Date(111, startMonth, 20);
 		Date endDate = new Date(111, startMonth + 1, 20);
@@ -171,6 +255,7 @@ public class Main {
 		System.out.println(endDate.toString());
 	}
 
+	// Data load method
 	public static void loadData(String database_name) {
 		Connection c = null;
 		Statement stmt = null;
@@ -380,6 +465,7 @@ public class Main {
 		System.out.println(elapsedSeconds);
 	}
 
+	// Data write to plain text file
 	public static void writeData(String database_name) {
 		try {
 			FileOutputStream fout = new FileOutputStream("./users_u" + database_name + ".dat");

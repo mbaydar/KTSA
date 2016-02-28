@@ -2,6 +2,8 @@ package com.baydar.ktsa;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 
 public class User implements Serializable {
 
@@ -31,6 +33,8 @@ public class User implements Serializable {
 	public ArrayList<User> getFriends() {
 		return null;
 	}
+	
+	
 
 	public boolean isVisitedPlace(Place place) {
 		for (int i = 0; i < this.checkins.size(); i++) {
@@ -70,7 +74,7 @@ public class User implements Serializable {
 		return visitedCategories;
 	}
 
-	public void calculateHomeLocation() {
+	public void calculateHomeLocationByAvg() {
 		double lat = 0;
 		double lon = 0;
 		for (int i = 0; i < checkins.size(); i++) {
@@ -80,7 +84,25 @@ public class User implements Serializable {
 		lat = lat / checkins.size();
 		lon = lon / checkins.size();
 		this.setHomeLocation(new Location(lat, lon));
+	}
 
+	public void calculateHomeLocationByFreq() {
+		HashMap<String, Integer> places = new HashMap<String, Integer>();
+		for (int i = 0; i < checkins.size(); i++) {
+			if (places.containsKey(checkins.get(i).getPlace().getId())) {
+				int val = places.get(checkins.get(i).getPlace().getId());
+				places.put(checkins.get(i).getPlace().getId(), val + 1);
+			} else {
+				places.put(checkins.get(i).getPlace().getId(), 1);
+			}
+		}
+		ArrayList<Pair> pair = new ArrayList<Pair>();
+		for (String key : places.keySet()) {
+			pair.add(new Pair(key, places.get(key)));
+		}
+		Collections.sort(pair);
+		this.setHomeLocation(
+				new Location(Main.places.get(pair.get(0).id).getLat(), Main.places.get(pair.get(0).id).getLon()));
 	}
 
 	public ArrayList<Location> getVisitedLocations() {
@@ -143,6 +165,26 @@ public class User implements Serializable {
 
 	public void setHomeLocation(Location homeLocation) {
 		this.homeLocation = homeLocation;
+	}
+
+	class Pair implements Comparable<Pair>{
+		String id;
+		int count;
+
+		public Pair(String id, int count) {
+			this.id = id;
+			this.count = count;
+		}
+
+		public int compareTo(Pair o) {
+			if (o.count == this.count) {
+				return 0;
+			} else if (o.count < this.count) {
+				return -1;
+			} else {
+				return 1;
+			}
+		}
 	}
 
 }

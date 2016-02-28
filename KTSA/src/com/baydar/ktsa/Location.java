@@ -16,7 +16,7 @@ public class Location implements Serializable {
 	}
 
 	public double getDistance(Location location) {
-		return this.lat - location.lat + this.lon - location.lon;
+		return Math.abs(this.lat - location.lat) + Math.abs(this.lon - location.lon);
 	}
 
 	public Location(double lat, double lon) {

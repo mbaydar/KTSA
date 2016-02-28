@@ -25,7 +25,7 @@ public class Place implements Serializable, Comparable {
 		this.name = name;
 	}
 
-	public Place(String id, int category_id, double lon, double lat, String name, int num_checkins, Location location) {
+	public Place(String id, int category_id, double lat, double lon, String name, int num_checkins, Location location) {
 		super();
 		this.id = id;
 		this.category_id = category_id;
@@ -33,8 +33,6 @@ public class Place implements Serializable, Comparable {
 		this.lat = lat;
 		this.name = name;
 		this.location = location;
-		this.location.lat = lat;
-		this.location.lon = lon;
 		this.num_checkins = num_checkins;
 	}
 
