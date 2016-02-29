@@ -1,17 +1,16 @@
 package com.baydar.ktsa;
 
-public class Pair implements Comparable<Pair> {
+public class Paired implements Comparable<Paired> {
 
 	String id;
 	double distance;
 
-	public Pair(String id, double distance) {
+	public Paired(String id, double distance) {
 		this.id = id;
 		this.distance = distance;
 	}
 
-	@Override
-	public int compareTo(Pair o) {
+	public int compareTo(Paired o) {
 		if (o.distance == this.distance) {
 			return 0;
 		} else if (o.distance < this.distance) {

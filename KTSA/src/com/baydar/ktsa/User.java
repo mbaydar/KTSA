@@ -52,11 +52,18 @@ public class User implements Serializable {
 		return false;
 	}
 
-	public ArrayList<Place> getVisitedPlaces() {
-		ArrayList<Place> visitedPlaces = new ArrayList<Place>();
+	public ArrayList<Paired> getVisitedPlaces() {
+		double alfa = 1.1;
+		ArrayList<Paired> visitedPlaces = new ArrayList<Paired>();
 		for (int i = 0; i < this.checkins.size(); i++) {
 			if (!visitedPlaces.contains(this.checkins.get(i).getPlace())) {
-				visitedPlaces.add(this.checkins.get(i).getPlace());
+				visitedPlaces.add(new Paired(this.checkins.get(i).getPlace().getId(), alfa));
+			} else {
+				for (Paired pairs : visitedPlaces) {
+					if (pairs.id.equals(this.checkins.get(i).getPlace_id())) {
+						pairs.distance = pairs.distance * alfa;
+					}
+				}
 			}
 		}
 		return visitedPlaces;
@@ -64,8 +71,11 @@ public class User implements Serializable {
 
 	public Integer[] getVisitedCategories() {
 		Integer[] visitedCategories = new Integer[Main.categories.size()];
+		for (int i = 0; i < visitedCategories.length; i++) {
+			visitedCategories[i] = 0;
+		}
 		for (int i = 0; i < this.checkins.size(); i++) {
-			visitedCategories[this.checkins.get(i).getPlace().getCategory_id()]++;
+			visitedCategories[this.checkins.get(i).getPlace().getCategory_id()-1]++;
 		}
 		return visitedCategories;
 	}
@@ -76,7 +86,7 @@ public class User implements Serializable {
 			visitedCategories[i] = 0;
 		}
 		for (int i = 0; i < this.checkins.size(); i++) {
-			visitedCategories[this.checkins.get(i).getPlace().getCategory_id()]++;
+			visitedCategories[this.checkins.get(i).getPlace().getCategory_id()-1]++;
 		}
 		int count = 0;
 		int index = 0;

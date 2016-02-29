@@ -33,7 +33,7 @@ public class Main {
 		setMostPopularPlaces();
 		getPredictedCheckins();
 		calculateUsersHomeLocations();
-		makePredictions(1);
+		makePredictions(6);
 	}
 
 	// Prediction Method
@@ -76,11 +76,56 @@ public class Main {
 					correctPredictions++;
 				}
 			}
+		} else if (choice == 6) {
+			for (int i = 0; i < predictedCheckins.size(); i++) {
+				System.out.println(i);
+				if (newMethod(predictedCheckins.get(i), 50)) {
+					correctPredictions++;
+				}
+			}
 		}
 
 		System.out.println(correctPredictions);
 		System.out.println(predictedCheckins.size());
 		System.out.println((double) correctPredictions / predictedCheckins.size());
+	}
+
+	public static boolean newMethod(Checkin predictedCheckin, int num) {
+		double alfa = -100;
+		double beta = 1;
+		double gamma = 0.1;
+		double teta = 0.01;
+		User user = users.get(predictedCheckin.getUser_id());
+		ArrayList<Paired> placeDistances = getPlaceDistances(user);
+		ArrayList<Paired> visitedPlaces = user.getVisitedPlaces();
+		Integer[] visitedCategories = user.getVisitedCategories();
+		HashMap<String, PlaceRank> rankPlaces = new HashMap<String, PlaceRank>();
+		for (int i = 0; i < placesArray.size(); i++) {
+			rankPlaces.put(placesArray.get(i).getId(),
+					new PlaceRank(placesArray.get(i).getId(), placesArray.get(i).getNum_checkins() * teta
+							+ gamma * visitedCategories[placesArray.get(i).getCategory_id()-1]));
+		}
+		for (int i = 0; i < placeDistances.size(); i++) {
+			double rank = rankPlaces.get(placeDistances.get(i).id).rankPoint;
+			rankPlaces.put(placeDistances.get(i).id,
+					new PlaceRank(placeDistances.get(i).id, rank * alfa * placeDistances.get(i).distance));
+		}
+		for (int i = 0; i < visitedPlaces.size(); i++) {
+			double rank = rankPlaces.get(visitedPlaces.get(i).id).rankPoint;
+			rankPlaces.put(visitedPlaces.get(i).id,
+					new PlaceRank(visitedPlaces.get(i).id, rank * beta * visitedPlaces.get(i).distance));
+		}
+		ArrayList<PlaceRank> rankedPlaces = new ArrayList<PlaceRank>();
+		for (PlaceRank pr : rankPlaces.values()) {
+			rankedPlaces.add(pr);
+		}
+		Collections.sort(rankedPlaces);
+		for (int i = 0; i < num; i++) {
+			if (rankedPlaces.get(i).id.equals(predictedCheckin.getPlace_id())) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public static boolean categoryPrediction(Checkin predictedCheckin, int num) {
@@ -201,12 +246,20 @@ public class Main {
 		return false;
 	}
 
+	public static ArrayList<Paired> getPlaceDistances(User user) {
+		ArrayList<Paired> pairs = new ArrayList<Paired>();
+		for (Place place : places.values()) {
+			pairs.add(new Paired(place.getId(), user.getHomeLocation().getDistance(place.getLocation())));
+		}
+		return pairs;
+	}
+
 	// Closest Places For All Places Returned
 	public static Place[] getClosestPlaces(User user, int num) {
 		Place[] closestPlaces = new Place[num];
-		ArrayList<Pair> pairs = new ArrayList<Pair>();
+		ArrayList<Paired> pairs = new ArrayList<Paired>();
 		for (Place place : places.values()) {
-			pairs.add(new Pair(place.getId(), user.getHomeLocation().getDistance(place.getLocation())));
+			pairs.add(new Paired(place.getId(), user.getHomeLocation().getDistance(place.getLocation())));
 		}
 		Collections.sort(pairs);
 		for (int i = 0; i < num; i++) {
@@ -218,9 +271,9 @@ public class Main {
 	// Closest Places For N Places Returned
 	public static Place[] getClosestNPlaces(User user, int num) {
 		Place[] closestPlaces = new Place[num];
-		ArrayList<Pair> pairs = new ArrayList<Pair>();
+		ArrayList<Paired> pairs = new ArrayList<Paired>();
 		for (int i = 0; i < mostPopularNPlaces.length; i++) {
-			pairs.add(new Pair(mostPopularNPlaces[i].getId(),
+			pairs.add(new Paired(mostPopularNPlaces[i].getId(),
 					user.getHomeLocation().getDistance(mostPopularNPlaces[i].getLocation())));
 		}
 		Collections.sort(pairs);

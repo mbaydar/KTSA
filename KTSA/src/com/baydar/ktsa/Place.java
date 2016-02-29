@@ -2,7 +2,7 @@ package com.baydar.ktsa;
 
 import java.io.Serializable;
 
-public class Place implements Serializable, Comparable {
+public class Place implements Serializable, Comparable<Object> {
 
 	/**
 	 * 
