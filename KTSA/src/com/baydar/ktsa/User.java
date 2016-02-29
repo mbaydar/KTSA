@@ -33,8 +33,6 @@ public class User implements Serializable {
 	public ArrayList<User> getFriends() {
 		return null;
 	}
-	
-	
 
 	public boolean isVisitedPlace(Place place) {
 		for (int i = 0; i < this.checkins.size(); i++) {
@@ -64,14 +62,31 @@ public class User implements Serializable {
 		return visitedPlaces;
 	}
 
-	public ArrayList<Category> getVisitedCategories() {
-		ArrayList<Category> visitedCategories = new ArrayList<Category>();
+	public Integer[] getVisitedCategories() {
+		Integer[] visitedCategories = new Integer[Main.categories.size()];
 		for (int i = 0; i < this.checkins.size(); i++) {
-			if (!visitedCategories.contains(this.checkins.get(i).getPlace().getCategory())) {
-				visitedCategories.add(this.checkins.get(i).getPlace().getCategory());
-			}
+			visitedCategories[this.checkins.get(i).getPlace().getCategory_id()]++;
 		}
 		return visitedCategories;
+	}
+
+	public Integer getMostVisitedCategory() {
+		Integer[] visitedCategories = new Integer[Main.categories.size()];
+		for (int i = 0; i < visitedCategories.length; i++) {
+			visitedCategories[i] = 0;
+		}
+		for (int i = 0; i < this.checkins.size(); i++) {
+			visitedCategories[this.checkins.get(i).getPlace().getCategory_id()]++;
+		}
+		int count = 0;
+		int index = 0;
+		for (int i = 0; i < visitedCategories.length; i++) {
+			if (visitedCategories[i] > count) {
+				count = visitedCategories[i];
+				index = i;
+			}
+		}
+		return index;
 	}
 
 	public void calculateHomeLocationByAvg() {
@@ -167,7 +182,7 @@ public class User implements Serializable {
 		this.homeLocation = homeLocation;
 	}
 
-	class Pair implements Comparable<Pair>{
+	class Pair implements Comparable<Pair> {
 		String id;
 		int count;
 

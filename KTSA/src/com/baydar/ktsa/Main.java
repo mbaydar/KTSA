@@ -15,8 +15,8 @@ import java.util.HashMap;
 public class Main {
 
 	static HashMap<Integer, User> users = new HashMap<Integer, User>();
-	// HashMap<Integer, Place> places = new HashMap<Integer, Place>();	//gowalla
-	static HashMap<String, Place> places = new HashMap<String, Place>();	//foursquare
+	// HashMap<Integer, Place> places = new HashMap<Integer, Place>(); //gowalla
+	static HashMap<String, Place> places = new HashMap<String, Place>(); // foursquare
 	static HashMap<Integer, Category> categories = new HashMap<Integer, Category>();
 	static ArrayList<Checkin> checkins = new ArrayList<Checkin>();
 	static ArrayList<Checkin> predictedCheckins = new ArrayList<Checkin>();
@@ -33,7 +33,88 @@ public class Main {
 		setMostPopularPlaces();
 		getPredictedCheckins();
 		calculateUsersHomeLocations();
-		makePredictions(4);
+		makePredictions(1);
+	}
+
+	// Prediction Method
+	// choice = 1 popular, = 2 closest,
+	public static void makePredictions(int choice) {
+		int correctPredictions = 0;
+		if (choice == 1) {
+			for (int i = 0; i < predictedCheckins.size(); i++) {
+				System.out.println(i);
+				if (popularPrediction(predictedCheckins.get(i))) {
+					correctPredictions++;
+				}
+			}
+		} else if (choice == 2) {
+			for (int i = 0; i < predictedCheckins.size(); i++) {
+				System.out.println(i);
+				if (closestPrediction(predictedCheckins.get(i), 50)) {
+					correctPredictions++;
+				}
+			}
+		} else if (choice == 3) {
+			for (int i = 0; i < predictedCheckins.size(); i++) {
+				System.out.println(i);
+				if (closePopularPrediction(predictedCheckins.get(i), 1000, 50)) {
+					correctPredictions++;
+				}
+			}
+		} else if (choice == 4) {
+			setMostPopularNPlaces(1000);
+			for (int i = 0; i < predictedCheckins.size(); i++) {
+				System.out.println(i);
+				if (popularClosePrediction(predictedCheckins.get(i), 50)) {
+					correctPredictions++;
+				}
+			}
+		} else if (choice == 5) {
+			for (int i = 0; i < predictedCheckins.size(); i++) {
+				System.out.println(i);
+				if (categoryPrediction(predictedCheckins.get(i), 50)) {
+					correctPredictions++;
+				}
+			}
+		}
+
+		System.out.println(correctPredictions);
+		System.out.println(predictedCheckins.size());
+		System.out.println((double) correctPredictions / predictedCheckins.size());
+	}
+
+	public static boolean categoryPrediction(Checkin predictedCheckin, int num) {
+		User user = users.get(predictedCheckin.getUser_id());
+		Category mostVisited = categories.get(user.getMostVisitedCategory());
+		Place[] mostPopularByCategory = getMostPopularByCategory(mostVisited, num);
+		for (int i = 0; i < mostPopularByCategory.length; i++) {
+			if (predictedCheckin.getPlace().getId().equals(mostPopularByCategory[i].getId())) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	@SuppressWarnings("unchecked")
+	public static Place[] getMostPopularByCategory(Category mostVisited, int num) {
+		ArrayList<Place> categoryPlace = new ArrayList<Place>();
+		for (int i = 0; i < placesArray.size(); i++) {
+			if (placesArray.get(i).getCategory() == mostVisited) {
+				categoryPlace.add(placesArray.get(i));
+			}
+		}
+		int size = categoryPlace.size();
+		if (size < num) {
+			for (int i = 0; i < num - size; i++) {
+				categoryPlace.add(placesArray.get(i));
+			}
+		}
+		Collections.sort(categoryPlace);
+		Place[] returnPlace = new Place[num];
+		for (int i = 0; i < num; i++) {
+			returnPlace[i] = categoryPlace.get(i);
+		}
+		return returnPlace;
 	}
 
 	// Users Home Locations Are Calculated
@@ -70,45 +151,6 @@ public class Main {
 			mostPopularNPlaces[i] = place[i];
 		}
 		return mostPopularNPlaces;
-	}
-
-	// Prediction Method
-	// choice = 1 popular, = 2 closest,
-	public static void makePredictions(int choice) {
-		int correctPredictions = 0;
-		if (choice == 1) {
-			for (int i = 0; i < predictedCheckins.size(); i++) {
-				if (popularPrediction(predictedCheckins.get(i))) {
-					correctPredictions++;
-				}
-			}
-		} else if (choice == 2) {
-			for (int i = 0; i < predictedCheckins.size(); i++) {
-				System.out.println(i);
-				if (closestPrediction(predictedCheckins.get(i), 10)) {
-					correctPredictions++;
-				}
-			}
-		} else if (choice == 3) {
-			for (int i = 0; i < predictedCheckins.size(); i++) {
-				System.out.println(i);
-				if (closePopularPrediction(predictedCheckins.get(i), 1000, 10)) {
-					correctPredictions++;
-				}
-			}
-		} else if (choice == 4) {
-			setMostPopularNPlaces(1000);
-			for (int i = 0; i < predictedCheckins.size(); i++) {
-				System.out.println(i);
-				if (popularClosePrediction(predictedCheckins.get(i), 10)) {
-					correctPredictions++;
-				}
-			}
-		}
-
-		System.out.println(correctPredictions);
-		System.out.println(predictedCheckins.size());
-		System.out.println((double) correctPredictions / predictedCheckins.size());
 	}
 
 	// First find closest than popular
