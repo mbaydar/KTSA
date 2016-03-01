@@ -1,6 +1,9 @@
 package com.baydar.ktsa;
 
+import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -31,9 +34,17 @@ public class Main {
 		// getMonthlyCheckinNumber(6);
 		mostPopularPlace = getMostPopularPlace();
 		setMostPopularPlaces();
-		getPredictedCheckins();
 		calculateUsersHomeLocations();
-		makePredictions(6);
+		testAll();
+	}
+
+	public static void testAll() {
+		for (int k = 0; k < 8; k++) {
+			getPredictedCheckins(k);
+			for (int i = 1; i < 7; i++) {
+				makePredictions(i);
+			}
+		}
 	}
 
 	// Prediction Method
@@ -41,6 +52,7 @@ public class Main {
 	public static void makePredictions(int choice) {
 		int correctPredictions = 0;
 		if (choice == 1) {
+			logResults("Popular Predictions");
 			for (int i = 0; i < predictedCheckins.size(); i++) {
 				System.out.println(i);
 				if (popularPrediction(predictedCheckins.get(i))) {
@@ -48,6 +60,7 @@ public class Main {
 				}
 			}
 		} else if (choice == 2) {
+			logResults("Close Predictions");
 			for (int i = 0; i < predictedCheckins.size(); i++) {
 				System.out.println(i);
 				if (closestPrediction(predictedCheckins.get(i), 50)) {
@@ -55,6 +68,7 @@ public class Main {
 				}
 			}
 		} else if (choice == 3) {
+			logResults("Close Popular Predictions");
 			for (int i = 0; i < predictedCheckins.size(); i++) {
 				System.out.println(i);
 				if (closePopularPrediction(predictedCheckins.get(i), 1000, 50)) {
@@ -62,6 +76,7 @@ public class Main {
 				}
 			}
 		} else if (choice == 4) {
+			logResults("Popular Close Predictions");
 			setMostPopularNPlaces(1000);
 			for (int i = 0; i < predictedCheckins.size(); i++) {
 				System.out.println(i);
@@ -70,6 +85,7 @@ public class Main {
 				}
 			}
 		} else if (choice == 5) {
+			logResults("Category-based Predictions");
 			for (int i = 0; i < predictedCheckins.size(); i++) {
 				System.out.println(i);
 				if (categoryPrediction(predictedCheckins.get(i), 50)) {
@@ -77,6 +93,7 @@ public class Main {
 				}
 			}
 		} else if (choice == 6) {
+			logResults("New Method Predictions");
 			for (int i = 0; i < predictedCheckins.size(); i++) {
 				System.out.println(i);
 				if (newMethod(predictedCheckins.get(i), 50)) {
@@ -88,6 +105,8 @@ public class Main {
 		System.out.println(correctPredictions);
 		System.out.println(predictedCheckins.size());
 		System.out.println((double) correctPredictions / predictedCheckins.size());
+		logResults("\nCorrect Predictions: " + correctPredictions + "\nTotal Predictions: " + predictedCheckins.size()
+				+ "\nAccuracy: " + ((double) correctPredictions / predictedCheckins.size()) + "\n");
 	}
 
 	public static boolean newMethod(Checkin predictedCheckin, int num) {
@@ -103,7 +122,7 @@ public class Main {
 		for (int i = 0; i < placesArray.size(); i++) {
 			rankPlaces.put(placesArray.get(i).getId(),
 					new PlaceRank(placesArray.get(i).getId(), placesArray.get(i).getNum_checkins() * teta
-							+ gamma * visitedCategories[placesArray.get(i).getCategory_id()-1]));
+							+ gamma * visitedCategories[placesArray.get(i).getCategory_id() - 1]));
 		}
 		for (int i = 0; i < placeDistances.size(); i++) {
 			double rank = rankPlaces.get(placeDistances.get(i).id).rankPoint;
@@ -312,10 +331,11 @@ public class Main {
 	}
 
 	// Checkins which is going to be predicted
-	public static void getPredictedCheckins() {
-		int startMonth = 7;
+	public static void getPredictedCheckins(int startMonth) {
+		predictedCheckins.clear();
 		Date startDate = new Date(111, startMonth, 20);
 		Date endDate = new Date(111, startMonth + 1, 20);
+		logResults("Start Date : " + startDate.toString() + " End Date:" + endDate.toString() + "\n");
 		for (int i = 0; i < checkins.size(); i++) {
 			if (checkins.get(i).getTimestamp().after(startDate) && checkins.get(i).getTimestamp().before(endDate)) {
 				predictedCheckins.add(checkins.get(i));
@@ -612,6 +632,20 @@ public class Main {
 
 		} catch (Exception ex) {
 			ex.printStackTrace();
+		}
+	}
+
+	public static void logResults(String result) {
+		try {
+			File newTextFile = new File("results.txt");
+
+			FileWriter fw = new FileWriter(newTextFile, true);
+			fw.write(result);
+			fw.close();
+
+		} catch (IOException iox) {
+			// do stuff with exception
+			iox.printStackTrace();
 		}
 	}
 
