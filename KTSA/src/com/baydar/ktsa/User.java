@@ -17,6 +17,7 @@ public class User implements Serializable {
 	private boolean is_active;
 	private Location homeLocation;
 	private ArrayList<Checkin> checkins = new ArrayList<Checkin>();
+	private ArrayList<Paired> placeDistances = new ArrayList<Paired>();
 
 	public ArrayList<Checkin> getCheckins() {
 		return checkins;
@@ -75,7 +76,7 @@ public class User implements Serializable {
 			visitedCategories[i] = 0;
 		}
 		for (int i = 0; i < this.checkins.size(); i++) {
-			visitedCategories[this.checkins.get(i).getPlace().getCategory_id()-1]++;
+			visitedCategories[this.checkins.get(i).getPlace().getCategory_id() - 1]++;
 		}
 		return visitedCategories;
 	}
@@ -86,7 +87,7 @@ public class User implements Serializable {
 			visitedCategories[i] = 0;
 		}
 		for (int i = 0; i < this.checkins.size(); i++) {
-			visitedCategories[this.checkins.get(i).getPlace().getCategory_id()-1]++;
+			visitedCategories[this.checkins.get(i).getPlace().getCategory_id() - 1]++;
 		}
 		int count = 0;
 		int index = 0;
@@ -97,6 +98,21 @@ public class User implements Serializable {
 			}
 		}
 		return index;
+	}
+
+	public void calculatePlaceDistances(int num) {
+		ArrayList<Paired> pairs = new ArrayList<Paired>();
+		for (Place place : Main.places.values()) {
+			pairs.add(new Paired(place.getId(), this.getHomeLocation().getDistance(place.getLocation())));
+		}
+		Collections.sort(pairs);
+		for (int i = 0; i < num; i++) {
+			placeDistances.add(new Paired(pairs.get(i).id, pairs.get(i).distance));
+		}
+	}
+	
+	public ArrayList<Paired> getPlaceDistances(){
+		return placeDistances;
 	}
 
 	public void calculateHomeLocationByAvg() {

@@ -1,0 +1,50 @@
+Start Date : Thu Jan 20 00:00:00 EET 2011 End Date:Sun Feb 20 00:00:00 EET 2011
+Popular Predictions
+Correct Predictions: 4911
+Total Predictions: 42163
+Accuracy: 0.1164765315561037
+Close Predictions
+Correct Predictions: 10966
+Total Predictions: 42163
+Accuracy: 0.260085857268221
+Close Popular Predictions
+Correct Predictions: 8859
+Total Predictions: 42163
+Accuracy: 0.2101131323672414
+Popular Close Predictions
+Correct Predictions: 6882
+Total Predictions: 42163
+Accuracy: 0.16322367952944525
+Category-based Predictions
+Correct Predictions: 2996
+Total Predictions: 42163
+Accuracy: 0.0710575623176719
+New Method Predictions
+Correct Predictions: 18809
+Total Predictions: 42163
+Accuracy: 0.44610203258781395
+Start Date : Sun Feb 20 00:00:00 EET 2011 End Date:Sun Mar 20 00:00:00 EET 2011
+Popular Predictions
+Correct Predictions: 4313
+Total Predictions: 37168
+Accuracy: 0.11604068015497201
+Close Predictions
+Correct Predictions: 9857
+Total Predictions: 37168
+Accuracy: 0.26520124838570813
+Close Popular Predictions
+Correct Predictions: 8240
+Total Predictions: 37168
+Accuracy: 0.22169608265174343
+Popular Close Predictions
+Correct Predictions: 6387
+Total Predictions: 37168
+Accuracy: 0.17184136891950064
+Category-based Predictions
+Correct Predictions: 2588
+Total Predictions: 37168
+Accuracy: 0.0696297890658631
+New Method Predictions
+Correct Predictions: 16681
+Total Predictions: 37168
+Accuracy: 0.44880004304778304

@@ -35,16 +35,25 @@ public class Main {
 		mostPopularPlace = getMostPopularPlace();
 		setMostPopularPlaces();
 		calculateUsersHomeLocations();
+		calculateUsersPlaceDistances(1000);
 		testAll();
 	}
 
 	public static void testAll() {
-		for (int k = 0; k < 8; k++) {
+		double total = 0;
+		for (int k = 0; k < 1; k++) {
 			getPredictedCheckins(k);
+			long tStart = System.currentTimeMillis();
 			for (int i = 1; i < 7; i++) {
 				makePredictions(i);
 			}
+			long tEnd = System.currentTimeMillis();
+			long tDelta = tEnd - tStart;
+			double elapsedSeconds = tDelta / 1000.0;
+			total += elapsedSeconds;
+			System.out.println(elapsedSeconds);
 		}
+		System.out.println(total);
 	}
 
 	// Prediction Method
@@ -54,7 +63,7 @@ public class Main {
 		if (choice == 1) {
 			logResults("Popular Predictions");
 			for (int i = 0; i < predictedCheckins.size(); i++) {
-				System.out.println(i);
+				 System.out.println(i);
 				if (popularPrediction(predictedCheckins.get(i))) {
 					correctPredictions++;
 				}
@@ -62,7 +71,7 @@ public class Main {
 		} else if (choice == 2) {
 			logResults("Close Predictions");
 			for (int i = 0; i < predictedCheckins.size(); i++) {
-				System.out.println(i);
+				 System.out.println(i);
 				if (closestPrediction(predictedCheckins.get(i), 50)) {
 					correctPredictions++;
 				}
@@ -70,7 +79,7 @@ public class Main {
 		} else if (choice == 3) {
 			logResults("Close Popular Predictions");
 			for (int i = 0; i < predictedCheckins.size(); i++) {
-				System.out.println(i);
+				 System.out.println(i);
 				if (closePopularPrediction(predictedCheckins.get(i), 1000, 50)) {
 					correctPredictions++;
 				}
@@ -79,7 +88,7 @@ public class Main {
 			logResults("Popular Close Predictions");
 			setMostPopularNPlaces(1000);
 			for (int i = 0; i < predictedCheckins.size(); i++) {
-				System.out.println(i);
+				 System.out.println(i);
 				if (popularClosePrediction(predictedCheckins.get(i), 50)) {
 					correctPredictions++;
 				}
@@ -87,7 +96,7 @@ public class Main {
 		} else if (choice == 5) {
 			logResults("Category-based Predictions");
 			for (int i = 0; i < predictedCheckins.size(); i++) {
-				System.out.println(i);
+				 System.out.println(i);
 				if (categoryPrediction(predictedCheckins.get(i), 50)) {
 					correctPredictions++;
 				}
@@ -95,7 +104,7 @@ public class Main {
 		} else if (choice == 6) {
 			logResults("New Method Predictions");
 			for (int i = 0; i < predictedCheckins.size(); i++) {
-				System.out.println(i);
+				 System.out.println(i);
 				if (newMethod(predictedCheckins.get(i), 50)) {
 					correctPredictions++;
 				}
@@ -110,12 +119,12 @@ public class Main {
 	}
 
 	public static boolean newMethod(Checkin predictedCheckin, int num) {
-		double alfa = -100;
+		double alfa = 4;
 		double beta = 1;
 		double gamma = 0.1;
 		double teta = 0.01;
 		User user = users.get(predictedCheckin.getUser_id());
-		ArrayList<Paired> placeDistances = getPlaceDistances(user);
+		ArrayList<Paired> placeDistances = user.getPlaceDistances();
 		ArrayList<Paired> visitedPlaces = user.getVisitedPlaces();
 		Integer[] visitedCategories = user.getVisitedCategories();
 		HashMap<String, PlaceRank> rankPlaces = new HashMap<String, PlaceRank>();
@@ -127,7 +136,7 @@ public class Main {
 		for (int i = 0; i < placeDistances.size(); i++) {
 			double rank = rankPlaces.get(placeDistances.get(i).id).rankPoint;
 			rankPlaces.put(placeDistances.get(i).id,
-					new PlaceRank(placeDistances.get(i).id, rank * alfa * placeDistances.get(i).distance));
+					new PlaceRank(placeDistances.get(i).id, rank + alfa - placeDistances.get(i).distance));
 		}
 		for (int i = 0; i < visitedPlaces.size(); i++) {
 			double rank = rankPlaces.get(visitedPlaces.get(i).id).rankPoint;
@@ -187,6 +196,15 @@ public class Main {
 			// user.calculateHomeLocationByAvg();
 			user.calculateHomeLocationByFreq();
 			// System.out.println(user.getHomeLocation());
+		}
+	}
+
+	public static void calculateUsersPlaceDistances(int num) {
+		int i=0;
+		for (User user : users.values()) {
+			user.calculatePlaceDistances(num);
+			i++;
+			System.out.println(i);
 		}
 	}
 
@@ -276,11 +294,7 @@ public class Main {
 	// Closest Places For All Places Returned
 	public static Place[] getClosestPlaces(User user, int num) {
 		Place[] closestPlaces = new Place[num];
-		ArrayList<Paired> pairs = new ArrayList<Paired>();
-		for (Place place : places.values()) {
-			pairs.add(new Paired(place.getId(), user.getHomeLocation().getDistance(place.getLocation())));
-		}
-		Collections.sort(pairs);
+		ArrayList<Paired> pairs = user.getPlaceDistances();
 		for (int i = 0; i < num; i++) {
 			closestPlaces[i] = places.get(pairs.get(i).id);
 		}
