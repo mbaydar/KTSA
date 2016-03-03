@@ -41,7 +41,7 @@ public class Main {
 
 	public static void testAll() {
 		double total = 0;
-		for (int k = 0; k < 1; k++) {
+		for (int k = 0; k < 8; k++) {
 			getPredictedCheckins(k);
 			long tStart = System.currentTimeMillis();
 			for (int i = 1; i < 7; i++) {

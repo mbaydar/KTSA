@@ -48,3 +48,153 @@ New Method Predictions
 Correct Predictions: 16681
 Total Predictions: 37168
 Accuracy: 0.44880004304778304
+Start Date : Sun Mar 20 00:00:00 EET 2011 End Date:Wed Apr 20 00:00:00 EEST 2011
+Popular Predictions
+Correct Predictions: 6337
+Total Predictions: 58885
+Accuracy: 0.10761654071495287
+Close Predictions
+Correct Predictions: 14878
+Total Predictions: 58885
+Accuracy: 0.2526619682431859
+Close Popular Predictions
+Correct Predictions: 12322
+Total Predictions: 58885
+Accuracy: 0.20925532818204975
+Popular Close Predictions
+Correct Predictions: 9709
+Total Predictions: 58885
+Accuracy: 0.16488069966884605
+Category-based Predictions
+Correct Predictions: 3839
+Total Predictions: 58885
+Accuracy: 0.06519487135942939
+New Method Predictions
+Correct Predictions: 25357
+Total Predictions: 58885
+Accuracy: 0.4306190031417169
+Start Date : Wed Apr 20 00:00:00 EEST 2011 End Date:Fri May 20 00:00:00 EEST 2011
+Popular Predictions
+Correct Predictions: 6834
+Total Predictions: 55238
+Accuracy: 0.1237191788261704
+Close Predictions
+Correct Predictions: 13323
+Total Predictions: 55238
+Accuracy: 0.24119265722871935
+Close Popular Predictions
+Correct Predictions: 11440
+Total Predictions: 55238
+Accuracy: 0.20710380535138853
+Popular Close Predictions
+Correct Predictions: 9227
+Total Predictions: 55238
+Accuracy: 0.16704080524276765
+Category-based Predictions
+Correct Predictions: 3912
+Total Predictions: 55238
+Accuracy: 0.07082081176002028
+New Method Predictions
+Correct Predictions: 23451
+Total Predictions: 55238
+Accuracy: 0.42454469749085777
+Start Date : Fri May 20 00:00:00 EEST 2011 End Date:Mon Jun 20 00:00:00 EEST 2011
+Popular Predictions
+Correct Predictions: 5896
+Total Predictions: 54327
+Accuracy: 0.10852798792497285
+Close Predictions
+Correct Predictions: 12969
+Total Predictions: 54327
+Accuracy: 0.23872107791705782
+Close Popular Predictions
+Correct Predictions: 10696
+Total Predictions: 54327
+Accuracy: 0.19688184512305115
+Popular Close Predictions
+Correct Predictions: 8595
+Total Predictions: 54327
+Accuracy: 0.15820862554530896
+Category-based Predictions
+Correct Predictions: 3681
+Total Predictions: 54327
+Accuracy: 0.0677563642387763
+New Method Predictions
+Correct Predictions: 22025
+Total Predictions: 54327
+Accuracy: 0.4054153551640989
+Start Date : Mon Jun 20 00:00:00 EEST 2011 End Date:Wed Jul 20 00:00:00 EEST 2011
+Popular Predictions
+Correct Predictions: 10229
+Total Predictions: 86185
+Accuracy: 0.11868654638278123
+Close Predictions
+Correct Predictions: 22568
+Total Predictions: 86185
+Accuracy: 0.26185531124905725
+Close Popular Predictions
+Correct Predictions: 17682
+Total Predictions: 86185
+Accuracy: 0.20516331148111622
+Popular Close Predictions
+Correct Predictions: 14255
+Total Predictions: 86185
+Accuracy: 0.16540001160294715
+Category-based Predictions
+Correct Predictions: 6522
+Total Predictions: 86185
+Accuracy: 0.07567442130301097
+New Method Predictions
+Correct Predictions: 38700
+Total Predictions: 86185
+Accuracy: 0.44903405464988105
+Start Date : Wed Jul 20 00:00:00 EEST 2011 End Date:Sat Aug 20 00:00:00 EEST 2011
+Popular Predictions
+Correct Predictions: 6501
+Total Predictions: 59088
+Accuracy: 0.11002233956133226
+Close Predictions
+Correct Predictions: 14532
+Total Predictions: 59088
+Accuracy: 0.2459382615759545
+Close Popular Predictions
+Correct Predictions: 10856
+Total Predictions: 59088
+Accuracy: 0.18372596804765773
+Popular Close Predictions
+Correct Predictions: 8458
+Total Predictions: 59088
+Accuracy: 0.1431424316274032
+Category-based Predictions
+Correct Predictions: 4110
+Total Predictions: 59088
+Accuracy: 0.06955727051177904
+New Method Predictions
+Correct Predictions: 24387
+Total Predictions: 59088
+Accuracy: 0.4127233956133225
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+Popular Predictions
+Correct Predictions: 3849
+Total Predictions: 36316
+Accuracy: 0.10598634210816169
+Close Predictions
+Correct Predictions: 8683
+Total Predictions: 36316
+Accuracy: 0.23909571538715718
+Close Popular Predictions
+Correct Predictions: 6393
+Total Predictions: 36316
+Accuracy: 0.17603810992400043
+Popular Close Predictions
+Correct Predictions: 4925
+Total Predictions: 36316
+Accuracy: 0.13561515585416897
+Category-based Predictions
+Correct Predictions: 2410
+Total Predictions: 36316
+Accuracy: 0.06636193413371516
+New Method Predictions
+Correct Predictions: 14525
+Total Predictions: 36316
+Accuracy: 0.3999614494988435
