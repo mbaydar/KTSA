@@ -8,7 +8,8 @@ public class Place implements Serializable, Comparable<Object> {
 	 * 
 	 */
 	private static final long serialVersionUID = -7775869498773199481L;
-	private String id;
+//	private String id;
+	private int id;
 	private int category_id;
 	private int num_checkins;
 	private double lon;
@@ -25,7 +26,8 @@ public class Place implements Serializable, Comparable<Object> {
 		this.name = name;
 	}
 
-	public Place(String id, int category_id, double lat, double lon, String name, int num_checkins, Location location) {
+	public Place(int id, int category_id, double lat, double lon, String name, int num_checkins, Location location) {
+//		public Place(String id, int category_id, double lat, double lon, String name, int num_checkins, Location location) {
 		super();
 		this.id = id;
 		this.category_id = category_id;
@@ -36,11 +38,13 @@ public class Place implements Serializable, Comparable<Object> {
 		this.num_checkins = num_checkins;
 	}
 
-	public String getId() {
+//	public String getId() {
+	public int getId(){
 		return id;
 	}
 
-	public void setId(String id) {
+//	public void setId(String id) {
+	public void setId(int id){
 		this.id = id;
 	}
 

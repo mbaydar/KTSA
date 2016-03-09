@@ -198,3 +198,13 @@ New Method Predictions
 Correct Predictions: 14525
 Total Predictions: 36316
 Accuracy: 0.3999614494988435
+Start Date : Thu Jan 20 00:00:00 EET 2011 End Date:Sun Feb 20 00:00:00 EET 2011
+Popular Predictions
+Correct Predictions: 0
+Total Predictions: 0
+Accuracy: NaN
+Start Date : Wed Jan 20 00:00:00 EET 2010 End Date:Sat Feb 20 00:00:00 EET 2010
+Popular Predictions
+Correct Predictions: 12194
+Total Predictions: 636691
+Accuracy: 0.019152147588076478
