@@ -11,8 +11,8 @@ public class Checkin implements Serializable{
 	private static final long serialVersionUID = 5235355871062461987L;
 	private int id;
 	private int user_id;
-//	private String place_id;
-	private int place_id;
+	private String place_id;
+//	private int place_id;
 	private int num_checkins;
 	private Date timestamp;
 	private Place place;
@@ -29,8 +29,8 @@ public class Checkin implements Serializable{
 		
 	}
 
-//	public Checkin(int id, int user_id, String place_id, int num_checkins, Date timestamp) {
-	public Checkin(int id, int user_id, int place_id, int num_checkins, Date timestamp) {
+	public Checkin(int id, int user_id, String place_id, int num_checkins, Date timestamp) {
+//	public Checkin(int id, int user_id, int place_id, int num_checkins, Date timestamp) {
 		super();
 		this.id = id;
 		this.user_id = user_id;
@@ -55,13 +55,13 @@ public class Checkin implements Serializable{
 		this.user_id = user_id;
 	}
 
-//	public String getPlace_id() {
-	public int getPlace_id(){
+	public String getPlace_id() {
+//	public int getPlace_id(){
 		return place_id;
 	}
 
-//	public void setPlace_id(String place_id) {
-	public void setPlace_id(int place_id) {
+	public void setPlace_id(String place_id) {
+//	public void setPlace_id(int place_id) {
 		this.place_id = place_id;
 	}
 

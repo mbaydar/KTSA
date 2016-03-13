@@ -61,8 +61,9 @@ public class User implements Serializable {
 				visitedPlaces.add(new Paired(this.checkins.get(i).getPlace().getId(), alfa));
 			} else {
 				for (Paired pairs : visitedPlaces) {
-//					if (pairs.id.equals(this.checkins.get(i).getPlace_id())) {
-					if (pairs.id == this.checkins.get(i).getPlace().getId()) {
+					if (pairs.id.equals(this.checkins.get(i).getPlace_id())) {
+						// if (pairs.id ==
+						// this.checkins.get(i).getPlace().getId()) {
 						pairs.distance = pairs.distance * alfa;
 					}
 				}
@@ -111,8 +112,8 @@ public class User implements Serializable {
 			placeDistances.add(new Paired(pairs.get(i).id, pairs.get(i).distance));
 		}
 	}
-	
-	public ArrayList<Paired> getPlaceDistances(){
+
+	public ArrayList<Paired> getPlaceDistances() {
 		return placeDistances;
 	}
 
@@ -129,8 +130,8 @@ public class User implements Serializable {
 	}
 
 	public void calculateHomeLocationByFreq() {
-//		HashMap<String, Integer> places = new HashMap<String, Integer>();
-		HashMap<Integer, Integer> places = new HashMap<Integer, Integer>();
+		HashMap<String, Integer> places = new HashMap<String, Integer>();
+		// HashMap<Integer, Integer> places = new HashMap<Integer, Integer>();
 		for (int i = 0; i < checkins.size(); i++) {
 			if (places.containsKey(checkins.get(i).getPlace().getId())) {
 				int val = places.get(checkins.get(i).getPlace().getId());
@@ -140,14 +141,11 @@ public class User implements Serializable {
 			}
 		}
 		ArrayList<Pair> pair = new ArrayList<Pair>();
-//		for (String key : places.keySet()) {
-		for (Integer key : places.keySet()) {
+		for (String key : places.keySet()) {
+			// for (Integer key : places.keySet()) {
 			pair.add(new Pair(key, places.get(key)));
 		}
-		
-		if(pair.size()==0){
-			System.out.println(this.getId());
-		}
+
 		Collections.sort(pair);
 		this.setHomeLocation(
 				new Location(Main.places.get(pair.get(0).id).getLat(), Main.places.get(pair.get(0).id).getLon()));
@@ -216,12 +214,12 @@ public class User implements Serializable {
 	}
 
 	class Pair implements Comparable<Pair> {
-//		String id;
-		int id;
+		String id;
+		// int id;
 		int count;
 
-//		public Pair(String id, int count) {
-		public Pair(int id, int count) {
+		public Pair(String id, int count) {
+			// public Pair(int id, int count) {
 			this.id = id;
 			this.count = count;
 		}

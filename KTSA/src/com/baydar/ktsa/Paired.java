@@ -2,12 +2,12 @@ package com.baydar.ktsa;
 
 public class Paired implements Comparable<Paired> {
 
-//	String id;
-	int id;
+	String id;
+//	int id;
 	double distance;
 
-//	public Paired(String id, double distance) {
-	public Paired(int id, double distance) {
+	public Paired(String id, double distance) {
+//	public Paired(int id, double distance) {
 		this.id = id;
 		this.distance = distance;
 	}
