@@ -54,7 +54,7 @@ public class User implements Serializable {
 	}
 
 	public ArrayList<Paired> getVisitedPlaces() {
-		double alfa = 1.1;
+		double alfa = 1;
 		ArrayList<Paired> visitedPlaces = new ArrayList<Paired>();
 		for (int i = 0; i < this.checkins.size(); i++) {
 			if (!visitedPlaces.contains(this.checkins.get(i).getPlace())) {
@@ -64,7 +64,7 @@ public class User implements Serializable {
 					if (pairs.id.equals(this.checkins.get(i).getPlace_id())) {
 						// if (pairs.id ==
 						// this.checkins.get(i).getPlace().getId()) {
-						pairs.distance = pairs.distance * alfa;
+						pairs.distance = pairs.distance + alfa;
 					}
 				}
 			}

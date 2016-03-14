@@ -38,7 +38,7 @@ public class Main {
 		setMostPopularPlaces();
 		calculateUsersHomeLocations();
 		Collections.sort(placesArray); // Sort by checkin nums
-		// calculateUsersPlaceDistances(1000);
+		calculateUsersPlaceDistances(1000);
 		testAll();
 	}
 
@@ -47,7 +47,7 @@ public class Main {
 		for (int k = 7; k < 8; k++) {
 			getPredictedCheckins(k);
 			long tStart = System.currentTimeMillis();
-			for (int i = 5; i < 6; i++) {
+			for (int i = 6; i < 7; i++) {
 				makePredictions(i);
 			}
 			long tEnd = System.currentTimeMillis();
@@ -122,31 +122,55 @@ public class Main {
 	}
 
 	public static boolean newMethod(Checkin predictedCheckin, int num) {
-		double alfa = 4;
+		double alfa = 1;
 		double beta = 1;
-		double gamma = 0.1;
-		double teta = 0.01;
+		double gamma = 1;
+		double teta = 1;
 		User user = users.get(predictedCheckin.getUser_id());
 		ArrayList<Paired> placeDistances = user.getPlaceDistances();
 		ArrayList<Paired> visitedPlaces = user.getVisitedPlaces();
+		double maxVisitedPlace = 0;
+		for (int i = 0; i < visitedPlaces.size(); i++) {
+			if (visitedPlaces.get(i).distance > maxVisitedPlace) {
+				maxVisitedPlace = visitedPlaces.get(i).distance;
+			}
+		}
+		int maxPlaceCheckin = placesArray.get(0).getNum_checkins();
+
 		Integer[] visitedCategories = user.getVisitedCategories();
+
+		int maxVisitedCategory = 0;
+		for (int i = 0; i < visitedCategories.length; i++) {
+			if (visitedCategories[i] > maxVisitedCategory) {
+				maxVisitedCategory = visitedCategories[i];
+			}
+		}
+
+		double maxPlaceDistance = 0;
+
+		for (int i = 0; i < placeDistances.size(); i++) {
+			if (placeDistances.get(i).distance > maxPlaceDistance) {
+				maxPlaceDistance = placeDistances.get(i).distance;
+			}
+		}
+
 		HashMap<String, PlaceRank> rankPlaces = new HashMap<String, PlaceRank>();
 		// HashMap<Integer, PlaceRank> rankPlaces = new HashMap<Integer,
 		// PlaceRank>();
 		for (int i = 0; i < placesArray.size(); i++) {
-			rankPlaces.put(placesArray.get(i).getId(),
-					new PlaceRank(placesArray.get(i).getId(), placesArray.get(i).getNum_checkins() * teta
-							+ gamma * visitedCategories[placesArray.get(i).getCategory_id() - 1]));
+			rankPlaces.put(placesArray.get(i).getId(), new PlaceRank(placesArray.get(i).getId(),
+					placesArray.get(i).getNum_checkins() / maxPlaceCheckin * teta
+							+ gamma * visitedCategories[placesArray.get(i).getCategory_id() - 1] / maxVisitedCategory));
 		}
 		for (int i = 0; i < placeDistances.size(); i++) {
 			double rank = rankPlaces.get(placeDistances.get(i).id).rankPoint;
-			rankPlaces.put(placeDistances.get(i).id,
-					new PlaceRank(placeDistances.get(i).id, rank + alfa - placeDistances.get(i).distance));
+			rankPlaces.put(placeDistances.get(i).id, new PlaceRank(placeDistances.get(i).id,
+					rank + alfa - placeDistances.get(i).distance / maxPlaceDistance));
 		}
 		for (int i = 0; i < visitedPlaces.size(); i++) {
 			double rank = rankPlaces.get(visitedPlaces.get(i).id).rankPoint;
-			rankPlaces.put(visitedPlaces.get(i).id,
-					new PlaceRank(visitedPlaces.get(i).id, rank * beta * visitedPlaces.get(i).distance));
+			rankPlaces.put(visitedPlaces.get(i).id, new PlaceRank(visitedPlaces.get(i).id,
+					rank + beta * visitedPlaces.get(i).distance / maxVisitedPlace));
 		}
 		ArrayList<PlaceRank> rankedPlaces = new ArrayList<PlaceRank>();
 		for (PlaceRank pr : rankPlaces.values()) {
@@ -154,9 +178,11 @@ public class Main {
 		}
 		Collections.sort(rankedPlaces);
 		for (int i = 0; i < num; i++) {
-			// if
-			// (rankedPlaces.get(i).id.equals(predictedCheckin.getPlace_id())) {
-			if (rankedPlaces.get(i).id == predictedCheckin.getPlace().getId()) {
+			if (rankedPlaces.get(i).id.equals(predictedCheckin.getPlace_id())) {
+				// if (rankedPlaces.get(i).id ==
+				// predictedCheckin.getPlace().getId()) {
+//				System.out.println(i + " " + rankedPlaces.get(i).rankPoint + " " + rankedPlaces.get(i).id + " "
+//						+ predictedCheckin.getPlace_id());
 				return true;
 			}
 		}

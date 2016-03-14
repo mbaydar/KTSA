@@ -208,3 +208,78 @@ Popular Predictions
 Correct Predictions: 12194
 Total Predictions: 636691
 Accuracy: 0.019152147588076478
+Start Date : Wed Jan 20 00:00:00 EET 2010 End Date:Sat Feb 20 00:00:00 EET 2010
+Popular Predictions
+Correct Predictions: 0
+Total Predictions: 0
+Accuracy: NaN
+Start Date : Thu Jan 20 00:00:00 EET 2011 End Date:Sun Feb 20 00:00:00 EET 2011
+Popular Predictions
+Correct Predictions: 4911
+Total Predictions: 42163
+Accuracy: 0.1164765315561037
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+Popular Predictions
+Correct Predictions: 3849
+Total Predictions: 36316
+Accuracy: 0.10598634210816169
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+Category-based Predictions
+Correct Predictions: 3194
+Total Predictions: 36316
+Accuracy: 0.08795021478136358
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+Category-based PredictionsStart Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+Category-based PredictionsStart Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+Category-based PredictionsStart Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+Category-based Predictions
+Correct Predictions: 8131
+Total Predictions: 36316
+Accuracy: 0.2238958035025884
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 33395
+Total Predictions: 36316
+Accuracy: 0.9195671329441568
+Start Date : Thu Jan 20 00:00:00 EET 2011 End Date:Sun Feb 20 00:00:00 EET 2011
+New Method Predictions
+Correct Predictions: 38785
+Total Predictions: 42163
+Accuracy: 0.9198823613120508
+Start Date : Sun Feb 20 00:00:00 EET 2011 End Date:Sun Mar 20 00:00:00 EET 2011
+New Method Predictions
+Correct Predictions: 34162
+Total Predictions: 37168
+Accuracy: 0.9191239776151529
+Start Date : Sun Mar 20 00:00:00 EET 2011 End Date:Wed Apr 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 53202
+Total Predictions: 58885
+Accuracy: 0.9034898531035068
+Start Date : Wed Apr 20 00:00:00 EEST 2011 End Date:Fri May 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 49910
+Total Predictions: 55238
+Accuracy: 0.9035446612838988
+Start Date : Fri May 20 00:00:00 EEST 2011 End Date:Mon Jun 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 49073
+Total Predictions: 54327
+Accuracy: 0.9032893404752701
+Start Date : Mon Jun 20 00:00:00 EEST 2011 End Date:Wed Jul 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 82137
+Total Predictions: 86185
+Accuracy: 0.9530312699425654
+Start Date : Wed Jul 20 00:00:00 EEST 2011 End Date:Sat Aug 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 54041
+Total Predictions: 59088
+Accuracy: 0.9145850257243433
+Start Date : Thu Jan 20 00:00:00 EET 2011 End Date:Sun Feb 20 00:00:00 EET 2011
+New Method PredictionsStart Date : Thu Jan 20 00:00:00 EET 2011 End Date:Sun Feb 20 00:00:00 EET 2011
+New Method PredictionsStart Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 29387
+Total Predictions: 36316
+Accuracy: 0.8092025553475052
