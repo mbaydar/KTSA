@@ -57,16 +57,16 @@ public class User implements Serializable {
 		double alfa = 1;
 		ArrayList<Paired> visitedPlaces = new ArrayList<Paired>();
 		for (int i = 0; i < this.checkins.size(); i++) {
-			if (!visitedPlaces.contains(this.checkins.get(i).getPlace())) {
-				visitedPlaces.add(new Paired(this.checkins.get(i).getPlace().getId(), alfa));
-			} else {
-				for (Paired pairs : visitedPlaces) {
-					if (pairs.id.equals(this.checkins.get(i).getPlace_id())) {
-						// if (pairs.id ==
-						// this.checkins.get(i).getPlace().getId()) {
-						pairs.distance = pairs.distance + alfa;
-					}
+			boolean found = false;
+			for (Paired pairs : visitedPlaces) {
+				if (pairs.id.equals(this.checkins.get(i).getPlace_id())) {
+					pairs.distance = pairs.distance + alfa;
+					found = true;
+					break;
 				}
+			}
+			if(!found){
+				visitedPlaces.add(new Paired(this.checkins.get(i).getPlace().getId(), alfa));
 			}
 		}
 		return visitedPlaces;

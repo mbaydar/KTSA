@@ -38,13 +38,13 @@ public class Main {
 		setMostPopularPlaces();
 		calculateUsersHomeLocations();
 		Collections.sort(placesArray); // Sort by checkin nums
-		calculateUsersPlaceDistances(1000);
+//		 calculateUsersPlaceDistances(1000);
 		testAll();
 	}
 
 	public static void testAll() {
 		double total = 0;
-		for (int k = 7; k < 8; k++) {
+		for (int k = 5; k < 6; k++) {
 			getPredictedCheckins(k);
 			long tStart = System.currentTimeMillis();
 			for (int i = 6; i < 7; i++) {
@@ -63,6 +63,7 @@ public class Main {
 	// choice = 1 popular, = 2 closest,
 	public static void makePredictions(int choice) {
 		int correctPredictions = 0;
+		double prec = 0;
 		if (choice == 1) {
 			logResults("Popular Predictions");
 			for (int i = 0; i < predictedCheckins.size(); i++) {
@@ -106,27 +107,35 @@ public class Main {
 			}
 		} else if (choice == 6) {
 			logResults("New Method Predictions");
+
 			for (int i = 0; i < predictedCheckins.size(); i++) {
 				System.out.println(i);
-				if (newMethod(predictedCheckins.get(i), 50)) {
+				double result = newMethod(predictedCheckins.get(i), 50);
+				if (result != 0) {
 					correctPredictions++;
+					prec += result;
 				}
 			}
+			prec = prec / correctPredictions;
 		}
 
-		System.out.println(correctPredictions);
+		System.out.println(correctPredictions + " " + prec);
 		System.out.println(predictedCheckins.size());
 		System.out.println((double) correctPredictions / predictedCheckins.size());
 		logResults("\nCorrect Predictions: " + correctPredictions + "\nTotal Predictions: " + predictedCheckins.size()
-				+ "\nAccuracy: " + ((double) correctPredictions / predictedCheckins.size()) + "\n");
+				+ "\nAccuracy: " + ((double) correctPredictions / predictedCheckins.size()) + "\nPrecision : " + prec
+				+ "\n");
 	}
 
-	public static boolean newMethod(Checkin predictedCheckin, int num) {
+	public static double newMethod(Checkin predictedCheckin, int num) {
 		double alfa = 1;
 		double beta = 1;
 		double gamma = 1;
 		double teta = 1;
 		User user = users.get(predictedCheckin.getUser_id());
+		if (user.getPlaceDistances().size() == 0) {
+			user.calculatePlaceDistances(1000);
+		}
 		ArrayList<Paired> placeDistances = user.getPlaceDistances();
 		ArrayList<Paired> visitedPlaces = user.getVisitedPlaces();
 		double maxVisitedPlace = 0;
@@ -153,40 +162,62 @@ public class Main {
 				maxPlaceDistance = placeDistances.get(i).distance;
 			}
 		}
-
 		HashMap<String, PlaceRank> rankPlaces = new HashMap<String, PlaceRank>();
 		// HashMap<Integer, PlaceRank> rankPlaces = new HashMap<Integer,
 		// PlaceRank>();
 		for (int i = 0; i < placesArray.size(); i++) {
-			rankPlaces.put(placesArray.get(i).getId(), new PlaceRank(placesArray.get(i).getId(),
-					placesArray.get(i).getNum_checkins() / maxPlaceCheckin * teta
-							+ gamma * visitedCategories[placesArray.get(i).getCategory_id() - 1] / maxVisitedCategory));
+			rankPlaces
+					.put(placesArray.get(i).getId(),
+							new PlaceRank(placesArray.get(i).getId(),
+									((double) placesArray.get(i).getNum_checkins() / maxPlaceCheckin * teta) + (gamma
+											* (double) visitedCategories[placesArray.get(i).getCategory_id() - 1]
+											/ maxVisitedCategory)));
+
+//			if (((double) placesArray.get(i).getNum_checkins() / maxPlaceCheckin * teta) > 1) {
+//				System.out.println((double) placesArray.get(i).getNum_checkins() / maxPlaceCheckin * teta);
+//			}
+//			if ((gamma * (double) visitedCategories[placesArray.get(i).getCategory_id() - 1]
+//					/ maxVisitedCategory) > 2) {
+//				System.out.println((gamma * (double) visitedCategories[placesArray.get(i).getCategory_id() - 1]
+//						/ maxVisitedCategory));
+//			}
+
 		}
 		for (int i = 0; i < placeDistances.size(); i++) {
 			double rank = rankPlaces.get(placeDistances.get(i).id).rankPoint;
 			rankPlaces.put(placeDistances.get(i).id, new PlaceRank(placeDistances.get(i).id,
-					rank + alfa - placeDistances.get(i).distance / maxPlaceDistance));
+					rank + alfa - ((double) placeDistances.get(i).distance / maxPlaceDistance)));
+//			if (rank + alfa - ((double) placeDistances.get(i).distance / maxPlaceDistance) > 4) {
+//				System.out.println(rank + alfa - ((double) placeDistances.get(i).distance / maxPlaceDistance));
+//			}
 		}
 		for (int i = 0; i < visitedPlaces.size(); i++) {
 			double rank = rankPlaces.get(visitedPlaces.get(i).id).rankPoint;
 			rankPlaces.put(visitedPlaces.get(i).id, new PlaceRank(visitedPlaces.get(i).id,
-					rank + beta * visitedPlaces.get(i).distance / maxVisitedPlace));
+					rank + (beta * (double) visitedPlaces.get(i).distance / maxVisitedPlace)));
+//			if (rank + (beta * (double) visitedPlaces.get(i).distance / maxVisitedPlace) > 6) {
+//				System.out.println(rank + (beta * (double) visitedPlaces.get(i).distance / maxVisitedPlace));
+//			}
 		}
 		ArrayList<PlaceRank> rankedPlaces = new ArrayList<PlaceRank>();
 		for (PlaceRank pr : rankPlaces.values()) {
 			rankedPlaces.add(pr);
 		}
 		Collections.sort(rankedPlaces);
+//		if(rankedPlaces.get(0).rankPoint>6){
+//			System.out.println(rankedPlaces.get(0).rankPoint);
+//		}
 		for (int i = 0; i < num; i++) {
 			if (rankedPlaces.get(i).id.equals(predictedCheckin.getPlace_id())) {
 				// if (rankedPlaces.get(i).id ==
 				// predictedCheckin.getPlace().getId()) {
-//				System.out.println(i + " " + rankedPlaces.get(i).rankPoint + " " + rankedPlaces.get(i).id + " "
-//						+ predictedCheckin.getPlace_id());
-				return true;
+				// System.out.println(i + " " + rankedPlaces.get(i).rankPoint +
+				// " " + rankedPlaces.get(i).id + " "
+				// + predictedCheckin.getPlace_id());
+				return (double) (num - i) / (double) num;
 			}
 		}
-		return false;
+		return 0;
 	}
 
 	public static boolean categoryPrediction(Checkin predictedCheckin, int num) {
@@ -441,9 +472,14 @@ public class Main {
 		Date startDate = new Date(111, startMonth, 20);
 		Date endDate = new Date(111, startMonth + 1, 20);
 		logResults("Start Date : " + startDate.toString() + " End Date:" + endDate.toString() + "\n");
+		int count = 0;
 		for (int i = 0; i < checkins.size(); i++) {
 			if (checkins.get(i).getTimestamp().after(startDate) && checkins.get(i).getTimestamp().before(endDate)) {
 				predictedCheckins.add(checkins.get(i));
+				count++;
+			}
+			if (count == 5000) {
+				break;
 			}
 		}
 	}

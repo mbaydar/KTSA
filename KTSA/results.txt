@@ -283,3 +283,231 @@ New Method Predictions
 Correct Predictions: 29387
 Total Predictions: 36316
 Accuracy: 0.8092025553475052
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 4088
+Total Predictions: 5000
+Accuracy: 0.8176
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 4350
+Total Predictions: 5000
+Accuracy: 0.87
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 872
+Total Predictions: 5000
+Accuracy: 0.1744
+Precision : 1.0
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method PredictionsStart Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 4350
+Total Predictions: 5000
+Accuracy: 0.87
+Precision : 0.8063816091954153
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method PredictionsStart Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method PredictionsStart Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method PredictionsStart Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method PredictionsStart Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method PredictionsStart Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method PredictionsStart Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method PredictionsStart Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method PredictionsStart Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method PredictionsStart Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method PredictionsStart Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method PredictionsStart Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method PredictionsStart Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method PredictionsStart Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method PredictionsStart Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method PredictionsStart Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method PredictionsStart Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method PredictionsStart Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method PredictionsStart Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method PredictionsStart Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method PredictionsStart Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method PredictionsStart Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method PredictionsStart Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method PredictionsStart Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 2237
+Total Predictions: 5000
+Accuracy: 0.4474
+Precision : 0.9307822977201712
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 2274
+Total Predictions: 5000
+Accuracy: 0.4548
+Precision : 0.9185224274406419
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 2350
+Total Predictions: 5000
+Accuracy: 0.47
+Precision : 0.8218723404255365
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 2350
+Total Predictions: 5000
+Accuracy: 0.47
+Precision : 0.8218723404255365
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 16617
+Total Predictions: 36316
+Accuracy: 0.4575669126555788
+Precision : 0.8263200337003809
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method PredictionsStart Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 2175
+Total Predictions: 5000
+Accuracy: 0.435
+Precision : 0.0
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 2350
+Total Predictions: 5000
+Accuracy: 0.47
+Precision : 0.8218723404255365
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method PredictionsStart Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 3242
+Total Predictions: 5000
+Accuracy: 0.6484
+Precision : 0.845638494756335
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 2646
+Total Predictions: 5000
+Accuracy: 0.5292
+Precision : 0.8704006046863277
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 2883
+Total Predictions: 5000
+Accuracy: 0.5766
+Precision : 0.8627748872702147
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 3469
+Total Predictions: 5000
+Accuracy: 0.6938
+Precision : 0.8453848371288675
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 2726
+Total Predictions: 5000
+Accuracy: 0.5452
+Precision : 0.8621643433602444
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 3368
+Total Predictions: 5000
+Accuracy: 0.6736
+Precision : 0.8538895486936015
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 3529
+Total Predictions: 5000
+Accuracy: 0.7058
+Precision : 0.8520827429866954
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 3898
+Total Predictions: 5000
+Accuracy: 0.7796
+Precision : 0.8430785017958067
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 4125
+Total Predictions: 5000
+Accuracy: 0.825
+Precision : 0.8366545454545614
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 4585
+Total Predictions: 5000
+Accuracy: 0.917
+Precision : 0.8108484187568307
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 4610
+Total Predictions: 5000
+Accuracy: 0.922
+Precision : 0.8090585683297338
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 1727
+Total Predictions: 5000
+Accuracy: 0.3454
+Precision : 0.8832194557035369
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 1497
+Total Predictions: 5000
+Accuracy: 0.2994
+Precision : 0.9002538410153681
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 2060
+Total Predictions: 5000
+Accuracy: 0.412
+Precision : 0.6434368932038774
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 3829
+Total Predictions: 5000
+Accuracy: 0.7658
+Precision : 0.7625594149908683
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 4179
+Total Predictions: 5000
+Accuracy: 0.8358
+Precision : 0.7883464943766558
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 3432
+Total Predictions: 5000
+Accuracy: 0.6864
+Precision : 0.8521620046620189
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 3945
+Total Predictions: 5000
+Accuracy: 0.789
+Precision : 0.8228086185044486
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 3531
+Total Predictions: 5000
+Accuracy: 0.7062
+Precision : 0.8596431605777544
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 1208
+Total Predictions: 5000
+Accuracy: 0.2416
+Precision : 0.892284768211921
+Start Date : Sat Aug 20 00:00:00 EEST 2011 End Date:Tue Sep 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 2350
+Total Predictions: 5000
+Accuracy: 0.47
+Precision : 0.8218723404255365
+Start Date : Wed Jul 20 00:00:00 EEST 2011 End Date:Sat Aug 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 2339
+Total Predictions: 5000
+Accuracy: 0.4678
+Precision : 0.8232920051304002
+Start Date : Mon Jun 20 00:00:00 EEST 2011 End Date:Wed Jul 20 00:00:00 EEST 2011
+New Method Predictions
+Correct Predictions: 2680
+Total Predictions: 5000
+Accuracy: 0.536
+Precision : 0.8385970149253813
