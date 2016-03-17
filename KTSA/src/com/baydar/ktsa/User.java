@@ -44,6 +44,15 @@ public class User implements Serializable {
 		return false;
 	}
 
+	public void deleteCheckin(Checkin checkin) {
+		for (int i = 0; i < this.checkins.size(); i++) {
+			if (this.checkins.get(i).getId() == checkin.getId()) {
+				this.checkins.remove(i);
+				break;
+			}
+		}
+	}
+
 	public boolean isVisitedCategory(Category category) {
 		for (int i = 0; i < this.checkins.size(); i++) {
 			if (this.checkins.get(i).getPlace().getCategory() == category) {
@@ -65,7 +74,7 @@ public class User implements Serializable {
 					break;
 				}
 			}
-			if(!found){
+			if (!found) {
 				visitedPlaces.add(new Paired(this.checkins.get(i).getPlace().getId(), alfa));
 			}
 		}
@@ -225,14 +234,13 @@ public class User implements Serializable {
 		}
 
 		public int compareTo(Pair o) {
-			if (o.count == this.count) {
-				return 0;
+			if (o.count > this.count) {
+				return 1;
 			} else if (o.count < this.count) {
 				return -1;
 			} else {
-				return 1;
+				return 0;
 			}
 		}
 	}
-
 }

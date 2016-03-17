@@ -13,12 +13,12 @@ public class PlaceRank implements Comparable<PlaceRank>{
 	}
 	
 	public int compareTo(PlaceRank o) {
-		if (o.rankPoint == this.rankPoint) {
-			return 0;
+		if (o.rankPoint < this.rankPoint) {
+			return -1;
 		} else if (o.rankPoint > this.rankPoint) {
 			return 1;
 		} else {
-			return -1;
+			return 0;
 		}
 	}
 

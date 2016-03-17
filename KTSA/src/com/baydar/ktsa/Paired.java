@@ -13,12 +13,12 @@ public class Paired implements Comparable<Paired> {
 	}
 
 	public int compareTo(Paired o) {
-		if (o.distance == this.distance) {
-			return 0;
+		if (o.distance > this.distance) {
+			return -1;
 		} else if (o.distance < this.distance) {
 			return 1;
 		} else {
-			return -1;
+			return 0;
 		}
 	}
 

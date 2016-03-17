@@ -29,8 +29,21 @@ public class Main {
 	static Place mostPopularPlace;
 	static Place[] mostPopularPlaces = new Place[50];
 	static Place[] mostPopularNPlaces;
+	
+	static int[] testVal;
+	
+	static double wdistance = 1;
+	static double wvisitedP = 1;
+	static double wvisitedC = 1;
+	static double wpopular = 1;
 
 	public static void main(String[] args) {
+		
+		testVal = new int[2];
+		testVal[0] = 5;
+		testVal[1] = 15;
+		
+		
 		String database_name = "foursquare";
 		loadData(database_name);
 		// getMonthlyCheckinNumber(6);
@@ -44,11 +57,28 @@ public class Main {
 
 	public static void testAll() {
 		double total = 0;
-		for (int k = 5; k < 6; k++) {
+		for (int k = 7; k < 8; k++) {
 			getPredictedCheckins(k);
+//			calculateUsersPlaceDistances(1000);
 			long tStart = System.currentTimeMillis();
 			for (int i = 6; i < 7; i++) {
+				
 				makePredictions(i);
+				
+				
+//				for(int j=0;j<testVal.length;j++){
+//					for(int t=0;t<testVal.length;t++){
+//						for(int m=0;m<testVal.length;m++){
+//							for(int l=0;l<testVal.length;l++){
+//								wdistance = testVal[j];
+//								wvisitedP = testVal[t];
+//								wvisitedC = testVal[m];
+//								wpopular = testVal[l];
+//								makePredictions(i);
+//							}
+//						}
+//					}
+//				}
 			}
 			long tEnd = System.currentTimeMillis();
 			long tDelta = tEnd - tStart;
@@ -106,8 +136,8 @@ public class Main {
 				}
 			}
 		} else if (choice == 6) {
-			logResults("New Method Predictions");
-
+			logResults("New Method Predictions\n Distance : " + wdistance + " VisitedPlace : " + wvisitedP + " VisitedCategory : " + wvisitedC + " PopularPlace : " + wpopular );
+			prec = 0;
 			for (int i = 0; i < predictedCheckins.size(); i++) {
 				System.out.println(i);
 				double result = newMethod(predictedCheckins.get(i), 50);
@@ -115,6 +145,8 @@ public class Main {
 					correctPredictions++;
 					prec += result;
 				}
+				
+
 			}
 			prec = prec / correctPredictions;
 		}
@@ -128,10 +160,6 @@ public class Main {
 	}
 
 	public static double newMethod(Checkin predictedCheckin, int num) {
-		double alfa = 1;
-		double beta = 1;
-		double gamma = 1;
-		double teta = 1;
 		User user = users.get(predictedCheckin.getUser_id());
 		if (user.getPlaceDistances().size() == 0) {
 			user.calculatePlaceDistances(1000);
@@ -169,7 +197,7 @@ public class Main {
 			rankPlaces
 					.put(placesArray.get(i).getId(),
 							new PlaceRank(placesArray.get(i).getId(),
-									((double) placesArray.get(i).getNum_checkins() / maxPlaceCheckin * teta) + (gamma
+									((double) placesArray.get(i).getNum_checkins() / maxPlaceCheckin * wpopular) + (wvisitedC
 											* (double) visitedCategories[placesArray.get(i).getCategory_id() - 1]
 											/ maxVisitedCategory)));
 
@@ -186,7 +214,7 @@ public class Main {
 		for (int i = 0; i < placeDistances.size(); i++) {
 			double rank = rankPlaces.get(placeDistances.get(i).id).rankPoint;
 			rankPlaces.put(placeDistances.get(i).id, new PlaceRank(placeDistances.get(i).id,
-					rank + alfa - ((double) placeDistances.get(i).distance / maxPlaceDistance)));
+					rank + wdistance * (1 - (double) placeDistances.get(i).distance / maxPlaceDistance)));
 //			if (rank + alfa - ((double) placeDistances.get(i).distance / maxPlaceDistance) > 4) {
 //				System.out.println(rank + alfa - ((double) placeDistances.get(i).distance / maxPlaceDistance));
 //			}
@@ -194,7 +222,7 @@ public class Main {
 		for (int i = 0; i < visitedPlaces.size(); i++) {
 			double rank = rankPlaces.get(visitedPlaces.get(i).id).rankPoint;
 			rankPlaces.put(visitedPlaces.get(i).id, new PlaceRank(visitedPlaces.get(i).id,
-					rank + (beta * (double) visitedPlaces.get(i).distance / maxVisitedPlace)));
+					rank + (wvisitedP * (double) visitedPlaces.get(i).distance / maxVisitedPlace)));
 //			if (rank + (beta * (double) visitedPlaces.get(i).distance / maxVisitedPlace) > 6) {
 //				System.out.println(rank + (beta * (double) visitedPlaces.get(i).distance / maxVisitedPlace));
 //			}
@@ -476,12 +504,20 @@ public class Main {
 		for (int i = 0; i < checkins.size(); i++) {
 			if (checkins.get(i).getTimestamp().after(startDate) && checkins.get(i).getTimestamp().before(endDate)) {
 				predictedCheckins.add(checkins.get(i));
+				deleteForPrediction(checkins.get(i));
 				count++;
 			}
-			if (count == 5000) {
-				break;
-			}
+//			if (count == 1000) {
+//				break;
+//			}
 		}
+	}
+	
+	public static void deleteForPrediction(Checkin checkin){
+		User user = users.get(checkin.getUser_id());
+		user.setNum_checkins(user.getNum_checkins()-1);
+		user.deleteCheckin(checkin);
+		places.get(checkin.getPlace_id()).setNum_checkins(places.get(checkin.getPlace_id()).getNum_checkins()-1);
 	}
 
 	// Monthly checkin number calculated
