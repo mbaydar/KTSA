@@ -78,8 +78,7 @@ public class LoadPlainData {
 	
 	public static void dummyMethod(){
 		System.out.println("Burdayiz");
-		System.out.println(users.get(214750).getCheckins().get(0).getTimestamp().getTime());
-		
+	
 	}
 
 }

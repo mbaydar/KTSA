@@ -3,6 +3,8 @@ package com.baydar.ktsa;
 import java.io.Serializable;
 import java.util.Date;
 
+import org.joda.time.LocalDateTime;
+
 public class Checkin implements Serializable{
 	
 	/**
@@ -14,7 +16,7 @@ public class Checkin implements Serializable{
 	private String place_id;
 //	private int place_id;
 	private int num_checkins;
-	private Date timestamp;
+	private LocalDateTime timestamp;
 	private Place place;
 	
 	public Place getPlace() {
@@ -29,7 +31,7 @@ public class Checkin implements Serializable{
 		
 	}
 
-	public Checkin(int id, int user_id, String place_id, int num_checkins, Date timestamp) {
+	public Checkin(int id, int user_id, String place_id, int num_checkins, LocalDateTime timestamp) {
 //	public Checkin(int id, int user_id, int place_id, int num_checkins, Date timestamp) {
 		super();
 		this.id = id;
@@ -73,11 +75,11 @@ public class Checkin implements Serializable{
 		this.num_checkins = num_checkins;
 	}
 
-	public Date getTimestamp() {
+	public LocalDateTime getTimestamp() {
 		return timestamp;
 	}
 
-	public void setTimestamp(Date timestamp) {
+	public void setTimestamp(LocalDateTime timestamp) {
 		this.timestamp = timestamp;
 	}
 	

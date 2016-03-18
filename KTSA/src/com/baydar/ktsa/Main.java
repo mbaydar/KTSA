@@ -9,14 +9,21 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
+
+import org.joda.time.DateTimeZone;
+import org.joda.time.LocalDateTime;
 
 public class Main {
 
+	public static final DateTimeZone jodaTzUTC = DateTimeZone.forID("EET");
 	static HashMap<Integer, User> users = new HashMap<Integer, User>();
 	// static HashMap<Integer, Place> places = new HashMap<Integer, Place>(); //
 	// gowalla
@@ -29,21 +36,21 @@ public class Main {
 	static Place mostPopularPlace;
 	static Place[] mostPopularPlaces = new Place[50];
 	static Place[] mostPopularNPlaces;
-	
+
 	static int[] testVal;
-	
+
 	static double wdistance = 1;
 	static double wvisitedP = 1;
 	static double wvisitedC = 1;
 	static double wpopular = 1;
+	static double wtime = 1;
 
 	public static void main(String[] args) {
-		
+
 		testVal = new int[2];
 		testVal[0] = 5;
 		testVal[1] = 15;
-		
-		
+
 		String database_name = "foursquare";
 		loadData(database_name);
 		// getMonthlyCheckinNumber(6);
@@ -51,34 +58,107 @@ public class Main {
 		setMostPopularPlaces();
 		calculateUsersHomeLocations();
 		Collections.sort(placesArray); // Sort by checkin nums
-//		 calculateUsersPlaceDistances(1000);
+		// calculateUsersPlaceDistances(1000);
+		// calculatePlaceTimes(); for once do it for gowalla, too
 		testAll();
+	}
+
+	public static void calculatePlaceTimes() {
+
+		Connection c = null;
+		Statement stmt = null;
+		int counter = 0;
+		for (Place place : placesArray) {
+			if (place.getNum_checkins() < 10) {
+				int cat1 = 0;
+				int cat2 = 0;
+				int cat3 = 0;
+				int cat4 = 0;
+				counter++;
+				for (Checkin checkin : checkins) {
+					if (checkin.getPlace_id().equals(place.getId())) {
+						LocalDateTime ldt = checkin.getTimestamp();
+						int hour = ldt.getHourOfDay();
+						if (hour > 0 && hour <= 6) {
+							cat1++;
+						} else if (hour > 6 && hour <= 12) {
+							cat2++;
+						} else if (hour > 12 && hour <= 18) {
+							cat3++;
+						} else {
+							cat4++;
+						}
+					}
+				}
+				int total = cat1 + cat2 + cat3 + cat4;
+				System.out.println(counter);
+				if (total == 0) {
+					try {
+						Class.forName("org.postgresql.Driver");
+						c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/foursquare", "postgres",
+								"02741903");
+						c.setAutoCommit(false);
+						// System.out.println("Opened database successfully");
+
+						stmt = c.createStatement();
+						String sql = "delete from place where id='" + place.getId() + "';";
+						stmt.executeUpdate(sql);
+						c.commit();
+						stmt.close();
+						c.close();
+					} catch (Exception e) {
+						System.err.println(e.getClass().getName() + ": " + e.getMessage());
+						System.exit(0);
+					}
+				} else {
+					try {
+						Class.forName("org.postgresql.Driver");
+						c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/foursquare", "postgres",
+								"02741903");
+						c.setAutoCommit(false);
+						// System.out.println("Opened database successfully");
+
+						stmt = c.createStatement();
+						String sql = "UPDATE place set time_category_1 = " + (double) cat1 / total
+								+ ", time_category_2 = " + (double) cat2 / total + ", time_category_3 = "
+								+ (double) cat3 / total + ", time_category_4 = " + (double) cat4 / total + " where id='"
+								+ place.getId() + "';";
+						stmt.executeUpdate(sql);
+						c.commit();
+						stmt.close();
+						c.close();
+					} catch (Exception e) {
+						System.err.println(e.getClass().getName() + ": " + e.getMessage());
+						System.exit(0);
+					}
+				}
+			}
+		}
 	}
 
 	public static void testAll() {
 		double total = 0;
-		for (int k = 7; k < 8; k++) {
+		for (int k = 1; k < 2; k++) {
 			getPredictedCheckins(k);
-//			calculateUsersPlaceDistances(1000);
+			// calculateUsersPlaceDistances(1000);
 			long tStart = System.currentTimeMillis();
 			for (int i = 6; i < 7; i++) {
-				
+
 				makePredictions(i);
-				
-				
-//				for(int j=0;j<testVal.length;j++){
-//					for(int t=0;t<testVal.length;t++){
-//						for(int m=0;m<testVal.length;m++){
-//							for(int l=0;l<testVal.length;l++){
-//								wdistance = testVal[j];
-//								wvisitedP = testVal[t];
-//								wvisitedC = testVal[m];
-//								wpopular = testVal[l];
-//								makePredictions(i);
-//							}
-//						}
-//					}
-//				}
+
+				// for(int j=0;j<testVal.length;j++){
+				// for(int t=0;t<testVal.length;t++){
+				// for(int m=0;m<testVal.length;m++){
+				// for(int l=0;l<testVal.length;l++){
+				// wdistance = testVal[j];
+				// wvisitedP = testVal[t];
+				// wvisitedC = testVal[m];
+				// wpopular = testVal[l];
+				// makePredictions(i);
+				// }
+				// }
+				// }
+				// }
 			}
 			long tEnd = System.currentTimeMillis();
 			long tDelta = tEnd - tStart;
@@ -136,16 +216,16 @@ public class Main {
 				}
 			}
 		} else if (choice == 6) {
-			logResults("New Method Predictions\n Distance : " + wdistance + " VisitedPlace : " + wvisitedP + " VisitedCategory : " + wvisitedC + " PopularPlace : " + wpopular );
+			logResults("New Method Predictions\n Distance : " + wdistance + " VisitedPlace : " + wvisitedP
+					+ " VisitedCategory : " + wvisitedC + " PopularPlace : " + wpopular + " Time " + wtime);
 			prec = 0;
 			for (int i = 0; i < predictedCheckins.size(); i++) {
 				System.out.println(i);
-				double result = newMethod(predictedCheckins.get(i), 50);
+				double result = newMethod(predictedCheckins.get(i), 10);
 				if (result != 0) {
 					correctPredictions++;
 					prec += result;
 				}
-				
 
 			}
 			prec = prec / correctPredictions;
@@ -194,47 +274,83 @@ public class Main {
 		// HashMap<Integer, PlaceRank> rankPlaces = new HashMap<Integer,
 		// PlaceRank>();
 		for (int i = 0; i < placesArray.size(); i++) {
-			rankPlaces
-					.put(placesArray.get(i).getId(),
-							new PlaceRank(placesArray.get(i).getId(),
-									((double) placesArray.get(i).getNum_checkins() / maxPlaceCheckin * wpopular) + (wvisitedC
-											* (double) visitedCategories[placesArray.get(i).getCategory_id() - 1]
+			rankPlaces.put(placesArray.get(i).getId(),
+					new PlaceRank(placesArray.get(i).getId(),
+							((double) placesArray.get(i).getNum_checkins() / maxPlaceCheckin * wpopular)
+									+ (wvisitedC * (double) visitedCategories[placesArray.get(i).getCategory_id() - 1]
 											/ maxVisitedCategory)));
 
-//			if (((double) placesArray.get(i).getNum_checkins() / maxPlaceCheckin * teta) > 1) {
-//				System.out.println((double) placesArray.get(i).getNum_checkins() / maxPlaceCheckin * teta);
-//			}
-//			if ((gamma * (double) visitedCategories[placesArray.get(i).getCategory_id() - 1]
-//					/ maxVisitedCategory) > 2) {
-//				System.out.println((gamma * (double) visitedCategories[placesArray.get(i).getCategory_id() - 1]
-//						/ maxVisitedCategory));
-//			}
+			// if (((double) placesArray.get(i).getNum_checkins() /
+			// maxPlaceCheckin * teta) > 1) {
+			// System.out.println((double) placesArray.get(i).getNum_checkins()
+			// / maxPlaceCheckin * teta);
+			// }
+			// if ((gamma * (double)
+			// visitedCategories[placesArray.get(i).getCategory_id() - 1]
+			// / maxVisitedCategory) > 2) {
+			// System.out.println((gamma * (double)
+			// visitedCategories[placesArray.get(i).getCategory_id() - 1]
+			// / maxVisitedCategory));
+			// }
 
 		}
 		for (int i = 0; i < placeDistances.size(); i++) {
 			double rank = rankPlaces.get(placeDistances.get(i).id).rankPoint;
 			rankPlaces.put(placeDistances.get(i).id, new PlaceRank(placeDistances.get(i).id,
 					rank + wdistance * (1 - (double) placeDistances.get(i).distance / maxPlaceDistance)));
-//			if (rank + alfa - ((double) placeDistances.get(i).distance / maxPlaceDistance) > 4) {
-//				System.out.println(rank + alfa - ((double) placeDistances.get(i).distance / maxPlaceDistance));
-//			}
+			// if (rank + alfa - ((double) placeDistances.get(i).distance /
+			// maxPlaceDistance) > 4) {
+			// System.out.println(rank + alfa - ((double)
+			// placeDistances.get(i).distance / maxPlaceDistance));
+			// }
 		}
 		for (int i = 0; i < visitedPlaces.size(); i++) {
 			double rank = rankPlaces.get(visitedPlaces.get(i).id).rankPoint;
 			rankPlaces.put(visitedPlaces.get(i).id, new PlaceRank(visitedPlaces.get(i).id,
 					rank + (wvisitedP * (double) visitedPlaces.get(i).distance / maxVisitedPlace)));
-//			if (rank + (beta * (double) visitedPlaces.get(i).distance / maxVisitedPlace) > 6) {
-//				System.out.println(rank + (beta * (double) visitedPlaces.get(i).distance / maxVisitedPlace));
-//			}
+			// if (rank + (beta * (double) visitedPlaces.get(i).distance /
+			// maxVisitedPlace) > 6) {
+			// System.out.println(rank + (beta * (double)
+			// visitedPlaces.get(i).distance / maxVisitedPlace));
+			// }
 		}
+		int hour = predictedCheckin.getTimestamp().getHourOfDay();
+		int timeInterval = 0;
+		if (hour > 0 && hour <= 6) {
+			timeInterval = 0;
+		} else if (hour > 6 && hour <= 12) {
+			timeInterval = 1;
+		} else if (hour > 12 && hour <= 18) {
+			timeInterval = 2;
+		} else {
+			timeInterval = 3;
+		}
+
+		for (int i = 0; i < placesArray.size(); i++) {
+			double rank = rankPlaces.get(placesArray.get(i).getId()).rankPoint;
+			if (timeInterval == 0) {
+				rankPlaces.put(placesArray.get(i).getId(), new PlaceRank(placesArray.get(i).getId(),
+						rank + (wtime * placesArray.get(i).getTime_category_1())));
+			} else if (timeInterval == 1) {
+				rankPlaces.put(placesArray.get(i).getId(), new PlaceRank(placesArray.get(i).getId(),
+						rank + (wtime * placesArray.get(i).getTime_category_2())));
+			} else if (timeInterval == 2) {
+				rankPlaces.put(placesArray.get(i).getId(), new PlaceRank(placesArray.get(i).getId(),
+						rank + (wtime * placesArray.get(i).getTime_category_3())));
+			} else if (timeInterval == 3) {
+				rankPlaces.put(placesArray.get(i).getId(), new PlaceRank(placesArray.get(i).getId(),
+						rank + (wtime * placesArray.get(i).getTime_category_4())));
+			}
+		}
+
 		ArrayList<PlaceRank> rankedPlaces = new ArrayList<PlaceRank>();
 		for (PlaceRank pr : rankPlaces.values()) {
 			rankedPlaces.add(pr);
 		}
 		Collections.sort(rankedPlaces);
-//		if(rankedPlaces.get(0).rankPoint>6){
-//			System.out.println(rankedPlaces.get(0).rankPoint);
-//		}
+		// if(rankedPlaces.get(0).rankPoint>6){
+		// System.out.println(rankedPlaces.get(0).rankPoint);
+		// }
 		for (int i = 0; i < num; i++) {
 			if (rankedPlaces.get(i).id.equals(predictedCheckin.getPlace_id())) {
 				// if (rankedPlaces.get(i).id ==
@@ -497,12 +613,15 @@ public class Main {
 	// Checkins which is going to be predicted
 	public static void getPredictedCheckins(int startMonth) {
 		predictedCheckins.clear();
-		Date startDate = new Date(111, startMonth, 20);
-		Date endDate = new Date(111, startMonth + 1, 20);
+		Timestamp ts = new Timestamp(111, startMonth, 20, 0, 0, 0, 0);
+		LocalDateTime startDate = new LocalDateTime(ts.getTime(), jodaTzUTC);
+		Timestamp ts2 = new Timestamp(111, startMonth + 1, 20, 0, 0, 0, 0);
+		LocalDateTime endDate = new LocalDateTime(ts2.getTime(), jodaTzUTC);
 		logResults("Start Date : " + startDate.toString() + " End Date:" + endDate.toString() + "\n");
 		int count = 0;
+
 		for (int i = 0; i < checkins.size(); i++) {
-			if (checkins.get(i).getTimestamp().after(startDate) && checkins.get(i).getTimestamp().before(endDate)) {
+			if (checkins.get(i).getTimestamp().isAfter(startDate) && checkins.get(i).getTimestamp().isBefore(endDate)) {
 				predictedCheckins.add(checkins.get(i));
 				deleteForPrediction(checkins.get(i));
 				count++;
@@ -512,12 +631,12 @@ public class Main {
 //			}
 		}
 	}
-	
-	public static void deleteForPrediction(Checkin checkin){
+
+	public static void deleteForPrediction(Checkin checkin) {
 		User user = users.get(checkin.getUser_id());
-		user.setNum_checkins(user.getNum_checkins()-1);
+		user.setNum_checkins(user.getNum_checkins() - 1);
 		user.deleteCheckin(checkin);
-		places.get(checkin.getPlace_id()).setNum_checkins(places.get(checkin.getPlace_id()).getNum_checkins()-1);
+		places.get(checkin.getPlace_id()).setNum_checkins(places.get(checkin.getPlace_id()).getNum_checkins() - 1);
 	}
 
 	// Monthly checkin number calculated
@@ -526,12 +645,15 @@ public class Main {
 		Date endDate = new Date(111, startMonth + 1, 20);
 		int checkinCount = 0;
 		int userCount = 0;
-		for (int i = 0; i < checkins.size(); i++) {
-			if (checkins.get(i).getTimestamp().after(startDate) && checkins.get(i).getTimestamp().before(endDate)) {
-				checkinCount++;
-				predictedCheckins.add(checkins.get(i));
-			}
-		}
+
+		// for (int i = 0; i < checkins.size(); i++) {
+		// if (checkins.get(i).getTimestamp().after(startDate) &&
+		// checkins.get(i).getTimestamp().before(endDate)) {
+		// checkinCount++;
+		// predictedCheckins.add(checkins.get(i));
+		// }
+		// }
+
 		// for (User user : users.values()) {
 		// for (int i = 0; i < user.getCheckins().size(); i++) {
 		// if (user.getCheckins().get(i).getTimestamp().after(startDate)
@@ -632,11 +754,17 @@ public class Main {
 				double lat = rs.getDouble("lat");
 				double lon = rs.getDouble("lon");
 				int num_checkins = rs.getInt("num_checkins");
+
+				double time_category_1 = rs.getDouble("time_category_1");
+				double time_category_2 = rs.getDouble("time_category_2");
+				double time_category_3 = rs.getDouble("time_category_3");
+				double time_category_4 = rs.getDouble("time_category_4");
 				// System.out.println("ID = " + num_checkins);
 				// System.out.println("user_id = " + id);
 				//
 				// System.out.println();
-				Place place = new Place(id, category_id, lat, lon, name, num_checkins, new Location(lat, lon));
+				Place place = new Place(id, category_id, lat, lon, name, num_checkins, new Location(lat, lon),
+						time_category_1, time_category_2, time_category_3, time_category_4);
 				place.setCategory(categories.get(category_id));
 				places.put(id, place);
 				placesArray.add(place);
@@ -665,12 +793,14 @@ public class Main {
 				// int place_id = rs.getInt("place_id");
 				// int num_checkins = rs.getInt("num_checkins");
 				Date timestamp = rs.getDate("time");
+				Timestamp ts = rs.getTimestamp("time");
+				LocalDateTime ldt = new LocalDateTime(ts.getTime(), jodaTzUTC);
 				// Date timestamp = rs.getDate("timestamp");
 				// System.out.println("ID = " + num_checkins);
 				// System.out.println("user_id = " + id);
 				//
 				// System.out.println();
-				Checkin checkin = new Checkin(id, user_id, place_id, 0, timestamp);
+				Checkin checkin = new Checkin(id, user_id, place_id, 0, ldt);
 				checkin.setPlace(places.get(place_id));
 				checkins.add(checkin);
 				users.get(user_id).addCheckin(checkin);
