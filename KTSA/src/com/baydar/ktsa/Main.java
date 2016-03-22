@@ -36,22 +36,21 @@ public class Main {
 	static Place mostPopularPlace;
 	static Place[] mostPopularPlaces = new Place[50];
 	static Place[] mostPopularNPlaces;
-	static String database_name = "gowalla_u";
+	static String database_name = "foursquare";
 
 	static int[] testVal;
 
-	static double wdistance = 1;
+	static double wdistance = 0;
 	static double wvisitedP = 1;
-	static double wvisitedC = 1;
-	static double wpopular = 1;
-	static double wtime = 1;
+	static double wvisitedC = 0;
+	static double wpopular = 0;
+	static double wtime = 0;
 
 	public static void main(String[] args) {
 
 		testVal = new int[2];
 		testVal[0] = 5;
 		testVal[1] = 15;
-
 
 		loadData(database_name);
 		// getMonthlyCheckinNumber(6);
@@ -60,10 +59,10 @@ public class Main {
 		calculateUsersHomeLocations();
 		Collections.sort(placesArray); // Sort by checkin nums
 		// calculateUsersPlaceDistances(1000);
-		 calculatePlaceTimes(); //for once do it for gowalla, too
+		// calculatePlaceTimes(); //for once do it for gowalla, too
 		testAll();
-//		calculateAverageDistances();
-//		calculateMaxAvgDistances();
+		// calculateAverageDistances();
+		// calculateMaxAvgDistances();
 	}
 
 	public static void calculateAverageDistances() {
@@ -652,9 +651,9 @@ public class Main {
 	// Checkins which is going to be predicted
 	public static void getPredictedCheckins(int startMonth) {
 		predictedCheckins.clear();
-		Timestamp ts = new Timestamp(110, startMonth, 20, 0, 0, 0, 0);
+		Timestamp ts = new Timestamp(111, startMonth, 20, 0, 0, 0, 0);
 		LocalDateTime startDate = new LocalDateTime(ts.getTime(), jodaTzUTC);
-		Timestamp ts2 = new Timestamp(110, startMonth + 1, 20, 0, 0, 0, 0);
+		Timestamp ts2 = new Timestamp(111, startMonth + 1, 20, 0, 0, 0, 0);
 		LocalDateTime endDate = new LocalDateTime(ts2.getTime(), jodaTzUTC);
 		logResults("Start Date : " + startDate.toString() + " End Date:" + endDate.toString() + "\n");
 		int count = 0;
@@ -665,7 +664,7 @@ public class Main {
 				// deleteForPrediction(checkins.get(i));
 				count++;
 			}
-			if (count == 1000) {
+			if (count == 500) {
 				break;
 			}
 		}
@@ -760,7 +759,12 @@ public class Main {
 			ResultSet rs = stmt.executeQuery("SELECT * FROM categories;");
 			while (rs.next()) {
 				int id = rs.getInt("id");
-				String name = rs.getString("name"); // for gowalla : name ,
+				String name = null;
+				if (!database_name.equals("foursquare")) {
+					name = rs.getString("name"); // for gowalla : name ,
+				} else {
+					name = rs.getString("category");
+				}
 				// foursquare : category
 				int num_checkins = rs.getInt("num_checkins");
 				// System.out.println("ID = " + num_checkins);
@@ -785,15 +789,26 @@ public class Main {
 			System.out.println("Opened database successfully");
 
 			stmt = c.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT * FROM places;"); // foursquare
-																		// :
-																		// place
-																		// ,
-																		// gowalla
-																		// :
-																		// places
+			ResultSet rs = null;
+			if (database_name.equals("foursquare")) {
+				rs = stmt.executeQuery("SELECT * FROM place;"); // foursquare
+																// :
+																// place
+																// ,
+																// gowalla
+																// :
+																// places
+			} else {
+				rs = stmt.executeQuery("SELECT * FROM places;"); // foursquare
+			}
 			while (rs.next()) {
-				int id = rs.getInt("id");
+				String id = null;
+				if (database_name.equals("foursquare")) {
+					id = rs.getString("id");
+				} else {
+					int id_i = rs.getInt("id");
+					id = id_i + "";
+				}
 				// String id = rs.getString("id");
 				String name = rs.getString("name");
 				int category_id = rs.getInt("category_id");
@@ -835,11 +850,17 @@ public class Main {
 			while (rs.next()) {
 				int id = rs.getInt("id");
 				int user_id = rs.getInt("user_id");
-				// String place_id = rs.getString("place_id");
-				int place_id_i = rs.getInt("place_id");
-				String place_id = place_id_i + "";
+				String place_id = null;
+				Timestamp ts;
+				if (database_name.equals("foursquare")) {
+					place_id = rs.getString("place_id");
+					ts = rs.getTimestamp("time");
+				} else {
+					int place_id_i = rs.getInt("place_id");
+					place_id = place_id_i + "";
+					ts = rs.getTimestamp("timestamp");
+				}
 				// int num_checkins = rs.getInt("num_checkins");
-				Timestamp ts = rs.getTimestamp("timestamp");
 				LocalDateTime ldt = new LocalDateTime(ts.getTime(), jodaTzUTC);
 				// Date timestamp = rs.getDate("timestamp");
 				// System.out.println("ID = " + num_checkins);
@@ -861,7 +882,45 @@ public class Main {
 
 		// System.out.println("1000000");
 
-		for (int i = 1; i < 8; i++) {
+		if (!database_name.equals("foursquare")) {
+			for (int i = 1; i < 8; i++) {
+				try {
+					Class.forName("org.postgresql.Driver");
+					c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/" + database_name, "postgres",
+							"02741903");
+					c.setAutoCommit(false);
+					System.out.println("Opened database successfully");
+
+					stmt = c.createStatement();
+					ResultSet rs = stmt.executeQuery("SELECT * FROM checkins where id >" + ((i * 1000000))
+							+ " and id < " + (((i + 1) * 1000000) + 1) + ";");
+					while (rs.next()) {
+						int id = rs.getInt("id");
+						int user_id = rs.getInt("user_id");
+						int place_id_i = rs.getInt("place_id");
+						String place_id = place_id_i + "";
+						int num_checkins = rs.getInt("num_checkins");
+						Timestamp ts = rs.getTimestamp("timestamp");
+						LocalDateTime ldt = new LocalDateTime(ts.getTime(), jodaTzUTC);
+						// System.out.println("ID = " + num_checkins);
+						// System.out.println("user_id = " + id);
+						//
+						// System.out.println();
+						Checkin checkin = new Checkin(id, user_id, place_id, num_checkins, ldt);
+						checkin.setPlace(places.get(place_id));
+						checkins.add(checkin);
+						users.get(user_id).addCheckin(checkin);
+					}
+					rs.close();
+					stmt.close();
+					c.close();
+				} catch (Exception e) {
+					System.err.println(e.getClass().getName() + ": " + e.getMessage());
+					System.exit(0);
+				}
+				System.out.println(i * 1000000);
+			}
+
 			try {
 				Class.forName("org.postgresql.Driver");
 				c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/" + database_name, "postgres",
@@ -870,8 +929,7 @@ public class Main {
 				System.out.println("Opened database successfully");
 
 				stmt = c.createStatement();
-				ResultSet rs = stmt.executeQuery("SELECT * FROM checkins where id >" + ((i * 1000000)) + " and id < "
-						+ (((i + 1) * 1000000) + 1) + ";");
+				ResultSet rs = stmt.executeQuery("SELECT * FROM checkins where id > 8000000;");
 				while (rs.next()) {
 					int id = rs.getInt("id");
 					int user_id = rs.getInt("user_id");
@@ -896,44 +954,8 @@ public class Main {
 				System.err.println(e.getClass().getName() + ": " + e.getMessage());
 				System.exit(0);
 			}
-			System.out.println(i * 1000000);
+			System.out.println("10000000");
 		}
-
-		try {
-			Class.forName("org.postgresql.Driver");
-			c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/" + database_name, "postgres",
-					"02741903");
-			c.setAutoCommit(false);
-			System.out.println("Opened database successfully");
-
-			stmt = c.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT * FROM checkins where id > 8000000;");
-			while (rs.next()) {
-				int id = rs.getInt("id");
-				int user_id = rs.getInt("user_id");
-				int place_id_i = rs.getInt("place_id");
-				String place_id = place_id_i + "";
-				int num_checkins = rs.getInt("num_checkins");
-				Timestamp ts = rs.getTimestamp("timestamp");
-				LocalDateTime ldt = new LocalDateTime(ts.getTime(), jodaTzUTC);
-				// System.out.println("ID = " + num_checkins);
-				// System.out.println("user_id = " + id);
-				//
-				// System.out.println();
-				Checkin checkin = new Checkin(id, user_id, place_id, num_checkins, ldt);
-				checkin.setPlace(places.get(place_id));
-				checkins.add(checkin);
-				users.get(user_id).addCheckin(checkin);
-			}
-			rs.close();
-			stmt.close();
-			c.close();
-		} catch (Exception e) {
-			System.err.println(e.getClass().getName() + ": " + e.getMessage());
-			System.exit(0);
-		}
-		System.out.println("10000000");
-
 		// System.out.println(users.get(14462276).getCheckins().get(0).getPlace().getCategory().getName());
 		System.out.println(checkins.size());
 		System.out.println("Operation done successfully");
