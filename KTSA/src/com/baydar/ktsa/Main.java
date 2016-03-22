@@ -36,14 +36,15 @@ public class Main {
 	static Place mostPopularPlace;
 	static Place[] mostPopularPlaces = new Place[50];
 	static Place[] mostPopularNPlaces;
+	static String database_name = "gowalla_u";
 
 	static int[] testVal;
 
 	static double wdistance = 1;
-	static double wvisitedP = 5;
+	static double wvisitedP = 1;
 	static double wvisitedC = 1;
-	static double wpopular = 3;
-	static double wtime = 2;
+	static double wpopular = 1;
+	static double wtime = 1;
 
 	public static void main(String[] args) {
 
@@ -51,7 +52,7 @@ public class Main {
 		testVal[0] = 5;
 		testVal[1] = 15;
 
-		String database_name = "gowalla_u";
+
 		loadData(database_name);
 		// getMonthlyCheckinNumber(6);
 		mostPopularPlace = getMostPopularPlace();
@@ -59,10 +60,10 @@ public class Main {
 		calculateUsersHomeLocations();
 		Collections.sort(placesArray); // Sort by checkin nums
 		// calculateUsersPlaceDistances(1000);
-		// calculatePlaceTimes(); for once do it for gowalla, too
-		// testAll();
-		calculateAverageDistances();
-		calculateMaxAvgDistances();
+		 calculatePlaceTimes(); //for once do it for gowalla, too
+		testAll();
+//		calculateAverageDistances();
+//		calculateMaxAvgDistances();
 	}
 
 	public static void calculateAverageDistances() {
@@ -105,7 +106,7 @@ public class Main {
 		Statement stmt = null;
 		int counter = 0;
 		for (Place place : placesArray) {
-			if (place.getNum_checkins() < 10) {
+			if (place.getNum_checkins() < 10000000) {
 				int cat1 = 0;
 				int cat2 = 0;
 				int cat3 = 0;
@@ -131,13 +132,13 @@ public class Main {
 				if (total == 0) {
 					try {
 						Class.forName("org.postgresql.Driver");
-						c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/foursquare", "postgres",
+						c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/" + database_name, "postgres",
 								"02741903");
 						c.setAutoCommit(false);
 						// System.out.println("Opened database successfully");
 
 						stmt = c.createStatement();
-						String sql = "delete from place where id='" + place.getId() + "';";
+						String sql = "delete from place where id=" + place.getId() + ";";
 						stmt.executeUpdate(sql);
 						c.commit();
 						stmt.close();
@@ -149,16 +150,16 @@ public class Main {
 				} else {
 					try {
 						Class.forName("org.postgresql.Driver");
-						c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/foursquare", "postgres",
+						c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/" + database_name, "postgres",
 								"02741903");
 						c.setAutoCommit(false);
 						// System.out.println("Opened database successfully");
 
 						stmt = c.createStatement();
-						String sql = "UPDATE place set time_category_1 = " + (double) cat1 / total
+						String sql = "UPDATE places set time_category_1 = " + (double) cat1 / total
 								+ ", time_category_2 = " + (double) cat2 / total + ", time_category_3 = "
-								+ (double) cat3 / total + ", time_category_4 = " + (double) cat4 / total + " where id='"
-								+ place.getId() + "';";
+								+ (double) cat3 / total + ", time_category_4 = " + (double) cat4 / total + " where id="
+								+ place.getId() + ";";
 						stmt.executeUpdate(sql);
 						c.commit();
 						stmt.close();
@@ -651,9 +652,9 @@ public class Main {
 	// Checkins which is going to be predicted
 	public static void getPredictedCheckins(int startMonth) {
 		predictedCheckins.clear();
-		Timestamp ts = new Timestamp(111, startMonth, 20, 0, 0, 0, 0);
+		Timestamp ts = new Timestamp(110, startMonth, 20, 0, 0, 0, 0);
 		LocalDateTime startDate = new LocalDateTime(ts.getTime(), jodaTzUTC);
-		Timestamp ts2 = new Timestamp(111, startMonth + 1, 20, 0, 0, 0, 0);
+		Timestamp ts2 = new Timestamp(110, startMonth + 1, 20, 0, 0, 0, 0);
 		LocalDateTime endDate = new LocalDateTime(ts2.getTime(), jodaTzUTC);
 		logResults("Start Date : " + startDate.toString() + " End Date:" + endDate.toString() + "\n");
 		int count = 0;
@@ -664,7 +665,7 @@ public class Main {
 				// deleteForPrediction(checkins.get(i));
 				count++;
 			}
-			if (count == 5000) {
+			if (count == 1000) {
 				break;
 			}
 		}
@@ -834,7 +835,7 @@ public class Main {
 			while (rs.next()) {
 				int id = rs.getInt("id");
 				int user_id = rs.getInt("user_id");
-//				String place_id = rs.getString("place_id");
+				// String place_id = rs.getString("place_id");
 				int place_id_i = rs.getInt("place_id");
 				String place_id = place_id_i + "";
 				// int num_checkins = rs.getInt("num_checkins");
@@ -933,7 +934,7 @@ public class Main {
 		}
 		System.out.println("10000000");
 
-//		System.out.println(users.get(14462276).getCheckins().get(0).getPlace().getCategory().getName());
+		// System.out.println(users.get(14462276).getCheckins().get(0).getPlace().getCategory().getName());
 		System.out.println(checkins.size());
 		System.out.println("Operation done successfully");
 		long tEnd = System.currentTimeMillis();
