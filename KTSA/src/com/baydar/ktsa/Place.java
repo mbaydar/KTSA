@@ -1,6 +1,7 @@
 package com.baydar.ktsa;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Place implements Serializable, Comparable<Object> {
 
@@ -21,6 +22,7 @@ public class Place implements Serializable, Comparable<Object> {
 	private double time_category_2;
 	private double time_category_3;
 	private double time_category_4;
+	public ArrayList<Integer> checkin = new ArrayList<Integer>();
 
 	public double getTime_category_1() {
 		return time_category_1;

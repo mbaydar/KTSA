@@ -7,15 +7,14 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.HashMap;
 
 import org.joda.time.DateTimeZone;
@@ -31,12 +30,13 @@ public class Main {
 	// foursquare
 	static HashMap<Integer, Category> categories = new HashMap<Integer, Category>();
 	static ArrayList<Checkin> checkins = new ArrayList<Checkin>();
+//	static HashMap<Integer, Checkin> checkinhm = new HashMap<Integer, Checkin>();
 	static ArrayList<Checkin> predictedCheckins = new ArrayList<Checkin>();
 	static ArrayList<Place> placesArray = new ArrayList<Place>();
 	static Place mostPopularPlace;
 	static Place[] mostPopularPlaces = new Place[50];
 	static Place[] mostPopularNPlaces;
-	static String database_name = "foursquare";
+	static String database_name = "gowalla_u";
 
 	static int[] testVal;
 
@@ -59,7 +59,7 @@ public class Main {
 		calculateUsersHomeLocations();
 		Collections.sort(placesArray); // Sort by checkin nums
 		// calculateUsersPlaceDistances(1000);
-		// calculatePlaceTimes(); //for once do it for gowalla, too
+		// calculatePlaceTimes(); // for once do it for gowalla, too
 		testAll();
 		// calculateAverageDistances();
 		// calculateMaxAvgDistances();
@@ -100,76 +100,121 @@ public class Main {
 	}
 
 	public static void calculatePlaceTimes() {
-
-		Connection c = null;
-		Statement stmt = null;
-		int counter = 0;
-		for (Place place : placesArray) {
-			if (place.getNum_checkins() < 10000000) {
-				int cat1 = 0;
-				int cat2 = 0;
-				int cat3 = 0;
-				int cat4 = 0;
-				counter++;
-				for (Checkin checkin : checkins) {
-					if (checkin.getPlace_id().equals(place.getId())) {
-						LocalDateTime ldt = checkin.getTimestamp();
-						int hour = ldt.getHourOfDay();
-						if (hour > 0 && hour <= 6) {
-							cat1++;
-						} else if (hour > 6 && hour <= 12) {
-							cat2++;
-						} else if (hour > 12 && hour <= 18) {
-							cat3++;
-						} else {
-							cat4++;
-						}
-					}
-				}
-				int total = cat1 + cat2 + cat3 + cat4;
-				System.out.println(counter);
-				if (total == 0) {
-					try {
-						Class.forName("org.postgresql.Driver");
-						c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/" + database_name, "postgres",
-								"02741903");
-						c.setAutoCommit(false);
-						// System.out.println("Opened database successfully");
-
-						stmt = c.createStatement();
-						String sql = "delete from place where id=" + place.getId() + ";";
-						stmt.executeUpdate(sql);
-						c.commit();
-						stmt.close();
-						c.close();
-					} catch (Exception e) {
-						System.err.println(e.getClass().getName() + ": " + e.getMessage());
-						System.exit(0);
-					}
-				} else {
-					try {
-						Class.forName("org.postgresql.Driver");
-						c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/" + database_name, "postgres",
-								"02741903");
-						c.setAutoCommit(false);
-						// System.out.println("Opened database successfully");
-
-						stmt = c.createStatement();
-						String sql = "UPDATE places set time_category_1 = " + (double) cat1 / total
-								+ ", time_category_2 = " + (double) cat2 / total + ", time_category_3 = "
-								+ (double) cat3 / total + ", time_category_4 = " + (double) cat4 / total + " where id="
-								+ place.getId() + ";";
-						stmt.executeUpdate(sql);
-						c.commit();
-						stmt.close();
-						c.close();
-					} catch (Exception e) {
-						System.err.println(e.getClass().getName() + ": " + e.getMessage());
-						System.exit(0);
-					}
-				}
-			}
-		}
+//		ArrayList<String> ids = new ArrayList<String>();
+//		ArrayList<Double> time1 = new ArrayList<Double>();
+//		ArrayList<Double> time2 = new ArrayList<Double>();
+//		ArrayList<Double> time3 = new ArrayList<Double>();
+//		ArrayList<Double> time4 = new ArrayList<Double>();
+//
+//		Connection c = null;
+//		Statement stmt = null;
+//		int counter = 0;
+//		for (Place place : placesArray) {
+//			if (place.getNum_checkins() < 10) {
+//				int cat1 = 0;
+//				int cat2 = 0;
+//				int cat3 = 0;
+//				int cat4 = 0;
+//				counter++;
+//				for (int i = 0; i < place.checkin.size(); i++) {
+//
+//					LocalDateTime ldt = checkinhm.get(place.checkin.get(i)).getTimestamp();
+//					int hour = ldt.getHourOfDay();
+//					if (hour > 0 && hour <= 6) {
+//						cat1++;
+//					} else if (hour > 6 && hour <= 12) {
+//						cat2++;
+//					} else if (hour > 12 && hour <= 18) {
+//						cat3++;
+//					} else {
+//						cat4++;
+//					}
+//
+//				}
+//				int total = cat1 + cat2 + cat3 + cat4;
+//				System.out.println(counter);
+//				if (total == 0) {
+//					// try {
+//					// Class.forName("org.postgresql.Driver");
+//					// c =
+//					// DriverManager.getConnection("jdbc:postgresql://localhost:5432/"
+//					// + database_name, "postgres",
+//					// "02741903");
+//					// c.setAutoCommit(false);
+//					// // System.out.println("Opened database successfully");
+//					//
+//					// stmt = c.createStatement();
+//					// String sql = "delete from place where id=" +
+//					// place.getId() + ";";
+//					// stmt.executeUpdate(sql);
+//					// c.commit();
+//					// stmt.close();
+//					// c.close();
+//					// } catch (Exception e) {
+//					// System.err.println(e.getClass().getName() + ": " +
+//					// e.getMessage());
+//					// System.exit(0);
+//					// }
+//				} else {
+//					ids.add(place.getId());
+//					time1.add((double) cat1 / total);
+//					time2.add((double) cat2 / total);
+//					time3.add((double) cat3 / total);
+//					time4.add((double) cat4 / total);
+//					// try {
+//					// Class.forName("org.postgresql.Driver");
+//					// c =
+//					// DriverManager.getConnection("jdbc:postgresql://localhost:5432/"
+//					// + database_name, "postgres",
+//					// "02741903");
+//					// c.setAutoCommit(false);
+//					// // System.out.println("Opened database successfully");
+//					//
+//					// stmt = c.createStatement();
+//					// String sql = "UPDATE places set time_category_1 = " +
+//					// (double) cat1 / total
+//					// + ", time_category_2 = " + (double) cat2 / total + ",
+//					// time_category_3 = "
+//					// + (double) cat3 / total + ", time_category_4 = " +
+//					// (double) cat4 / total + " where id="
+//					// + place.getId() + ";";
+//					// stmt.executeUpdate(sql);
+//					// c.commit();
+//					// stmt.close();
+//					// c.close();
+//					// } catch (Exception e) {
+//					// System.err.println(e.getClass().getName() + ": " +
+//					// e.getMessage());
+//					// System.exit(0);
+//					// }
+//				}
+//			}
+//		}
+//
+//		try {
+//			Class.forName("org.postgresql.Driver");
+//			c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/gowalla_u", "postgres", "02741903");
+//			PreparedStatement ps = c.prepareStatement(
+//					"update places set time_category_1 = ?, time_category_2 = ?, time_category_3 = ? , time_category_4 = ? where id = ?");
+//			if (true) {
+//				c.setAutoCommit(false);
+//			}
+//			for (int i = 0; i < time1.size(); i++) {
+//				ps.setDouble(1, time1.get(i));
+//				ps.setDouble(2, time2.get(i));
+//				ps.setDouble(3, time3.get(i));
+//				ps.setDouble(4, time4.get(i));
+//				ps.setInt(5, Integer.parseInt(ids.get(i)));
+//				ps.addBatch();
+//			}
+//			ps.executeBatch();
+//			if (true) {
+//				c.setAutoCommit(true);
+//			}
+//		} catch (Exception e) {
+//			System.err.println(e.getClass().getName() + " : " + e.getMessage());
+//			System.exit(0);
+//		}
 	}
 
 	public static void testAll() {
@@ -651,9 +696,9 @@ public class Main {
 	// Checkins which is going to be predicted
 	public static void getPredictedCheckins(int startMonth) {
 		predictedCheckins.clear();
-		Timestamp ts = new Timestamp(111, startMonth, 20, 0, 0, 0, 0);
+		Timestamp ts = new Timestamp(110, startMonth, 20, 0, 0, 0, 0);
 		LocalDateTime startDate = new LocalDateTime(ts.getTime(), jodaTzUTC);
-		Timestamp ts2 = new Timestamp(111, startMonth + 1, 20, 0, 0, 0, 0);
+		Timestamp ts2 = new Timestamp(110, startMonth + 1, 20, 0, 0, 0, 0);
 		LocalDateTime endDate = new LocalDateTime(ts2.getTime(), jodaTzUTC);
 		logResults("Start Date : " + startDate.toString() + " End Date:" + endDate.toString() + "\n");
 		int count = 0;
@@ -870,6 +915,8 @@ public class Main {
 				Checkin checkin = new Checkin(id, user_id, place_id, 0, ldt);
 				checkin.setPlace(places.get(place_id));
 				checkins.add(checkin);
+//				checkinhm.put(checkin.getId(), checkin); /////
+//				places.get(place_id).checkin.add(checkin.getId()); //////
 				users.get(user_id).addCheckin(checkin);
 			}
 			rs.close();
@@ -909,6 +956,8 @@ public class Main {
 						Checkin checkin = new Checkin(id, user_id, place_id, num_checkins, ldt);
 						checkin.setPlace(places.get(place_id));
 						checkins.add(checkin);
+//						checkinhm.put(checkin.getId(), checkin); /////
+//						places.get(place_id).checkin.add(checkin.getId()); //////
 						users.get(user_id).addCheckin(checkin);
 					}
 					rs.close();
@@ -945,6 +994,8 @@ public class Main {
 					Checkin checkin = new Checkin(id, user_id, place_id, num_checkins, ldt);
 					checkin.setPlace(places.get(place_id));
 					checkins.add(checkin);
+//					checkinhm.put(checkin.getId(), checkin); /////
+//					places.get(place_id).checkin.add(checkin.getId()); //////
 					users.get(user_id).addCheckin(checkin);
 				}
 				rs.close();
