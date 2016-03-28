@@ -18,6 +18,11 @@ public class User implements Serializable {
 	private Location homeLocation;
 	private ArrayList<Checkin> checkins = new ArrayList<Checkin>();
 	private ArrayList<Paired> placeDistances = new ArrayList<Paired>();
+	private double max_place_distance;
+	
+	public double getMaxPlaceDistance(){
+		return this.max_place_distance;
+	}
 
 	public ArrayList<Checkin> getCheckins() {
 		return checkins;
@@ -29,6 +34,31 @@ public class User implements Serializable {
 
 	public void addCheckin(Checkin checkin) {
 		this.checkins.add(checkin);
+		this.num_checkins++;
+	}
+
+	public int getVisitPlaceNum(Place place) {
+		int count = 0;
+		for (int i = 0; i < this.checkins.size(); i++) {
+			if (this.checkins.get(i).getPlace_id().equals(place.getId())) {
+				count++;
+			}
+		}
+		return count;
+	}
+	
+	public int getVisitCatNum(Category cat){
+		int count = 0;
+		for (int i = 0; i < checkins.size(); i++) {
+			if (checkins.get(i).getPlace().getCategory().getId()==cat.getId()) {
+				count++;
+			}
+		}
+		return count;
+	}
+	
+	public double getPlaceDistance(Place place){
+		return this.homeLocation.getDistance(place.getLocation());
 	}
 
 	public ArrayList<User> getFriends() {
@@ -48,6 +78,7 @@ public class User implements Serializable {
 		for (int i = 0; i < this.checkins.size(); i++) {
 			if (this.checkins.get(i).getId() == checkin.getId()) {
 				this.checkins.remove(i);
+				this.num_checkins--;
 				break;
 			}
 		}
@@ -117,6 +148,7 @@ public class User implements Serializable {
 			pairs.add(new Paired(place.getId(), this.getHomeLocation().getDistance(place.getLocation())));
 		}
 		Collections.sort(pairs);
+		this.max_place_distance = pairs.get(pairs.size()-1).distance;
 		for (int i = 0; i < num; i++) {
 			placeDistances.add(new Paired(pairs.get(i).id, pairs.get(i).distance));
 		}
@@ -139,25 +171,28 @@ public class User implements Serializable {
 	}
 
 	public void calculateHomeLocationByFreq() {
-		HashMap<String, Integer> places = new HashMap<String, Integer>();
-		// HashMap<Integer, Integer> places = new HashMap<Integer, Integer>();
-		for (int i = 0; i < checkins.size(); i++) {
-			if (places.containsKey(checkins.get(i).getPlace().getId())) {
-				int val = places.get(checkins.get(i).getPlace().getId());
-				places.put(checkins.get(i).getPlace().getId(), val + 1);
-			} else {
-				places.put(checkins.get(i).getPlace().getId(), 1);
+		if (this.num_checkins != 0) {
+			HashMap<String, Integer> places = new HashMap<String, Integer>();
+			// HashMap<Integer, Integer> places = new HashMap<Integer,
+			// Integer>();
+			for (int i = 0; i < checkins.size(); i++) {
+				if (places.containsKey(checkins.get(i).getPlace().getId())) {
+					int val = places.get(checkins.get(i).getPlace().getId());
+					places.put(checkins.get(i).getPlace().getId(), val + 1);
+				} else {
+					places.put(checkins.get(i).getPlace().getId(), 1);
+				}
 			}
-		}
-		ArrayList<Pair> pair = new ArrayList<Pair>();
-		for (String key : places.keySet()) {
-			// for (Integer key : places.keySet()) {
-			pair.add(new Pair(key, places.get(key)));
-		}
+			ArrayList<Pair> pair = new ArrayList<Pair>();
+			for (String key : places.keySet()) {
+				// for (Integer key : places.keySet()) {
+				pair.add(new Pair(key, places.get(key)));
+			}
 
-		Collections.sort(pair);
-		this.setHomeLocation(
-				new Location(Main.places.get(pair.get(0).id).getLat(), Main.places.get(pair.get(0).id).getLon()));
+			Collections.sort(pair);
+			this.setHomeLocation(
+					new Location(Main.places.get(pair.get(0).id).getLat(), Main.places.get(pair.get(0).id).getLon()));
+		}
 	}
 
 	public ArrayList<Location> getVisitedLocations() {

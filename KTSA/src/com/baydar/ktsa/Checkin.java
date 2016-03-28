@@ -1,7 +1,6 @@
 package com.baydar.ktsa;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import org.joda.time.LocalDateTime;
 

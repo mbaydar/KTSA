@@ -161,3 +161,354 @@ Correct Predictions: 9684
 Total Predictions: 37757
 Accuracy: 0.2564822417035252
 Precision : 0.8909128459314183
+Start Date : 2011-02-20T00:00:00.000 End Date:2011-03-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 344
+Total Predictions: 1000
+Accuracy: 0.344
+Precision : 0.8755813953488372
+Start Date : 2011-02-20T00:00:00.000 End Date:2011-03-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 1638
+Total Predictions: 5000
+Accuracy: 0.3276
+Precision : 0.8799755799755801
+Start Date : 2011-02-20T00:00:00.000 End Date:2011-03-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 10.0 VisitedCategory : 1.0 PopularPlace : 6.0 Time 1.0
+Correct Predictions: 2666
+Total Predictions: 5000
+Accuracy: 0.5332
+Precision : 0.7517629407351859
+Start Date : 2011-02-20T00:00:00.000 End Date:2011-03-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 10.0 VisitedCategory : 1.0 PopularPlace : 6.0 Time 1.0
+Correct Predictions: 1895
+Total Predictions: 5000
+Accuracy: 0.379
+Precision : 0.7997361477572565
+Start Date : 2011-02-20T00:00:00.000 End Date:2011-03-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 10.0 VisitedCategory : 1.0 PopularPlace : 6.0 Time 1.0
+Correct Predictions: 2039
+Total Predictions: 5000
+Accuracy: 0.4078
+Precision : 0.7922511034821009
+Start Date : 2011-02-20T00:00:00.000 End Date:2011-03-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 10.0 VisitedCategory : 1.0 PopularPlace : 6.0 Time 4.0
+Correct Predictions: 1973
+Total Predictions: 5000
+Accuracy: 0.3946
+Precision : 0.824936644703499
+Start Date : 2011-02-20T00:00:00.000 End Date:2011-03-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 5.0 VisitedCategory : 1.0 PopularPlace : 3.0 Time 2.0
+Correct Predictions: 1929
+Total Predictions: 5000
+Accuracy: 0.3858
+Precision : 0.8427682737169534
+Start Date : 2011-02-20T00:00:00.000 End Date:2011-03-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 5.0 VisitedCategory : 1.0 PopularPlace : 3.0 Time 2.0
+Correct Predictions: 1739
+Total Predictions: 5000
+Accuracy: 0.3478
+Precision : 0.8747556066705036
+Start Date : 2011-02-20T00:00:00.000 End Date:2011-03-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 5.0 VisitedCategory : 1.0 PopularPlace : 3.0 Time 2.0
+Correct Predictions: 1929
+Total Predictions: 5000
+Accuracy: 0.3858
+Precision : 0.8427682737169534
+Start Date : 2011-02-20T00:00:00.000 End Date:2011-03-20T00:00:00.000
+New Method Predictions
+ Distance : 0.0 VisitedPlace : 1.0 VisitedCategory : 0.0 PopularPlace : 0.0 Time 0.0
+Correct Predictions: 0
+Total Predictions: 0
+Accuracy: NaN
+Precision : NaN
+Start Date : 2010-02-20T00:00:00.000 End Date:2010-03-20T00:00:00.000
+New Method Predictions
+ Distance : 0.0 VisitedPlace : 1.0 VisitedCategory : 0.0 PopularPlace : 0.0 Time 0.0Start Date : 2010-02-20T00:00:00.000 End Date:2010-03-20T00:00:00.000
+New Method Predictions
+ Distance : 0.0 VisitedPlace : 1.0 VisitedCategory : 0.0 PopularPlace : 0.0 Time 0.0
+Correct Predictions: 5
+Total Predictions: 500
+Accuracy: 0.01
+Precision : 0.58
+Start Date : 2010-02-20T00:00:00.000 End Date:2010-03-20T00:00:00.000
+New Method Predictions
+ Distance : 0.0 VisitedPlace : 1.0 VisitedCategory : 0.0 PopularPlace : 0.0 Time 0.0
+Correct Predictions: 2
+Total Predictions: 500
+Accuracy: 0.004
+Precision : 0.30000000000000004
+Start Date : 2010-02-20T00:00:00.000 End Date:2010-03-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 5
+Total Predictions: 500
+Accuracy: 0.01
+Precision : 0.9
+Start Date : 2010-02-20T00:00:00.000 End Date:2010-03-20T00:00:00.000
+New Method Predictions
+ Distance : 0.0 VisitedPlace : 1.0 VisitedCategory : 0.0 PopularPlace : 0.0 Time 0.0
+Correct Predictions: 2
+Total Predictions: 500
+Accuracy: 0.004
+Precision : 0.30000000000000004
+Start Date : 2010-02-20T00:00:00.000 End Date:2010-03-20T00:00:00.000
+New Method Predictions
+ Distance : 0.0 VisitedPlace : 1.0 VisitedCategory : 0.0 PopularPlace : 0.0 Time 0.0
+Correct Predictions: 0
+Total Predictions: 0
+Accuracy: NaN
+Precision : NaN
+Start Date : 2011-02-20T00:00:00.000 End Date:2011-03-20T00:00:00.000
+New Method Predictions
+ Distance : 0.0 VisitedPlace : 1.0 VisitedCategory : 0.0 PopularPlace : 0.0 Time 0.0
+Correct Predictions: 231
+Total Predictions: 500
+Accuracy: 0.462
+Precision : 0.7878787878787882
+Start Date : 2010-02-20T00:00:00.000 End Date:2010-03-20T00:00:00.000
+New Method Predictions
+ Distance : 0.0 VisitedPlace : 1.0 VisitedCategory : 0.0 PopularPlace : 0.0 Time 0.0
+Correct Predictions: 2
+Total Predictions: 500
+Accuracy: 0.004
+Precision : 0.30000000000000004
+Start Date : 2010-02-20T00:00:00.000 End Date:2010-03-20T00:00:00.000
+New Method Predictions
+ Distance : 0.0 VisitedPlace : 1.0 VisitedCategory : 0.0 PopularPlace : 0.0 Time 0.0
+Correct Predictions: 2
+Total Predictions: 500
+Accuracy: 0.004
+Precision : 0.30000000000000004
+Start Date : 2010-02-20T00:00:00.000 End Date:2010-03-20T00:00:00.000
+New Method Predictions
+ Distance : 0.0 VisitedPlace : 1.0 VisitedCategory : 0.0 PopularPlace : 0.0 Time 0.0Start Date : 2010-02-20T00:00:00.000 End Date:2010-03-20T00:00:00.000
+New Method Predictions
+ Distance : 0.0 VisitedPlace : 1.0 VisitedCategory : 0.0 PopularPlace : 0.0 Time 0.0Start Date : 2010-02-20T00:00:00.000 End Date:2010-03-20T00:00:00.000
+New Method Predictions
+ Distance : 0.0 VisitedPlace : 1.0 VisitedCategory : 0.0 PopularPlace : 0.0 Time 0.0Start Date : 2010-02-20T00:00:00.000 End Date:2010-03-20T00:00:00.000
+Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+New Method Predictions
+ Distance : 0.0 VisitedPlace : 1.0 VisitedCategory : 0.0 PopularPlace : 0.0 Time 0.0Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+New Method Predictions
+ Distance : 0.0 VisitedPlace : 1.0 VisitedCategory : 0.0 PopularPlace : 0.0 Time 0.0
+Correct Predictions: 454
+Total Predictions: 3000
+Accuracy: 0.15133333333333332
+Precision : 0.7270925110132159
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 0.0 VisitedPlace : 1.0 VisitedCategory : 0.0 PopularPlace : 0.0 Time 0.0
+Correct Predictions: 1164
+Total Predictions: 3000
+Accuracy: 0.388
+Precision : 0.7793814432989667
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 750
+Total Predictions: 3000
+Accuracy: 0.25
+Precision : 0.8898666666666653
+Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 261
+Total Predictions: 3000
+Accuracy: 0.087
+Precision : 0.866666666666667
+Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 619
+Total Predictions: 3000
+Accuracy: 0.20633333333333334
+Precision : 0.8920840064620347
+Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 318
+Total Predictions: 3000
+Accuracy: 0.106
+Precision : 0.8493710691823901
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 750
+Total Predictions: 3000
+Accuracy: 0.25
+Precision : 0.8898666666666653
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 972
+Total Predictions: 3000
+Accuracy: 0.324
+Precision : 0.8508230452674879
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 1096
+Total Predictions: 3000
+Accuracy: 0.36533333333333334
+Precision : 0.8349452554744502
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 1924
+Total Predictions: 3000
+Accuracy: 0.6413333333333333
+Precision : 0.7859667359667372
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 1925
+Total Predictions: 3000
+Accuracy: 0.6416666666666667
+Precision : 0.7859220779220791
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 1925
+Total Predictions: 3000
+Accuracy: 0.6416666666666667
+Precision : 0.7859220779220791
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 1925
+Total Predictions: 3000
+Accuracy: 0.6416666666666667
+Precision : 0.7859220779220791
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 1925
+Total Predictions: 3000
+Accuracy: 0.6416666666666667
+Precision : 0.7859220779220791
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 1925
+Total Predictions: 3000
+Accuracy: 0.6416666666666667
+Precision : 0.7859220779220791
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 3000
+Total Predictions: 3000
+Accuracy: 1.0
+Precision : 0.8254600000000053
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 257
+Total Predictions: 500
+Accuracy: 0.514
+Precision : 0.8102723735408554
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 322
+Total Predictions: 500
+Accuracy: 0.644
+Precision : 0.7581366459627332
+Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 237
+Total Predictions: 500
+Accuracy: 0.474
+Precision : 0.6454008438818564
+Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 0
+Total Predictions: 0
+Accuracy: NaN
+Precision : NaN
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 157
+Total Predictions: 500
+Accuracy: 0.314
+Precision : 0.8789808917197452
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 322
+Total Predictions: 500
+Accuracy: 0.644
+Precision : 0.7581366459627332
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 157
+Total Predictions: 500
+Accuracy: 0.314
+Precision : 0.8789808917197452
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 182
+Total Predictions: 500
+Accuracy: 0.364
+Precision : 0.8539560439560439
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 257
+Total Predictions: 500
+Accuracy: 0.514
+Precision : 0.8102723735408554
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 9.7E-4 VisitedPlace : 0.454 VisitedCategory : 0.514 PopularPlace : 0.059 Time 0.48
+Correct Predictions: 116
+Total Predictions: 500
+Accuracy: 0.232
+Precision : 0.9081034482758622
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 9.7E-4 VisitedPlace : 0.454 VisitedCategory : 0.514 PopularPlace : 1.0 Time 0.48
+Correct Predictions: 126
+Total Predictions: 500
+Accuracy: 0.252
+Precision : 0.8895238095238093
