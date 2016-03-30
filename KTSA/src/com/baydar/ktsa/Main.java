@@ -36,17 +36,17 @@ public class Main {
 	static Place mostPopularPlace;
 	static Place[] mostPopularPlaces = new Place[50];
 	static Place[] mostPopularNPlaces;
-	static String database_name = "foursquare";
-	static String city = "New York City";
-	static int year = 111;
+	static String database_name = "gowalla_u";
+	static String city = "Renton";
+	static int year = 110;
 
 	static int[] testVal;
 
-	static double wdistance = 0.00097;
-	static double wvisitedP = 0.454;
-	static double wvisitedC = 0.514;
+	static double wdistance = 1;
+	static double wvisitedP = 1;
+	static double wvisitedC = 1;
 	static double wpopular = 1;
-	static double wtime = 0.480;
+	static double wtime = 1;
 
 	public static void main(String[] args) {
 
@@ -55,6 +55,7 @@ public class Main {
 		testVal[1] = 15;
 
 		loadData(database_name);
+//		getMonthlyActiveUserNum();
 		// getMonthlyCheckinNumber(6);
 		mostPopularPlace = getMostPopularPlace();
 		setMostPopularPlaces();
@@ -66,6 +67,19 @@ public class Main {
 		// calculateAverageDistances();
 		// calculateMaxAvgDistances();
 	}
+	
+	public static void getMonthlyActiveUserNum(){
+		int count = 0;
+		int checkinCount = 0;
+		for(User user:users.values()){
+			if(user.getNum_checkins()>0){
+				count++;
+				checkinCount += user.getNum_checkins();
+			}
+		}
+		System.out.println(count + " " + (double)checkinCount/count);
+	}
+	
 
 	public static void calculateAverageDistances() {
 		double userDistance = 0;
