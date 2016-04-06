@@ -33,14 +33,11 @@ public class Main {
 	// Checkin>();
 	static ArrayList<Checkin> predictedCheckins = new ArrayList<Checkin>();
 	static ArrayList<Place> placesArray = new ArrayList<Place>();
-	static Place mostPopularPlace;
 	static Place[] mostPopularPlaces = new Place[50];
 	static Place[] mostPopularNPlaces;
-	static String database_name = "gowalla_u";
-	static String city = "Renton";
+	static String database_name = "foursquare";
+	static String city = "New York City";
 	static int year = 110;
-
-	static int[] testVal;
 
 	static double wdistance = 1;
 	static double wvisitedP = 1;
@@ -50,25 +47,61 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		testVal = new int[2];
-		testVal[0] = 5;
-		testVal[1] = 15;
-
 		loadData(database_name);
-//		getMonthlyActiveUserNum();
-		// getMonthlyCheckinNumber(6);
-		mostPopularPlace = getMostPopularPlace();
 		setMostPopularPlaces();
-		calculateUsersHomeLocations();
+//		calculateUsersHomeLocations();
 		Collections.sort(placesArray); // Sort by checkin nums
+		getAvgUniquePlaceVisited();
+		getAvgCheckinNumByUniquePlaceVisited();
+		getMaxCheckinNumByUniquePlaceVisited();
+//		testAll();
+
+		
+		// getMonthlyCheckinNumber(6);		
+		// getActiveUserNumByCity();
 		// calculateUsersPlaceDistances(1000);
 		// calculatePlaceTimes(); // for once do it for gowalla, too
-		testAll();
 		// calculateAverageDistances();
 		// calculateMaxAvgDistances();
 	}
 	
-	public static void getMonthlyActiveUserNum(){
+	public static void getMaxCheckinNumByUniquePlaceVisited(){
+		int activeUserCount = 0;
+		double maxCheckinCount = 0;
+		for(User user:users.values()){
+			if(user.getNum_checkins()>0){
+				activeUserCount++;
+				maxCheckinCount += user.getVisitedPlaces().get(user.getVisitedPlaces().size()-1).distance;				
+			}
+		}
+		System.out.println((double)maxCheckinCount/activeUserCount);
+	}
+	
+	public static void getAvgCheckinNumByUniquePlaceVisited(){
+		int activeUserCount = 0;
+		int checkinCount = 0;
+		for(User user:users.values()){
+			if(user.getNum_checkins()>0){
+				activeUserCount++;
+				checkinCount += (double)user.getNum_checkins()/user.getVisitedPlaces().size();				
+			}
+		}
+		System.out.println((double)checkinCount/activeUserCount);
+	}
+	
+	public static void getAvgUniquePlaceVisited(){
+		int activeUserCount = 0;
+		int uniquePlaceCount = 0;
+		for(User user:users.values()){
+			if(user.getNum_checkins()>0){
+				activeUserCount++;
+				uniquePlaceCount += user.getVisitedLocations().size();				
+			}
+		}
+		System.out.println((double)uniquePlaceCount/activeUserCount);
+	}
+	
+	public static void getActiveUserNumByCity(){
 		int count = 0;
 		int checkinCount = 0;
 		for(User user:users.values()){
@@ -465,20 +498,21 @@ public class Main {
 			}
 		}
 
-		// // Ignore all but close places
-		// ArrayList<Paired> pairs = new ArrayList<Paired>();
-		// for (Place place : places.values()) {
-		// pairs.add(new Paired(place.getId(),
-		// prePlace.getLocation().getDistance(place.getLocation())));
-		// }
-		// Collections.sort(pairs);
-		// for (int i = 500; i < pairs.size(); i++) {
-		//// if (pairs.get(i).distance > 4.16) {
-		// double rank = rankPlaces.get(pairs.get(i).id).rankPoint;
-		// rankPlaces.put(pairs.get(i).id, new PlaceRank(pairs.get(i).id,
-		// -100));
-		//// }
-		// }
+		// Ignore all but close places
+		ArrayList<Paired> pairs = new ArrayList<Paired>();
+		for (Place place : places.values()) {
+			pairs.add(new Paired(place.getId(), prePlace.getLocation().getDistance(place.getLocation())));
+		}
+		
+		
+		Collections.sort(pairs);
+		System.out.println(pairs.get(250).distance);
+		for (int i = 500; i < pairs.size(); i++) {
+			// if (pairs.get(i).distance > 4.16) {
+			double rank = rankPlaces.get(pairs.get(i).id).rankPoint;
+			rankPlaces.put(pairs.get(i).id, new PlaceRank(pairs.get(i).id, -100));
+			// }
+		}
 
 		ArrayList<PlaceRank> rankedPlaces = new ArrayList<PlaceRank>();
 		for (PlaceRank pr : rankPlaces.values()) {
