@@ -587,4 +587,17 @@ Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
 New Method Predictions
  Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
 New Method Predictions
- Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0859 VisitedPlace : 0.0 VisitedCategory : 0.339 PopularPlace : 0.5061 Time 0.0073
+Correct Predictions: 1068
+Total Predictions: 3000
+Accuracy: 0.356
+Precision : 0.6874531835205995
+Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0859 VisitedPlace : 0.0 VisitedCategory : 0.339 PopularPlace : 0.5061 Time 0.0073
+Correct Predictions: 313
+Total Predictions: 3000
+Accuracy: 0.10433333333333333
+Precision : 0.8134185303514374
