@@ -369,3 +369,1525 @@ Total Predictions: 68603
 Accuracy: 0.20558867688001983
 Precision : 0.8004714974475055
 List Size: 100
+Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 1538
+Total Predictions: 3000
+Accuracy: 0.5126666666666667
+Precision : 0.7691807542262669
+List Size: 10
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 2417
+Total Predictions: 3000
+Accuracy: 0.8056666666666666
+Precision : 0.8365411667356303
+List Size: 50
+
+
+
+
+
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 1753
+Total Predictions: 3000
+Accuracy: 0.5843333333333334
+Precision : 0.8390758699372529
+List Size: 10
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 2006
+Total Predictions: 3000
+Accuracy: 0.6686666666666666
+Precision : 0.8413010967098734
+List Size: 20
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 2192
+Total Predictions: 3000
+Accuracy: 0.7306666666666667
+Precision : 0.833378953771293
+List Size: 30
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Popular Predictions
+Correct Predictions: 124
+Total Predictions: 3000
+Accuracy: 0.04133333333333333
+Precision : 0.675
+List Size: 10
+Popular Predictions
+Correct Predictions: 202
+Total Predictions: 3000
+Accuracy: 0.06733333333333333
+Precision : 0.6133663366336637
+List Size: 20
+Popular Predictions
+Correct Predictions: 239
+Total Predictions: 3000
+Accuracy: 0.07966666666666666
+Precision : 0.6599721059972109
+List Size: 30
+Popular Predictions
+Correct Predictions: 283
+Total Predictions: 3000
+Accuracy: 0.09433333333333334
+Precision : 0.646731448763251
+List Size: 40
+Popular Predictions
+Correct Predictions: 320
+Total Predictions: 3000
+Accuracy: 0.10666666666666667
+Precision : 0.6478125
+List Size: 50
+Popular Predictions
+Correct Predictions: 338
+Total Predictions: 3000
+Accuracy: 0.11266666666666666
+Precision : 0.6744575936883624
+List Size: 60
+Popular Predictions
+Correct Predictions: 355
+Total Predictions: 3000
+Accuracy: 0.11833333333333333
+Precision : 0.6908651911468814
+List Size: 70
+Popular Predictions
+Correct Predictions: 364
+Total Predictions: 3000
+Accuracy: 0.12133333333333333
+Precision : 0.713324175824176
+List Size: 80
+Popular Predictions
+Correct Predictions: 393
+Total Predictions: 3000
+Accuracy: 0.131
+Precision : 0.6952219394967488
+List Size: 90
+Popular Predictions
+Correct Predictions: 422
+Total Predictions: 3000
+Accuracy: 0.14066666666666666
+Precision : 0.6799763033175368
+List Size: 100
+Close PredictionsStart Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Popular Predictions
+Correct Predictions: 124
+Total Predictions: 3000
+Accuracy: 0.04133333333333333
+Precision : 0.675
+List Size: 10
+Popular Predictions
+Correct Predictions: 202
+Total Predictions: 3000
+Accuracy: 0.06733333333333333
+Precision : 0.6133663366336637
+List Size: 20
+Popular Predictions
+Correct Predictions: 239
+Total Predictions: 3000
+Accuracy: 0.07966666666666666
+Precision : 0.6599721059972109
+List Size: 30
+Popular Predictions
+Correct Predictions: 283
+Total Predictions: 3000
+Accuracy: 0.09433333333333334
+Precision : 0.646731448763251
+List Size: 40
+Popular Predictions
+Correct Predictions: 320
+Total Predictions: 3000
+Accuracy: 0.10666666666666667
+Precision : 0.6478125
+List Size: 50
+Popular Predictions
+Correct Predictions: 338
+Total Predictions: 3000
+Accuracy: 0.11266666666666666
+Precision : 0.6744575936883624
+List Size: 60
+Popular Predictions
+Correct Predictions: 355
+Total Predictions: 3000
+Accuracy: 0.11833333333333333
+Precision : 0.6908651911468814
+List Size: 70
+Popular Predictions
+Correct Predictions: 364
+Total Predictions: 3000
+Accuracy: 0.12133333333333333
+Precision : 0.713324175824176
+List Size: 80
+Popular Predictions
+Correct Predictions: 393
+Total Predictions: 3000
+Accuracy: 0.131
+Precision : 0.6952219394967488
+List Size: 90
+Popular Predictions
+Correct Predictions: 422
+Total Predictions: 3000
+Accuracy: 0.14066666666666666
+Precision : 0.6799763033175368
+List Size: 100
+Close Predictions
+Correct Predictions: 572
+Total Predictions: 3000
+Accuracy: 0.19066666666666668
+Precision : 0.9372377622377615
+List Size: 10
+Close Predictions
+Correct Predictions: 614
+Total Predictions: 3000
+Accuracy: 0.20466666666666666
+Precision : 0.925
+List Size: 20
+Close Predictions
+Correct Predictions: 660
+Total Predictions: 3000
+Accuracy: 0.22
+Precision : 0.8959090909090905
+List Size: 30
+Close Predictions
+Correct Predictions: 696
+Total Predictions: 3000
+Accuracy: 0.232
+Precision : 0.8803160919540238
+List Size: 40
+Close Predictions
+Correct Predictions: 717
+Total Predictions: 3000
+Accuracy: 0.239
+Precision : 0.8806694560669476
+List Size: 50
+Close Predictions
+Correct Predictions: 737
+Total Predictions: 3000
+Accuracy: 0.24566666666666667
+Precision : 0.87912709181366
+List Size: 60
+Close Predictions
+Correct Predictions: 759
+Total Predictions: 3000
+Accuracy: 0.253
+Precision : 0.8725766986636548
+List Size: 70
+Close Predictions
+Correct Predictions: 776
+Total Predictions: 3000
+Accuracy: 0.25866666666666666
+Precision : 0.8707313144329886
+List Size: 80
+Close Predictions
+Correct Predictions: 796
+Total Predictions: 3000
+Accuracy: 0.2653333333333333
+Precision : 0.8648520379676167
+List Size: 90
+Close Predictions
+Correct Predictions: 812
+Total Predictions: 3000
+Accuracy: 0.27066666666666667
+Precision : 0.8619950738916267
+List Size: 100
+Close Popular Predictions
+Correct Predictions: 337
+Total Predictions: 3000
+Accuracy: 0.11233333333333333
+Precision : 0.6563798219584568
+List Size: 10
+Close Popular Predictions
+Correct Predictions: 489
+Total Predictions: 3000
+Accuracy: 0.163
+Precision : 0.6643149284253588
+List Size: 20
+Close Popular Predictions
+Correct Predictions: 650
+Total Predictions: 3000
+Accuracy: 0.21666666666666667
+Precision : 0.6387179487179482
+List Size: 30
+Close Popular Predictions
+Correct Predictions: 740
+Total Predictions: 3000
+Accuracy: 0.24666666666666667
+Precision : 0.6615540540540539
+List Size: 40
+Close Popular Predictions
+Correct Predictions: 824
+Total Predictions: 3000
+Accuracy: 0.27466666666666667
+Precision : 0.6709223300970881
+List Size: 50
+Close Popular Predictions
+Correct Predictions: 874
+Total Predictions: 3000
+Accuracy: 0.29133333333333333
+Precision : 0.6954614797864217
+List Size: 60
+Close Popular Predictions
+Correct Predictions: 929
+Total Predictions: 3000
+Accuracy: 0.30966666666666665
+Precision : 0.7044441027218195
+List Size: 70
+Close Popular Predictions
+Correct Predictions: 979
+Total Predictions: 3000
+Accuracy: 0.3263333333333333
+Precision : 0.7128702757916234
+List Size: 80
+Close Popular Predictions
+Correct Predictions: 1032
+Total Predictions: 3000
+Accuracy: 0.344
+Precision : 0.7143195521102508
+List Size: 90
+Close Popular Predictions
+Correct Predictions: 1089
+Total Predictions: 3000
+Accuracy: 0.363
+Precision : 0.7106703397612506
+List Size: 100
+Popular Close Predictions
+Correct Predictions: 602
+Total Predictions: 3000
+Accuracy: 0.20066666666666666
+Precision : 0.8606312292358795
+List Size: 10
+Popular Close Predictions
+Correct Predictions: 660
+Total Predictions: 3000
+Accuracy: 0.22
+Precision : 0.8762121212121211
+List Size: 20
+Popular Close Predictions
+Correct Predictions: 701
+Total Predictions: 3000
+Accuracy: 0.23366666666666666
+Precision : 0.8770328102710406
+List Size: 30
+Popular Close Predictions
+Correct Predictions: 735
+Total Predictions: 3000
+Accuracy: 0.245
+Precision : 0.8728231292517009
+List Size: 40
+Popular Close Predictions
+Correct Predictions: 748
+Total Predictions: 3000
+Accuracy: 0.24933333333333332
+Precision : 0.8844652406417125
+List Size: 50
+Popular Close Predictions
+Correct Predictions: 766
+Total Predictions: 3000
+Accuracy: 0.25533333333333336
+Precision : 0.8845517841601389
+List Size: 60
+Popular Close Predictions
+Correct Predictions: 792
+Total Predictions: 3000
+Accuracy: 0.264
+Precision : 0.873665223665223
+List Size: 70
+Popular Close Predictions
+Correct Predictions: 820
+Total Predictions: 3000
+Accuracy: 0.2733333333333333
+Precision : 0.8618597560975607
+List Size: 80
+Popular Close Predictions
+Correct Predictions: 828
+Total Predictions: 3000
+Accuracy: 0.276
+Precision : 0.86947128287708
+List Size: 90
+Popular Close Predictions
+Correct Predictions: 855
+Total Predictions: 3000
+Accuracy: 0.285
+Precision : 0.8563391812865516
+List Size: 100
+Category-based Predictions
+Correct Predictions: 376
+Total Predictions: 3000
+Accuracy: 0.12533333333333332
+Precision : 0.6007978723404258
+List Size: 10
+Category-based Predictions
+Correct Predictions: 659
+Total Predictions: 3000
+Accuracy: 0.21966666666666668
+Precision : 0.5705614567526558
+List Size: 20
+Category-based Predictions
+Correct Predictions: 902
+Total Predictions: 3000
+Accuracy: 0.3006666666666667
+Precision : 0.5558388765705846
+List Size: 30
+Category-based Predictions
+Correct Predictions: 1112
+Total Predictions: 3000
+Accuracy: 0.37066666666666664
+Precision : 0.5451214028776967
+List Size: 40
+Category-based Predictions
+Correct Predictions: 1273
+Total Predictions: 3000
+Accuracy: 0.42433333333333334
+Precision : 0.5443833464257661
+List Size: 50
+Category-based Predictions
+Correct Predictions: 1393
+Total Predictions: 3000
+Accuracy: 0.4643333333333333
+Precision : 0.5561856903565462
+List Size: 60
+Category-based Predictions
+Correct Predictions: 1499
+Total Predictions: 3000
+Accuracy: 0.49966666666666665
+Precision : 0.5622129038406558
+List Size: 70
+Category-based Predictions
+Correct Predictions: 1588
+Total Predictions: 3000
+Accuracy: 0.5293333333333333
+Precision : 0.5659083753148628
+List Size: 80
+Category-based Predictions
+Correct Predictions: 1685
+Total Predictions: 3000
+Accuracy: 0.5616666666666666
+Precision : 0.5661193537751403
+List Size: 90
+Category-based Predictions
+Correct Predictions: 1779
+Total Predictions: 3000
+Accuracy: 0.593
+Precision : 0.5659078133783014
+List Size: 100
+
+
+
+
+
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Popular Predictions
+Correct Predictions: 4417
+Total Predictions: 86564
+Accuracy: 0.051025830599325354
+Precision : 0.6416572334163488
+List Size: 10
+Popular Predictions
+Correct Predictions: 6687
+Total Predictions: 86564
+Accuracy: 0.07724920290189917
+Precision : 0.6409376401973951
+List Size: 20
+Popular Predictions
+Correct Predictions: 8025
+Total Predictions: 86564
+Accuracy: 0.09270597477011229
+Precision : 0.6666043613707175
+List Size: 30
+Popular Predictions
+Correct Predictions: 9374
+Total Predictions: 86564
+Accuracy: 0.10828982024860219
+Precision : 0.6615639001493406
+List Size: 40
+Popular Predictions
+Correct Predictions: 10393
+Total Predictions: 86564
+Accuracy: 0.12006145741878842
+Precision : 0.6694294236505248
+List Size: 50
+Popular Predictions
+Correct Predictions: 11305
+Total Predictions: 86564
+Accuracy: 0.13059701492537312
+Precision : 0.6727686864219231
+List Size: 60
+Popular Predictions
+Correct Predictions: 11966
+Total Predictions: 86564
+Accuracy: 0.1382329836883693
+Precision : 0.6843664191399575
+List Size: 70
+Popular Predictions
+Correct Predictions: 12454
+Total Predictions: 86564
+Accuracy: 0.14387043112610323
+Precision : 0.6984502970933082
+List Size: 80
+Popular Predictions
+Correct Predictions: 13025
+Total Predictions: 86564
+Accuracy: 0.15046670671410747
+Precision : 0.7026879931755301
+List Size: 90
+Popular Predictions
+Correct Predictions: 13529
+Total Predictions: 86564
+Accuracy: 0.1562889884940622
+Precision : 0.7068393820681296
+List Size: 100
+Close Predictions
+Correct Predictions: 20197
+Total Predictions: 86564
+Accuracy: 0.2333187006145742
+Precision : 0.9365796900529815
+List Size: 10
+Close Predictions
+Correct Predictions: 21611
+Total Predictions: 86564
+Accuracy: 0.24965343560833603
+Precision : 0.9238836703530692
+List Size: 20
+Close Predictions
+Correct Predictions: 22622
+Total Predictions: 86564
+Accuracy: 0.26133265560741187
+Precision : 0.9157413137653617
+List Size: 30
+Close Predictions
+Correct Predictions: 23556
+Total Predictions: 86564
+Accuracy: 0.2721223603345502
+Precision : 0.9050348106639489
+List Size: 40
+Close Predictions
+Correct Predictions: 24351
+Total Predictions: 86564
+Accuracy: 0.2813063167136454
+Precision : 0.8974506180444121
+List Size: 50
+Close Predictions
+Correct Predictions: 24975
+Total Predictions: 86564
+Accuracy: 0.288514856060256
+Precision : 0.8942015348682179
+List Size: 60
+Close Predictions
+Correct Predictions: 25526
+Total Predictions: 86564
+Accuracy: 0.29488008872048427
+Precision : 0.89141267727026
+List Size: 70
+Close Predictions
+Correct Predictions: 26058
+Total Predictions: 86564
+Accuracy: 0.30102583059932536
+Precision : 0.887907264563656
+List Size: 80
+Close Predictions
+Correct Predictions: 26487
+Total Predictions: 86564
+Accuracy: 0.30598170140012015
+Precision : 0.8867729661930843
+List Size: 90
+Close Predictions
+Correct Predictions: 26891
+Total Predictions: 86564
+Accuracy: 0.31064876854119494
+Precision : 0.8853471421665219
+List Size: 100
+Close Popular Predictions
+Correct Predictions: 8633
+Total Predictions: 86564
+Accuracy: 0.0997296797745021
+Precision : 0.6996872466118418
+List Size: 10
+Close Popular Predictions
+Correct Predictions: 12512
+Total Predictions: 86564
+Accuracy: 0.14454045561665357
+Precision : 0.6755075127877072
+List Size: 20
+Close Popular Predictions
+Correct Predictions: 15077
+Total Predictions: 86564
+Accuracy: 0.1741717111039231
+Precision : 0.6819659083371947
+List Size: 30
+Close Popular Predictions
+Correct Predictions: 17182
+Total Predictions: 86564
+Accuracy: 0.1984889792523451
+Precision : 0.6865265976021533
+List Size: 40
+Close Popular Predictions
+Correct Predictions: 18852
+Total Predictions: 86564
+Accuracy: 0.21778106372163947
+Precision : 0.6934054742202
+List Size: 50
+Close Popular Predictions
+Correct Predictions: 20378
+Total Predictions: 86564
+Accuracy: 0.2354096391109468
+Precision : 0.6961126378120246
+List Size: 60
+Close Popular Predictions
+Correct Predictions: 21635
+Total Predictions: 86564
+Accuracy: 0.24993068712166722
+Precision : 0.7016652910297742
+List Size: 70
+Close Popular Predictions
+Correct Predictions: 22754
+Total Predictions: 86564
+Accuracy: 0.2628575389307333
+Precision : 0.7061049705546273
+List Size: 80
+Close Popular Predictions
+Correct Predictions: 23866
+Total Predictions: 86564
+Accuracy: 0.27570352571507784
+Precision : 0.7074457387078054
+List Size: 90
+Close Popular Predictions
+Correct Predictions: 24849
+Total Predictions: 86564
+Accuracy: 0.28705928561526733
+Precision : 0.7098402350194857
+List Size: 100
+Popular Close Predictions
+Correct Predictions: 13646
+Total Predictions: 86564
+Accuracy: 0.1576405896215517
+Precision : 0.9121354243001474
+List Size: 10
+Popular Close Predictions
+Correct Predictions: 14939
+Total Predictions: 86564
+Accuracy: 0.17257751490226883
+Precision : 0.9006493071825478
+List Size: 20
+Popular Close Predictions
+Correct Predictions: 15659
+Total Predictions: 86564
+Accuracy: 0.18089506030220415
+Precision : 0.8989909955935735
+List Size: 30
+Popular Close Predictions
+Correct Predictions: 16222
+Total Predictions: 86564
+Accuracy: 0.187398918719098
+Precision : 0.8970580076439539
+List Size: 40
+Popular Close Predictions
+Correct Predictions: 16691
+Total Predictions: 86564
+Accuracy: 0.19281687537544476
+Precision : 0.8951159307410899
+List Size: 50
+Popular Close Predictions
+Correct Predictions: 17135
+Total Predictions: 86564
+Accuracy: 0.19794602837207154
+Precision : 0.8911691469701492
+List Size: 60
+Popular Close Predictions
+Correct Predictions: 17570
+Total Predictions: 86564
+Accuracy: 0.2029712120511991
+Precision : 0.8860704122286558
+List Size: 70
+Popular Close Predictions
+Correct Predictions: 18066
+Total Predictions: 86564
+Accuracy: 0.20870107666004345
+Precision : 0.8775309974537691
+List Size: 80
+Popular Close Predictions
+Correct Predictions: 18405
+Total Predictions: 86564
+Accuracy: 0.2126172542858463
+Precision : 0.8758405022789846
+List Size: 90
+Popular Close Predictions
+Correct Predictions: 18726
+Total Predictions: 86564
+Accuracy: 0.2163254932766508
+Precision : 0.8739768236676
+List Size: 100
+Category-based Predictions
+Correct Predictions: 10496
+Total Predictions: 86564
+Accuracy: 0.12125132849683472
+Precision : 0.6448266006097534
+List Size: 10
+Category-based Predictions
+Correct Predictions: 15988
+Total Predictions: 86564
+Accuracy: 0.18469571646411903
+Precision : 0.6437922191643705
+List Size: 20
+Category-based Predictions
+Correct Predictions: 20948
+Total Predictions: 86564
+Accuracy: 0.24199436255256226
+Precision : 0.6219495894595899
+List Size: 30
+Category-based Predictions
+Correct Predictions: 24704
+Total Predictions: 86564
+Accuracy: 0.28538422438889144
+Precision : 0.6176034245466433
+List Size: 40
+Category-based Predictions
+Correct Predictions: 27820
+Total Predictions: 86564
+Accuracy: 0.3213807125363893
+Precision : 0.6146944644140663
+List Size: 50
+Category-based Predictions
+Correct Predictions: 30389
+Total Predictions: 86564
+Accuracy: 0.351058176609214
+Precision : 0.6147120120219168
+List Size: 60
+Category-based Predictions
+Correct Predictions: 32951
+Total Predictions: 86564
+Accuracy: 0.38065477565731715
+Precision : 0.6089440164400239
+List Size: 70
+Category-based Predictions
+Correct Predictions: 35217
+Total Predictions: 86564
+Accuracy: 0.40683193937433576
+Precision : 0.6062725388306703
+List Size: 80
+Category-based Predictions
+Correct Predictions: 37138
+Total Predictions: 86564
+Accuracy: 0.4290236125872187
+Precision : 0.6061263994351774
+List Size: 90
+Category-based Predictions
+Correct Predictions: 38979
+Total Predictions: 86564
+Accuracy: 0.45029111408899775
+Precision : 0.6049947407578424
+List Size: 100
+
+
+
+
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 26098
+Total Predictions: 86564
+Accuracy: 0.3014879164548773
+Precision : 0.8782550387003007
+List Size: 10
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 28645
+Total Predictions: 86564
+Accuracy: 0.33091123330714844
+Precision : 0.8825205096876048
+List Size: 20
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 30250
+Total Predictions: 86564
+Accuracy: 0.3494524282611709
+Precision : 0.8828606060606372
+List Size: 30
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 31382
+Total Predictions: 86564
+Accuracy: 0.36252945797329145
+Precision : 0.8845357211139872
+List Size: 40
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 32374
+Total Predictions: 86564
+Accuracy: 0.37398918719098007
+Precision : 0.8832729968492399
+List Size: 50
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 33225
+Total Predictions: 86564
+Accuracy: 0.38382006376784805
+Precision : 0.8820115374969238
+List Size: 60
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 33870
+Total Predictions: 86564
+Accuracy: 0.39127119818862344
+Precision : 0.8833303808680985
+List Size: 70
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 34408
+Total Predictions: 86564
+Accuracy: 0.3974862529457973
+Precision : 0.8849969483840481
+List Size: 80
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 35051
+Total Predictions: 86564
+Accuracy: 0.4049142830737951
+Precision : 0.8824452623004018
+List Size: 90
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 35542
+Total Predictions: 86564
+Accuracy: 0.41058638695069544
+Precision : 0.8826199988746197
+List Size: 100
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 1753
+Total Predictions: 3000
+Accuracy: 0.5843333333333334
+Precision : 0.8390758699372529
+List Size: 10
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 5814
+Total Predictions: 10000
+Accuracy: 0.5814
+Precision : 0.8366185070519466
+List Size: 10
+
+
+
+
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 1753
+Total Predictions: 3000
+Accuracy: 0.5843333333333334
+Precision : 0.8390758699372529
+List Size: 10
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 2006
+Total Predictions: 3000
+Accuracy: 0.6686666666666666
+Precision : 0.8413010967098734
+List Size: 20
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 2192
+Total Predictions: 3000
+Accuracy: 0.7306666666666667
+Precision : 0.833378953771293
+List Size: 30
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 2308
+Total Predictions: 3000
+Accuracy: 0.7693333333333333
+Precision : 0.8384098786828399
+List Size: 40
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 2417
+Total Predictions: 3000
+Accuracy: 0.8056666666666666
+Precision : 0.8365411667356303
+List Size: 50
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 2467
+Total Predictions: 3000
+Accuracy: 0.8223333333333334
+Precision : 0.8482097013917071
+List Size: 60
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 2535
+Total Predictions: 3000
+Accuracy: 0.845
+Precision : 0.848599605522679
+List Size: 70
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 2591
+Total Predictions: 3000
+Accuracy: 0.8636666666666667
+Precision : 0.8502942879197195
+List Size: 80
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 2634
+Total Predictions: 3000
+Accuracy: 0.878
+Precision : 0.8537458871171874
+List Size: 90
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 2664
+Total Predictions: 3000
+Accuracy: 0.888
+Precision : 0.8592304804804812
+List Size: 100
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 1753
+Total Predictions: 3000
+Accuracy: 0.5843333333333334
+Precision : 0.8390758699372529
+List Size: 10
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 0
+Total Predictions: 0
+Accuracy: NaN
+Precision : NaN
+List Size: 10
+Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 1538
+Total Predictions: 3000
+Accuracy: 0.5126666666666667
+Precision : 0.7691807542262669
+List Size: 10
+Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 1818
+Total Predictions: 3000
+Accuracy: 0.606
+Precision : 0.7665016501650157
+List Size: 10
+Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 928
+Total Predictions: 3000
+Accuracy: 0.30933333333333335
+Precision : 0.8418103448275854
+List Size: 10
+Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 1953
+Total Predictions: 3000
+Accuracy: 0.651
+Precision : 0.7444444444444462
+List Size: 10
+Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+New Method Predictions
+ Distance : 1.0 VisitedPlace : 1.0 VisitedCategory : 1.0 PopularPlace : 1.0 Time 1.0
+Correct Predictions: 1072
+Total Predictions: 3000
+Accuracy: 0.35733333333333334
+Precision : 0.7494402985074607
+List Size: 10
+Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+Category-based PredictionsStart Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+Category-based PredictionsStart Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+Former visit Predictions
+Correct Predictions: 455
+Total Predictions: 3000
+Accuracy: 0.15166666666666667
+Precision : 0.7564835164835167
+List Size: 10
+Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+Former visit Predictions
+Correct Predictions: 745
+Total Predictions: 3000
+Accuracy: 0.24833333333333332
+Precision : 0.8488590604026878
+List Size: 100
+Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+Former visit Predictions
+Correct Predictions: 669
+Total Predictions: 3000
+Accuracy: 0.223
+Precision : 0.8211061285500757
+List Size: 50
+
+
+
+
+
+
+
+
+gowalla_method_7
+Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+Former visit Predictions
+Correct Predictions: 12722
+Total Predictions: 68603
+Accuracy: 0.1854437852572045
+Precision : 0.7345307341612757
+List Size: 10
+Former visit PredictionsStart Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+Former visit Predictions
+Correct Predictions: 16052
+Total Predictions: 68603
+Accuracy: 0.233983936562541
+Precision : 0.7507164216297159
+List Size: 20
+Former visit Predictions
+Correct Predictions: 18192
+Total Predictions: 68603
+Accuracy: 0.26517790767167615
+Precision : 0.7603213866901004
+List Size: 30
+Former visit Predictions
+Correct Predictions: 19674
+Total Predictions: 68603
+Accuracy: 0.28678046149585296
+Precision : 0.7687709667581819
+List Size: 40
+Former visit Predictions
+Correct Predictions: 20731
+Total Predictions: 68603
+Accuracy: 0.30218795096424356
+Precision : 0.7792108436640233
+List Size: 50
+Former visit Predictions
+Correct Predictions: 21564
+Total Predictions: 68603
+Accuracy: 0.31433027710158445
+Precision : 0.7882041056081394
+List Size: 60
+Former visit Predictions
+Correct Predictions: 22233
+Total Predictions: 68603
+Accuracy: 0.3240820372286926
+Precision : 0.7964711400685525
+List Size: 70
+Former visit Predictions
+Correct Predictions: 22744
+Total Predictions: 68603
+Accuracy: 0.33153069107764965
+Precision : 0.8048688665142225
+List Size: 80
+Former visit Predictions
+Correct Predictions: 23202
+Total Predictions: 68603
+Accuracy: 0.3382067839598851
+Precision : 0.8115660527349686
+List Size: 90
+Former visit Predictions
+Correct Predictions: 23601
+Total Predictions: 68603
+Accuracy: 0.34402285614331735
+Precision : 0.8175467141222558
+List Size: 100
+
+
+
+
+foursqaure_method_7Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Former visit Predictions
+Correct Predictions: 51732
+Total Predictions: 86564
+Accuracy: 0.5976156369853519
+Precision : 0.7589432072991618
+List Size: 20
+Former visit Predictions
+Correct Predictions: 56839
+Total Predictions: 86564
+Accuracy: 0.6566124485929485
+Precision : 0.7737087797698438
+List Size: 30
+Former visit Predictions
+Correct Predictions: 60750
+Total Predictions: 86564
+Accuracy: 0.7017928931195416
+Precision : 0.7865456790122874
+List Size: 40
+Former visit Predictions
+Correct Predictions: 63332
+Total Predictions: 86564
+Accuracy: 0.7316205350954207
+Precision : 0.8004436935514571
+List Size: 50
+Former visit Predictions
+Correct Predictions: 65370
+Total Predictions: 86564
+Accuracy: 0.7551638094357932
+Precision : 0.8107893529140865
+List Size: 60
+Former visit Predictions
+Correct Predictions: 66791
+Total Predictions: 86564
+Accuracy: 0.7715794094542766
+Precision : 0.8217345365181906
+List Size: 70
+Former visit Predictions
+Correct Predictions: 67941
+Total Predictions: 86564
+Accuracy: 0.7848643778013955
+Precision : 0.831016617359224
+List Size: 80
+Former visit Predictions
+Correct Predictions: 68753
+Total Predictions: 86564
+Accuracy: 0.7942447206691003
+Precision : 0.8404952026338329
+List Size: 90
+Former visit Predictions
+Correct Predictions: 69385
+Total Predictions: 86564
+Accuracy: 0.8015456771868213
+Precision : 0.8491635079628381
+List Size: 100
+
+
+
+
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Former visit Predictions
+Correct Predictions: 59178
+Total Predictions: 86564
+Accuracy: 0.6836329189963495
+Precision : 0.7305130284904122
+List Size: 10
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Former visit Predictions
+Correct Predictions: 1165
+Total Predictions: 3000
+Accuracy: 0.3883333333333333
+Precision : 0.779742489270384
+List Size: 10
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 0.0 VisitedPlace : 1.0 VisitedCategory : 0.0 PopularPlace : 0.0 Time 0.0Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 0.0 VisitedPlace : 1.0 VisitedCategory : 0.0 PopularPlace : 0.0 Time 0.0
+Correct Predictions: 1894
+Total Predictions: 3000
+Accuracy: 0.6313333333333333
+Precision : 0.8853220696937741
+List Size: 10
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 0.0 VisitedPlace : 1.0 VisitedCategory : 0.0 PopularPlace : 0.0 Time 0.0
+Correct Predictions: 1166
+Total Predictions: 3000
+Accuracy: 0.38866666666666666
+Precision : 0.7795025728987971
+List Size: 10
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+New Method Predictions
+ Distance : 0.0 VisitedPlace : 1.0 VisitedCategory : 0.0 PopularPlace : 0.0 Time 0.0
+Correct Predictions: 1661
+Total Predictions: 3000
+Accuracy: 0.5536666666666666
+Precision : 0.891685731487062
+List Size: 100
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Former visit Predictions
+Correct Predictions: 1656
+Total Predictions: 3000
+Accuracy: 0.552
+Precision : 0.8901147342995218
+List Size: 100
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Former visit Predictions
+Correct Predictions: 267998
+Total Predictions: 460034
+Accuracy: 0.5825612889482081
+Precision : 0.8522014343394908
+List Size: 50
+
+
+full_database_former_visits
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Popular Predictions
+Correct Predictions: 23724
+Total Predictions: 460034
+Accuracy: 0.05157010134033571
+Precision : 0.6518462316641146
+List Size: 10
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Popular Predictions
+Correct Predictions: 70816
+Total Predictions: 460034
+Accuracy: 0.15393644817556965
+Precision : 0.7043187980117879
+List Size: 100
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Category-based Predictions
+Correct Predictions: 32547
+Total Predictions: 460034
+Accuracy: 0.07074911854341201
+Precision : 0.681918456386146
+List Size: 10
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Category-based Predictions
+Correct Predictions: 123115
+Total Predictions: 460034
+Accuracy: 0.26762152362651453
+Precision : 0.6168718677659315
+List Size: 100
+
+
+full_database_popular_foursquare
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Popular Predictions
+Correct Predictions: 23724
+Total Predictions: 460034
+Accuracy: 0.05157010134033571
+Precision : 0.6518462316641146
+List Size: 10
+Popular Predictions
+Correct Predictions: 34717
+Total Predictions: 460034
+Accuracy: 0.07546616119678111
+Precision : 0.6554757035458364
+List Size: 20
+Popular Predictions
+Correct Predictions: 42971
+Total Predictions: 460034
+Accuracy: 0.09340831329858228
+Precision : 0.6591204921148585
+List Size: 30
+Popular Predictions
+Correct Predictions: 49203
+Total Predictions: 460034
+Accuracy: 0.10695513809848838
+Precision : 0.6682768327134498
+List Size: 40
+Popular Predictions
+Correct Predictions: 53949
+Total Predictions: 460034
+Accuracy: 0.11727176686940531
+Precision : 0.6800570909562116
+List Size: 50
+Popular Predictions
+Correct Predictions: 57849
+Total Predictions: 460034
+Accuracy: 0.12574940113122074
+Precision : 0.6901801817375006
+List Size: 60
+Popular Predictions
+Correct Predictions: 61505
+Total Predictions: 460034
+Accuracy: 0.133696639813579
+Precision : 0.6955072177640685
+List Size: 70
+Popular Predictions
+Correct Predictions: 64795
+Total Predictions: 460034
+Accuracy: 0.1408482851267515
+Precision : 0.6998568562388824
+List Size: 80
+Popular Predictions
+Correct Predictions: 67866
+Total Predictions: 460034
+Accuracy: 0.14752387866983746
+Precision : 0.7028101127386303
+List Size: 90
+Popular Predictions
+Correct Predictions: 70816
+Total Predictions: 460034
+Accuracy: 0.15393644817556965
+Precision : 0.7043187980117879
+List Size: 100
+
+full_database_category_foursquareStart Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Category-based Predictions
+Correct Predictions: 32547
+Total Predictions: 460034
+Accuracy: 0.07074911854341201
+Precision : 0.681918456386146
+List Size: 10
+Category-based Predictions
+Correct Predictions: 50335
+Total Predictions: 460034
+Accuracy: 0.10941582578678967
+Precision : 0.660272176418036
+List Size: 20
+Category-based Predictions
+Correct Predictions: 63941
+Total Predictions: 460034
+Accuracy: 0.1389919005986514
+Precision : 0.6542771200534455
+List Size: 30
+Category-based Predictions
+Correct Predictions: 75776
+Total Predictions: 460034
+Accuracy: 0.164718259954699
+Precision : 0.6449535472972577
+List Size: 40
+Category-based Predictions
+Correct Predictions: 85528
+Total Predictions: 460034
+Accuracy: 0.18591669311398723
+Precision : 0.6400399869048462
+List Size: 50
+Category-based Predictions
+Correct Predictions: 94788
+Total Predictions: 460034
+Accuracy: 0.20604564010486182
+Precision : 0.6328220168515791
+List Size: 60
+Category-based Predictions
+Correct Predictions: 103211
+Total Predictions: 460034
+Accuracy: 0.22435515635800832
+Precision : 0.6256420619619576
+List Size: 70
+Category-based Predictions
+Correct Predictions: 110416
+Total Predictions: 460034
+Accuracy: 0.24001704221861864
+Precision : 0.6225389662730122
+List Size: 80
+Category-based Predictions
+Correct Predictions: 117604
+Total Predictions: 460034
+Accuracy: 0.25564197428885693
+Precision : 0.6173382235676436
+List Size: 90
+Category-based Predictions
+Correct Predictions: 123115
+Total Predictions: 460034
+Accuracy: 0.26762152362651453
+Precision : 0.6168718677659315
+List Size: 100
+
+
+full_database_former_visits_foursquare
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Former visit PredictionsStart Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Former visit PredictionsStart Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Former visit Predictions
+Correct Predictions: 198881
+Total Predictions: 460034
+Accuracy: 0.4323180460574653
+Precision : 0.77973461517151
+List Size: 10
+Former visit Predictions
+Correct Predictions: 233366
+Total Predictions: 460034
+Accuracy: 0.5072798967032871
+Precision : 0.8042264083029778
+List Size: 20
+Former visit Predictions
+Correct Predictions: 251090
+Total Predictions: 460034
+Accuracy: 0.545807483794676
+Precision : 0.8220669879322542
+List Size: 30
+Former visit Predictions
+Correct Predictions: 261399
+Total Predictions: 460034
+Accuracy: 0.5682166970267415
+Precision : 0.8382879238257601
+List Size: 40
+Former visit Predictions
+Correct Predictions: 267891
+Total Predictions: 460034
+Accuracy: 0.582328697444102
+Precision : 0.8524120631156504
+List Size: 50
+Former visit Predictions
+Correct Predictions: 272625
+Total Predictions: 460034
+Accuracy: 0.592619241186521
+Precision : 0.8634695399666317
+List Size: 60
+Former visit Predictions
+Correct Predictions: 275797
+Total Predictions: 460034
+Accuracy: 0.5995143837194642
+Precision : 0.8737609805134486
+List Size: 70
+Former visit Predictions
+Correct Predictions: 278150
+Total Predictions: 460034
+Accuracy: 0.6046292230574262
+Precision : 0.8826235843966365
+List Size: 80
+Former visit Predictions
+Correct Predictions: 279927
+Total Predictions: 460034
+Accuracy: 0.6084919810274892
+Precision : 0.8903892006751248
+List Size: 90
+Former visit Predictions
+Correct Predictions: 281246
+Total Predictions: 460034
+Accuracy: 0.6113591604098827
+Precision : 0.8973835005654496
+List Size: 100
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Former visit Predictions
+Correct Predictions: 286664
+Total Predictions: 460034
+Accuracy: 0.6231365507766817
+Precision : 0.9870829612376001
+List Size: 1000
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Former visit Predictions
+Correct Predictions: 286664
+Total Predictions: 460034
+Accuracy: 0.6231365507766817
+Precision : 0.9987082961226316
+List Size: 10000
+
+
+full_database_popular_gowalla
+Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+Popular Predictions
+Correct Predictions: 19426
+Total Predictions: 497935
+Accuracy: 0.039013124202958216
+Precision : 0.6870431380623823
+List Size: 10
+Popular Predictions
+Correct Predictions: 29093
+Total Predictions: 497935
+Accuracy: 0.05842730476869471
+Precision : 0.6581531639913228
+List Size: 20
+Popular Predictions
+Correct Predictions: 36177
+Total Predictions: 497935
+Accuracy: 0.07265406127305774
+Precision : 0.6577245211045546
+List Size: 30
+Popular Predictions
+Correct Predictions: 42517
+Total Predictions: 497935
+Accuracy: 0.08538664685149668
+Precision : 0.6532839805254526
+List Size: 40
+Popular Predictions
+Correct Predictions: 48245
+Total Predictions: 497935
+Accuracy: 0.09689015634570777
+Precision : 0.6500487097107732
+List Size: 50
+Popular Predictions
+Correct Predictions: 53425
+Total Predictions: 497935
+Accuracy: 0.10729312058802856
+Precision : 0.6486987989393611
+List Size: 60
+Popular Predictions
+Correct Predictions: 58151
+Total Predictions: 497935
+Accuracy: 0.11678431923845482
+Precision : 0.648535708758288
+List Size: 70
+Popular Predictions
+Correct Predictions: 62592
+Total Predictions: 497935
+Accuracy: 0.12570315402612792
+Precision : 0.6482415883818785
+List Size: 80
+Popular Predictions
+Correct Predictions: 66830
+Total Predictions: 497935
+Accuracy: 0.1342143050799803
+Precision : 0.6476462666467909
+List Size: 90
+Popular Predictions
+Correct Predictions: 70922
+Total Predictions: 497935
+Accuracy: 0.14243224517256267
+Precision : 0.6466683116663737
+List Size: 100
+
+
+full_database_category_gowalla
+Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+Category-based Predictions
+Correct Predictions: 17818
+Total Predictions: 497935
+Accuracy: 0.03578378704047717
+Precision : 0.6704063306768228
+List Size: 10
+Category-based Predictions
+Correct Predictions: 29438
+Total Predictions: 497935
+Accuracy: 0.059120166286764336
+Precision : 0.6211138664311532
+List Size: 20
+Category-based Predictions
+Correct Predictions: 38603
+Total Predictions: 497935
+Accuracy: 0.07752618313635314
+Precision : 0.613500677840248
+List Size: 30
+Category-based Predictions
+Correct Predictions: 46294
+Total Predictions: 497935
+Accuracy: 0.09297197425366764
+Precision : 0.6134790685617896
+List Size: 40
+Category-based Predictions
+Correct Predictions: 53438
+Total Predictions: 497935
+Accuracy: 0.10731922841334712
+Precision : 0.610612298364429
+List Size: 50
+Category-based Predictions
+Correct Predictions: 59574
+Total Predictions: 497935
+Accuracy: 0.11964212196371013
+Precision : 0.612224292476587
+List Size: 60
+Category-based Predictions
+Correct Predictions: 65176
+Total Predictions: 497935
+Accuracy: 0.13089258638175666
+Precision : 0.6138403268512989
+List Size: 70
+Category-based Predictions
+Correct Predictions: 70809
+Total Predictions: 497935
+Accuracy: 0.14220530792171668
+Precision : 0.6124669886596459
+List Size: 80
+Category-based Predictions
+Correct Predictions: 76259
+Total Predictions: 497935
+Accuracy: 0.15315051161296153
+Precision : 0.6100113502086276
+List Size: 90
+Category-based Predictions
+Correct Predictions: 81229
+Total Predictions: 497935
+Accuracy: 0.16313173406167472
+Precision : 0.6094841743712244
+List Size: 100
+
+
+full_database_former_visits_gowalla
+Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+Former visit Predictions
