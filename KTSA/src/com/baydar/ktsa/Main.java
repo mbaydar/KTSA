@@ -38,7 +38,7 @@ public class Main {
 	static ArrayList<Place> placesArray = new ArrayList<Place>();
 	static Place[] mostPopularPlaces = new Place[100];
 	static Place[] mostPopularNPlaces;
-	static String database_name = "gowalla_u";
+	static String database_name = "foursquare";
 	static String city = "Austin";
 	static int year = 110;
 

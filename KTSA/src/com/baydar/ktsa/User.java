@@ -19,8 +19,9 @@ public class User implements Serializable {
 	private ArrayList<Checkin> checkins = new ArrayList<Checkin>();
 	private ArrayList<Paired> placeDistances = new ArrayList<Paired>();
 	private double max_place_distance;
-	
-	public double getMaxPlaceDistance(){
+	private ArrayList<Paired> visitedPlaces = new ArrayList<Paired>();
+
+	public double getMaxPlaceDistance() {
 		return this.max_place_distance;
 	}
 
@@ -35,6 +36,18 @@ public class User implements Serializable {
 	public void addCheckin(Checkin checkin) {
 		this.checkins.add(checkin);
 		this.num_checkins++;
+		boolean found = false;
+		for (int i = 0; i < visitedPlaces.size(); i++) {
+			if (visitedPlaces.get(i).id.equals(checkin.getPlace_id())) {
+				visitedPlaces.get(i).distance = visitedPlaces.get(i).distance + 1;
+				found = true;
+				break;
+			}
+		}
+		if (!found) {
+			visitedPlaces.add(new Paired(checkin.getPlace_id(), 1));
+		}
+
 	}
 
 	public int getVisitPlaceNum(Place place) {
@@ -46,18 +59,18 @@ public class User implements Serializable {
 		}
 		return count;
 	}
-	
-	public int getVisitCatNum(Category cat){
+
+	public int getVisitCatNum(Category cat) {
 		int count = 0;
 		for (int i = 0; i < checkins.size(); i++) {
-			if (checkins.get(i).getPlace().getCategory().getId()==cat.getId()) {
+			if (checkins.get(i).getPlace().getCategory().getId() == cat.getId()) {
 				count++;
 			}
 		}
 		return count;
 	}
-	
-	public double getPlaceDistance(Place place){
+
+	public double getPlaceDistance(Place place) {
 		return this.homeLocation.getDistance(place.getLocation());
 	}
 
@@ -82,6 +95,16 @@ public class User implements Serializable {
 				break;
 			}
 		}
+		for (int i = 0; i < visitedPlaces.size(); i++) {
+			if (visitedPlaces.get(i).id.equals(checkin.getPlace_id())) {
+				if (visitedPlaces.get(i).distance == 1) {
+					visitedPlaces.remove(i);
+				} else {
+					visitedPlaces.get(i).distance = visitedPlaces.get(i).distance - 1;
+				}
+				break;
+			}
+		}
 	}
 
 	public boolean isVisitedCategory(Category category) {
@@ -94,19 +117,20 @@ public class User implements Serializable {
 	}
 
 	public ArrayList<Paired> getVisitedPlaces() {
-		double alfa = 1;
-		ArrayList<Paired> visitedPlaces = new ArrayList<Paired>();
-		for (int i = 0; i < this.checkins.size(); i++) {
-			boolean found = false;
-			for (Paired pairs : visitedPlaces) {
-				if (pairs.id.equals(this.checkins.get(i).getPlace_id())) {
-					pairs.distance = pairs.distance + alfa;
-					found = true;
-					break;
+		if (visitedPlaces.size() == 0) {
+			double alfa = 1;
+			for (int i = 0; i < this.checkins.size(); i++) {
+				boolean found = false;
+				for (Paired pairs : visitedPlaces) {
+					if (pairs.id.equals(this.checkins.get(i).getPlace_id())) {
+						pairs.distance = pairs.distance + alfa;
+						found = true;
+						break;
+					}
 				}
-			}
-			if (!found) {
-				visitedPlaces.add(new Paired(this.checkins.get(i).getPlace().getId(), alfa));
+				if (!found) {
+					visitedPlaces.add(new Paired(this.checkins.get(i).getPlace().getId(), alfa));
+				}
 			}
 		}
 		return visitedPlaces;
@@ -148,7 +172,7 @@ public class User implements Serializable {
 			pairs.add(new Paired(place.getId(), this.getHomeLocation().getDistance(place.getLocation())));
 		}
 		Collections.sort(pairs);
-		this.max_place_distance = pairs.get(pairs.size()-1).distance;
+		this.max_place_distance = pairs.get(pairs.size() - 1).distance;
 		for (int i = 0; i < num; i++) {
 			placeDistances.add(new Paired(pairs.get(i).id, pairs.get(i).distance));
 		}
