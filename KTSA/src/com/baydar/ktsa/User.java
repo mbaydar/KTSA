@@ -20,6 +20,13 @@ public class User implements Serializable {
 	private ArrayList<Paired> placeDistances = new ArrayList<Paired>();
 	private double max_place_distance;
 	private ArrayList<Paired> visitedPlaces = new ArrayList<Paired>();
+	
+	
+	public double wdistance = 0;
+	public double wvisitedP = 0;
+	public double wvisitedC = 0;
+	public double wpopular = 0;
+	public double wtime = 0;
 
 	public double getMaxPlaceDistance() {
 		return this.max_place_distance;

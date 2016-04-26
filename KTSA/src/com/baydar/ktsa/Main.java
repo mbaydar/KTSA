@@ -55,12 +55,14 @@ public class Main {
 		loadData(database_name);
 		Collections.sort(placesArray); // Sort by checkin nums
 		setMostPopularPlaces();
-		// calculateUsersHomeLocations();
+		calculateUsersHomeLocations();
 		// calculateUsersPlaceDistances(1000);
 		setActiveUsers();
+		calculateWeights();
 		testAll();
 		// System.out.println((double) closePlaceNumber / 3000);
-		// calculateWeights();
+		// calculateSigma();
+
 		// getAvgUniquePlaceVisited();
 		// getAvgCheckinNumByUniquePlaceVisited();
 		// getMaxCheckinNumByUniquePlaceVisited();
@@ -70,6 +72,42 @@ public class Main {
 		// calculatePlaceTimes(); // for once do it for gowalla, too
 		// calculateAverageDistances();
 		// calculateMaxAvgDistances();
+	}
+
+	public static void calculateSigma() {
+		int activeUsers = 0;
+		int rangeUsers = 0;
+		double sum = 0;
+		int numCheckins = 0;
+		for (User user : users.values()) {
+			if (user.isIs_active()) {
+				activeUsers++;
+				sum += user.getNum_checkins();
+			}
+		}
+		System.out.println("Active-user checkin : " + sum + " Total Checkins :" + checkins.size());
+		double m = sum / activeUsers;
+		sum = 0;
+		for (User user : users.values()) {
+			if (user.isIs_active()) {
+				sum += Math.pow(user.getNum_checkins() - m, 2);
+			}
+		}
+		sum = sum / activeUsers;
+		sum = Math.sqrt(sum);
+		System.out.println(sum + " " + m);
+
+		for (User user : users.values()) {
+			if (user.isIs_active()) {
+				if (user.getNum_checkins() > m - sum && user.getNum_checkins() < m + sum) {
+					numCheckins += user.getNum_checkins();
+					rangeUsers++;
+				}
+			}
+		}
+		System.out.println(
+				"Kalan check-in : " + numCheckins + " range users: " + rangeUsers + " active users :" + activeUsers);
+
 	}
 
 	public static void setActiveUsers() {
@@ -310,9 +348,9 @@ public class Main {
 			// calculateWeights();
 			// calculateUsersPlaceDistances(1000);
 			long tStart = System.currentTimeMillis();
-			for (int i = 7; i < 8; i++) {
-				for (int j = 1; j < 11; j++) {
-					makePredictions(i, j * 10);
+			for (int i = 6; i < 7; i++) {
+				for (int j = 1; j < 2; j++) {
+					makePredictions(i, j * 50);
 				}
 				// for(int j=0;j<testVal.length;j++){
 				// for(int t=0;t<testVal.length;t++){
@@ -454,6 +492,11 @@ public class Main {
 
 	public static double newMethod(Checkin predictedCheckin, int num) {
 		User user = users.get(predictedCheckin.getUser_id());
+		wdistance = user.wdistance;
+		wpopular = user.wpopular;
+		wtime = user.wtime;
+		wvisitedC = user.wvisitedC;
+		wvisitedP = user.wvisitedP;
 		Place prePlace = predictedCheckin.getPlace();
 
 		if (user.getPlaceDistances().size() == 0) {
@@ -614,16 +657,17 @@ public class Main {
 		ArrayList<Paired> visitedPlaces = user.getVisitedPlaces();
 
 		ArrayList<PlaceRank> rankedPlaces = new ArrayList<PlaceRank>();
-//		for (Place place : places.values()) {
-//			rankedPlaces.add(new PlaceRank(place.getId(), ThreadLocalRandom.current().nextDouble(-100, 0)));
-//		}
+		// for (Place place : places.values()) {
+		// rankedPlaces.add(new PlaceRank(place.getId(),
+		// ThreadLocalRandom.current().nextDouble(-100, 0)));
+		// }
 		for (Paired pair : visitedPlaces) {
 			rankedPlaces.add(new PlaceRank(pair.id, pair.distance));
 		}
 		Collections.sort(rankedPlaces);
 
 		for (int i = 0; i < num; i++) {
-			if(i>=rankedPlaces.size()){
+			if (i >= rankedPlaces.size()) {
 				break;
 			}
 			if (rankedPlaces.get(i).id.equals(predictedCheckin.getPlace_id())) {
@@ -720,7 +764,9 @@ public class Main {
 
 	// Users Home Locations Are Calculated
 	public static void calculateUsersHomeLocations() {
+		int counter = 0;
 		for (User user : users.values()) {
+			System.out.println(counter++);
 			// user.calculateHomeLocationByAvg();
 			user.calculateHomeLocationByFreq();
 			// System.out.println(user.getHomeLocation());
@@ -896,23 +942,101 @@ public class Main {
 		logResults("Start Date : " + startDate.toString() + " End Date:" + endDate.toString() + "\n");
 		int count = 0;
 
-//		for (int i = 0; i < checkins.size(); i++) {
-//			if (checkins.get(i).getTimestamp().isAfter(startDate) && checkins.get(i).getTimestamp().isBefore(endDate)
-//					&& users.get(checkins.get(i).getUser_id()).isIs_active()) {
-//				predictedCheckins.add(checkins.get(i));
-//				// deleteForPrediction(checkins.get(i));
-//				count++;
-//			}
-//			if (count == 3000) {
-//				break;
-//			}
-//		}
+		// for (int i = 0; i < checkins.size(); i++) {
+		// if (checkins.get(i).getTimestamp().isAfter(startDate) &&
+		// checkins.get(i).getTimestamp().isBefore(endDate)
+		// && users.get(checkins.get(i).getUser_id()).isIs_active()) {
+		// predictedCheckins.add(checkins.get(i));
+		// // deleteForPrediction(checkins.get(i));
+		// count++;
+		// }
+		// if (count == 3000) {
+		// break;
+		// }
+		// }
 		for (Checkin checkin : checkins) {
 			predictedCheckins.add(checkin);
 		}
 	}
 
 	public static void calculateWeights() {
+		// FOR WEKA OUTPUT
+		// double w1 = 0;
+		// double w2 = 0;
+		// double w3 = 0;
+		// double w4 = 0;
+		// double w5 = 0;
+		// int counter = 0;
+		// for (User user : users.values()) {
+		// System.out.println(counter);
+		// counter++;
+		// ArrayList<Paired> visitedPlaces = user.getVisitedPlaces();
+		// for (int i = 0; i < visitedPlaces.size(); i++) {
+		// if (user.getPlaceDistances().size() == 0) {
+		// user.calculatePlaceDistances(1000);
+		// }
+		// // System.out.println(user.getId() + " "+
+		// // checkins.get(i).getPlace_id() + " " +
+		// // user.getNum_checkins());
+		// Place prePlace = places.get(visitedPlaces.get(i).id);
+		//
+		// Collections.sort(visitedPlaces);
+		// double maxVisitedPlace = visitedPlaces.get(visitedPlaces.size() -
+		// 1).distance;
+		//
+		// int placeVisitNum = user.getVisitPlaceNum(prePlace);
+		// w2 = (double) placeVisitNum / maxVisitedPlace;
+		//
+		// double dist = user.getPlaceDistance(prePlace);
+		//
+		// w1 = 1 - (double) dist / user.getMaxPlaceDistance();
+		// int maxPlaceCheckin = placesArray.get(0).getNum_checkins();
+		// int placeCheckin = prePlace.getNum_checkins();
+		//
+		// w4 = (double) placeCheckin / maxPlaceCheckin;
+		//
+		// Integer[] visitedCategories = user.getVisitedCategories();
+		// int visitedCategory = user.getVisitCatNum(prePlace.getCategory());
+		// int maxVisitedCategory = 0;
+		// for (int k = 0; k < visitedCategories.length; k++) {
+		// if (visitedCategories[k] > maxVisitedCategory) {
+		// maxVisitedCategory = visitedCategories[k];
+		// }
+		// }
+		// w3 = (double) visitedCategory / maxVisitedCategory;
+		//
+		// ArrayList<Checkin> userCheckins = user.getCheckins();
+		// Checkin selectedCheckin = null;
+		// for (Checkin checkin : userCheckins) {
+		// if (checkin.getPlace_id().equals(prePlace.getId())) {
+		// selectedCheckin = checkin;
+		// }
+		// }
+		//
+		// int time_cat = getTimeCategory(selectedCheckin);
+		// if (time_cat == 1) {
+		// w5 = prePlace.getTime_category_1();
+		// } else if (time_cat == 2) {
+		// w5 = prePlace.getTime_category_2();
+		// } else if (time_cat == 3) {
+		// w5 = prePlace.getTime_category_3();
+		// } else if (time_cat == 4) {
+		// w5 = prePlace.getTime_category_4();
+		// }
+		// // }
+		// try {
+		// PrintWriter out = new PrintWriter(new BufferedWriter(new
+		// FileWriter("weka.txt", true)));
+		// out.println(w1 + "," + w4 + "," + w3 + "," + w5 + "," + w2 + "," +
+		// w2);
+		// out.close();
+		// } catch (IOException e) {
+		// // exception handling left as an exercise for the reader
+		// }
+		// }
+		// }
+
+		// FOR PERSONAL WEIGHTS
 		double w1 = 0;
 		double w2 = 0;
 		double w3 = 0;
@@ -920,18 +1044,19 @@ public class Main {
 		double w5 = 0;
 		int counter = 0;
 		for (User user : users.values()) {
+			w1 = 0;
+			w2 = 0;
+			w3 = 0;
+			w4 = 0;
+			w5 = 0;
 			System.out.println(counter);
-			counter++;
-			ArrayList<Paired> visitedPlaces = user.getVisitedPlaces();
-			for (int i = 0; i < visitedPlaces.size(); i++) {
+			ArrayList<Checkin> userCheckins = user.getCheckins();
+			for (Checkin checkin : userCheckins) {
+				Place prePlace = checkin.getPlace();
 				if (user.getPlaceDistances().size() == 0) {
 					user.calculatePlaceDistances(1000);
 				}
-				// System.out.println(user.getId() + " "+
-				// checkins.get(i).getPlace_id() + " " +
-				// user.getNum_checkins());
-				Place prePlace = places.get(visitedPlaces.get(i).id);
-
+				ArrayList<Paired> visitedPlaces = user.getVisitedPlaces();
 				Collections.sort(visitedPlaces);
 				double maxVisitedPlace = visitedPlaces.get(visitedPlaces.size() - 1).distance;
 
@@ -942,7 +1067,7 @@ public class Main {
 
 				w1 = 1 - (double) dist / user.getMaxPlaceDistance();
 				int maxPlaceCheckin = placesArray.get(0).getNum_checkins();
-				int placeCheckin = prePlace.getNum_checkins();
+				int placeCheckin = checkin.getPlace().getNum_checkins();
 
 				w4 = (double) placeCheckin / maxPlaceCheckin;
 
@@ -956,15 +1081,7 @@ public class Main {
 				}
 				w3 = (double) visitedCategory / maxVisitedCategory;
 
-				ArrayList<Checkin> userCheckins = user.getCheckins();
-				Checkin selectedCheckin = null;
-				for (Checkin checkin : userCheckins) {
-					if (checkin.getPlace_id().equals(prePlace.getId())) {
-						selectedCheckin = checkin;
-					}
-				}
-
-				int time_cat = getTimeCategory(selectedCheckin);
+				int time_cat = getTimeCategory(checkin);
 				if (time_cat == 1) {
 					w5 = prePlace.getTime_category_1();
 				} else if (time_cat == 2) {
@@ -974,15 +1091,13 @@ public class Main {
 				} else if (time_cat == 4) {
 					w5 = prePlace.getTime_category_4();
 				}
-				// }
-				try {
-					PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("weka.txt", true)));
-					out.println(w1 + "," + w4 + "," + w3 + "," + w5 + "," + w2 + "," + w2);
-					out.close();
-				} catch (IOException e) {
-					// exception handling left as an exercise for the reader
-				}
 			}
+			user.wdistance = w1 / user.getNum_checkins();
+			user.wpopular = w4 / user.getNum_checkins();
+			user.wvisitedP = w2 / user.getNum_checkins();
+			user.wtime = w5 / user.getNum_checkins();
+			user.wvisitedC = w3 / user.getNum_checkins();
+			counter++;
 		}
 
 		// for (int i = 0; i < checkins.size(); i++) {

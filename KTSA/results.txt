@@ -2139,4 +2139,11 @@ Accuracy: 0.6187390497224118
 Precision : 0.9234165141354926
 List Size: 100
 Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
-Former visit Predictions
+Former visit PredictionsStart Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+New Method Predictions
+ Distance : 0.0 VisitedPlace : 1.0 VisitedCategory : 0.0 PopularPlace : 0.0 Time 0.0
+Correct Predictions: 147489
+Total Predictions: 460034
+Accuracy: 0.3206045640104862
+Precision : 0.8683779807307659
+List Size: 50
