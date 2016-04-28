@@ -22,6 +22,16 @@ public class Place implements Serializable, Comparable<Object> {
 	private double time_category_2;
 	private double time_category_3;
 	private double time_category_4;
+	private double[] time_category;
+	
+	public double[] getTime_category() {
+		return time_category;
+	}
+
+	public void setTime_category(double[] time_category) {
+		this.time_category = time_category;
+	}
+
 	public ArrayList<Integer> checkin = new ArrayList<Integer>();
 
 	public double getTime_category_1() {
@@ -69,6 +79,7 @@ public class Place implements Serializable, Comparable<Object> {
 	public Place(String id, int category_id, double lat, double lon, String name, int num_checkins, Location location,
 			double time_category_1, double time_category_2, double time_category_3, double time_category_4) {
 		super();
+		time_category = new double[4];
 		this.id = id;
 		this.category_id = category_id;
 		this.lon = lon;
@@ -76,10 +87,10 @@ public class Place implements Serializable, Comparable<Object> {
 		this.name = name;
 		this.location = location;
 		this.num_checkins = num_checkins;
-		this.time_category_1 = time_category_1;
-		this.time_category_2 = time_category_2;
-		this.time_category_3 = time_category_3;
-		this.time_category_4 = time_category_4;
+		this.time_category[0] = time_category_1;
+		this.time_category[1] = time_category_2;
+		this.time_category[2] = time_category_3;
+		this.time_category[3] = time_category_4;
 
 	}
 

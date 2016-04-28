@@ -1,12 +1,10 @@
 package com.baydar.ktsa;
 
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -17,6 +15,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.concurrent.Callable;
 import java.util.concurrent.ThreadLocalRandom;
 
 import org.joda.time.DateTimeZone;
@@ -38,15 +37,16 @@ public class Main {
 	static ArrayList<Place> placesArray = new ArrayList<Place>();
 	static Place[] mostPopularPlaces = new Place[100];
 	static Place[] mostPopularNPlaces;
+	static Place mostPopularPlace;
 	static String database_name = "foursquare";
 	static String city = "Austin";
-	static int year = 110;
+	static int year = 111;
 
-	static double wdistance = 0;
+	static double wdistance = 1;
 	static double wvisitedP = 1;
-	static double wvisitedC = 0;
-	static double wpopular = 0;
-	static double wtime = 0;
+	static double wvisitedC = 1;
+	static double wpopular = 1;
+	static double wtime = 1;
 
 	static int closePlaceNumber = 0;
 
@@ -58,7 +58,7 @@ public class Main {
 		calculateUsersHomeLocations();
 		// calculateUsersPlaceDistances(1000);
 		setActiveUsers();
-		calculateWeights();
+		// calculateWeights();
 		testAll();
 		// System.out.println((double) closePlaceNumber / 3000);
 		// calculateSigma();
@@ -74,6 +74,7 @@ public class Main {
 		// calculateMaxAvgDistances();
 	}
 
+	// Calculate sigma distribution of user check-ins
 	public static void calculateSigma() {
 		int activeUsers = 0;
 		int rangeUsers = 0;
@@ -110,6 +111,7 @@ public class Main {
 
 	}
 
+	// Set active users whose check-ins over 8
 	public static void setActiveUsers() {
 		int activeCount = 0;
 		int freqCount = 0;
@@ -129,6 +131,7 @@ public class Main {
 		System.out.println(activeCount + " " + freqCount);
 	}
 
+	// Print Max Check-in Number By Unique Place Visited By Users
 	public static void getMaxCheckinNumByUniquePlaceVisited() {
 		int activeUserCount = 0;
 		double maxCheckinCount = 0;
@@ -141,6 +144,7 @@ public class Main {
 		System.out.println((double) maxCheckinCount / activeUserCount);
 	}
 
+	// Print Average Check-in Number By Users
 	public static void getAvgCheckinNumByUniquePlaceVisited() {
 		int activeUserCount = 0;
 		int checkinCount = 0;
@@ -153,6 +157,7 @@ public class Main {
 		System.out.println((double) checkinCount / activeUserCount);
 	}
 
+	// Print Average Visited Place Number By Users
 	public static void getAvgUniquePlaceVisited() {
 		int activeUserCount = 0;
 		int uniquePlaceCount = 0;
@@ -165,6 +170,7 @@ public class Main {
 		System.out.println((double) uniquePlaceCount / activeUserCount);
 	}
 
+	// Print Active User Number On Selected City
 	public static void getActiveUserNumByCity() {
 		int count = 0;
 		int checkinCount = 0;
@@ -177,6 +183,7 @@ public class Main {
 		System.out.println(count + " " + (double) checkinCount / count);
 	}
 
+	// Print Average Check-in Distances to User's Home
 	public static void calculateAverageDistances() {
 		double userDistance = 0;
 		double totalAvgDistance = 0;
@@ -197,6 +204,7 @@ public class Main {
 		System.out.println(totalAvgDistance / userCount);
 	}
 
+	// Print Max Check-in Distance to User's Home
 	public static void calculateMaxAvgDistances() {
 		double userDistance = 0;
 		double totalAvgDistance = 0;
@@ -219,6 +227,7 @@ public class Main {
 		System.out.println(totalAvgDistance / userCount);
 	}
 
+	// Calculate and Export to DB Place Popularity Time Ranges
 	public static void calculatePlaceTimes() {
 		// ArrayList<String> ids = new ArrayList<String>();
 		// ArrayList<Double> time1 = new ArrayList<Double>();
@@ -341,6 +350,7 @@ public class Main {
 		// }
 	}
 
+	// Test System
 	public static void testAll() {
 		double total = 0;
 		for (int k = 5; k < 6; k++) {
@@ -348,9 +358,9 @@ public class Main {
 			// calculateWeights();
 			// calculateUsersPlaceDistances(1000);
 			long tStart = System.currentTimeMillis();
-			for (int i = 6; i < 7; i++) {
+			for (int i = 8; i < 9; i++) {
 				for (int j = 1; j < 2; j++) {
-					makePredictions(i, j * 50);
+					selectPredictionMethod(i, j * 50);
 				}
 				// for(int j=0;j<testVal.length;j++){
 				// for(int t=0;t<testVal.length;t++){
@@ -376,13 +386,14 @@ public class Main {
 	}
 
 	// Prediction Method
-	// choice = 1 popular, = 2 closest,
-	public static void makePredictions(int choice, int listSize) {
+	// choice = 1 popular, = 2 closest, 3 = close-popular, 4 = popular-close, 5
+	// = category-based, 6 = new-method, 7 = former visits
+	public static void selectPredictionMethod(int choice, int listSize) {
+		double apr = 0;
 		int correctPredictions = 0;
 		double prec = 0;
 		if (choice == 1) {
 			logResults("Popular Predictions");
-			prec = 0;
 			for (int i = 0; i < predictedCheckins.size(); i++) {
 				System.out.println(i);
 				deleteForPrediction(predictedCheckins.get(i));
@@ -391,12 +402,11 @@ public class Main {
 					correctPredictions++;
 					prec += result;
 				}
+				apr += result;
 				giveBackCheckin(predictedCheckins.get(i));
 			}
-			prec = prec / correctPredictions;
 		} else if (choice == 2) {
 			logResults("Close Predictions");
-			prec = 0;
 			for (int i = 0; i < predictedCheckins.size(); i++) {
 				System.out.println(i);
 				deleteForPrediction(predictedCheckins.get(i));
@@ -405,12 +415,11 @@ public class Main {
 					correctPredictions++;
 					prec += result;
 				}
+				apr += result;
 				giveBackCheckin(predictedCheckins.get(i));
 			}
-			prec = prec / correctPredictions;
 		} else if (choice == 3) {
 			logResults("Close Popular Predictions");
-			prec = 0;
 			for (int i = 0; i < predictedCheckins.size(); i++) {
 				System.out.println(i);
 				deleteForPrediction(predictedCheckins.get(i));
@@ -419,13 +428,12 @@ public class Main {
 					correctPredictions++;
 					prec += result;
 				}
+				apr += result;
 				giveBackCheckin(predictedCheckins.get(i));
 			}
-			prec = prec / correctPredictions;
 		} else if (choice == 4) {
 			logResults("Popular Close Predictions");
 			setMostPopularNPlaces(1000);
-			prec = 0;
 			for (int i = 0; i < predictedCheckins.size(); i++) {
 				System.out.println(i);
 				deleteForPrediction(predictedCheckins.get(i));
@@ -434,12 +442,11 @@ public class Main {
 					correctPredictions++;
 					prec += result;
 				}
+				apr += result;
 				giveBackCheckin(predictedCheckins.get(i));
 			}
-			prec = prec / correctPredictions;
 		} else if (choice == 5) {
 			logResults("Category-based Predictions");
-			prec = 0;
 			for (int i = 0; i < predictedCheckins.size(); i++) {
 				System.out.println(i);
 				deleteForPrediction(predictedCheckins.get(i));
@@ -448,13 +455,12 @@ public class Main {
 					correctPredictions++;
 					prec += result;
 				}
+				apr += result;
 				giveBackCheckin(predictedCheckins.get(i));
 			}
-			prec = prec / correctPredictions;
 		} else if (choice == 6) {
 			logResults("New Method Predictions\n Distance : " + wdistance + " VisitedPlace : " + wvisitedP
 					+ " VisitedCategory : " + wvisitedC + " PopularPlace : " + wpopular + " Time " + wtime);
-			prec = 0;
 			for (int i = 0; i < predictedCheckins.size(); i++) {
 				System.out.println(i);
 				deleteForPrediction(predictedCheckins.get(i));
@@ -463,12 +469,11 @@ public class Main {
 					correctPredictions++;
 					prec += result;
 				}
+				apr += result;
 				giveBackCheckin(predictedCheckins.get(i));
 			}
-			prec = prec / correctPredictions;
 		} else if (choice == 7) {
 			logResults("Former visit Predictions");
-			prec = 0;
 			for (int i = 0; i < predictedCheckins.size(); i++) {
 				System.out.println(i);
 				deleteForPrediction(predictedCheckins.get(i));
@@ -477,26 +482,42 @@ public class Main {
 					correctPredictions++;
 					prec += result;
 				}
+				apr += result;
 				giveBackCheckin(predictedCheckins.get(i));
 			}
-			prec = prec / correctPredictions;
+		} else if (choice == 8) {
+			logResults("Check-in Location Used Predictions");
+			for (int i = 0; i < predictedCheckins.size(); i++) {
+				System.out.println(i);
+				deleteForPrediction(predictedCheckins.get(i));
+				double result = checkinLocationUsedPrediction(predictedCheckins.get(i), listSize);
+				if (result != 0) {
+					correctPredictions++;
+					prec += result;
+				}
+				apr += result;
+				giveBackCheckin(predictedCheckins.get(i));
+			}
 		}
-
+		prec = prec / correctPredictions;
+		apr = apr / predictedCheckins.size();
 		System.out.println(correctPredictions + " " + prec);
 		System.out.println(predictedCheckins.size());
 		System.out.println((double) correctPredictions / predictedCheckins.size());
+		System.out.println("apr :" + apr);
 		logResults("\nCorrect Predictions: " + correctPredictions + "\nTotal Predictions: " + predictedCheckins.size()
 				+ "\nAccuracy: " + ((double) correctPredictions / predictedCheckins.size()) + "\nPrecision : " + prec
 				+ "\nList Size: " + listSize + "\n");
 	}
 
+	// Proposed new method for check-in prediction
 	public static double newMethod(Checkin predictedCheckin, int num) {
 		User user = users.get(predictedCheckin.getUser_id());
-		wdistance = user.wdistance;
-		wpopular = user.wpopular;
-		wtime = user.wtime;
-		wvisitedC = user.wvisitedC;
-		wvisitedP = user.wvisitedP;
+		// wdistance = user.wdistance;
+		// wpopular = user.wpopular;
+		// wtime = user.wtime;
+		// wvisitedC = user.wvisitedC;
+		// wvisitedP = user.wvisitedP;
 		Place prePlace = predictedCheckin.getPlace();
 
 		if (user.getPlaceDistances().size() == 0) {
@@ -580,34 +601,30 @@ public class Main {
 			// }
 		}
 
-		int hour = predictedCheckin.getTimestamp().getHourOfDay();
-		int timeInterval = 0;
-		if (hour > 0 && hour <= 6) {
-			timeInterval = 0;
-		} else if (hour > 6 && hour <= 12) {
-			timeInterval = 1;
-		} else if (hour > 12 && hour <= 18) {
-			timeInterval = 2;
-		} else {
-			timeInterval = 3;
-		}
+		int timeInterval = getTimeCategory(predictedCheckin);
 
 		// Add time category to ranks
 		for (int i = 0; i < placesArray.size(); i++) {
 			double rank = rankPlaces.get(placesArray.get(i).getId()).rankPoint;
-			if (timeInterval == 0) {
-				rankPlaces.put(placesArray.get(i).getId(), new PlaceRank(placesArray.get(i).getId(),
-						rank + (wtime * placesArray.get(i).getTime_category_1())));
-			} else if (timeInterval == 1) {
-				rankPlaces.put(placesArray.get(i).getId(), new PlaceRank(placesArray.get(i).getId(),
-						rank + (wtime * placesArray.get(i).getTime_category_2())));
-			} else if (timeInterval == 2) {
-				rankPlaces.put(placesArray.get(i).getId(), new PlaceRank(placesArray.get(i).getId(),
-						rank + (wtime * placesArray.get(i).getTime_category_3())));
-			} else if (timeInterval == 3) {
-				rankPlaces.put(placesArray.get(i).getId(), new PlaceRank(placesArray.get(i).getId(),
-						rank + (wtime * placesArray.get(i).getTime_category_4())));
-			}
+			rankPlaces.put(placesArray.get(i).getId(), new PlaceRank(placesArray.get(i).getId(),
+					rank + (wtime * placesArray.get(i).getTime_category()[timeInterval])));
+			// if (timeInterval == 0) {
+			// rankPlaces.put(placesArray.get(i).getId(), new
+			// PlaceRank(placesArray.get(i).getId(),
+			// rank + (wtime * placesArray.get(i).getTime_category_1())));
+			// } else if (timeInterval == 1) {
+			// rankPlaces.put(placesArray.get(i).getId(), new
+			// PlaceRank(placesArray.get(i).getId(),
+			// rank + (wtime * placesArray.get(i).getTime_category_2())));
+			// } else if (timeInterval == 2) {
+			// rankPlaces.put(placesArray.get(i).getId(), new
+			// PlaceRank(placesArray.get(i).getId(),
+			// rank + (wtime * placesArray.get(i).getTime_category_3())));
+			// } else if (timeInterval == 3) {
+			// rankPlaces.put(placesArray.get(i).getId(), new
+			// PlaceRank(placesArray.get(i).getId(),
+			// rank + (wtime * placesArray.get(i).getTime_category_4())));
+			// }
 		}
 
 		// // Ignore all but close places
@@ -652,6 +669,7 @@ public class Main {
 		return 0;
 	}
 
+	// Former visits for check-in prediction
 	public static double formerVisitPrediction(Checkin predictedCheckin, int num) {
 		User user = users.get(predictedCheckin.getUser_id());
 		ArrayList<Paired> visitedPlaces = user.getVisitedPlaces();
@@ -682,6 +700,62 @@ public class Main {
 		return 0;
 	}
 
+	// Check-in Location Used For Prediction
+	public static double checkinLocationUsedPrediction(Checkin predictedCheckin, int num) {
+		User user = users.get(predictedCheckin.getUser_id());
+		Place prePlace = places.get(predictedCheckin.getPlace_id());
+
+		// Ignore all but close places
+		ArrayList<Paired> placeToPlaceDistances = new ArrayList<Paired>();
+		for (Place place : places.values()) {
+			placeToPlaceDistances
+					.add(new Paired(place.getId(), prePlace.getLocation().getDistance(place.getLocation())));
+		}
+		Collections.sort(placeToPlaceDistances);
+
+		ArrayList<PlaceRank> ranks = new ArrayList<PlaceRank>();
+		for (int i = 0; i < 1000; i++) {
+
+			// ranks.add(new PlaceRank(placeToPlaceDistances.get(i).id,
+			// places.get(placeToPlaceDistances.get(i).id).getNum_checkins()));
+			// //Using place popularity
+			// ranks.add(new PlaceRank(placeToPlaceDistances.get(i).id,
+			// places.get(placeToPlaceDistances.get(i).id).getTime_category()[getTimeCategory(predictedCheckin)]));
+			// // Using
+			// // time
+			// // category
+//			ranks.add(
+//					new PlaceRank(placeToPlaceDistances.get(i).id,
+//							places.get(placeToPlaceDistances.get(i).id)
+//									.getTime_category()[getTimeCategory(predictedCheckin)]
+//									* places.get(placeToPlaceDistances.get(i).id).getNum_checkins())); // Using
+//																										// time_category
+//																										// and*
+//																										// popularity
+//																										// together
+			ranks.add(
+					new PlaceRank(placeToPlaceDistances.get(i).id,
+							places.get(placeToPlaceDistances.get(i).id)
+									.getTime_category()[getTimeCategory(predictedCheckin)]
+									+ places.get(placeToPlaceDistances.get(i).id).getNum_checkins()/mostPopularPlace.getNum_checkins())); // Using
+																										// time_category
+																										// and +
+																										// popularity
+																										// together
+			// ranks.add(new PlaceRank(placeToPlaceDistances.get(i).id,
+			// ThreadLocalRandom.current().nextDouble(0, 1))); //Random
+		}
+		Collections.sort(ranks);
+
+		for (int i = 0; i < num; i++) {
+			if (ranks.get(i).id.equals(predictedCheckin.getPlace_id())) {
+				return (double) (num - i) / (double) num;
+			}
+		}
+		return 0;
+	}
+
+	// Category-based prediction
 	public static double categoryPrediction(Checkin predictedCheckin, int num) {
 		User user = users.get(predictedCheckin.getUser_id());
 		// Category mostVisited = categories.get(user.getMostVisitedCategory());
@@ -702,6 +776,7 @@ public class Main {
 		return 0;
 	}
 
+	// Get top N most popular places
 	public static Place[] getMostPopularByCategories(Integer[] visitedCategories, int num) {
 		ArrayList<Place> categoryPlace = new ArrayList<Place>();
 		double sum = 0;
@@ -740,6 +815,7 @@ public class Main {
 		return returnPlace;
 	}
 
+	// Get most popular places by category
 	@SuppressWarnings("unchecked")
 	public static Place[] getMostPopularByCategory(Category mostVisited, int num) {
 		ArrayList<Place> categoryPlace = new ArrayList<Place>();
@@ -773,6 +849,7 @@ public class Main {
 		}
 	}
 
+	// Calculate and set top N closest Places to Users
 	public static void calculateUsersPlaceDistances(int num) {
 		int i = 0;
 		for (User user : users.values()) {
@@ -791,8 +868,10 @@ public class Main {
 		for (int i = 0; i < mostPopularPlaces.length; i++) {
 			mostPopularPlaces[i] = placesArray.get(i);
 		}
+		mostPopularPlace = mostPopularPlaces[0];
 	}
 
+	// Set most popular N places
 	@SuppressWarnings("unchecked")
 	public static void setMostPopularNPlaces(int size) {
 		Collections.sort(placesArray);
@@ -802,6 +881,7 @@ public class Main {
 		}
 	}
 
+	// get top N most popular places from given places list
 	public static Place[] getMostPopularNPlaces(Place[] place, int size) {
 		Arrays.sort(place);
 		mostPopularNPlaces = new Place[size];
@@ -871,6 +951,7 @@ public class Main {
 		return 0;
 	}
 
+	// Get place distances to user
 	public static ArrayList<Paired> getPlaceDistances(User user) {
 		ArrayList<Paired> pairs = new ArrayList<Paired>();
 		for (Place place : places.values()) {
@@ -942,23 +1023,23 @@ public class Main {
 		logResults("Start Date : " + startDate.toString() + " End Date:" + endDate.toString() + "\n");
 		int count = 0;
 
-		// for (int i = 0; i < checkins.size(); i++) {
-		// if (checkins.get(i).getTimestamp().isAfter(startDate) &&
-		// checkins.get(i).getTimestamp().isBefore(endDate)
-		// && users.get(checkins.get(i).getUser_id()).isIs_active()) {
-		// predictedCheckins.add(checkins.get(i));
-		// // deleteForPrediction(checkins.get(i));
-		// count++;
-		// }
-		// if (count == 3000) {
-		// break;
-		// }
-		// }
-		for (Checkin checkin : checkins) {
-			predictedCheckins.add(checkin);
+		for (int i = 0; i < checkins.size(); i++) {
+			if (checkins.get(i).getTimestamp().isAfter(startDate) && checkins.get(i).getTimestamp().isBefore(endDate)
+					&& users.get(checkins.get(i).getUser_id()).isIs_active()) {
+				predictedCheckins.add(checkins.get(i));
+				// deleteForPrediction(checkins.get(i));
+				count++;
+			}
+			if (count == 3000) {
+				break;
+			}
 		}
+		// for (Checkin checkin : checkins) {
+		// predictedCheckins.add(checkin);
+		// }
 	}
 
+	// Calculate weights according to given condition
 	public static void calculateWeights() {
 		// FOR WEKA OUTPUT
 		// double w1 = 0;
@@ -1082,15 +1163,8 @@ public class Main {
 				w3 = (double) visitedCategory / maxVisitedCategory;
 
 				int time_cat = getTimeCategory(checkin);
-				if (time_cat == 1) {
-					w5 = prePlace.getTime_category_1();
-				} else if (time_cat == 2) {
-					w5 = prePlace.getTime_category_2();
-				} else if (time_cat == 3) {
-					w5 = prePlace.getTime_category_3();
-				} else if (time_cat == 4) {
-					w5 = prePlace.getTime_category_4();
-				}
+				w5 = prePlace.getTime_category()[time_cat];
+
 			}
 			user.wdistance = w1 / user.getNum_checkins();
 			user.wpopular = w4 / user.getNum_checkins();
@@ -1168,26 +1242,29 @@ public class Main {
 		// wtime = w5 / checkins.size();
 	}
 
+	// Return time category for given check-in
 	public static int getTimeCategory(Checkin checkin) {
 		LocalDateTime ldt = checkin.getTimestamp();
 		int hour = ldt.getHourOfDay();
 		if (hour > 0 && hour <= 6) {
-			return 1;
+			return 0;
 		} else if (hour > 6 && hour <= 12) {
-			return 2;
+			return 1;
 		} else if (hour > 12 && hour <= 18) {
-			return 3;
+			return 2;
 		} else {
-			return 4;
+			return 3;
 		}
 	}
 
+	// Delete check-in from the system before prediction
 	public static void deleteForPrediction(Checkin checkin) {
 		User user = users.get(checkin.getUser_id());
 		user.deleteCheckin(checkin);
 		places.get(checkin.getPlace_id()).setNum_checkins(places.get(checkin.getPlace_id()).getNum_checkins() - 1);
 	}
 
+	// Give back the predicted check-in to system
 	public static void giveBackCheckin(Checkin checkin) {
 		User user = users.get(checkin.getUser_id());
 		user.addCheckin(checkin);
@@ -1547,6 +1624,7 @@ public class Main {
 		}
 	}
 
+	// Log results for debugging
 	public static void logResults(String result) {
 		try {
 			File newTextFile = new File("results.txt");
