@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.Timestamp;
@@ -38,17 +39,19 @@ public class Main {
 	static Place[] mostPopularPlaces = new Place[100];
 	static Place[] mostPopularNPlaces;
 	static Place mostPopularPlace;
-	static String database_name = "foursquare";
+	static String database_name = "gowalla_u";
 	static String city = "Austin";
-	static int year = 111;
+	static int year = 110;
 
-	static double wdistance = 1;
+	static double wdistance = 0;
 	static double wvisitedP = 1;
-	static double wvisitedC = 1;
-	static double wpopular = 1;
-	static double wtime = 1;
+	static double wvisitedC = 0;
+	static double wpopular = 0;
+	static double wtime = 0;
 
 	static int closePlaceNumber = 0;
+
+	static double avgDistance = 0;
 
 	public static void main(String[] args) {
 
@@ -58,11 +61,15 @@ public class Main {
 		calculateUsersHomeLocations();
 		// calculateUsersPlaceDistances(1000);
 		setActiveUsers();
-		// calculateWeights();
+
 		testAll();
+
+		// findAvgFriendNum();
+		// findAvgDistance();
+		// findoutliners();
 		// System.out.println((double) closePlaceNumber / 3000);
 		// calculateSigma();
-
+		// calculateWeights();
 		// getAvgUniquePlaceVisited();
 		// getAvgCheckinNumByUniquePlaceVisited();
 		// getMaxCheckinNumByUniquePlaceVisited();
@@ -72,6 +79,222 @@ public class Main {
 		// calculatePlaceTimes(); // for once do it for gowalla, too
 		// calculateAverageDistances();
 		// calculateMaxAvgDistances();
+	}
+
+	public static void findAvgFriendNum() {
+		double friendNum = 0;
+		int activeUsers = 0;
+		for (User user : users.values()) {
+			if (user.isIs_active()) {
+				friendNum += user.getNum_friends();
+				activeUsers++;
+			}
+		}
+		System.out.println(friendNum / activeUsers);
+	}
+
+	public static void findAvgDistance() {
+		getPredictedCheckins(5);
+		for (int i = 0; i < predictedCheckins.size(); i++) {
+			User user = users.get(predictedCheckins.get(i).getUser_id());
+			Place prePlace = places.get(predictedCheckins.get(i).getPlace_id());
+			int closePlaceNumberLimit = 1000;
+
+			// Ignore all but close places
+			ArrayList<Paired> placeToPlaceDistances = new ArrayList<Paired>();
+			for (Place place : places.values()) {
+				placeToPlaceDistances
+						.add(new Paired(place.getId(), prePlace.getLocation().getDistance(place.getLocation())));
+			}
+			Collections.sort(placeToPlaceDistances);
+			if (placeToPlaceDistances.get(1000).distance > 10) {
+				System.out.println(prePlace.getId() + "wtf" + placeToPlaceDistances.get(1000).distance + " "
+						+ places.get(placeToPlaceDistances.get(1000).id).getId());
+			}
+			avgDistance += placeToPlaceDistances.get(1000).distance;
+		}
+		System.out.println("avg dist : " + avgDistance / 3000);
+	}
+
+	public static void findoutliners() {
+		for (User user : users.values()) {
+			if (user.getNum_checkins() > 128) {
+				System.out.println(user.getId());
+			}
+		}
+	}
+
+	// Test System
+	public static void testAll() {
+		double total = 0;
+		for (int k = 4; k < 5; k++) {
+			getPredictedCheckins(k);
+			// calculateWeights();
+			// calculateUsersPlaceDistances(1000);
+			long tStart = System.currentTimeMillis();
+			for (int i = 9; i < 10; i++) {
+				for (int j = 1; j < 11; j++) {
+					selectPredictionMethod(i, j * 10);
+				}
+				// for(int j=0;j<testVal.length;j++){
+				// for(int t=0;t<testVal.length;t++){
+				// for(int m=0;m<testVal.length;m++){
+				// for(int l=0;l<testVal.length;l++){
+				// wdistance = testVal[j];
+				// wvisitedP = testVal[t];
+				// wvisitedC = testVal[m];
+				// wpopular = testVal[l];
+				// makePredictions(i);
+				// }
+				// }
+				// }
+				// }
+			}
+			long tEnd = System.currentTimeMillis();
+			long tDelta = tEnd - tStart;
+			double elapsedSeconds = tDelta / 1000.0;
+			total += elapsedSeconds;
+			System.out.println(elapsedSeconds + " time");
+		}
+		System.out.println(total + " total time");
+	}
+
+	// Prediction Method
+	// choice = 1 popular, = 2 closest, 3 = close-popular, 4 = popular-close, 5
+	// = category-based, 6 = new-method, 7 = former visits
+	public static void selectPredictionMethod(int choice, int listSize) {
+		double apr = 0;
+		int correctPredictions = 0;
+		double prec = 0;
+		if (choice == 1) {
+			logResults("Popular Predictions");
+			for (int i = 0; i < predictedCheckins.size(); i++) {
+				System.out.println(i);
+				deleteForPrediction(predictedCheckins.get(i));
+				double result = popularPrediction(predictedCheckins.get(i), listSize);
+				if (result != 0) {
+					correctPredictions++;
+					prec += result;
+				}
+				apr += result;
+				giveBackCheckin(predictedCheckins.get(i));
+			}
+		} else if (choice == 2) {
+			logResults("Close Predictions");
+			for (int i = 0; i < predictedCheckins.size(); i++) {
+				System.out.println(i);
+				deleteForPrediction(predictedCheckins.get(i));
+				double result = closestPrediction(predictedCheckins.get(i), listSize);
+				if (result != 0) {
+					correctPredictions++;
+					prec += result;
+				}
+				apr += result;
+				giveBackCheckin(predictedCheckins.get(i));
+			}
+		} else if (choice == 3) {
+			logResults("Close Popular Predictions");
+			for (int i = 0; i < predictedCheckins.size(); i++) {
+				System.out.println(i);
+				deleteForPrediction(predictedCheckins.get(i));
+				double result = closePopularPrediction(predictedCheckins.get(i), 1000, listSize);
+				if (result != 0) {
+					correctPredictions++;
+					prec += result;
+				}
+				apr += result;
+				giveBackCheckin(predictedCheckins.get(i));
+			}
+		} else if (choice == 4) {
+			logResults("Popular Close Predictions");
+			setMostPopularNPlaces(1000);
+			for (int i = 0; i < predictedCheckins.size(); i++) {
+				System.out.println(i);
+				deleteForPrediction(predictedCheckins.get(i));
+				double result = popularClosePrediction(predictedCheckins.get(i), listSize);
+				if (result != 0) {
+					correctPredictions++;
+					prec += result;
+				}
+				apr += result;
+				giveBackCheckin(predictedCheckins.get(i));
+			}
+		} else if (choice == 5) {
+			logResults("Category-based Predictions");
+			for (int i = 0; i < predictedCheckins.size(); i++) {
+				System.out.println(i);
+				deleteForPrediction(predictedCheckins.get(i));
+				double result = categoryPrediction(predictedCheckins.get(i), listSize);
+				if (result != 0) {
+					correctPredictions++;
+					prec += result;
+				}
+				apr += result;
+				giveBackCheckin(predictedCheckins.get(i));
+			}
+		} else if (choice == 6) {
+			logResults("New Method Predictions\n Distance : " + wdistance + " VisitedPlace : " + wvisitedP
+					+ " VisitedCategory : " + wvisitedC + " PopularPlace : " + wpopular + " Time " + wtime);
+			for (int i = 0; i < predictedCheckins.size(); i++) {
+				System.out.println(i);
+				deleteForPrediction(predictedCheckins.get(i));
+				double result = newMethod(predictedCheckins.get(i), listSize);
+				if (result != 0) {
+					correctPredictions++;
+					prec += result;
+				}
+				apr += result;
+				giveBackCheckin(predictedCheckins.get(i));
+			}
+		} else if (choice == 7) {
+			logResults("Former visit Predictions");
+			for (int i = 0; i < predictedCheckins.size(); i++) {
+				System.out.println(i);
+				deleteForPrediction(predictedCheckins.get(i));
+				double result = formerVisitPrediction(predictedCheckins.get(i), listSize);
+				if (result != 0) {
+					correctPredictions++;
+					prec += result;
+				}
+				apr += result;
+				giveBackCheckin(predictedCheckins.get(i));
+			}
+		} else if (choice == 8) {
+			logResults("Check-in Location Used Predictions");
+			for (int i = 0; i < predictedCheckins.size(); i++) {
+				System.out.println(i);
+				deleteForPrediction(predictedCheckins.get(i));
+				double result = checkinLocationUsedPrediction(predictedCheckins.get(i), listSize);
+				if (result != 0) {
+					correctPredictions++;
+					prec += result;
+				}
+				apr += result;
+				giveBackCheckin(predictedCheckins.get(i));
+			}
+		} else if (choice == 9) {
+			logResults("Check-in Location Used Predictions");
+			for (int i = 0; i < predictedCheckins.size(); i++) {
+				System.out.println(i);
+				deleteForPrediction(predictedCheckins.get(i));
+				double result = friendshipPrediction(predictedCheckins.get(i), listSize);
+				if (result != 0) {
+					correctPredictions++;
+					prec += result;
+				}
+				apr += result;
+				giveBackCheckin(predictedCheckins.get(i));
+			}
+		}
+		prec = prec / correctPredictions;
+		apr = apr / predictedCheckins.size();
+		System.out.println(correctPredictions + " " + prec);
+		System.out.println(predictedCheckins.size());
+		System.out.println((double) correctPredictions / predictedCheckins.size());
+		System.out.println("apr :" + apr);
+		logResults("\nCorrect Predictions: " + correctPredictions + "\nTotal Predictions: " + predictedCheckins.size()
+				+ "\nAccuracy: " + ((double) correctPredictions / predictedCheckins.size()) + "\nPrecision : " + prec
+				+ "\nList Size: " + listSize + "\n");
 	}
 
 	// Calculate sigma distribution of user check-ins
@@ -229,17 +452,17 @@ public class Main {
 
 	// Calculate and Export to DB Place Popularity Time Ranges
 	public static void calculatePlaceTimes() {
-		// ArrayList<String> ids = new ArrayList<String>();
-		// ArrayList<Double> time1 = new ArrayList<Double>();
-		// ArrayList<Double> time2 = new ArrayList<Double>();
-		// ArrayList<Double> time3 = new ArrayList<Double>();
-		// ArrayList<Double> time4 = new ArrayList<Double>();
-		//
+		ArrayList<String> ids = new ArrayList<String>();
+		ArrayList<Double> time1 = new ArrayList<Double>();
+		ArrayList<Double> time2 = new ArrayList<Double>();
+		ArrayList<Double> time3 = new ArrayList<Double>();
+		ArrayList<Double> time4 = new ArrayList<Double>();
+
 		// Connection c = null;
 		// Statement stmt = null;
 		// int counter = 0;
 		// for (Place place : placesArray) {
-		// if (place.getNum_checkins() < 10) {
+		// if (place.getNum_checkins() > 0) {
 		// int cat1 = 0;
 		// int cat2 = 0;
 		// int cat3 = 0;
@@ -327,8 +550,8 @@ public class Main {
 		// DriverManager.getConnection("jdbc:postgresql://localhost:5432/gowalla_u",
 		// "postgres", "02741903");
 		// PreparedStatement ps = c.prepareStatement(
-		// "update places set time_category_1 = ?, time_category_2 = ?,
-		// time_category_3 = ? , time_category_4 = ? where id = ?");
+		// "update places set time_category_1 = ?, time_category_2 =
+		// ?,time_category_3 = ? , time_category_4 = ? where id = ?");
 		// if (true) {
 		// c.setAutoCommit(false);
 		// }
@@ -348,166 +571,6 @@ public class Main {
 		// System.err.println(e.getClass().getName() + " : " + e.getMessage());
 		// System.exit(0);
 		// }
-	}
-
-	// Test System
-	public static void testAll() {
-		double total = 0;
-		for (int k = 5; k < 6; k++) {
-			getPredictedCheckins(k);
-			// calculateWeights();
-			// calculateUsersPlaceDistances(1000);
-			long tStart = System.currentTimeMillis();
-			for (int i = 8; i < 9; i++) {
-				for (int j = 1; j < 2; j++) {
-					selectPredictionMethod(i, j * 50);
-				}
-				// for(int j=0;j<testVal.length;j++){
-				// for(int t=0;t<testVal.length;t++){
-				// for(int m=0;m<testVal.length;m++){
-				// for(int l=0;l<testVal.length;l++){
-				// wdistance = testVal[j];
-				// wvisitedP = testVal[t];
-				// wvisitedC = testVal[m];
-				// wpopular = testVal[l];
-				// makePredictions(i);
-				// }
-				// }
-				// }
-				// }
-			}
-			long tEnd = System.currentTimeMillis();
-			long tDelta = tEnd - tStart;
-			double elapsedSeconds = tDelta / 1000.0;
-			total += elapsedSeconds;
-			System.out.println(elapsedSeconds + " time");
-		}
-		System.out.println(total + " total time");
-	}
-
-	// Prediction Method
-	// choice = 1 popular, = 2 closest, 3 = close-popular, 4 = popular-close, 5
-	// = category-based, 6 = new-method, 7 = former visits
-	public static void selectPredictionMethod(int choice, int listSize) {
-		double apr = 0;
-		int correctPredictions = 0;
-		double prec = 0;
-		if (choice == 1) {
-			logResults("Popular Predictions");
-			for (int i = 0; i < predictedCheckins.size(); i++) {
-				System.out.println(i);
-				deleteForPrediction(predictedCheckins.get(i));
-				double result = popularPrediction(predictedCheckins.get(i), listSize);
-				if (result != 0) {
-					correctPredictions++;
-					prec += result;
-				}
-				apr += result;
-				giveBackCheckin(predictedCheckins.get(i));
-			}
-		} else if (choice == 2) {
-			logResults("Close Predictions");
-			for (int i = 0; i < predictedCheckins.size(); i++) {
-				System.out.println(i);
-				deleteForPrediction(predictedCheckins.get(i));
-				double result = closestPrediction(predictedCheckins.get(i), listSize);
-				if (result != 0) {
-					correctPredictions++;
-					prec += result;
-				}
-				apr += result;
-				giveBackCheckin(predictedCheckins.get(i));
-			}
-		} else if (choice == 3) {
-			logResults("Close Popular Predictions");
-			for (int i = 0; i < predictedCheckins.size(); i++) {
-				System.out.println(i);
-				deleteForPrediction(predictedCheckins.get(i));
-				double result = closePopularPrediction(predictedCheckins.get(i), 1000, listSize);
-				if (result != 0) {
-					correctPredictions++;
-					prec += result;
-				}
-				apr += result;
-				giveBackCheckin(predictedCheckins.get(i));
-			}
-		} else if (choice == 4) {
-			logResults("Popular Close Predictions");
-			setMostPopularNPlaces(1000);
-			for (int i = 0; i < predictedCheckins.size(); i++) {
-				System.out.println(i);
-				deleteForPrediction(predictedCheckins.get(i));
-				double result = popularClosePrediction(predictedCheckins.get(i), listSize);
-				if (result != 0) {
-					correctPredictions++;
-					prec += result;
-				}
-				apr += result;
-				giveBackCheckin(predictedCheckins.get(i));
-			}
-		} else if (choice == 5) {
-			logResults("Category-based Predictions");
-			for (int i = 0; i < predictedCheckins.size(); i++) {
-				System.out.println(i);
-				deleteForPrediction(predictedCheckins.get(i));
-				double result = categoryPrediction(predictedCheckins.get(i), listSize);
-				if (result != 0) {
-					correctPredictions++;
-					prec += result;
-				}
-				apr += result;
-				giveBackCheckin(predictedCheckins.get(i));
-			}
-		} else if (choice == 6) {
-			logResults("New Method Predictions\n Distance : " + wdistance + " VisitedPlace : " + wvisitedP
-					+ " VisitedCategory : " + wvisitedC + " PopularPlace : " + wpopular + " Time " + wtime);
-			for (int i = 0; i < predictedCheckins.size(); i++) {
-				System.out.println(i);
-				deleteForPrediction(predictedCheckins.get(i));
-				double result = newMethod(predictedCheckins.get(i), listSize);
-				if (result != 0) {
-					correctPredictions++;
-					prec += result;
-				}
-				apr += result;
-				giveBackCheckin(predictedCheckins.get(i));
-			}
-		} else if (choice == 7) {
-			logResults("Former visit Predictions");
-			for (int i = 0; i < predictedCheckins.size(); i++) {
-				System.out.println(i);
-				deleteForPrediction(predictedCheckins.get(i));
-				double result = formerVisitPrediction(predictedCheckins.get(i), listSize);
-				if (result != 0) {
-					correctPredictions++;
-					prec += result;
-				}
-				apr += result;
-				giveBackCheckin(predictedCheckins.get(i));
-			}
-		} else if (choice == 8) {
-			logResults("Check-in Location Used Predictions");
-			for (int i = 0; i < predictedCheckins.size(); i++) {
-				System.out.println(i);
-				deleteForPrediction(predictedCheckins.get(i));
-				double result = checkinLocationUsedPrediction(predictedCheckins.get(i), listSize);
-				if (result != 0) {
-					correctPredictions++;
-					prec += result;
-				}
-				apr += result;
-				giveBackCheckin(predictedCheckins.get(i));
-			}
-		}
-		prec = prec / correctPredictions;
-		apr = apr / predictedCheckins.size();
-		System.out.println(correctPredictions + " " + prec);
-		System.out.println(predictedCheckins.size());
-		System.out.println((double) correctPredictions / predictedCheckins.size());
-		System.out.println("apr :" + apr);
-		logResults("\nCorrect Predictions: " + correctPredictions + "\nTotal Predictions: " + predictedCheckins.size()
-				+ "\nAccuracy: " + ((double) correctPredictions / predictedCheckins.size()) + "\nPrecision : " + prec
-				+ "\nList Size: " + listSize + "\n");
 	}
 
 	// Proposed new method for check-in prediction
@@ -704,6 +767,7 @@ public class Main {
 	public static double checkinLocationUsedPrediction(Checkin predictedCheckin, int num) {
 		User user = users.get(predictedCheckin.getUser_id());
 		Place prePlace = places.get(predictedCheckin.getPlace_id());
+		int closePlaceNumberLimit = 1000;
 
 		// Ignore all but close places
 		ArrayList<Paired> placeToPlaceDistances = new ArrayList<Paired>();
@@ -712,46 +776,135 @@ public class Main {
 					.add(new Paired(place.getId(), prePlace.getLocation().getDistance(place.getLocation())));
 		}
 		Collections.sort(placeToPlaceDistances);
-
+		int choice = 0;
 		ArrayList<PlaceRank> ranks = new ArrayList<PlaceRank>();
-		for (int i = 0; i < 1000; i++) {
+		for (int i = 0; i < closePlaceNumberLimit; i++) {
 
-			// ranks.add(new PlaceRank(placeToPlaceDistances.get(i).id,
-			// places.get(placeToPlaceDistances.get(i).id).getNum_checkins()));
-			// //Using place popularity
-			// ranks.add(new PlaceRank(placeToPlaceDistances.get(i).id,
-			// places.get(placeToPlaceDistances.get(i).id).getTime_category()[getTimeCategory(predictedCheckin)]));
-			// // Using
-			// // time
-			// // category
-//			ranks.add(
-//					new PlaceRank(placeToPlaceDistances.get(i).id,
-//							places.get(placeToPlaceDistances.get(i).id)
-//									.getTime_category()[getTimeCategory(predictedCheckin)]
-//									* places.get(placeToPlaceDistances.get(i).id).getNum_checkins())); // Using
-//																										// time_category
-//																										// and*
-//																										// popularity
-//																										// together
-			ranks.add(
-					new PlaceRank(placeToPlaceDistances.get(i).id,
-							places.get(placeToPlaceDistances.get(i).id)
-									.getTime_category()[getTimeCategory(predictedCheckin)]
-									+ places.get(placeToPlaceDistances.get(i).id).getNum_checkins()/mostPopularPlace.getNum_checkins())); // Using
-																										// time_category
-																										// and +
-																										// popularity
-																										// together
-			// ranks.add(new PlaceRank(placeToPlaceDistances.get(i).id,
-			// ThreadLocalRandom.current().nextDouble(0, 1))); //Random
+			if (choice == 0) {
+				ranks.add(new PlaceRank(placeToPlaceDistances.get(i).id,
+						places.get(placeToPlaceDistances.get(i).id).getNum_checkins()));
+				// Using place popularity
+			} else if (choice == 1) {
+				ranks.add(new PlaceRank(placeToPlaceDistances.get(i).id, places.get(placeToPlaceDistances.get(i).id)
+						.getTime_category()[getTimeCategory(predictedCheckin)]));
+				// Using time category
+			} else if (choice == 2) {
+				ranks.add(new PlaceRank(placeToPlaceDistances.get(i).id,
+						places.get(placeToPlaceDistances.get(i).id)
+								.getTime_category()[getTimeCategory(predictedCheckin)]
+								* places.get(placeToPlaceDistances.get(i).id).getNum_checkins()));
+				// Using time_category and*popularity together
+			} else if (choice == 3) {
+				ranks.add(new PlaceRank(placeToPlaceDistances.get(i).id,
+						places.get(placeToPlaceDistances.get(i).id)
+								.getTime_category()[getTimeCategory(predictedCheckin)]
+								+ places.get(placeToPlaceDistances.get(i).id).getNum_checkins()
+										/ mostPopularPlace.getNum_checkins()));
+				// Using time_category and + popularity together
+			} else if (choice == 4) {
+				ranks.add(new PlaceRank(placeToPlaceDistances.get(i).id, ThreadLocalRandom.current().nextDouble(0, 1))); // Random
+			} else if (choice == 5) {
+				// Former visits
+				ArrayList<Paired> visitedPlaces = user.getVisitedPlaces();
+				for (int j = 0; j < visitedPlaces.size(); j++) {
+					if (visitedPlaces.get(j).id.equals(placeToPlaceDistances.get(i).id)) {
+						ranks.add(new PlaceRank(placeToPlaceDistances.get(i).id, visitedPlaces.get(j).distance));
+						break;
+					}
+				}
+			}
 		}
-		Collections.sort(ranks);
 
+		if (choice == 6) { // category_pref[time_range*popularity]
+			Place[] closePlaces = new Place[closePlaceNumberLimit];
+			for (int i = 0; i < closePlaceNumberLimit; i++) {
+				closePlaces[i] = places.get(placeToPlaceDistances.get(i).id);
+			}
+			Integer[] visitedCategories = user.getVisitedCategories();
+			int timeRange = getTimeCategory(predictedCheckin);
+			Place[] mostPopularByCategories = getMostPopularByCategoriesWithTimeRange(closePlaces, visitedCategories,
+					num, timeRange);
+			for (int k = 0; k < mostPopularByCategories.length; k++) {
+				ranks.add(new PlaceRank(mostPopularByCategories[k].getId(), mostPopularByCategories[k].getNum_checkins()
+						* mostPopularByCategories[k].getTime_category()[timeRange]));
+			}
+		}
+
+		if (choice == 7) { // category_pref[popularity]
+			Place[] closePlaces = new Place[closePlaceNumberLimit];
+			for (int i = 0; i < closePlaceNumberLimit; i++) {
+				closePlaces[i] = places.get(placeToPlaceDistances.get(i).id);
+			}
+			Integer[] visitedCategories = user.getVisitedCategories();
+			Place[] mostPopularByCategories = getMostPopularByCategoriesFromGivenPlaces(closePlaces, visitedCategories,
+					num);
+			for (int k = 0; k < mostPopularByCategories.length; k++) {
+				ranks.add(new PlaceRank(mostPopularByCategories[k].getId(),
+						mostPopularByCategories[k].getNum_checkins()));
+			}
+		}
+
+		Collections.sort(ranks);
+		if (ranks.size() < num) {
+			num = ranks.size();
+			System.out.println(ranks.size());
+		}
 		for (int i = 0; i < num; i++) {
 			if (ranks.get(i).id.equals(predictedCheckin.getPlace_id())) {
 				return (double) (num - i) / (double) num;
 			}
 		}
+		return 0;
+	}
+
+	public static double friendshipPrediction(Checkin predictedCheckin, int num) {
+		User user = users.get(predictedCheckin.getUser_id());
+		HashMap<String, PlaceRank> ranks = new HashMap<String, PlaceRank>();
+		int choice = 0; // 0 for total visits, 1 for only first visits
+		if (choice == 0) {
+			if (user.getNum_friends() > 0) {
+				for (int i = 0; i < user.getNum_friends(); i++) {
+					User friend = user.getFriend(i);
+					for (int j = 0; j < friend.getNum_checkins(); j++) {
+						double rank = 0;
+						if (ranks.get(friend.getCheckin(j).getPlace_id()) != null) {
+							rank = ranks.get(friend.getCheckin(j).getPlace_id()).rankPoint;
+						}
+						ranks.put(friend.getCheckins().get(j).getPlace_id(),
+								new PlaceRank(friend.getCheckins().get(j).getPlace_id(), rank + 1));
+					}
+				}
+			}
+		} else if (choice == 1) {
+			if (user.getNum_friends() > 0) {
+				for (int i = 0; i < user.getNum_friends(); i++) {
+					User friend = user.getFriend(i);
+					ArrayList<Paired> visitedPlaces = friend.getVisitedPlaces();
+					for (int j = 0; j < visitedPlaces.size(); j++) {
+						double rank = 0;
+						if (ranks.get(visitedPlaces.get(j).id) != null) {
+							rank = ranks.get(visitedPlaces.get(j).id).rankPoint;
+						}
+						ranks.put(visitedPlaces.get(j).id, new PlaceRank(visitedPlaces.get(j).id, rank + 1));
+					}
+				}
+			}
+		}
+		ArrayList<PlaceRank> placeRanks = new ArrayList<PlaceRank>();
+
+		for (PlaceRank pr : ranks.values()) {
+			placeRanks.add(pr);
+		}
+		Collections.sort(placeRanks);
+		if (placeRanks.size() < num) {
+			num = placeRanks.size();
+		}
+		for (int i = 0; i < num; i++) {
+			if (predictedCheckin.getPlace().getId().equals(placeRanks.get(i).id)) {
+				return (double) (num - i) / (double) num;
+			}
+		}
+
 		return 0;
 	}
 
@@ -790,6 +943,102 @@ public class Main {
 		for (int i = 0; i < categoryRate.length; i++) {
 			for (int j = 0; j < Math.ceil(categoryRate[i] * num); j++) {
 				for (Place place : placesArray) {
+					if (place.getCategory().getId() == i + 1) {
+						if (categoryPlace.contains(place)) {
+							continue;
+						} else {
+							categoryPlace.add(place);
+							break;
+						}
+					}
+				}
+			}
+		}
+		int size = categoryPlace.size();
+		if (size < num) {
+			for (int i = 0; i < num - size; i++) {
+				categoryPlace.add(placesArray.get(i));
+			}
+		}
+		Collections.sort(categoryPlace);
+		Place[] returnPlace = new Place[num];
+		for (int i = 0; i < num; i++) {
+			returnPlace[i] = categoryPlace.get(i);
+		}
+		return returnPlace;
+	}
+
+	// Get top N most popular places from given places
+	public static Place[] getMostPopularByCategoriesFromGivenPlaces(Place[] closePlaces, Integer[] visitedCategories,
+			int num) {
+		ArrayList<Place> categoryPlace = new ArrayList<Place>();
+		double sum = 0;
+		for (int i : visitedCategories) {
+			sum += i;
+		}
+		double[] categoryRate = new double[visitedCategories.length];
+		for (int i = 0; i < categoryRate.length; i++) {
+			categoryRate[i] = visitedCategories[i] / sum;
+		}
+
+		ArrayList<PlaceRank> placePopularity = new ArrayList<PlaceRank>();
+		for (int i = 0; i < closePlaces.length; i++) {
+			placePopularity.add(new PlaceRank(closePlaces[i].getId(), closePlaces[i].getNum_checkins()));
+		}
+		Collections.sort(placePopularity);
+
+		for (int i = 0; i < categoryRate.length; i++) {
+			for (int j = 0; j < Math.ceil(categoryRate[i] * num); j++) {
+				for (int k = 0; k < placePopularity.size(); k++) {
+					Place place = places.get(placePopularity.get(k).id);
+					if (place.getCategory().getId() == i + 1) {
+						if (categoryPlace.contains(place)) {
+							continue;
+						} else {
+							categoryPlace.add(place);
+							break;
+						}
+					}
+				}
+			}
+		}
+		int size = categoryPlace.size();
+		if (size < num) {
+			for (int i = 0; i < num - size; i++) {
+				categoryPlace.add(placesArray.get(i));
+			}
+		}
+		Collections.sort(categoryPlace);
+		Place[] returnPlace = new Place[num];
+		for (int i = 0; i < num; i++) {
+			returnPlace[i] = categoryPlace.get(i);
+		}
+		return returnPlace;
+	}
+
+	// Get top N most popular places
+	public static Place[] getMostPopularByCategoriesWithTimeRange(Place[] closePlaces, Integer[] visitedCategories,
+			int num, int timeRange) {
+		ArrayList<Place> categoryPlace = new ArrayList<Place>();
+		double sum = 0;
+		for (int i : visitedCategories) {
+			sum += i;
+		}
+		double[] categoryRate = new double[visitedCategories.length];
+		for (int i = 0; i < categoryRate.length; i++) {
+			categoryRate[i] = visitedCategories[i] / sum;
+		}
+
+		ArrayList<PlaceRank> placePopularityByTimeRange = new ArrayList<PlaceRank>();
+		for (int i = 0; i < closePlaces.length; i++) {
+			placePopularityByTimeRange.add(new PlaceRank(closePlaces[i].getId(),
+					closePlaces[i].getNum_checkins() * closePlaces[i].getTime_category()[timeRange]));
+		}
+		Collections.sort(placePopularityByTimeRange);
+		for (int i = 0; i < categoryRate.length; i++) {
+			for (int j = 0; j < Math.ceil(categoryRate[i] * num); j++) {
+				for (int k = 0; k < placePopularityByTimeRange.size(); k++) {
+					Place place = places.get(placePopularityByTimeRange.get(k).id);
 					if (place.getCategory().getId() == i + 1) {
 						if (categoryPlace.contains(place)) {
 							continue;
@@ -1016,27 +1265,34 @@ public class Main {
 	// Checkins which are going to be predicted
 	public static void getPredictedCheckins(int startMonth) {
 		predictedCheckins.clear();
-		Timestamp ts = new Timestamp(year, startMonth, 20, 0, 0, 0, 0);
-		LocalDateTime startDate = new LocalDateTime(ts.getTime(), jodaTzUTC);
-		Timestamp ts2 = new Timestamp(year, startMonth + 1, 20, 0, 0, 0, 0);
-		LocalDateTime endDate = new LocalDateTime(ts2.getTime(), jodaTzUTC);
-		logResults("Start Date : " + startDate.toString() + " End Date:" + endDate.toString() + "\n");
+		// Timestamp ts = new Timestamp(year, startMonth, 20, 0, 0, 0, 0);
+		// LocalDateTime startDate = new LocalDateTime(ts.getTime(), jodaTzUTC);
+		// Timestamp ts2 = new Timestamp(year, startMonth + 1, 20, 0, 0, 0, 0);
+		// LocalDateTime endDate = new LocalDateTime(ts2.getTime(), jodaTzUTC);
+		// logResults("Start Date : " + startDate.toString() + " End Date:" +
+		// endDate.toString() + "\n");
 		int count = 0;
-
-		for (int i = 0; i < checkins.size(); i++) {
-			if (checkins.get(i).getTimestamp().isAfter(startDate) && checkins.get(i).getTimestamp().isBefore(endDate)
-					&& users.get(checkins.get(i).getUser_id()).isIs_active()) {
-				predictedCheckins.add(checkins.get(i));
-				// deleteForPrediction(checkins.get(i));
-				count++;
-			}
-			if (count == 3000) {
-				break;
-			}
-		}
-		// for (Checkin checkin : checkins) {
-		// predictedCheckins.add(checkin);
+		//
+		// for (int i = 0; i < checkins.size(); i++) {
+		// if (checkins.get(i).getTimestamp().isAfter(startDate) &&
+		// checkins.get(i).getTimestamp().isBefore(endDate)
+		// && users.get(checkins.get(i).getUser_id()).isIs_active()) {
+		// predictedCheckins.add(checkins.get(i));
+		// // deleteForPrediction(checkins.get(i));
+		// count++;
 		// }
+		// if (count == 3000) {
+		// break;
+		// }
+		// }
+		for (Checkin checkin : checkins) {
+//			if (count == 10000) {
+//				break;
+//			}
+			predictedCheckins.add(checkin);
+			count++;
+		}
+
 	}
 
 	// Calculate weights according to given condition
@@ -1474,6 +1730,32 @@ public class Main {
 			System.exit(0);
 		}
 
+		// Friends load
+		if (database_name.equals("gowalla_u")) {
+			try {
+				Class.forName("org.postgresql.Driver");
+				c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/" + database_name, "postgres",
+						"02741903");
+				c.setAutoCommit(false);
+				System.out.println("Opened database successfully friends");
+
+				stmt = c.createStatement();
+				ResultSet rs = stmt.executeQuery("SELECT * FROM friendships;");
+				while (rs.next()) {
+					int id = rs.getInt("user1");
+					int friend_id = rs.getInt("user2");
+					if (users.containsKey(id) && users.containsKey(friend_id)) {
+						users.get(id).addFriend(users.get(friend_id));
+					}
+				}
+				rs.close();
+				stmt.close();
+				c.close();
+			} catch (Exception e) {
+				System.err.println(e.getClass().getName() + ": " + e.getMessage());
+				System.exit(0);
+			}
+		}
 		// System.out.println("1000000");
 		// For loading whole gowalla database
 		// if (!database_name.equals("foursquare")) {
