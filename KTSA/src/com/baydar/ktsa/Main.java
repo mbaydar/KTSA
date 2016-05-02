@@ -39,9 +39,9 @@ public class Main {
 	static Place[] mostPopularPlaces = new Place[100];
 	static Place[] mostPopularNPlaces;
 	static Place mostPopularPlace;
-	static String database_name = "foursquare";
+	static String database_name = "gowalla_u";
 	static String city = "Austin";
-	static int year = 111;
+	static int year = 110;
 
 	static double wdistance = 0;
 	static double wvisitedP = 1;
@@ -127,14 +127,14 @@ public class Main {
 	// Test System
 	public static void testAll() {
 		double total = 0;
-		for (int k = 4; k < 5; k++) {
+		for (int k = 5; k < 6; k++) {
 			getPredictedCheckins(k);
 			// calculateWeights();
 			// calculateUsersPlaceDistances(1000);
 			long tStart = System.currentTimeMillis();
 			for (int i = 10; i < 11; i++) {
-				for (int j = 1; j < 10; j++) {
-					selectPredictionMethod(i, j * 10);
+				for (int j = 1; j < 2; j++) {
+					selectPredictionMethod(i, j * 50);
 				}
 				// for(int j=0;j<testVal.length;j++){
 				// for(int t=0;t<testVal.length;t++){
@@ -885,12 +885,14 @@ public class Main {
 		Collections.sort(placeToPlaceDistances);
 
 		ArrayList<PlaceRank> ranks = new ArrayList<PlaceRank>();
+		ArrayList<Paired> visitedPlaces = user.getVisitedPlaces();
+		double maxVisitedNumber = visitedPlaces.get(0).distance;
 		for (int i = 0; i < closePlaceNumberLimit; i++) {
 			// Former visits
-			ArrayList<Paired> visitedPlaces = user.getVisitedPlaces();
 			for (int j = 0; j < visitedPlaces.size(); j++) {
 				if (visitedPlaces.get(j).id.equals(placeToPlaceDistances.get(i).id)) {
-					ranks.add(new PlaceRank(placeToPlaceDistances.get(i).id, visitedPlaces.get(j).distance));
+					ranks.add(new PlaceRank(placeToPlaceDistances.get(i).id,
+							visitedPlaces.get(j).distance / maxVisitedNumber));
 					break;
 				}
 			}
@@ -909,11 +911,18 @@ public class Main {
 		int timeRange = getTimeCategory(predictedCheckin);
 		Place[] mostPopularByCategories = getMostPopularByCategoriesWithTimeRange(closePlaces, visitedCategories, num,
 				timeRange);
+		double maxPopularityNumber = 0;
+		for (int i = 0; i < mostPopularByCategories.length; i++) {
+			if (maxPopularityNumber < mostPopularByCategories[i].getNum_checkins()) {
+				maxPopularityNumber = mostPopularByCategories[i].getNum_checkins();
+			}
+		}
+
 		int counter = 0;
 		for (int k = 0; k < mostPopularByCategories.length; k++) {
 			if (!ranks.contains(places.get(mostPopularByCategories[k].getId()))) {
 				ranks.add(new PlaceRank(mostPopularByCategories[k].getId(),
-						mostPopularByCategories[k].getNum_checkins()));
+						mostPopularByCategories[k].getNum_checkins() / maxPopularityNumber));
 				counter++;
 				if (counter == remaining) {
 					break;
@@ -1364,7 +1373,7 @@ public class Main {
 				// deleteForPrediction(checkins.get(i));
 				count++;
 			}
-			if (count == 3000) {
+			if (count == 60000) {
 				break;
 			}
 		}
@@ -1750,11 +1759,13 @@ public class Main {
 				// System.out.println("user_id = " + id);
 				//
 				// System.out.println();
-				Place place = new Place(id + "", category_id, lat, lon, name, num_checkins, new Location(lat, lon),
-						time_category_1, time_category_2, time_category_3, time_category_4);
-				place.setCategory(categories.get(category_id));
-				places.put(id + "", place);
-				placesArray.add(place);
+				if (num_checkins > 0) {
+					Place place = new Place(id + "", category_id, lat, lon, name, num_checkins, new Location(lat, lon),
+							time_category_1, time_category_2, time_category_3, time_category_4);
+					place.setCategory(categories.get(category_id));
+					places.put(id + "", place);
+					placesArray.add(place);
+				}
 			}
 			rs.close();
 			stmt.close();

@@ -726,3 +726,284 @@ Total Predictions: 3000
 Accuracy: 0.7073333333333334
 Precision : 0.6233165776521091
 List Size: 90
+Start Date : 2011-05-20T00:00:00.000 End Date:2011-06-20T00:00:00.000
+Proposed Method Predictions
+Correct Predictions: 2145
+Total Predictions: 3000
+Accuracy: 0.715
+Precision : 0.6206386946386967
+List Size: 100
+Start Date : 2010-05-20T00:00:00.000 End Date:2010-06-20T00:00:00.000
+Proposed Method Predictions
+Correct Predictions: 1819
+Total Predictions: 3000
+Accuracy: 0.6063333333333333
+Precision : 0.5440351841671224
+List Size: 10
+Proposed Method Predictions
+Correct Predictions: 1895
+Total Predictions: 3000
+Accuracy: 0.6316666666666667
+Precision : 0.5716358839050161
+List Size: 20
+Proposed Method Predictions
+Correct Predictions: 1964
+Total Predictions: 3000
+Accuracy: 0.6546666666666666
+Precision : 0.5937712152070607
+List Size: 30
+Proposed Method Predictions
+Correct Predictions: 2006
+Total Predictions: 3000
+Accuracy: 0.6686666666666666
+Precision : 0.6146061814556333
+List Size: 40
+Proposed Method Predictions
+Correct Predictions: 2037
+Total Predictions: 3000
+Accuracy: 0.679
+Precision : 0.6299852724595026
+List Size: 50
+Proposed Method Predictions
+Correct Predictions: 2074
+Total Predictions: 3000
+Accuracy: 0.6913333333333334
+Precision : 0.6365879138540673
+List Size: 60
+Proposed Method Predictions
+Correct Predictions: 2097
+Total Predictions: 3000
+Accuracy: 0.699
+Precision : 0.6443695074596338
+List Size: 70
+Proposed Method Predictions
+Correct Predictions: 2117
+Total Predictions: 3000
+Accuracy: 0.7056666666666667
+Precision : 0.6508502598016038
+List Size: 80
+Proposed Method Predictions
+Correct Predictions: 2145
+Total Predictions: 3000
+Accuracy: 0.715
+Precision : 0.6542812742812742
+List Size: 90
+Proposed Method Predictions
+Correct Predictions: 2177
+Total Predictions: 3000
+Accuracy: 0.7256666666666667
+Precision : 0.6572531005971542
+List Size: 100
+Start Date : 2010-05-20T00:00:00.000 End Date:2010-06-20T00:00:00.000
+Proposed Method Predictions
+Correct Predictions: 2177
+Total Predictions: 3000
+Accuracy: 0.7256666666666667
+Precision : 0.853183279742772
+List Size: 100
+Start Date : 2010-05-20T00:00:00.000 End Date:2010-06-20T00:00:00.000
+Proposed Method Predictions
+Correct Predictions: 2177
+Total Predictions: 3000
+Accuracy: 0.7256666666666667
+Precision : 0.853183279742772
+List Size: 100
+Proposed Method Predictions
+Correct Predictions: 2326
+Total Predictions: 3000
+Accuracy: 0.7753333333333333
+Precision : 0.8492884780739409
+List Size: 200
+Proposed Method Predictions
+Correct Predictions: 2436
+Total Predictions: 3000
+Accuracy: 0.812
+Precision : 0.8375779967159319
+List Size: 300
+Proposed Method Predictions
+Correct Predictions: 2505
+Total Predictions: 3000
+Accuracy: 0.835
+Precision : 0.8272584830339259
+List Size: 400
+Proposed Method Predictions
+Correct Predictions: 2562
+Total Predictions: 3000
+Accuracy: 0.854
+Precision : 0.819241998438723
+List Size: 500
+Proposed Method Predictions
+Correct Predictions: 2585
+Total Predictions: 3000
+Accuracy: 0.8616666666666667
+Precision : 0.8195190199870973
+List Size: 600
+Proposed Method Predictions
+Correct Predictions: 2622
+Total Predictions: 3000
+Accuracy: 0.874
+Precision : 0.8153132832080215
+List Size: 700
+Proposed Method Predictions
+Correct Predictions: 2656
+Total Predictions: 3000
+Accuracy: 0.8853333333333333
+Precision : 0.8129612198795136
+List Size: 800
+Proposed Method Predictions
+Correct Predictions: 2675
+Total Predictions: 3000
+Accuracy: 0.8916666666666667
+Precision : 0.8128066458982325
+List Size: 900
+Proposed Method Predictions
+Correct Predictions: 2694
+Total Predictions: 3000
+Accuracy: 0.898
+Precision : 0.811759094283596
+List Size: 1000
+Start Date : 2010-05-20T00:00:00.000 End Date:2010-06-20T00:00:00.000
+Proposed Method Predictions
+Correct Predictions: 1819
+Total Predictions: 3000
+Accuracy: 0.6063333333333333
+Precision : 0.8029686641011545
+List Size: 10
+Proposed Method Predictions
+Correct Predictions: 1895
+Total Predictions: 3000
+Accuracy: 0.6316666666666667
+Precision : 0.8170976253298196
+List Size: 20
+Proposed Method Predictions
+Correct Predictions: 1964
+Total Predictions: 3000
+Accuracy: 0.6546666666666666
+Precision : 0.8236082824168386
+List Size: 30
+Proposed Method Predictions
+Correct Predictions: 2006
+Total Predictions: 3000
+Accuracy: 0.6686666666666666
+Precision : 0.8339356929212358
+List Size: 40
+Proposed Method Predictions
+Correct Predictions: 2037
+Total Predictions: 3000
+Accuracy: 0.679
+Precision : 0.8434069710358434
+List Size: 50
+Proposed Method Predictions
+Correct Predictions: 2074
+Total Predictions: 3000
+Accuracy: 0.6913333333333334
+Precision : 0.8451301832208342
+List Size: 60
+Proposed Method Predictions
+Correct Predictions: 2097
+Total Predictions: 3000
+Accuracy: 0.699
+Precision : 0.8500919681177138
+List Size: 70
+Proposed Method Predictions
+Correct Predictions: 2117
+Total Predictions: 3000
+Accuracy: 0.7056666666666667
+Precision : 0.8538379782711348
+List Size: 80
+Proposed Method Predictions
+Correct Predictions: 2145
+Total Predictions: 3000
+Accuracy: 0.715
+Precision : 0.8541983941983946
+List Size: 90
+Proposed Method Predictions
+Correct Predictions: 2177
+Total Predictions: 3000
+Accuracy: 0.7256666666666667
+Precision : 0.853183279742772
+List Size: 100
+
+
+Correct Predictions: 1808
+Total Predictions: 3000
+Accuracy: 0.6026666666666667
+Precision : 0.8036504424778782
+List Size: 10
+Proposed Method Predictions
+Correct Predictions: 1870
+Total Predictions: 3000
+Accuracy: 0.6233333333333333
+Precision : 0.8236898395721968
+List Size: 20
+Proposed Method Predictions
+Correct Predictions: 1920
+Total Predictions: 3000
+Accuracy: 0.64
+Precision : 0.8331597222222257
+List Size: 30
+Proposed Method Predictions
+Correct Predictions: 1960
+Total Predictions: 3000
+Accuracy: 0.6533333333333333
+Precision : 0.8418877551020382
+List Size: 40
+Proposed Method Predictions
+Correct Predictions: 2000
+Total Predictions: 3000
+Accuracy: 0.6666666666666666
+Precision : 0.844040000000004
+List Size: 50
+Proposed Method Predictions
+Correct Predictions: 2032
+Total Predictions: 3000
+Accuracy: 0.6773333333333333
+Precision : 0.8501804461942283
+List Size: 60
+Proposed Method Predictions
+Correct Predictions: 2068
+Total Predictions: 3000
+Accuracy: 0.6893333333333334
+Precision : 0.8499101961867902
+List Size: 70
+Proposed Method Predictions
+Correct Predictions: 2100
+Total Predictions: 3000
+Accuracy: 0.7
+Precision : 0.8485714285714238
+List Size: 80
+Proposed Method Predictions
+Correct Predictions: 2122
+Total Predictions: 3000
+Accuracy: 0.7073333333333334
+Precision : 0.8508482563619233
+List Size: 90
+Proposed Method Predictions
+Correct Predictions: 2145
+Total Predictions: 3000
+Accuracy: 0.715
+Precision : 0.8497808857808904
+List Size: 100
+
+
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Proposed Method Predictions
+Correct Predictions: 6483
+Total Predictions: 10000
+Accuracy: 0.6483
+Precision : 0.8675890791300249
+List Size: 50
+Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Proposed Method Predictions
+Correct Predictions: 49252
+Total Predictions: 60000
+Accuracy: 0.8208666666666666
+Precision : 0.8757751969463102
+List Size: 50
+Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+Proposed Method Predictions
+Correct Predictions: 32442
+Total Predictions: 60000
+Accuracy: 0.5407
+Precision : 0.8003045434929
+List Size: 50
