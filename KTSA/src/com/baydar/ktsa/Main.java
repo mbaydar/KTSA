@@ -39,9 +39,9 @@ public class Main {
 	static Place[] mostPopularPlaces = new Place[100];
 	static Place[] mostPopularNPlaces;
 	static Place mostPopularPlace;
-	static String database_name = "gowalla_u";
+	static String database_name = "foursquare";
 	static String city = "Austin";
-	static int year = 110;
+	static int year = 111;
 
 	static double wdistance = 0;
 	static double wvisitedP = 1;
@@ -132,8 +132,8 @@ public class Main {
 			// calculateWeights();
 			// calculateUsersPlaceDistances(1000);
 			long tStart = System.currentTimeMillis();
-			for (int i = 9; i < 10; i++) {
-				for (int j = 1; j < 11; j++) {
+			for (int i = 10; i < 11; i++) {
+				for (int j = 1; j < 10; j++) {
 					selectPredictionMethod(i, j * 10);
 				}
 				// for(int j=0;j<testVal.length;j++){
@@ -273,11 +273,24 @@ public class Main {
 				giveBackCheckin(predictedCheckins.get(i));
 			}
 		} else if (choice == 9) {
-			logResults("Check-in Location Used Predictions");
+			logResults("Friendship Predictions");
 			for (int i = 0; i < predictedCheckins.size(); i++) {
 				System.out.println(i);
 				deleteForPrediction(predictedCheckins.get(i));
 				double result = friendshipPrediction(predictedCheckins.get(i), listSize);
+				if (result != 0) {
+					correctPredictions++;
+					prec += result;
+				}
+				apr += result;
+				giveBackCheckin(predictedCheckins.get(i));
+			}
+		} else if (choice == 10) {
+			logResults("Proposed Method Predictions");
+			for (int i = 0; i < predictedCheckins.size(); i++) {
+				System.out.println(i);
+				deleteForPrediction(predictedCheckins.get(i));
+				double result = proposedMethodPrediction(predictedCheckins.get(i), listSize);
 				if (result != 0) {
 					correctPredictions++;
 					prec += result;
@@ -776,7 +789,7 @@ public class Main {
 					.add(new Paired(place.getId(), prePlace.getLocation().getDistance(place.getLocation())));
 		}
 		Collections.sort(placeToPlaceDistances);
-		int choice = 0;
+		int choice = 6;
 		ArrayList<PlaceRank> ranks = new ArrayList<PlaceRank>();
 		for (int i = 0; i < closePlaceNumberLimit; i++) {
 
@@ -841,6 +854,70 @@ public class Main {
 			for (int k = 0; k < mostPopularByCategories.length; k++) {
 				ranks.add(new PlaceRank(mostPopularByCategories[k].getId(),
 						mostPopularByCategories[k].getNum_checkins()));
+			}
+		}
+
+		Collections.sort(ranks);
+		if (ranks.size() < num) {
+			num = ranks.size();
+			System.out.println(ranks.size());
+		}
+		for (int i = 0; i < num; i++) {
+			if (ranks.get(i).id.equals(predictedCheckin.getPlace_id())) {
+				return (double) (num - i) / (double) num;
+			}
+		}
+		return 0;
+	}
+
+	// Check-in Location Used For Prediction
+	public static double proposedMethodPrediction(Checkin predictedCheckin, int num) {
+		User user = users.get(predictedCheckin.getUser_id());
+		Place prePlace = places.get(predictedCheckin.getPlace_id());
+		int closePlaceNumberLimit = 1000;
+
+		// Ignore all but close places
+		ArrayList<Paired> placeToPlaceDistances = new ArrayList<Paired>();
+		for (Place place : places.values()) {
+			placeToPlaceDistances
+					.add(new Paired(place.getId(), prePlace.getLocation().getDistance(place.getLocation())));
+		}
+		Collections.sort(placeToPlaceDistances);
+
+		ArrayList<PlaceRank> ranks = new ArrayList<PlaceRank>();
+		for (int i = 0; i < closePlaceNumberLimit; i++) {
+			// Former visits
+			ArrayList<Paired> visitedPlaces = user.getVisitedPlaces();
+			for (int j = 0; j < visitedPlaces.size(); j++) {
+				if (visitedPlaces.get(j).id.equals(placeToPlaceDistances.get(i).id)) {
+					ranks.add(new PlaceRank(placeToPlaceDistances.get(i).id, visitedPlaces.get(j).distance));
+					break;
+				}
+			}
+			if (ranks.size() == num / 2) {
+				break;
+			}
+		}
+
+		int remaining = num - ranks.size();
+		// category_pref[time_range*popularity]
+		Place[] closePlaces = new Place[closePlaceNumberLimit];
+		for (int i = 0; i < closePlaceNumberLimit; i++) {
+			closePlaces[i] = places.get(placeToPlaceDistances.get(i).id);
+		}
+		Integer[] visitedCategories = user.getVisitedCategories();
+		int timeRange = getTimeCategory(predictedCheckin);
+		Place[] mostPopularByCategories = getMostPopularByCategoriesWithTimeRange(closePlaces, visitedCategories, num,
+				timeRange);
+		int counter = 0;
+		for (int k = 0; k < mostPopularByCategories.length; k++) {
+			if (!ranks.contains(places.get(mostPopularByCategories[k].getId()))) {
+				ranks.add(new PlaceRank(mostPopularByCategories[k].getId(),
+						mostPopularByCategories[k].getNum_checkins()));
+				counter++;
+				if (counter == remaining) {
+					break;
+				}
 			}
 		}
 
@@ -1056,10 +1133,18 @@ public class Main {
 				categoryPlace.add(placesArray.get(i));
 			}
 		}
-		Collections.sort(categoryPlace);
+		ArrayList<Place> orderedPlaces = new ArrayList<Place>();
+		for (int i = 0; i < categoryPlace.size(); i++) {
+			orderedPlaces.add(
+					new Place(categoryPlace.get(i).getId() + "", categoryPlace.get(i).getCategory_id(), 0.0, 0.0, "",
+							(int) Math.ceil(categoryPlace.get(i).getNum_checkins()
+									* categoryPlace.get(i).getTime_category()[timeRange]),
+							new Location(0.0, 0.0), 0.0, 0.0, 0.0, 0.0));
+		}
+		Collections.sort(orderedPlaces);
 		Place[] returnPlace = new Place[num];
 		for (int i = 0; i < num; i++) {
-			returnPlace[i] = categoryPlace.get(i);
+			returnPlace[i] = orderedPlaces.get(i);
 		}
 		return returnPlace;
 	}
@@ -1265,33 +1350,31 @@ public class Main {
 	// Checkins which are going to be predicted
 	public static void getPredictedCheckins(int startMonth) {
 		predictedCheckins.clear();
-		// Timestamp ts = new Timestamp(year, startMonth, 20, 0, 0, 0, 0);
-		// LocalDateTime startDate = new LocalDateTime(ts.getTime(), jodaTzUTC);
-		// Timestamp ts2 = new Timestamp(year, startMonth + 1, 20, 0, 0, 0, 0);
-		// LocalDateTime endDate = new LocalDateTime(ts2.getTime(), jodaTzUTC);
-		// logResults("Start Date : " + startDate.toString() + " End Date:" +
-		// endDate.toString() + "\n");
+		Timestamp ts = new Timestamp(year, startMonth, 20, 0, 0, 0, 0);
+		LocalDateTime startDate = new LocalDateTime(ts.getTime(), jodaTzUTC);
+		Timestamp ts2 = new Timestamp(year, startMonth + 1, 20, 0, 0, 0, 0);
+		LocalDateTime endDate = new LocalDateTime(ts2.getTime(), jodaTzUTC);
+		logResults("Start Date : " + startDate.toString() + " End Date:" + endDate.toString() + "\n");
 		int count = 0;
-		//
-		// for (int i = 0; i < checkins.size(); i++) {
-		// if (checkins.get(i).getTimestamp().isAfter(startDate) &&
-		// checkins.get(i).getTimestamp().isBefore(endDate)
-		// && users.get(checkins.get(i).getUser_id()).isIs_active()) {
-		// predictedCheckins.add(checkins.get(i));
-		// // deleteForPrediction(checkins.get(i));
+
+		for (int i = 0; i < checkins.size(); i++) {
+			if (checkins.get(i).getTimestamp().isAfter(startDate) && checkins.get(i).getTimestamp().isBefore(endDate)
+					&& users.get(checkins.get(i).getUser_id()).isIs_active()) {
+				predictedCheckins.add(checkins.get(i));
+				// deleteForPrediction(checkins.get(i));
+				count++;
+			}
+			if (count == 3000) {
+				break;
+			}
+		}
+		// for (Checkin checkin : checkins) {
+		// // if (count == 10000) {
+		// // break;
+		// // }
+		// predictedCheckins.add(checkin);
 		// count++;
 		// }
-		// if (count == 3000) {
-		// break;
-		// }
-		// }
-		for (Checkin checkin : checkins) {
-//			if (count == 10000) {
-//				break;
-//			}
-			predictedCheckins.add(checkin);
-			count++;
-		}
 
 	}
 
