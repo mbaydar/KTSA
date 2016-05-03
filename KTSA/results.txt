@@ -1007,3 +1007,145 @@ Total Predictions: 60000
 Accuracy: 0.5407
 Precision : 0.8003045434929
 List Size: 50
+
+
+
+Proposed Method Predictions
+Correct Predictions: 209690
+Total Predictions: 468573
+Accuracy: 0.4475076455536277
+Precision : 0.7413689732463302
+List Size: 50
+
+
+Proposed Method PredictionsProposed Method PredictionsProposed Method Predictions
+Correct Predictions: 4402
+Total Predictions: 9773
+Accuracy: 0.4504246393123913
+Precision : 0.7556519763743853
+List Size: 50
+
+gowalla_randomized_10000
+Proposed Method Predictions
+Correct Predictions: 3267
+Total Predictions: 9768
+Accuracy: 0.3344594594594595
+Precision : 0.7402509947964574
+List Size: 10
+Proposed Method Predictions
+Correct Predictions: 3623
+Total Predictions: 9768
+Accuracy: 0.3709049959049959
+Precision : 0.7447695280154539
+List Size: 20
+Proposed Method Predictions
+Correct Predictions: 3905
+Total Predictions: 9768
+Accuracy: 0.3997747747747748
+Precision : 0.7464191207853265
+List Size: 30
+Proposed Method Predictions
+Correct Predictions: 4152
+Total Predictions: 9768
+Accuracy: 0.4250614250614251
+Precision : 0.7481334296724416
+List Size: 40
+Proposed Method Predictions
+Correct Predictions: 4355
+Total Predictions: 9768
+Accuracy: 0.44584357084357085
+Precision : 0.7494971297359477
+List Size: 50
+Proposed Method Predictions
+Correct Predictions: 4520
+Total Predictions: 9768
+Accuracy: 0.46273546273546273
+Precision : 0.7504535398230014
+List Size: 60
+Proposed Method Predictions
+Correct Predictions: 4666
+Total Predictions: 9768
+Accuracy: 0.4776822276822277
+Precision : 0.7531565733880425
+List Size: 70
+Proposed Method Predictions
+Correct Predictions: 4808
+Total Predictions: 9768
+Accuracy: 0.49221949221949224
+Precision : 0.7523632487520842
+List Size: 80
+Proposed Method Predictions
+Correct Predictions: 4958
+Total Predictions: 9768
+Accuracy: 0.5075757575757576
+Precision : 0.7519340235758195
+List Size: 90
+Proposed Method Predictions
+Correct Predictions: 5076
+Total Predictions: 9768
+Accuracy: 0.5196560196560197
+Precision : 0.752557131599677
+List Size: 100
+
+
+
+foursquare_randomized_10000Proposed Method Predictions
+Correct Predictions: 6562
+Total Predictions: 10000
+Accuracy: 0.6562
+Precision : 0.8262572386467526
+List Size: 10
+Proposed Method Predictions
+Correct Predictions: 6745
+Total Predictions: 10000
+Accuracy: 0.6745
+Precision : 0.8475166790214809
+List Size: 20
+Proposed Method Predictions
+Correct Predictions: 6899
+Total Predictions: 10000
+Accuracy: 0.6899
+Precision : 0.8582548195390524
+List Size: 30
+Proposed Method Predictions
+Correct Predictions: 6990
+Total Predictions: 10000
+Accuracy: 0.699
+Precision : 0.8669456366237539
+List Size: 40
+Proposed Method Predictions
+Correct Predictions: 7097
+Total Predictions: 10000
+Accuracy: 0.7097
+Precision : 0.870824291954331
+List Size: 50
+Proposed Method Predictions
+Correct Predictions: 7200
+Total Predictions: 10000
+Accuracy: 0.72
+Precision : 0.8718842592592537
+List Size: 60
+Proposed Method Predictions
+Correct Predictions: 7289
+Total Predictions: 10000
+Accuracy: 0.7289
+Precision : 0.8728475393450198
+List Size: 70
+Proposed Method Predictions
+Correct Predictions: 7367
+Total Predictions: 10000
+Accuracy: 0.7367
+Precision : 0.8730809691869285
+List Size: 80
+Proposed Method Predictions
+Correct Predictions: 7436
+Total Predictions: 10000
+Accuracy: 0.7436
+Precision : 0.8730560038252467
+List Size: 90
+Proposed Method Predictions
+Correct Predictions: 7495
+Total Predictions: 10000
+Accuracy: 0.7495
+Precision : 0.8722281521013772
+List Size: 100

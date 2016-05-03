@@ -16,6 +16,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Random;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -39,7 +40,7 @@ public class Main {
 	static Place[] mostPopularPlaces = new Place[100];
 	static Place[] mostPopularNPlaces;
 	static Place mostPopularPlace;
-	static String database_name = "gowalla_u";
+	static String database_name = "foursquare";
 	static String city = "Austin";
 	static int year = 110;
 
@@ -133,8 +134,8 @@ public class Main {
 			// calculateUsersPlaceDistances(1000);
 			long tStart = System.currentTimeMillis();
 			for (int i = 10; i < 11; i++) {
-				for (int j = 1; j < 2; j++) {
-					selectPredictionMethod(i, j * 50);
+				for (int j = 1; j < 11; j++) {
+					selectPredictionMethod(i, j * 10);
 				}
 				// for(int j=0;j<testVal.length;j++){
 				// for(int t=0;t<testVal.length;t++){
@@ -1358,32 +1359,47 @@ public class Main {
 
 	// Checkins which are going to be predicted
 	public static void getPredictedCheckins(int startMonth) {
-		predictedCheckins.clear();
-		Timestamp ts = new Timestamp(year, startMonth, 20, 0, 0, 0, 0);
-		LocalDateTime startDate = new LocalDateTime(ts.getTime(), jodaTzUTC);
-		Timestamp ts2 = new Timestamp(year, startMonth + 1, 20, 0, 0, 0, 0);
-		LocalDateTime endDate = new LocalDateTime(ts2.getTime(), jodaTzUTC);
-		logResults("Start Date : " + startDate.toString() + " End Date:" + endDate.toString() + "\n");
+		// predictedCheckins.clear();
+		// Timestamp ts = new Timestamp(year, startMonth, 20, 0, 0, 0, 0);
+		// LocalDateTime startDate = new LocalDateTime(ts.getTime(), jodaTzUTC);
+		// Timestamp ts2 = new Timestamp(year, startMonth + 1, 20, 0, 0, 0, 0);
+		// LocalDateTime endDate = new LocalDateTime(ts2.getTime(), jodaTzUTC);
+		// logResults("Start Date : " + startDate.toString() + " End Date:" +
+		// endDate.toString() + "\n");
 		int count = 0;
-
-		for (int i = 0; i < checkins.size(); i++) {
-			if (checkins.get(i).getTimestamp().isAfter(startDate) && checkins.get(i).getTimestamp().isBefore(endDate)
-					&& users.get(checkins.get(i).getUser_id()).isIs_active()) {
-				predictedCheckins.add(checkins.get(i));
-				// deleteForPrediction(checkins.get(i));
-				count++;
-			}
-			if (count == 60000) {
-				break;
-			}
-		}
-		// for (Checkin checkin : checkins) {
+		//
+		// for (int i = 0; i < checkins.size(); i++) {
+		// if (checkins.get(i).getTimestamp().isAfter(startDate) &&
+		// checkins.get(i).getTimestamp().isBefore(endDate)
+		// && users.get(checkins.get(i).getUser_id()).isIs_active()) {
+		// predictedCheckins.add(checkins.get(i));
+		// // deleteForPrediction(checkins.get(i));
+		// count++;
+		// }
+		// if (count == 60000) {
+		// break;
+		// }
+		// }
+		// for (int i = 0; i < checkins.size(); i++) {
 		// // if (count == 10000) {
 		// // break;
 		// // }
-		// predictedCheckins.add(checkin);
+		// if (users.get(checkins.get(i).getUser_id()).isIs_active()) {
+		// predictedCheckins.add(checkins.get(i));
 		// count++;
 		// }
+		// }
+		ArrayList<Integer> randomNums = new ArrayList<Integer>();
+		for (int i = 0; i < checkins.size(); i++) {
+			randomNums.add(i);
+		}
+		long seed = System.nanoTime();
+		Collections.shuffle(randomNums, new Random(seed));
+		for (int i = 0; i < 10000; i++) {
+			if (users.get(checkins.get(randomNums.get(i)).getUser_id()).isIs_active()) {
+				predictedCheckins.add(checkins.get(randomNums.get(i)));
+			}
+		}
 
 	}
 
