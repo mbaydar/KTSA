@@ -40,8 +40,8 @@ public class Main {
 	static Place[] mostPopularPlaces = new Place[100];
 	static Place[] mostPopularNPlaces;
 	static Place mostPopularPlace;
-	static String database_name = "foursquare";
-	static String city = "Austin";
+	static String database_name = "gowalla_u";
+	static String city = "San Francisco";
 	static int year = 110;
 
 	static double wdistance = 0;
@@ -134,8 +134,8 @@ public class Main {
 			// calculateUsersPlaceDistances(1000);
 			long tStart = System.currentTimeMillis();
 			for (int i = 10; i < 11; i++) {
-				for (int j = 1; j < 11; j++) {
-					selectPredictionMethod(i, j * 10);
+				for (int j = 1; j < 2; j++) {
+					selectPredictionMethod(i, j * 50);
 				}
 				// for(int j=0;j<testVal.length;j++){
 				// for(int t=0;t<testVal.length;t++){

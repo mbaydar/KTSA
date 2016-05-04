@@ -1149,3 +1149,31 @@ Total Predictions: 10000
 Accuracy: 0.7495
 Precision : 0.8722281521013772
 List Size: 100
+Proposed Method Predictions
+Correct Predictions: 6648
+Total Predictions: 10000
+Accuracy: 0.6648
+Precision : 0.871281588447641
+List Size: 50
+
+Stockholm
+Proposed Method Predictions
+Correct Predictions: 3712
+Total Predictions: 9276
+Accuracy: 0.4001724881414403
+Precision : 0.7828017241379411
+List Size: 50
+
+Dallas
+Proposed Method Predictions
+Correct Predictions: 3587
+Total Predictions: 9576
+Accuracy: 0.37458228905597324
+Precision : 0.7788012266518094
+List Size: 50
+
+Correct Predictions: 3402
+Total Predictions: 9509
+Accuracy: 0.35776632663792196
+Precision : 0.7536684303351064
+List Size: 50
