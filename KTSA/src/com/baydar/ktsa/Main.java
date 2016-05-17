@@ -33,15 +33,14 @@ public class Main {
 	// foursquare
 	static HashMap<Integer, Category> categories = new HashMap<Integer, Category>();
 	static ArrayList<Checkin> checkins = new ArrayList<Checkin>();
-	// static HashMap<Integer, Checkin> checkinhm = new HashMap<Integer,
-	// Checkin>();
+	static HashMap<Integer, Checkin> checkinhm = new HashMap<Integer, Checkin>();
 	static ArrayList<Checkin> predictedCheckins = new ArrayList<Checkin>();
 	static ArrayList<Place> placesArray = new ArrayList<Place>();
 	static Place[] mostPopularPlaces = new Place[100];
 	static Place[] mostPopularNPlaces;
 	static Place mostPopularPlace;
-	static String database_name = "gowalla_u";
-	static String city = "San Francisco";
+	static String database_name = "foursquare_austin";
+	static String city = "Austin";
 	static int year = 110;
 
 	static double wdistance = 0;
@@ -60,8 +59,10 @@ public class Main {
 		Collections.sort(placesArray); // Sort by checkin nums
 		setMostPopularPlaces();
 		calculateUsersHomeLocations();
-		// calculateUsersPlaceDistances(1000);
+//		calculateUsersPlaceDistances(1000);
 		setActiveUsers();
+
+		// printCategories();
 
 		testAll();
 
@@ -80,6 +81,14 @@ public class Main {
 		// calculatePlaceTimes(); // for once do it for gowalla, too
 		// calculateAverageDistances();
 		// calculateMaxAvgDistances();
+	}
+
+	public static void printCategories() {
+		for (Place place : placesArray) {
+			if (place.getCategory_id() == 0) {
+				System.out.println(place.getId());
+			}
+		}
 	}
 
 	public static void findAvgFriendNum() {
@@ -134,8 +143,8 @@ public class Main {
 			// calculateUsersPlaceDistances(1000);
 			long tStart = System.currentTimeMillis();
 			for (int i = 10; i < 11; i++) {
-				for (int j = 1; j < 2; j++) {
-					selectPredictionMethod(i, j * 50);
+				for (int j = 1; j < 11; j++) {
+					selectPredictionMethod(i, j * 10);
 				}
 				// for(int j=0;j<testVal.length;j++){
 				// for(int t=0;t<testVal.length;t++){
@@ -472,119 +481,116 @@ public class Main {
 		ArrayList<Double> time3 = new ArrayList<Double>();
 		ArrayList<Double> time4 = new ArrayList<Double>();
 
-		// Connection c = null;
-		// Statement stmt = null;
-		// int counter = 0;
-		// for (Place place : placesArray) {
-		// if (place.getNum_checkins() > 0) {
-		// int cat1 = 0;
-		// int cat2 = 0;
-		// int cat3 = 0;
-		// int cat4 = 0;
-		// counter++;
-		// for (int i = 0; i < place.checkin.size(); i++) {
-		//
-		// LocalDateTime ldt =
-		// checkinhm.get(place.checkin.get(i)).getTimestamp();
-		// int hour = ldt.getHourOfDay();
-		// if (hour > 0 && hour <= 6) {
-		// cat1++;
-		// } else if (hour > 6 && hour <= 12) {
-		// cat2++;
-		// } else if (hour > 12 && hour <= 18) {
-		// cat3++;
-		// } else {
-		// cat4++;
-		// }
-		//
-		// }
-		// int total = cat1 + cat2 + cat3 + cat4;
-		// System.out.println(counter);
-		// if (total == 0) {
-		// // try {
-		// // Class.forName("org.postgresql.Driver");
-		// // c =
-		// // DriverManager.getConnection("jdbc:postgresql://localhost:5432/"
-		// // + database_name, "postgres",
-		// // "02741903");
-		// // c.setAutoCommit(false);
-		// // // System.out.println("Opened database successfully");
-		// //
-		// // stmt = c.createStatement();
-		// // String sql = "delete from place where id=" +
-		// // place.getId() + ";";
-		// // stmt.executeUpdate(sql);
-		// // c.commit();
-		// // stmt.close();
-		// // c.close();
-		// // } catch (Exception e) {
-		// // System.err.println(e.getClass().getName() + ": " +
-		// // e.getMessage());
-		// // System.exit(0);
-		// // }
-		// } else {
-		// ids.add(place.getId());
-		// time1.add((double) cat1 / total);
-		// time2.add((double) cat2 / total);
-		// time3.add((double) cat3 / total);
-		// time4.add((double) cat4 / total);
-		// // try {
-		// // Class.forName("org.postgresql.Driver");
-		// // c =
-		// // DriverManager.getConnection("jdbc:postgresql://localhost:5432/"
-		// // + database_name, "postgres",
-		// // "02741903");
-		// // c.setAutoCommit(false);
-		// // // System.out.println("Opened database successfully");
-		// //
-		// // stmt = c.createStatement();
-		// // String sql = "UPDATE places set time_category_1 = " +
-		// // (double) cat1 / total
-		// // + ", time_category_2 = " + (double) cat2 / total + ",
-		// // time_category_3 = "
-		// // + (double) cat3 / total + ", time_category_4 = " +
-		// // (double) cat4 / total + " where id="
-		// // + place.getId() + ";";
-		// // stmt.executeUpdate(sql);
-		// // c.commit();
-		// // stmt.close();
-		// // c.close();
-		// // } catch (Exception e) {
-		// // System.err.println(e.getClass().getName() + ": " +
-		// // e.getMessage());
-		// // System.exit(0);
-		// // }
-		// }
-		// }
-		// }
-		//
-		// try {
-		// Class.forName("org.postgresql.Driver");
-		// c =
-		// DriverManager.getConnection("jdbc:postgresql://localhost:5432/gowalla_u",
-		// "postgres", "02741903");
-		// PreparedStatement ps = c.prepareStatement(
-		// "update places set time_category_1 = ?, time_category_2 =
-		// ?,time_category_3 = ? , time_category_4 = ? where id = ?");
-		// if (true) {
-		// c.setAutoCommit(false);
-		// }
-		// for (int i = 0; i < time1.size(); i++) {
-		// ps.setDouble(1, time1.get(i));
-		// ps.setDouble(2, time2.get(i));
-		// ps.setDouble(3, time3.get(i));
-		// ps.setDouble(4, time4.get(i));
-		// ps.setInt(5, Integer.parseInt(ids.get(i)));
-		// ps.addBatch();
-		// }
-		// ps.executeBatch();
-		// if (true) {
-		// c.setAutoCommit(true);
-		// }
-		// } catch (Exception e) {
-		// System.err.println(e.getClass().getName() + " : " + e.getMessage());
-		// System.exit(0);
-		// }
+		Connection c = null;
+		Statement stmt = null;
+		int counter = 0;
+		for (Place place : placesArray) {
+			if (place.getNum_checkins() > 0) {
+				int cat1 = 0;
+				int cat2 = 0;
+				int cat3 = 0;
+				int cat4 = 0;
+				counter++;
+				for (int i = 0; i < place.checkin.size(); i++) {
+
+					LocalDateTime ldt = checkinhm.get(place.checkin.get(i)).getTimestamp();
+					int hour = ldt.getHourOfDay();
+					if (hour > 0 && hour <= 6) {
+						cat1++;
+					} else if (hour > 6 && hour <= 12) {
+						cat2++;
+					} else if (hour > 12 && hour <= 18) {
+						cat3++;
+					} else {
+						cat4++;
+					}
+
+				}
+				int total = cat1 + cat2 + cat3 + cat4;
+				System.out.println(counter);
+				if (total == 0) {
+					// try {
+					// Class.forName("org.postgresql.Driver");
+					// c =
+					// DriverManager.getConnection("jdbc:postgresql://localhost:5432/"
+					// + database_name, "postgres",
+					// "02741903");
+					// c.setAutoCommit(false);
+					// // System.out.println("Opened database successfully");
+					//
+					// stmt = c.createStatement();
+					// String sql = "delete from place where id=" +
+					// place.getId() + ";";
+					// stmt.executeUpdate(sql);
+					// c.commit();
+					// stmt.close();
+					// c.close();
+					// } catch (Exception e) {
+					// System.err.println(e.getClass().getName() + ": " +
+					// e.getMessage());
+					// System.exit(0);
+					// }
+				} else {
+					ids.add(place.getId());
+					time1.add((double) cat1 / total);
+					time2.add((double) cat2 / total);
+					time3.add((double) cat3 / total);
+					time4.add((double) cat4 / total);
+					// try {
+					// Class.forName("org.postgresql.Driver");
+					// c =
+					// DriverManager.getConnection("jdbc:postgresql://localhost:5432/"
+					// + database_name, "postgres",
+					// "02741903");
+					// c.setAutoCommit(false);
+					// // System.out.println("Opened database successfully");
+					//
+					// stmt = c.createStatement();
+					// String sql = "UPDATE places set time_category_1 = " +
+					// (double) cat1 / total
+					// + ", time_category_2 = " + (double) cat2 / total + ",
+					// time_category_3 = "
+					// + (double) cat3 / total + ", time_category_4 = " +
+					// (double) cat4 / total + " where id="
+					// + place.getId() + ";";
+					// stmt.executeUpdate(sql);
+					// c.commit();
+					// stmt.close();
+					// c.close();
+					// } catch (Exception e) {
+					// System.err.println(e.getClass().getName() + ": " +
+					// e.getMessage());
+					// System.exit(0);
+					// }
+				}
+			}
+		}
+
+		try {
+			Class.forName("org.postgresql.Driver");
+			c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/foursquare_austin", "postgres",
+					"02741903");
+			PreparedStatement ps = c.prepareStatement(
+					"update places set time_category_1 = ?, time_category_2 =?,time_category_3 = ? , time_category_4 = ? where id = ?");
+			if (true) {
+				c.setAutoCommit(false);
+			}
+			for (int i = 0; i < time1.size(); i++) {
+				ps.setDouble(1, time1.get(i));
+				ps.setDouble(2, time2.get(i));
+				ps.setDouble(3, time3.get(i));
+				ps.setDouble(4, time4.get(i));
+				ps.setInt(5, Integer.parseInt(ids.get(i)));
+				ps.addBatch();
+			}
+			ps.executeBatch();
+			if (true) {
+				c.setAutoCommit(true);
+			}
+		} catch (Exception e) {
+			System.err.println(e.getClass().getName() + " : " + e.getMessage());
+			System.exit(0);
+		}
 	}
 
 	// Proposed new method for check-in prediction
@@ -633,9 +639,10 @@ public class Main {
 		// Add popularity and visited categories to ranks
 		for (int i = 0; i < placesArray.size(); i++) {
 
-			rankPlaces.put(placesArray.get(i).getId(),
-					new PlaceRank(placesArray.get(i).getId(),
-							((double) (placesArray.get(i).getNum_checkins() / maxPlaceCheckin) * wpopular)
+			rankPlaces
+					.put(placesArray.get(i).getId(),
+							new PlaceRank(placesArray.get(i).getId(), ((double) (placesArray.get(i).getNum_checkins()
+									/ maxPlaceCheckin) * wpopular)
 									+ (wvisitedC * (double) visitedCategories[placesArray.get(i).getCategory_id() - 1]
 											/ maxVisitedCategory)));
 
@@ -1711,7 +1718,7 @@ public class Main {
 			while (rs.next()) {
 				int id = rs.getInt("id");
 				String name = null;
-				if (!database_name.equals("foursquare")) {
+				if (!database_name.contains("foursquare")) {
 					name = rs.getString("name"); // for gowalla : name ,
 				} else {
 					name = rs.getString("category");
@@ -1741,7 +1748,7 @@ public class Main {
 
 			stmt = c.createStatement();
 			ResultSet rs = null;
-			if (database_name.equals("foursquare")) {
+			if (database_name.contains("foursquare")) {
 				rs = stmt.executeQuery("SELECT * FROM place;"); // foursquare
 																// :
 																// place
@@ -1750,11 +1757,11 @@ public class Main {
 																// :
 																// places
 			} else {
-				rs = stmt.executeQuery("SELECT * FROM places where city = '" + city + "';"); // foursquare
+				rs = stmt.executeQuery("SELECT * FROM places where city = '" + city + "';");
 			}
 			while (rs.next()) {
 				String id = null;
-				if (database_name.equals("foursquare")) {
+				if (database_name.contains("foursquare")) {
 					id = rs.getString("id");
 				} else {
 					int id_i = rs.getInt("id");
@@ -1810,7 +1817,7 @@ public class Main {
 				int user_id = rs.getInt("user_id");
 				String place_id = null;
 				Timestamp ts;
-				if (database_name.equals("foursquare")) {
+				if (database_name.contains("foursquare")) {
 					place_id = rs.getString("place_id");
 					ts = rs.getTimestamp("time");
 				} else {
@@ -1828,7 +1835,7 @@ public class Main {
 				Checkin checkin = new Checkin(id, user_id, place_id, 0, ldt);
 				checkin.setPlace(places.get(place_id));
 				checkins.add(checkin);
-				// checkinhm.put(checkin.getId(), checkin); /////
+				checkinhm.put(checkin.getId(), checkin); /////
 				// places.get(place_id).checkin.add(checkin.getId()); //////
 				users.get(user_id).addCheckin(checkin);
 			}

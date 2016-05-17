@@ -1,1011 +1,1011 @@
-Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00,000 End Date:2011-07-20T00:00:00,000
 Popular Predictions
 Correct Predictions: 16876
 Total Predictions: 285803
-Accuracy: 0.05904766569980021
-Precision : 0.6527909457217173
+0,05904766569980021
+0,6527909457217173
 List Size: 10
 Popular Predictions
 Correct Predictions: 25189
 Total Predictions: 285803
-Accuracy: 0.08813413435128392
-Precision : 0.6481142562229731
+0,08813413435128392
+0,6481142562229731
 List Size: 20
 Popular Predictions
 Correct Predictions: 31781
 Total Predictions: 285803
-Accuracy: 0.11119897271897076
-Precision : 0.645700261162336
+0,11119897271897076
+0,645700261162336
 List Size: 30
 Popular Predictions
 Correct Predictions: 36463
 Total Predictions: 285803
-Accuracy: 0.12758088613485513
-Precision : 0.6587047143679824
+0,12758088613485513
+0,6587047143679824
 List Size: 40
 Popular Predictions
 Correct Predictions: 40000
 Total Predictions: 285803
-Accuracy: 0.13995654349324535
-Precision : 0.6728019999999343
+0,13995654349324535
+0,6728019999999343
 List Size: 50
 Popular Predictions
 Correct Predictions: 42954
 Total Predictions: 285803
-Accuracy: 0.1502923342302215
-Precision : 0.6837733389207565
+0,1502923342302215
+0,6837733389207565
 List Size: 60
 Popular Predictions
 Correct Predictions: 45515
 Total Predictions: 285803
-Accuracy: 0.15925305192737654
-Precision : 0.6924141177948252
+0,15925305192737654
+0,6924141177948252
 List Size: 70
 Popular Predictions
 Correct Predictions: 47727
 Total Predictions: 285803
-Accuracy: 0.16699264878255302
-Precision : 0.700251691914407
+0,16699264878255302
+0,700251691914407
 List Size: 80
 Popular Predictions
 Correct Predictions: 49769
 Total Predictions: 285803
-Accuracy: 0.1741374303278832
-Precision : 0.7059883327641241
+0,1741374303278832
+0,7059883327641241
 List Size: 90
 Popular Predictions
 Correct Predictions: 51700
 Total Predictions: 285803
-Accuracy: 0.1808938324650196
-Precision : 0.7099878143133878
+0,1808938324650196
+0,7099878143133878
 List Size: 100
 
 
 
-Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00,000 End Date:2011-07-20T00:00:00,000
 Category-based Predictions
 Correct Predictions: 24738
 Total Predictions: 285803
-Accuracy: 0.08655612432339758
-Precision : 0.67481203007517
+0,08655612432339758
+0,67481203007517
 List Size: 10
 Category-based Predictions
 Correct Predictions: 37314
 Total Predictions: 285803
-Accuracy: 0.13055846159767392
-Precision : 0.6725746368655557
+0,13055846159767392
+0,6725746368655557
 List Size: 20
 Category-based Predictions
 Correct Predictions: 46728
 Total Predictions: 285803
-Accuracy: 0.1634972341088092
-Precision : 0.6638154140272863
+0,1634972341088092
+0,6638154140272863
 List Size: 30
 Category-based Predictions
 Correct Predictions: 54244
 Total Predictions: 285803
-Accuracy: 0.18979506863119003
-Precision : 0.656354158985301
+0,18979506863119003
+0,656354158985301
 List Size: 40
 Category-based Predictions
 Correct Predictions: 60296
 Total Predictions: 285803
-Accuracy: 0.21097049366171805
-Precision : 0.6505728406527534
+0,21097049366171805
+0,6505728406527534
 List Size: 50
 Category-based Predictions
 Correct Predictions: 65787
 Total Predictions: 285803
-Accuracy: 0.23018302816975328
-Precision : 0.6449209823622571
+0,23018302816975328
+0,6449209823622571
 List Size: 60
 Category-based Predictions
 Correct Predictions: 70166
 Total Predictions: 285803
-Accuracy: 0.24550477076867633
-Precision : 0.6439376417557814
+0,24550477076867633
+0,6439376417557814
 List Size: 70
 Category-based Predictions
 Correct Predictions: 74098
 Total Predictions: 285803
-Accuracy: 0.25926249899406234
-Precision : 0.643033550163313
+0,25926249899406234
+0,643033550163313
 List Size: 80
 Category-based Predictions
 Correct Predictions: 77344
 Total Predictions: 285803
-Accuracy: 0.2706199724985392
-Precision : 0.6438716786191886
+0,2706199724985392
+0,6438716786191886
 List Size: 90
 Category-based Predictions
 Correct Predictions: 80389
 Total Predictions: 285803
-Accuracy: 0.2812741643719625
-Precision : 0.6427073355807288
+0,2812741643719625
+0,6427073355807288
 List Size: 100
 
 
 
 
 
-Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00,000 End Date:2011-07-20T00:00:00,000
 Former visit Predictions
 Correct Predictions: 130067
 Total Predictions: 285803
-Accuracy: 0.45509319356339856
-Precision : 0.7722927414332089
+0,45509319356339856
+0,7722927414332089
 List Size: 10
 Former visit Predictions
 Correct Predictions: 147862
 Total Predictions: 285803
-Accuracy: 0.5173563608499561
-Precision : 0.8202218960920221
+0,5173563608499561
+0,8202218960920221
 List Size: 20
 Former visit Predictions
 Correct Predictions: 150874
 Total Predictions: 285803
-Accuracy: 0.5278950885749975
-Precision : 0.867544441056279
+0,5278950885749975
+0,867544441056279
 List Size: 30
 Former visit Predictions
 Correct Predictions: 151212
 Total Predictions: 285803
-Accuracy: 0.5290777213675154
-Precision : 0.8990643930377707
+0,5290777213675154
+0,8990643930377707
 List Size: 40
 Former visit Predictions
 Correct Predictions: 151278
 Total Predictions: 285803
-Accuracy: 0.5293086496642793
-Precision : 0.9189377173153164
+0,5293086496642793
+0,9189377173153164
 List Size: 50
 Former visit Predictions
 Correct Predictions: 151278
 Total Predictions: 285803
-Accuracy: 0.5293086496642793
-Precision : 0.932448097762529
+0,5293086496642793
+0,932448097762529
 List Size: 60
 Former visit Predictions
 Correct Predictions: 151278
 Total Predictions: 285803
-Accuracy: 0.5293086496642793
-Precision : 0.9420983695099677
+0,5293086496642793
+0,9420983695099677
 List Size: 70
 Former visit Predictions
 Correct Predictions: 151278
 Total Predictions: 285803
-Accuracy: 0.5293086496642793
-Precision : 0.9493360733220769
+0,5293086496642793
+0,9493360733220769
 List Size: 80
 Former visit Predictions
 Correct Predictions: 151278
 Total Predictions: 285803
-Accuracy: 0.5293086496642793
-Precision : 0.9549653985072799
+0,5293086496642793
+0,9549653985072799
 List Size: 90
 Former visit Predictions
 Correct Predictions: 151278
 Total Predictions: 285803
-Accuracy: 0.5293086496642793
-Precision : 0.9594688586578319
+0,5293086496642793
+0,9594688586578319
 List Size: 100
 
 
 
 
-Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
-Check-in Location Used PredictionsStart Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00,000 End Date:2011-07-20T00:00:00,000
+Check-in Location Used PredictionsStart Date : 2011-06-20T00:00:00,000 End Date:2011-07-20T00:00:00,000
 Check-in Location Used Predictions
 Correct Predictions: 1304
 Total Predictions: 3000
-Accuracy: 0.43466666666666665
-Precision : 0.7285736196319039
+0,43466666666666665
+0,7285736196319039
 List Size: 50
 
-Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00,000 End Date:2011-07-20T00:00:00,000
 Check-in Location Used Predictions
 Correct Predictions: 1304
 Total Predictions: 3000
-Accuracy: 0.43466666666666665
-Precision : 0.7285736196319039
+0,43466666666666665
+0,7285736196319039
 List Size: 50
 
 
 
-Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+Start Date : 2010-06-20T00:00:00,000 End Date:2010-07-20T00:00:00,000
 Check-in Location Used Predictions
 Correct Predictions: 1243
 Total Predictions: 3000
-Accuracy: 0.41433333333333333
-Precision : 0.6895897023330653
+0,41433333333333333
+0,6895897023330653
 List Size: 50
-Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+Start Date : 2010-06-20T00:00:00,000 End Date:2010-07-20T00:00:00,000
 Check-in Location Used Predictions
 Correct Predictions: 157
 Total Predictions: 3000
-Accuracy: 0.052333333333333336
-Precision : 0.5257324840764334
+0,052333333333333336
+0,5257324840764334
 List Size: 50
-Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+Start Date : 2010-06-20T00:00:00,000 End Date:2010-07-20T00:00:00,000
 Check-in Location Used Predictions
 Correct Predictions: 177
 Total Predictions: 3000
-Accuracy: 0.059
-Precision : 0.4696045197740111
+0,059
+0,4696045197740111
 List Size: 50
-Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+Start Date : 2010-06-20T00:00:00,000 End Date:2010-07-20T00:00:00,000
 Check-in Location Used Predictions
 Correct Predictions: 1130
 Total Predictions: 3000
-Accuracy: 0.37666666666666665
-Precision : 0.6903893805309735
+0,37666666666666665
+0,6903893805309735
 List Size: 50
-Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+Start Date : 2010-06-20T00:00:00,000 End Date:2010-07-20T00:00:00,000
 Check-in Location Used Predictions
 Correct Predictions: 204
 Total Predictions: 3000
-Accuracy: 0.068
-Precision : 0.5398039215686274
+0,068
+0,5398039215686274
 List Size: 50
-Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
-Check-in Location Used PredictionsStart Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+Start Date : 2010-06-20T00:00:00,000 End Date:2010-07-20T00:00:00,000
+Check-in Location Used PredictionsStart Date : 2010-06-20T00:00:00,000 End Date:2010-07-20T00:00:00,000
 Check-in Location Used Predictions
 Correct Predictions: 1013
 Total Predictions: 3000
-Accuracy: 0.33766666666666667
-Precision : 0.874333268654802
+0,33766666666666667
+0,874333268654802
 List Size: 50
-Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+Start Date : 2010-06-20T00:00:00,000 End Date:2010-07-20T00:00:00,000
 New Method Predictions
- Distance : 0.0 VisitedPlace : 1.0 VisitedCategory : 0.0 PopularPlace : 0.0 Time 0.0
+ Distance : 0,0 VisitedPlace : 1,0 VisitedCategory : 0,0 PopularPlace : 0,0 Time 0,0
 Correct Predictions: 770
 Total Predictions: 3000
-Accuracy: 0.25666666666666665
-Precision : 0.76361038961039
+0,25666666666666665
+0,76361038961039
 List Size: 50
-Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+Start Date : 2010-06-20T00:00:00,000 End Date:2010-07-20T00:00:00,000
 New Method Predictions
- Distance : 0.0 VisitedPlace : 1.0 VisitedCategory : 0.0 PopularPlace : 0.0 Time 0.0
+ Distance : 0,0 VisitedPlace : 1,0 VisitedCategory : 0,0 PopularPlace : 0,0 Time 0,0
 Correct Predictions: 3377
 Total Predictions: 10000
-Accuracy: 0.3377
-Precision : 0.803494225644075
+0,3377
+0,803494225644075
 List Size: 50
-Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+Start Date : 2010-06-20T00:00:00,000 End Date:2010-07-20T00:00:00,000
 Check-in Location Used Predictions
 Correct Predictions: 0
 Total Predictions: 0
-Accuracy: NaN
-Precision : NaN
+NaN
+NaN
 List Size: 50
-Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00,000 End Date:2011-07-20T00:00:00,000
 Check-in Location Used Predictions
 Correct Predictions: 4412
 Total Predictions: 10000
-Accuracy: 0.4412
-Precision : 0.8911027386007881
+0,4412
+0,8911027386007881
 List Size: 50
-Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00,000 End Date:2011-07-20T00:00:00,000
 New Method Predictions
- Distance : 0.0 VisitedPlace : 1.0 VisitedCategory : 0.0 PopularPlace : 0.0 Time 0.0
+ Distance : 0,0 VisitedPlace : 1,0 VisitedCategory : 0,0 PopularPlace : 0,0 Time 0,0
 Correct Predictions: 4365
 Total Predictions: 10000
-Accuracy: 0.4365
-Precision : 0.8744604810996718
+0,4365
+0,8744604810996718
 List Size: 50
-Start Date : 2011-09-20T00:00:00.000 End Date:2011-10-20T00:00:00.000
+Start Date : 2011-09-20T00:00:00,000 End Date:2011-10-20T00:00:00,000
 New Method Predictions
- Distance : 0.0 VisitedPlace : 1.0 VisitedCategory : 0.0 PopularPlace : 0.0 Time 0.0
+ Distance : 0,0 VisitedPlace : 1,0 VisitedCategory : 0,0 PopularPlace : 0,0 Time 0,0
 Correct Predictions: 0
 Total Predictions: 0
-Accuracy: NaN
-Precision : NaN
+NaN
+NaN
 List Size: 10
-Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00,000 End Date:2011-07-20T00:00:00,000
 Check-in Location Used Predictions
 Correct Predictions: 4358
 Total Predictions: 10000
-Accuracy: 0.4358
-Precision : 0.8787624656716019
+0,4358
+0,8787624656716019
 List Size: 10
-Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00,000 End Date:2011-07-20T00:00:00,000
 New Method Predictions
- Distance : 0.0 VisitedPlace : 1.0 VisitedCategory : 0.0 PopularPlace : 0.0 Time 0.0
+ Distance : 0,0 VisitedPlace : 1,0 VisitedCategory : 0,0 PopularPlace : 0,0 Time 0,0
 Correct Predictions: 3381
 Total Predictions: 10000
-Accuracy: 0.3381
-Precision : 0.7942620526471524
+0,3381
+0,7942620526471524
 List Size: 10
-Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
-Check-in Location Used PredictionsStart Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00,000 End Date:2011-07-20T00:00:00,000
+Check-in Location Used PredictionsStart Date : 2011-06-20T00:00:00,000 End Date:2011-07-20T00:00:00,000
 Check-in Location Used Predictions
 Correct Predictions: 1301
 Total Predictions: 3000
-Accuracy: 0.43366666666666664
-Precision : 0.8913691594835244
+0,43366666666666664
+0,8913691594835244
 List Size: 50
-Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00,000 End Date:2011-07-20T00:00:00,000
 Check-in Location Used Predictions
 Correct Predictions: 1304
 Total Predictions: 3000
-Accuracy: 0.43466666666666665
-Precision : 0.7285736196319039
+0,43466666666666665
+0,7285736196319039
 List Size: 50
-Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
-Check-in Location Used PredictionsStart Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
-Check-in Location Used PredictionsStart Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00,000 End Date:2011-07-20T00:00:00,000
+Check-in Location Used PredictionsStart Date : 2011-06-20T00:00:00,000 End Date:2011-07-20T00:00:00,000
+Check-in Location Used PredictionsStart Date : 2011-06-20T00:00:00,000 End Date:2011-07-20T00:00:00,000
 Former visit Predictions
 Correct Predictions: 1299
 Total Predictions: 3000
-Accuracy: 0.433
-Precision : 0.9006312548113982
+0,433
+0,9006312548113982
 List Size: 50
-Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00,000 End Date:2011-07-20T00:00:00,000
 Former visit Predictions
 Correct Predictions: 1299
 Total Predictions: 3000
-Accuracy: 0.433
-Precision : 0.9006312548113982
+0,433
+0,9006312548113982
 List Size: 50
-Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00,000 End Date:2011-07-20T00:00:00,000
 Check-in Location Used Predictions
 Correct Predictions: 598
 Total Predictions: 3000
-Accuracy: 0.19933333333333333
-Precision : 0.657424749163879
+0,19933333333333333
+0,657424749163879
 List Size: 50
-Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+Start Date : 2010-06-20T00:00:00,000 End Date:2010-07-20T00:00:00,000
 Check-in Location Used Predictions
 Correct Predictions: 362
 Total Predictions: 3000
-Accuracy: 0.12066666666666667
-Precision : 0.6391160220994471
+0,12066666666666667
+0,6391160220994471
 List Size: 50
-Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00,000 End Date:2011-07-20T00:00:00,000
 Check-in Location Used Predictions
 Correct Predictions: 1369
 Total Predictions: 3000
-Accuracy: 0.4563333333333333
-Precision : 0.6630679327976645
+0,4563333333333333
+0,6630679327976645
 List Size: 50
-Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00,000 End Date:2011-07-20T00:00:00,000
 Check-in Location Used Predictions
 Correct Predictions: 1369
 Total Predictions: 3000
-Accuracy: 0.4563333333333333
-Precision : 0.6630679327976645
+0,4563333333333333
+0,6630679327976645
 List Size: 50
-Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00,000 End Date:2011-07-20T00:00:00,000
 Check-in Location Used Predictions
 Correct Predictions: 1353
 Total Predictions: 3000
-Accuracy: 0.451
-Precision : 0.6255136733185525
+0,451
+0,6255136733185525
 List Size: 50
-Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
-Check-in Location Used PredictionsStart Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00,000 End Date:2011-07-20T00:00:00,000
+Check-in Location Used PredictionsStart Date : 2011-06-20T00:00:00,000 End Date:2011-07-20T00:00:00,000
 Check-in Location Used Predictions
 Correct Predictions: 1353
 Total Predictions: 3000
-Accuracy: 0.451
-Precision : 0.6255136733185525
+0,451
+0,6255136733185525
 List Size: 50
-Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+Start Date : 2010-06-20T00:00:00,000 End Date:2010-07-20T00:00:00,000
 Check-in Location Used Predictions
 Correct Predictions: 1118
 Total Predictions: 3000
-Accuracy: 0.37266666666666665
-Precision : 0.6788550983899828
+0,37266666666666665
+0,6788550983899828
 List Size: 50
-Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00,000 End Date:2011-07-20T00:00:00,000
 Check-in Location Used Predictions
 Correct Predictions: 1353
 Total Predictions: 3000
-Accuracy: 0.451
-Precision : 0.6255136733185525
+0,451
+0,6255136733185525
 List Size: 50
-Start Date : 2011-05-20T00:00:00.000 End Date:2011-06-20T00:00:00.000
+Start Date : 2011-05-20T00:00:00,000 End Date:2011-06-20T00:00:00,000
 Check-in Location Used Predictions
 Correct Predictions: 1383
 Total Predictions: 3000
-Accuracy: 0.461
-Precision : 0.6257122198120053
+0,461
+0,6257122198120053
 List Size: 50
-Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
-Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
-Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
-Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
-Start Date : 2011-05-20T00:00:00.000 End Date:2011-06-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00,000 End Date:2011-07-20T00:00:00,000
+Start Date : 2011-06-20T00:00:00,000 End Date:2011-07-20T00:00:00,000
+Start Date : 2011-06-20T00:00:00,000 End Date:2011-07-20T00:00:00,000
+Start Date : 2011-06-20T00:00:00,000 End Date:2011-07-20T00:00:00,000
+Start Date : 2011-05-20T00:00:00,000 End Date:2011-06-20T00:00:00,000
 Check-in Location Used Predictions
 Correct Predictions: 1672
 Total Predictions: 3000
-Accuracy: 0.5573333333333333
-Precision : 0.8732106095915743
+0,5573333333333333
+0,8732106095915743
 List Size: 50
-Start Date : 2011-05-20T00:00:00.000 End Date:2011-06-20T00:00:00.000
+Start Date : 2011-05-20T00:00:00,000 End Date:2011-06-20T00:00:00,000
 Check-in Location Used Predictions
 Correct Predictions: 1672
 Total Predictions: 3000
-Accuracy: 0.5573333333333333
-Precision : 0.8732106095915743
+0,5573333333333333
+0,8732106095915743
 List Size: 50
-Start Date : 2011-05-20T00:00:00.000 End Date:2011-06-20T00:00:00.000
+Start Date : 2011-05-20T00:00:00,000 End Date:2011-06-20T00:00:00,000
 Check-in Location Used Predictions
 Correct Predictions: 1539
 Total Predictions: 3000
-Accuracy: 0.513
-Precision : 0.7005328135152712
+0,513
+0,7005328135152712
 List Size: 50
-Start Date : 2011-05-20T00:00:00.000 End Date:2011-06-20T00:00:00.000
+Start Date : 2011-05-20T00:00:00,000 End Date:2011-06-20T00:00:00,000
 Check-in Location Used Predictions
 Correct Predictions: 1471
 Total Predictions: 3000
-Accuracy: 0.49033333333333334
-Precision : 0.6628008157715856
+0,49033333333333334
+0,6628008157715856
 List Size: 50
-Start Date : 2011-05-20T00:00:00.000 End Date:2011-06-20T00:00:00.000
+Start Date : 2011-05-20T00:00:00,000 End Date:2011-06-20T00:00:00,000
 Check-in Location Used Predictions
 Correct Predictions: 1403
 Total Predictions: 3000
-Accuracy: 0.4676666666666667
-Precision : 0.7182466143977214
+0,4676666666666667
+0,7182466143977214
 List Size: 50
-Start Date : 2011-05-20T00:00:00.000 End Date:2011-06-20T00:00:00.000
+Start Date : 2011-05-20T00:00:00,000 End Date:2011-06-20T00:00:00,000
 Check-in Location Used Predictions
 Correct Predictions: 1231
 Total Predictions: 3000
-Accuracy: 0.4103333333333333
-Precision : 0.7209423233143812
+0,4103333333333333
+0,7209423233143812
 List Size: 50
-Start Date : 2010-05-20T00:00:00.000 End Date:2010-06-20T00:00:00.000
-Check-in Location Used PredictionsStart Date : 2010-05-20T00:00:00.000 End Date:2010-06-20T00:00:00.000
-Check-in Location Used PredictionsStart Date : 2010-05-20T00:00:00.000 End Date:2010-06-20T00:00:00.000
-Check-in Location Used PredictionsStart Date : 2010-05-20T00:00:00.000 End Date:2010-06-20T00:00:00.000
-Check-in Location Used PredictionsStart Date : 2010-05-20T00:00:00.000 End Date:2010-06-20T00:00:00.000
-Check-in Location Used PredictionsStart Date : 2010-05-20T00:00:00.000 End Date:2010-06-20T00:00:00.000
-Check-in Location Used PredictionsStart Date : 2010-05-20T00:00:00.000 End Date:2010-06-20T00:00:00.000
-Check-in Location Used PredictionsStart Date : 2010-05-20T00:00:00.000 End Date:2010-06-20T00:00:00.000
+Start Date : 2010-05-20T00:00:00,000 End Date:2010-06-20T00:00:00,000
+Check-in Location Used PredictionsStart Date : 2010-05-20T00:00:00,000 End Date:2010-06-20T00:00:00,000
+Check-in Location Used PredictionsStart Date : 2010-05-20T00:00:00,000 End Date:2010-06-20T00:00:00,000
+Check-in Location Used PredictionsStart Date : 2010-05-20T00:00:00,000 End Date:2010-06-20T00:00:00,000
+Check-in Location Used PredictionsStart Date : 2010-05-20T00:00:00,000 End Date:2010-06-20T00:00:00,000
+Check-in Location Used PredictionsStart Date : 2010-05-20T00:00:00,000 End Date:2010-06-20T00:00:00,000
+Check-in Location Used PredictionsStart Date : 2010-05-20T00:00:00,000 End Date:2010-06-20T00:00:00,000
+Check-in Location Used PredictionsStart Date : 2010-05-20T00:00:00,000 End Date:2010-06-20T00:00:00,000
 Check-in Location Used Predictions
 Correct Predictions: 583
 Total Predictions: 3000
-Accuracy: 0.19433333333333333
-Precision : 0.7029110666335984
+0,19433333333333333
+0,7029110666335984
 List Size: 50
 Check-in Location Used Predictions
 Correct Predictions: 73226
 Total Predictions: 497935
-Accuracy: 0.14705935513671464
-Precision : 0.6599821717737601
+0,14705935513671464
+0,6599821717737601
 List Size: 50
 Check-in Location Used Predictions
 Correct Predictions: 715
 Total Predictions: 5000
-Accuracy: 0.143
-Precision : 0.6272253000372116
+0,143
+0,6272253000372116
 List Size: 50
 Check-in Location Used Predictions
 Correct Predictions: 1430
 Total Predictions: 10000
-Accuracy: 0.143
-Precision : 0.6270864708726791
+0,143
+0,6270864708726791
 List Size: 50
 Check-in Location Used Predictions
 Correct Predictions: 1562
 Total Predictions: 10000
-Accuracy: 0.1562
-Precision : 0.6196029786166013
+0,1562
+0,6196029786166013
 List Size: 50
 Check-in Location Used Predictions
 Correct Predictions: 70315
 Total Predictions: 497935
-Accuracy: 0.1412132105596112
-Precision : 0.6491090324527037
+0,1412132105596112
+0,6491090324527037
 List Size: 50
 Check-in Location Used Predictions
 Correct Predictions: 31213
 Total Predictions: 497935
-Accuracy: 0.06268488858987618
-Precision : 0.6653324520359011
+0,06268488858987618
+0,6653324520359011
 List Size: 10
 Check-in Location Used Predictions
 Correct Predictions: 46415
 Total Predictions: 497935
-Accuracy: 0.09321497785855584
-Precision : 0.6526251756574369
+0,09321497785855584
+0,6526251756574369
 List Size: 20
 Check-in Location Used Predictions
 Correct Predictions: 57107
 Total Predictions: 497935
-Accuracy: 0.11468766003594846
-Precision : 0.6564212375817814
+0,11468766003594846
+0,6564212375817814
 List Size: 30
 Check-in Location Used Predictions
 Correct Predictions: 65792
 Total Predictions: 497935
-Accuracy: 0.1321296956430056
-Precision : 0.6584938994156617
+0,1321296956430056
+0,6584938994156617
 List Size: 40
 Check-in Location Used Predictions
 Correct Predictions: 73226
 Total Predictions: 497935
-Accuracy: 0.14705935513671464
-Precision : 0.6599821717737601
+0,14705935513671464
+0,6599821717737601
 List Size: 50
 Check-in Location Used Predictions
 Correct Predictions: 79863
 Total Predictions: 497935
-Accuracy: 0.16038840410897004
-Precision : 0.6603474381186167
+0,16038840410897004
+0,6603474381186167
 List Size: 60
 Check-in Location Used Predictions
 Correct Predictions: 85915
 Total Predictions: 497935
-Accuracy: 0.17254260094189
-Precision : 0.6602723879451418
+0,17254260094189
+0,6602723879451418
 List Size: 70
 Check-in Location Used Predictions
 Correct Predictions: 91197
 Total Predictions: 497935
-Accuracy: 0.18315041119824876
-Precision : 0.6621015582280723
+0,18315041119824876
+0,6621015582280723
 List Size: 80
 Check-in Location Used Predictions
 Correct Predictions: 95863
 Total Predictions: 497935
-Accuracy: 0.19252111219335857
-Precision : 0.664652700231336
+0,19252111219335857
+0,664652700231336
 List Size: 90
 Check-in Location Used Predictions
 Correct Predictions: 100101
 Total Predictions: 497935
-Accuracy: 0.201032263247211
-Precision : 0.6669132172263059
+0,201032263247211
+0,6669132172263059
 List Size: 100
-Check-in Location Used PredictionsStart Date : 2010-05-20T00:00:00.000 End Date:2010-06-20T00:00:00.000
+Check-in Location Used PredictionsStart Date : 2010-05-20T00:00:00,000 End Date:2010-06-20T00:00:00,000
 Check-in Location Used Predictions
 Correct Predictions: 691
 Total Predictions: 3000
-Accuracy: 0.23033333333333333
-Precision : 0.6824891461649781
+0,23033333333333333
+0,6824891461649781
 List Size: 10
-Start Date : 2010-05-20T00:00:00.000 End Date:2010-06-20T00:00:00.000
+Start Date : 2010-05-20T00:00:00,000 End Date:2010-06-20T00:00:00,000
 Proposed Method Predictions
 Correct Predictions: 1815
 Total Predictions: 3000
-Accuracy: 0.605
-Precision : 0.9222296558660219
+0,605
+0,9222296558660219
 List Size: 10
 
 
 
-Start Date : 2010-05-20T00:00:00.000 End Date:2010-06-20T00:00:00.000
-Proposed Method PredictionsStart Date : 2010-05-20T00:00:00.000 End Date:2010-06-20T00:00:00.000
-Proposed Method PredictionsStart Date : 2010-05-20T00:00:00.000 End Date:2010-06-20T00:00:00.000
+Start Date : 2010-05-20T00:00:00,000 End Date:2010-06-20T00:00:00,000
+Proposed Method PredictionsStart Date : 2010-05-20T00:00:00,000 End Date:2010-06-20T00:00:00,000
+Proposed Method PredictionsStart Date : 2010-05-20T00:00:00,000 End Date:2010-06-20T00:00:00,000
 Proposed Method Predictions
 Correct Predictions: 1815
 Total Predictions: 3000
-Accuracy: 0.605
-Precision : 0.543137653592197
+0,605
+0,543137653592197
 List Size: 10
 Proposed Method Predictions
 Correct Predictions: 1874
 Total Predictions: 3000
-Accuracy: 0.6246666666666667
-Precision : 0.5670834389632642
+0,6246666666666667
+0,5670834389632642
 List Size: 20
 Proposed Method Predictions
 Correct Predictions: 1925
 Total Predictions: 3000
-Accuracy: 0.6416666666666667
-Precision : 0.582856678248034
+0,6416666666666667
+0,582856678248034
 List Size: 30
 Proposed Method Predictions
 Correct Predictions: 1972
 Total Predictions: 3000
-Accuracy: 0.6573333333333333
-Precision : 0.5934944961771276
+0,6573333333333333
+0,5934944961771276
 List Size: 40
 Proposed Method Predictions
 Correct Predictions: 1997
 Total Predictions: 3000
-Accuracy: 0.6656666666666666
-Precision : 0.6004710218082433
+0,6656666666666666
+0,6004710218082433
 List Size: 50
 Proposed Method Predictions
 Correct Predictions: 2026
 Total Predictions: 3000
-Accuracy: 0.6753333333333333
-Precision : 0.6001388630446061
+0,6753333333333333
+0,6001388630446061
 List Size: 60
 Proposed Method Predictions
 Correct Predictions: 2046
 Total Predictions: 3000
-Accuracy: 0.682
-Precision : 0.599079992070346
+0,682
+0,599079992070346
 List Size: 70
 Proposed Method Predictions
 Correct Predictions: 2066
 Total Predictions: 3000
-Accuracy: 0.6886666666666666
-Precision : 0.598323404358069
+0,6886666666666666
+0,598323404358069
 List Size: 80
 Proposed Method Predictions
 Correct Predictions: 2086
 Total Predictions: 3000
-Accuracy: 0.6953333333333334
-Precision : 0.5952446816971196
+0,6953333333333334
+0,5952446816971196
 List Size: 90
 Proposed Method Predictions
 Correct Predictions: 2112
 Total Predictions: 3000
-Accuracy: 0.704
-Precision : 0.5918868834998708
+0,704
+0,5918868834998708
 List Size: 100
-Start Date : 2010-05-20T00:00:00.000 End Date:2010-06-20T00:00:00.000
+Start Date : 2010-05-20T00:00:00,000 End Date:2010-06-20T00:00:00,000
 Proposed Method Predictions
 
 
-Start Date : 2010-05-20T00:00:00.000 End Date:2010-06-20T00:00:00.000
+Start Date : 2010-05-20T00:00:00,000 End Date:2010-06-20T00:00:00,000
 Proposed Method Predictions
 Correct Predictions: 0
 Total Predictions: 0
-Accuracy: NaN
-Precision : NaN
+NaN
+NaN
 List Size: 10
-Start Date : 2011-05-20T00:00:00.000 End Date:2011-06-20T00:00:00.000
+Start Date : 2011-05-20T00:00:00,000 End Date:2011-06-20T00:00:00,000
 Proposed Method Predictions
 Correct Predictions: 1091
 Total Predictions: 3000
-Accuracy: 0.3636666666666667
-Precision : 0.6594867094408785
+0,3636666666666667
+0,6594867094408785
 List Size: 10
-Start Date : 2011-05-20T00:00:00.000 End Date:2011-06-20T00:00:00.000
-Proposed Method PredictionsStart Date : 2011-05-20T00:00:00.000 End Date:2011-06-20T00:00:00.000
-Proposed Method PredictionsStart Date : 2011-05-20T00:00:00.000 End Date:2011-06-20T00:00:00.000
+Start Date : 2011-05-20T00:00:00,000 End Date:2011-06-20T00:00:00,000
+Proposed Method PredictionsStart Date : 2011-05-20T00:00:00,000 End Date:2011-06-20T00:00:00,000
+Proposed Method PredictionsStart Date : 2011-05-20T00:00:00,000 End Date:2011-06-20T00:00:00,000
 Proposed Method Predictions
 Correct Predictions: 1808
 Total Predictions: 3000
-Accuracy: 0.6026666666666667
-Precision : 0.5701327433628282
+0,6026666666666667
+0,5701327433628282
 List Size: 10
 
 
 
-Start Date : 2011-05-20T00:00:00.000 End Date:2011-06-20T00:00:00.000
+Start Date : 2011-05-20T00:00:00,000 End Date:2011-06-20T00:00:00,000
 Proposed Method Predictions
 Correct Predictions: 1808
 Total Predictions: 3000
-Accuracy: 0.6026666666666667
-Precision : 0.5701327433628282
+0,6026666666666667
+0,5701327433628282
 List Size: 10
 Proposed Method Predictions
 Correct Predictions: 1870
 Total Predictions: 3000
-Accuracy: 0.6233333333333333
-Precision : 0.5953743315508032
+0,6233333333333333
+0,5953743315508032
 List Size: 20
 Proposed Method Predictions
 Correct Predictions: 1920
 Total Predictions: 3000
-Accuracy: 0.64
-Precision : 0.6104340277777772
+0,64
+0,6104340277777772
 List Size: 30
 Proposed Method Predictions
 Correct Predictions: 1960
 Total Predictions: 3000
-Accuracy: 0.6533333333333333
-Precision : 0.6206250000000002
+0,6533333333333333
+0,6206250000000002
 List Size: 40
 Proposed Method Predictions
 Correct Predictions: 2000
 Total Predictions: 3000
-Accuracy: 0.6666666666666666
-Precision : 0.6226500000000026
+0,6666666666666666
+0,6226500000000026
 List Size: 50
 Proposed Method Predictions
 Correct Predictions: 2032
 Total Predictions: 3000
-Accuracy: 0.6773333333333333
-Precision : 0.6254675196850402
+0,6773333333333333
+0,6254675196850402
 List Size: 60
 Proposed Method Predictions
 Correct Predictions: 2068
 Total Predictions: 3000
-Accuracy: 0.6893333333333334
-Precision : 0.6255319148936169
+0,6893333333333334
+0,6255319148936169
 List Size: 70
 Proposed Method Predictions
 Correct Predictions: 2100
 Total Predictions: 3000
-Accuracy: 0.7
-Precision : 0.6235654761904762
+0,7
+0,6235654761904762
 List Size: 80
 Proposed Method Predictions
 Correct Predictions: 2122
 Total Predictions: 3000
-Accuracy: 0.7073333333333334
-Precision : 0.6233165776521091
+0,7073333333333334
+0,6233165776521091
 List Size: 90
-Start Date : 2011-05-20T00:00:00.000 End Date:2011-06-20T00:00:00.000
+Start Date : 2011-05-20T00:00:00,000 End Date:2011-06-20T00:00:00,000
 Proposed Method Predictions
 Correct Predictions: 2145
 Total Predictions: 3000
-Accuracy: 0.715
-Precision : 0.6206386946386967
+0,715
+0,6206386946386967
 List Size: 100
-Start Date : 2010-05-20T00:00:00.000 End Date:2010-06-20T00:00:00.000
+Start Date : 2010-05-20T00:00:00,000 End Date:2010-06-20T00:00:00,000
 Proposed Method Predictions
 Correct Predictions: 1819
 Total Predictions: 3000
-Accuracy: 0.6063333333333333
-Precision : 0.5440351841671224
+0,6063333333333333
+0,5440351841671224
 List Size: 10
 Proposed Method Predictions
 Correct Predictions: 1895
 Total Predictions: 3000
-Accuracy: 0.6316666666666667
-Precision : 0.5716358839050161
+0,6316666666666667
+0,5716358839050161
 List Size: 20
 Proposed Method Predictions
 Correct Predictions: 1964
 Total Predictions: 3000
-Accuracy: 0.6546666666666666
-Precision : 0.5937712152070607
+0,6546666666666666
+0,5937712152070607
 List Size: 30
 Proposed Method Predictions
 Correct Predictions: 2006
 Total Predictions: 3000
-Accuracy: 0.6686666666666666
-Precision : 0.6146061814556333
+0,6686666666666666
+0,6146061814556333
 List Size: 40
 Proposed Method Predictions
 Correct Predictions: 2037
 Total Predictions: 3000
-Accuracy: 0.679
-Precision : 0.6299852724595026
+0,679
+0,6299852724595026
 List Size: 50
 Proposed Method Predictions
 Correct Predictions: 2074
 Total Predictions: 3000
-Accuracy: 0.6913333333333334
-Precision : 0.6365879138540673
+0,6913333333333334
+0,6365879138540673
 List Size: 60
 Proposed Method Predictions
 Correct Predictions: 2097
 Total Predictions: 3000
-Accuracy: 0.699
-Precision : 0.6443695074596338
+0,699
+0,6443695074596338
 List Size: 70
 Proposed Method Predictions
 Correct Predictions: 2117
 Total Predictions: 3000
-Accuracy: 0.7056666666666667
-Precision : 0.6508502598016038
+0,7056666666666667
+0,6508502598016038
 List Size: 80
 Proposed Method Predictions
 Correct Predictions: 2145
 Total Predictions: 3000
-Accuracy: 0.715
-Precision : 0.6542812742812742
+0,715
+0,6542812742812742
 List Size: 90
 Proposed Method Predictions
 Correct Predictions: 2177
 Total Predictions: 3000
-Accuracy: 0.7256666666666667
-Precision : 0.6572531005971542
+0,7256666666666667
+0,6572531005971542
 List Size: 100
-Start Date : 2010-05-20T00:00:00.000 End Date:2010-06-20T00:00:00.000
+Start Date : 2010-05-20T00:00:00,000 End Date:2010-06-20T00:00:00,000
 Proposed Method Predictions
 Correct Predictions: 2177
 Total Predictions: 3000
-Accuracy: 0.7256666666666667
-Precision : 0.853183279742772
+0,7256666666666667
+0,853183279742772
 List Size: 100
-Start Date : 2010-05-20T00:00:00.000 End Date:2010-06-20T00:00:00.000
+Start Date : 2010-05-20T00:00:00,000 End Date:2010-06-20T00:00:00,000
 Proposed Method Predictions
 Correct Predictions: 2177
 Total Predictions: 3000
-Accuracy: 0.7256666666666667
-Precision : 0.853183279742772
+0,7256666666666667
+0,853183279742772
 List Size: 100
 Proposed Method Predictions
 Correct Predictions: 2326
 Total Predictions: 3000
-Accuracy: 0.7753333333333333
-Precision : 0.8492884780739409
+0,7753333333333333
+0,8492884780739409
 List Size: 200
 Proposed Method Predictions
 Correct Predictions: 2436
 Total Predictions: 3000
-Accuracy: 0.812
-Precision : 0.8375779967159319
+0,812
+0,8375779967159319
 List Size: 300
 Proposed Method Predictions
 Correct Predictions: 2505
 Total Predictions: 3000
-Accuracy: 0.835
-Precision : 0.8272584830339259
+0,835
+0,8272584830339259
 List Size: 400
 Proposed Method Predictions
 Correct Predictions: 2562
 Total Predictions: 3000
-Accuracy: 0.854
-Precision : 0.819241998438723
+0,854
+0,819241998438723
 List Size: 500
 Proposed Method Predictions
 Correct Predictions: 2585
 Total Predictions: 3000
-Accuracy: 0.8616666666666667
-Precision : 0.8195190199870973
+0,8616666666666667
+0,8195190199870973
 List Size: 600
 Proposed Method Predictions
 Correct Predictions: 2622
 Total Predictions: 3000
-Accuracy: 0.874
-Precision : 0.8153132832080215
+0,874
+0,8153132832080215
 List Size: 700
 Proposed Method Predictions
 Correct Predictions: 2656
 Total Predictions: 3000
-Accuracy: 0.8853333333333333
-Precision : 0.8129612198795136
+0,8853333333333333
+0,8129612198795136
 List Size: 800
 Proposed Method Predictions
 Correct Predictions: 2675
 Total Predictions: 3000
-Accuracy: 0.8916666666666667
-Precision : 0.8128066458982325
+0,8916666666666667
+0,8128066458982325
 List Size: 900
 Proposed Method Predictions
 Correct Predictions: 2694
 Total Predictions: 3000
-Accuracy: 0.898
-Precision : 0.811759094283596
+0,898
+0,811759094283596
 List Size: 1000
-Start Date : 2010-05-20T00:00:00.000 End Date:2010-06-20T00:00:00.000
+Start Date : 2010-05-20T00:00:00,000 End Date:2010-06-20T00:00:00,000
 Proposed Method Predictions
 Correct Predictions: 1819
 Total Predictions: 3000
-Accuracy: 0.6063333333333333
-Precision : 0.8029686641011545
+0,6063333333333333
+0,8029686641011545
 List Size: 10
 Proposed Method Predictions
 Correct Predictions: 1895
 Total Predictions: 3000
-Accuracy: 0.6316666666666667
-Precision : 0.8170976253298196
+0,6316666666666667
+0,8170976253298196
 List Size: 20
 Proposed Method Predictions
 Correct Predictions: 1964
 Total Predictions: 3000
-Accuracy: 0.6546666666666666
-Precision : 0.8236082824168386
+0,6546666666666666
+0,8236082824168386
 List Size: 30
 Proposed Method Predictions
 Correct Predictions: 2006
 Total Predictions: 3000
-Accuracy: 0.6686666666666666
-Precision : 0.8339356929212358
+0,6686666666666666
+0,8339356929212358
 List Size: 40
 Proposed Method Predictions
 Correct Predictions: 2037
 Total Predictions: 3000
-Accuracy: 0.679
-Precision : 0.8434069710358434
+0,679
+0,8434069710358434
 List Size: 50
 Proposed Method Predictions
 Correct Predictions: 2074
 Total Predictions: 3000
-Accuracy: 0.6913333333333334
-Precision : 0.8451301832208342
+0,6913333333333334
+0,8451301832208342
 List Size: 60
 Proposed Method Predictions
 Correct Predictions: 2097
 Total Predictions: 3000
-Accuracy: 0.699
-Precision : 0.8500919681177138
+0,699
+0,8500919681177138
 List Size: 70
 Proposed Method Predictions
 Correct Predictions: 2117
 Total Predictions: 3000
-Accuracy: 0.7056666666666667
-Precision : 0.8538379782711348
+0,7056666666666667
+0,8538379782711348
 List Size: 80
 Proposed Method Predictions
 Correct Predictions: 2145
 Total Predictions: 3000
-Accuracy: 0.715
-Precision : 0.8541983941983946
+0,715
+0,8541983941983946
 List Size: 90
 Proposed Method Predictions
 Correct Predictions: 2177
 Total Predictions: 3000
-Accuracy: 0.7256666666666667
-Precision : 0.853183279742772
+0,7256666666666667
+0,853183279742772
 List Size: 100
 
 
 Correct Predictions: 1808
 Total Predictions: 3000
-Accuracy: 0.6026666666666667
-Precision : 0.8036504424778782
+0,6026666666666667
+0,8036504424778782
 List Size: 10
 Proposed Method Predictions
 Correct Predictions: 1870
 Total Predictions: 3000
-Accuracy: 0.6233333333333333
-Precision : 0.8236898395721968
+0,6233333333333333
+0,8236898395721968
 List Size: 20
 Proposed Method Predictions
 Correct Predictions: 1920
 Total Predictions: 3000
-Accuracy: 0.64
-Precision : 0.8331597222222257
+0,64
+0,8331597222222257
 List Size: 30
 Proposed Method Predictions
 Correct Predictions: 1960
 Total Predictions: 3000
-Accuracy: 0.6533333333333333
-Precision : 0.8418877551020382
+0,6533333333333333
+0,8418877551020382
 List Size: 40
 Proposed Method Predictions
 Correct Predictions: 2000
 Total Predictions: 3000
-Accuracy: 0.6666666666666666
-Precision : 0.844040000000004
+0,6666666666666666
+0,844040000000004
 List Size: 50
 Proposed Method Predictions
 Correct Predictions: 2032
 Total Predictions: 3000
-Accuracy: 0.6773333333333333
-Precision : 0.8501804461942283
+0,6773333333333333
+0,8501804461942283
 List Size: 60
 Proposed Method Predictions
 Correct Predictions: 2068
 Total Predictions: 3000
-Accuracy: 0.6893333333333334
-Precision : 0.8499101961867902
+0,6893333333333334
+0,8499101961867902
 List Size: 70
 Proposed Method Predictions
 Correct Predictions: 2100
 Total Predictions: 3000
-Accuracy: 0.7
-Precision : 0.8485714285714238
+0,7
+0,8485714285714238
 List Size: 80
 Proposed Method Predictions
 Correct Predictions: 2122
 Total Predictions: 3000
-Accuracy: 0.7073333333333334
-Precision : 0.8508482563619233
+0,7073333333333334
+0,8508482563619233
 List Size: 90
 Proposed Method Predictions
 Correct Predictions: 2145
 Total Predictions: 3000
-Accuracy: 0.715
-Precision : 0.8497808857808904
+0,715
+0,8497808857808904
 List Size: 100
 
 
-Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00,000 End Date:2011-07-20T00:00:00,000
 Proposed Method Predictions
 Correct Predictions: 6483
 Total Predictions: 10000
-Accuracy: 0.6483
-Precision : 0.8675890791300249
+0,6483
+0,8675890791300249
 List Size: 50
-Start Date : 2011-06-20T00:00:00.000 End Date:2011-07-20T00:00:00.000
+Start Date : 2011-06-20T00:00:00,000 End Date:2011-07-20T00:00:00,000
 Proposed Method Predictions
 Correct Predictions: 49252
 Total Predictions: 60000
-Accuracy: 0.8208666666666666
-Precision : 0.8757751969463102
+0,8208666666666666
+0,8757751969463102
 List Size: 50
-Start Date : 2010-06-20T00:00:00.000 End Date:2010-07-20T00:00:00.000
+Start Date : 2010-06-20T00:00:00,000 End Date:2010-07-20T00:00:00,000
 Proposed Method Predictions
 Correct Predictions: 32442
 Total Predictions: 60000
-Accuracy: 0.5407
-Precision : 0.8003045434929
+0,5407
+0,8003045434929
 List Size: 50
 
 
@@ -1013,78 +1013,78 @@ List Size: 50
 Proposed Method Predictions
 Correct Predictions: 209690
 Total Predictions: 468573
-Accuracy: 0.4475076455536277
-Precision : 0.7413689732463302
+0,4475076455536277
+0,7413689732463302
 List Size: 50
 
 
 Proposed Method PredictionsProposed Method PredictionsProposed Method Predictions
 Correct Predictions: 4402
 Total Predictions: 9773
-Accuracy: 0.4504246393123913
-Precision : 0.7556519763743853
+0,4504246393123913
+0,7556519763743853
 List Size: 50
 
 gowalla_randomized_10000
 Proposed Method Predictions
 Correct Predictions: 3267
 Total Predictions: 9768
-Accuracy: 0.3344594594594595
-Precision : 0.7402509947964574
+0,3344594594594595
+0,7402509947964574
 List Size: 10
 Proposed Method Predictions
 Correct Predictions: 3623
 Total Predictions: 9768
-Accuracy: 0.3709049959049959
-Precision : 0.7447695280154539
+0,3709049959049959
+0,7447695280154539
 List Size: 20
 Proposed Method Predictions
 Correct Predictions: 3905
 Total Predictions: 9768
-Accuracy: 0.3997747747747748
-Precision : 0.7464191207853265
+0,3997747747747748
+0,7464191207853265
 List Size: 30
 Proposed Method Predictions
 Correct Predictions: 4152
 Total Predictions: 9768
-Accuracy: 0.4250614250614251
-Precision : 0.7481334296724416
+0,4250614250614251
+0,7481334296724416
 List Size: 40
 Proposed Method Predictions
 Correct Predictions: 4355
 Total Predictions: 9768
-Accuracy: 0.44584357084357085
-Precision : 0.7494971297359477
+0,44584357084357085
+0,7494971297359477
 List Size: 50
 Proposed Method Predictions
 Correct Predictions: 4520
 Total Predictions: 9768
-Accuracy: 0.46273546273546273
-Precision : 0.7504535398230014
+0,46273546273546273
+0,7504535398230014
 List Size: 60
 Proposed Method Predictions
 Correct Predictions: 4666
 Total Predictions: 9768
-Accuracy: 0.4776822276822277
-Precision : 0.7531565733880425
+0,4776822276822277
+0,7531565733880425
 List Size: 70
 Proposed Method Predictions
 Correct Predictions: 4808
 Total Predictions: 9768
-Accuracy: 0.49221949221949224
-Precision : 0.7523632487520842
+0,49221949221949224
+0,7523632487520842
 List Size: 80
 Proposed Method Predictions
 Correct Predictions: 4958
 Total Predictions: 9768
-Accuracy: 0.5075757575757576
-Precision : 0.7519340235758195
+0,5075757575757576
+0,7519340235758195
 List Size: 90
 Proposed Method Predictions
 Correct Predictions: 5076
 Total Predictions: 9768
-Accuracy: 0.5196560196560197
-Precision : 0.752557131599677
+0,5196560196560197
+0,752557131599677
 List Size: 100
 
 
@@ -1092,88 +1092,3352 @@ List Size: 100
 foursquare_randomized_10000Proposed Method Predictions
 Correct Predictions: 6562
 Total Predictions: 10000
-Accuracy: 0.6562
-Precision : 0.8262572386467526
+0,6562
+0,8262572386467526
 List Size: 10
 Proposed Method Predictions
 Correct Predictions: 6745
 Total Predictions: 10000
-Accuracy: 0.6745
-Precision : 0.8475166790214809
+0,6745
+0,8475166790214809
 List Size: 20
 Proposed Method Predictions
 Correct Predictions: 6899
 Total Predictions: 10000
-Accuracy: 0.6899
-Precision : 0.8582548195390524
+0,6899
+0,8582548195390524
 List Size: 30
 Proposed Method Predictions
 Correct Predictions: 6990
 Total Predictions: 10000
-Accuracy: 0.699
-Precision : 0.8669456366237539
+0,699
+0,8669456366237539
 List Size: 40
 Proposed Method Predictions
 Correct Predictions: 7097
 Total Predictions: 10000
-Accuracy: 0.7097
-Precision : 0.870824291954331
+0,7097
+0,870824291954331
 List Size: 50
 Proposed Method Predictions
 Correct Predictions: 7200
 Total Predictions: 10000
-Accuracy: 0.72
-Precision : 0.8718842592592537
+0,72
+0,8718842592592537
 List Size: 60
 Proposed Method Predictions
 Correct Predictions: 7289
 Total Predictions: 10000
-Accuracy: 0.7289
-Precision : 0.8728475393450198
+0,7289
+0,8728475393450198
 List Size: 70
 Proposed Method Predictions
 Correct Predictions: 7367
 Total Predictions: 10000
-Accuracy: 0.7367
-Precision : 0.8730809691869285
+0,7367
+0,8730809691869285
 List Size: 80
 Proposed Method Predictions
 Correct Predictions: 7436
 Total Predictions: 10000
-Accuracy: 0.7436
-Precision : 0.8730560038252467
+0,7436
+0,8730560038252467
 List Size: 90
 Proposed Method Predictions
 Correct Predictions: 7495
 Total Predictions: 10000
-Accuracy: 0.7495
-Precision : 0.8722281521013772
+0,7495
+0,8722281521013772
 List Size: 100
 Proposed Method Predictions
 Correct Predictions: 6648
 Total Predictions: 10000
-Accuracy: 0.6648
-Precision : 0.871281588447641
+0,6648
+0,871281588447641
 List Size: 50
 
 Stockholm
 Proposed Method Predictions
 Correct Predictions: 3712
 Total Predictions: 9276
-Accuracy: 0.4001724881414403
-Precision : 0.7828017241379411
+0,4001724881414403
+0,7828017241379411
 List Size: 50
 
 Dallas
 Proposed Method Predictions
 Correct Predictions: 3587
 Total Predictions: 9576
-Accuracy: 0.37458228905597324
-Precision : 0.7788012266518094
+0,37458228905597324
+0,7788012266518094
 List Size: 50
 
 Correct Predictions: 3402
 Total Predictions: 9509
-Accuracy: 0.35776632663792196
-Precision : 0.7536684303351064
+0,35776632663792196
+0,7536684303351064
+List Size: 50
+Popular Predictions
+Correct Predictions: 2126
+Total Predictions: 9991
+0,212791512361125
+0,7239416745061171
+List Size: 50
+Close PredictionsClose PredictionsClose PredictionsClose Predictions
+Correct Predictions: 2293
+Total Predictions: 9998
+0,22934586917383476
+0,9139904055822088
+List Size: 50
+Category-based PredictionsCategory-based PredictionsCategory-based PredictionsCategory-based PredictionsCategory-based PredictionsCategory-based PredictionsCategory-based PredictionsCategory-based PredictionsCategory-based PredictionsCategory-based PredictionsCategory-based Predictions
+Correct Predictions: 3146
+Total Predictions: 9991
+0,31488339505555
+0,642034329307061
+List Size: 50
+Proposed Method Predictions
+Correct Predictions: 7359
+Total Predictions: 9993
+0,7364154908435905
+0,8649218643837254
+List Size: 50
+Proposed Method Predictions
+Correct Predictions: 192891
+Total Predictions: 262222
+0,7356018945778767
+0,865562208708787
+List Size: 50
+
+
+
+
+foursquare_austin
+Popular Predictions
+Correct Predictions: 5275
+Total Predictions: 49942
+0,10562252212566577
+0,7485308056872164
+List Size: 10
+Popular Predictions
+Correct Predictions: 6991
+Total Predictions: 49942
+0,13998237956028994
+0,7321484766127717
+List Size: 20
+Popular Predictions
+Correct Predictions: 8269
+Total Predictions: 49942
+0,16557206359376878
+0,7238763252307685
+List Size: 30
+Popular Predictions
+Correct Predictions: 9317
+Total Predictions: 49942
+0,18655640543029914
+0,7198159278737902
+List Size: 40
+Popular Predictions
+Correct Predictions: 10268
+Total Predictions: 49942
+0,20559849425333387
+0,7144195559018114
+List Size: 50
+Popular Predictions
+Correct Predictions: 11109
+Total Predictions: 49942
+0,22243802811261063
+0,7114636780988373
+List Size: 60
+Popular Predictions
+Correct Predictions: 11899
+Total Predictions: 49942
+0,23825637739778144
+0,7079778612848827
+List Size: 70
+Popular Predictions
+Correct Predictions: 12561
+Total Predictions: 49942
+0,2515117536342157
+0,7089403709895785
+List Size: 80
+Popular Predictions
+Correct Predictions: 13224
+Total Predictions: 49942
+0,2647871530975932
+0,7072830543792572
+List Size: 90
+Popular Predictions
+Correct Predictions: 13852
+Total Predictions: 49942
+0,27736173961795685
+0,7056475599191209
+List Size: 100
+Close Predictions
+Correct Predictions: 10217
+Total Predictions: 49942
+0,2045773096792279
+0,9529901145150195
+List Size: 10
+Close Predictions
+Correct Predictions: 10784
+Total Predictions: 49942
+0,21593047935605303
+0,9402726261127611
+List Size: 20
+Close Predictions
+Correct Predictions: 11194
+Total Predictions: 49942
+0,22414000240278723
+0,9323030194747128
+List Size: 30
+Close Predictions
+Correct Predictions: 11615
+Total Predictions: 49942
+0,23256978094589725
+0,9200064571674587
+List Size: 40
+Close Predictions
+Correct Predictions: 11927
+Total Predictions: 49942
+0,23881702775219255
+0,9142584052988905
+List Size: 50
+Close Predictions
+Correct Predictions: 12273
+Total Predictions: 49942
+0,2457450642745585
+0,90505445558
+List Size: 60
+Close Predictions
+Correct Predictions: 12532
+Total Predictions: 49942
+0,2509310800528613
+0,901390725457122
+List Size: 70
+Close Predictions
+Correct Predictions: 12854
+Total Predictions: 49942
+0,25737855912858915
+0,892472187645864
+List Size: 80
+Close Predictions
+Correct Predictions: 13111
+Total Predictions: 49942
+0,2625245284530055
+0,8878719311180673
+List Size: 90
+Close Predictions
+Correct Predictions: 13454
+Total Predictions: 49942
+0,2693924952945417
+0,8774869927159105
+List Size: 100
+Close Popular Predictions
+Correct Predictions: 5745
+Total Predictions: 49942
+0,11503343878899523
+0,7342210617928634
+List Size: 10
+Close Popular Predictions
+Correct Predictions: 8329
+Total Predictions: 49942
+0,16677345721036402
+0,6876155600912442
+List Size: 20
+Close Popular Predictions
+Correct Predictions: 10064
+Total Predictions: 49942
+0,20151375595691
+0,6870859830418575
+List Size: 30
+Close Popular Predictions
+Correct Predictions: 11365
+Total Predictions: 49942
+0,2275639742100837
+0,6945512538495455
+List Size: 40
+Close Popular Predictions
+Correct Predictions: 12720
+Total Predictions: 49942
+0,2546954467181931
+0,687716981132058
+List Size: 50
+Close Popular Predictions
+Correct Predictions: 13741
+Total Predictions: 49942
+0,27513916142725564
+0,6916405889915821
+List Size: 60
+Close Popular Predictions
+Correct Predictions: 14573
+Total Predictions: 49942
+0,2917984862440431
+0,6980609934222842
+List Size: 70
+Close Popular Predictions
+Correct Predictions: 15394
+Total Predictions: 49942
+0,30823755556445476
+0,7004912628296692
+List Size: 80
+Close Popular Predictions
+Correct Predictions: 16152
+Total Predictions: 49942
+0,32341516158744144
+0,7022267624236505
+List Size: 90
+Close Popular Predictions
+Correct Predictions: 16705
+Total Predictions: 49942
+0,334488006087061
+0,7095743789284494
+List Size: 100
+Popular Close Predictions
+Correct Predictions: 8913
+Total Predictions: 49942
+0,17846702174522447
+0,9281162347133379
+List Size: 10
+Popular Close Predictions
+Correct Predictions: 9913
+Total Predictions: 49942
+0,19849024868847864
+0,8936043579138487
+List Size: 20
+Popular Close Predictions
+Correct Predictions: 10822
+Total Predictions: 49942
+0,2166913619798967
+0,868773486108539
+List Size: 30
+Popular Close Predictions
+Correct Predictions: 11783
+Total Predictions: 49942
+0,23593368307236395
+0,8403611134685557
+List Size: 40
+Popular Close Predictions
+Correct Predictions: 12332
+Total Predictions: 49942
+0,2469264346642105
+0,8387560817385603
+List Size: 50
+Popular Close Predictions
+Correct Predictions: 13047
+Total Predictions: 49942
+0,26124304192863723
+0,8231406964564016
+List Size: 60
+Popular Close Predictions
+Correct Predictions: 13877
+Total Predictions: 49942
+0,2778623202915382
+0,8025077466311162
+List Size: 70
+Popular Close Predictions
+Correct Predictions: 14264
+Total Predictions: 49942
+0,28561130911857757
+0,8066960530005578
+List Size: 80
+Popular Close Predictions
+Correct Predictions: 14707
+Total Predictions: 49942
+0,2944815986544391
+0,8051245438680065
+List Size: 90
+Popular Close Predictions
+Correct Predictions: 15248
+Total Predictions: 49942
+0,30531416443073967
+0,7973681794333571
+List Size: 100
+Category-based Predictions
+Correct Predictions: 6205
+Total Predictions: 49942
+0,12424412318289216
+0,7384528605962942
+List Size: 10
+Category-based Predictions
+Correct Predictions: 9272
+Total Predictions: 49942
+0,1856553602178527
+0,6714840379637596
+List Size: 20
+Category-based Predictions
+Correct Predictions: 11532
+Total Predictions: 49942
+0,23090785310960715
+0,6579315527806565
+List Size: 30
+Category-based Predictions
+Correct Predictions: 13592
+Total Predictions: 49942
+0,27215570061271077
+0,6424698351971773
+List Size: 40
+Category-based Predictions
+Correct Predictions: 15241
+Total Predictions: 49942
+0,3051740018421369
+0,6398280952693277
+List Size: 50
+Category-based Predictions
+Correct Predictions: 16568
+Total Predictions: 49942
+0,33174482399583516
+0,6420288105585095
+List Size: 60
+Category-based Predictions
+Correct Predictions: 17835
+Total Predictions: 49942
+0,3571142525329382
+0,6403964916496575
+List Size: 70
+Category-based Predictions
+Correct Predictions: 18805
+Total Predictions: 49942
+0,37653678266789475
+0,6449009571922381
+List Size: 80
+Category-based Predictions
+Correct Predictions: 19749
+Total Predictions: 49942
+0,3954387089023267
+0,6464282298400668
+List Size: 90
+Category-based Predictions
+Correct Predictions: 20645
+Total Predictions: 49942
+0,41337952024348246
+0,6455800435940697
+List Size: 100
+
+
+Former visit Predictions
+Correct Predictions: 20639
+Total Predictions: 49950
+0,4131931931931932
+0,7813992926013424
+List Size: 10
+Former visit Predictions
+Correct Predictions: 24591
+Total Predictions: 49950
+0,4923123123123123
+0,7995486153471217
+List Size: 20
+Former visit Predictions
+Correct Predictions: 26470
+Total Predictions: 49950
+0,5299299299299299
+0,8191008689082032
+List Size: 30
+Former visit Predictions
+Correct Predictions: 27621
+Total Predictions: 49950
+0,552972972972973
+0,8343723978132516
+List Size: 40
+Former visit Predictions
+Correct Predictions: 28281
+Total Predictions: 49950
+0,5661861861861862
+0,849944485696995
+List Size: 50
+Former visit Predictions
+Correct Predictions: 28792
+Total Predictions: 49950
+0,5764164164164164
+0,8611419838844856
+List Size: 60
+Former visit Predictions
+Correct Predictions: 29105
+Total Predictions: 49950
+0,5826826826826826
+0,872362627923621
+List Size: 70
+Former visit Predictions
+Correct Predictions: 29348
+Total Predictions: 49950
+0,5875475475475476
+0,8815110910453303
+List Size: 80
+Former visit Predictions
+Correct Predictions: 29541
+Total Predictions: 49950
+0,5914114114114114
+0,8892447032186087
+List Size: 90
+Former visit Predictions
+Correct Predictions: 29674
+Total Predictions: 49950
+0,5940740740740741
+0,8965228819842525
+List Size: 100
+
+
+foursquare_dallas
+Popular Predictions
+Correct Predictions: 2058
+Total Predictions: 49911
+0,041233395443890125
+0,6705539358600597
+List Size: 10
+Popular Predictions
+Correct Predictions: 3092
+Total Predictions: 49911
+0,061950271483240164
+0,651730271668826
+List Size: 20
+Popular Predictions
+Correct Predictions: 3846
+Total Predictions: 49911
+0,07705716174791129
+0,6551048708615077
+List Size: 30
+Popular Predictions
+Correct Predictions: 4566
+Total Predictions: 49911
+0,09148283945422853
+0,6463315812527362
+List Size: 40
+Popular Predictions
+Correct Predictions: 5185
+Total Predictions: 49911
+0,10388491514896515
+0,6445708775313483
+List Size: 50
+Popular Predictions
+Correct Predictions: 5746
+Total Predictions: 49911
+0,11512492236180401
+0,6435375333565331
+List Size: 60
+Popular Predictions
+Correct Predictions: 6301
+Total Predictions: 49911
+0,12624471559375688
+0,6403632076541186
+List Size: 70
+Popular Predictions
+Correct Predictions: 6848
+Total Predictions: 49911
+0,1372042235178618
+0,6362587616822453
+List Size: 80
+Popular Predictions
+Correct Predictions: 7340
+Total Predictions: 49911
+0,1470617699505119
+0,6355540417802048
+List Size: 90
+Popular Predictions
+Correct Predictions: 7852
+Total Predictions: 49911
+0,15732002965278194
+0,6318275598573542
+List Size: 100
+Close Predictions
+Correct Predictions: 12858
+Total Predictions: 49911
+0,2576185610386488
+0,9388707419505261
+List Size: 10
+Close Predictions
+Correct Predictions: 13753
+Total Predictions: 49911
+0,2755504798541404
+0,9248891151021643
+List Size: 20
+Close Predictions
+Correct Predictions: 14341
+Total Predictions: 49911
+0,2873314499809661
+0,9198521720939891
+List Size: 30
+Close Predictions
+Correct Predictions: 14848
+Total Predictions: 49911
+0,2974895313658312
+0,9123349946120813
+List Size: 40
+Close Predictions
+Correct Predictions: 15314
+Total Predictions: 49911
+0,3068261505479754
+0,9048609115841539
+List Size: 50
+Close Predictions
+Correct Predictions: 15706
+Total Predictions: 49911
+0,3146801306325259
+0,9001029330616765
+List Size: 60
+Close Predictions
+Correct Predictions: 16055
+Total Predictions: 49911
+0,32167257718739356
+0,8962895404191152
+List Size: 70
+Close Predictions
+Correct Predictions: 16314
+Total Predictions: 49911
+0,3268618140289716
+0,8958793061174392
+List Size: 80
+Close Predictions
+Correct Predictions: 16556
+Total Predictions: 49911
+0,33171044459137267
+0,8950195967893625
+List Size: 90
+Close Predictions
+Correct Predictions: 16751
+Total Predictions: 49911
+0,3356173989701669
+0,8954904184824564
+List Size: 100
+Close Popular Predictions
+Correct Predictions: 3897
+Total Predictions: 49911
+0,07807898058544209
+0,6233512958686216
+List Size: 10
+Close Popular Predictions
+Correct Predictions: 6108
+Total Predictions: 49911
+0,12237783254192462
+0,6253028814669238
+List Size: 20
+Close Popular Predictions
+Correct Predictions: 7647
+Total Predictions: 49911
+0,15321271863917774
+0,6367072054400392
+List Size: 30
+Close Popular Predictions
+Correct Predictions: 9054
+Total Predictions: 49911
+0,18140289715693936
+0,6352523746410431
+List Size: 40
+Close Popular Predictions
+Correct Predictions: 10270
+Total Predictions: 49911
+0,2057662639498307
+0,637423563777978
+List Size: 50
+Close Popular Predictions
+Correct Predictions: 11247
+Total Predictions: 49911
+0,22534110717076397
+0,6459529948727076
+List Size: 60
+Close Popular Predictions
+Correct Predictions: 12149
+Total Predictions: 49911
+0,2434132756306225
+0,6505226767635286
+List Size: 70
+Close Popular Predictions
+Correct Predictions: 12924
+Total Predictions: 49911
+0,25894091482839454
+0,6568012999071539
+List Size: 80
+Close Popular Predictions
+Correct Predictions: 13562
+Total Predictions: 49911
+0,2717236681292701
+0,6651583673335736
+List Size: 90
+Close Popular Predictions
+Correct Predictions: 14274
+Total Predictions: 49911
+0,28598906052773937
+0,6667009948157333
+List Size: 100
+Popular Close Predictions
+Correct Predictions: 9814
+Total Predictions: 49911
+0,19663000140249645
+0,929040146729155
+List Size: 10
+Popular Close Predictions
+Correct Predictions: 10666
+Total Predictions: 49911
+0,21370038668830518
+0,9103459591224405
+List Size: 20
+Popular Close Predictions
+Correct Predictions: 11355
+Total Predictions: 49911
+0,22750495882671154
+0,8950829296932248
+List Size: 30
+Popular Close Predictions
+Correct Predictions: 11935
+Total Predictions: 49911
+0,23912564364568933
+0,8835148722245574
+List Size: 40
+Popular Close Predictions
+Correct Predictions: 12415
+Total Predictions: 49911
+0,24874276211656748
+0,8760918244059418
+List Size: 50
+Popular Close Predictions
+Correct Predictions: 12787
+Total Predictions: 49911
+0,25619602893149807
+0,8732488725528573
+List Size: 60
+Popular Close Predictions
+Correct Predictions: 13168
+Total Predictions: 49911
+0,2638296167177576
+0,8680394028814583
+List Size: 70
+Popular Close Predictions
+Correct Predictions: 13491
+Total Predictions: 49911
+0,27030113602211936
+0,8649164257653246
+List Size: 80
+Popular Close Predictions
+Correct Predictions: 13808
+Total Predictions: 49911
+0,27665244134559513
+0,8610153534183179
+List Size: 90
+Popular Close Predictions
+Correct Predictions: 14112
+Total Predictions: 49911
+0,282743283043818
+0,8572448979591656
+List Size: 100
+Category-based Predictions
+Correct Predictions: 3592
+Total Predictions: 49911
+0,07196810322373826
+0,6516146993318489
+List Size: 10
+Category-based Predictions
+Correct Predictions: 6522
+Total Predictions: 49911
+0,13067259722305705
+0,5705075130328133
+List Size: 20
+Category-based Predictions
+Correct Predictions: 9089
+Total Predictions: 49911
+0,18210414537877423
+0,5500751824549793
+List Size: 30
+Category-based Predictions
+Correct Predictions: 11418
+Total Predictions: 49911
+0,2287672056260143
+0,5334756524785493
+List Size: 40
+Category-based Predictions
+Correct Predictions: 13400
+Total Predictions: 49911
+0,2684778906453487
+0,5317955223880528
+List Size: 50
+Category-based Predictions
+Correct Predictions: 14861
+Total Predictions: 49911
+0,2977499949910841
+0,5413285332974456
+List Size: 60
+Category-based Predictions
+Correct Predictions: 16055
+Total Predictions: 49911
+0,32167257718739356
+0,5499301508208443
+List Size: 70
+Category-based Predictions
+Correct Predictions: 17150
+Total Predictions: 49911
+0,34361162869908435
+0,5549045189504376
+List Size: 80
+Category-based Predictions
+Correct Predictions: 18233
+Total Predictions: 49911
+0,3653102522490032
+0,5587122250863898
+List Size: 90
+Category-based Predictions
+Correct Predictions: 19067
+Total Predictions: 49911
+0,38201999559215405
+0,562442439817475
+List Size: 100
+
+
+Former visit Predictions
+Correct Predictions: 25136
+Total Predictions: 49892
+0,5038082257676582
+0,8001909611712237
+List Size: 10
+Former visit Predictions
+Correct Predictions: 29066
+Total Predictions: 49892
+0,5825783692776397
+0,821423656505944
+List Size: 20
+Former visit Predictions
+Correct Predictions: 31173
+Total Predictions: 49892
+0,6248095887116171
+0,8346207722495236
+List Size: 30
+Former visit Predictions
+Correct Predictions: 32417
+Total Predictions: 49892
+0,6497434458430209
+0,8479678872196332
+List Size: 40
+Former visit Predictions
+Correct Predictions: 33229
+Total Predictions: 49892
+0,666018600176381
+0,8597526257183726
+List Size: 50
+Former visit Predictions
+Correct Predictions: 33827
+Total Predictions: 49892
+0,6780044896977472
+0,8692208393690354
+List Size: 60
+Former visit Predictions
+Correct Predictions: 34235
+Total Predictions: 49892
+0,6861821534514552
+0,8782640989798495
+List Size: 70
+Former visit Predictions
+Correct Predictions: 34558
+Total Predictions: 49892
+0,692656137256474
+0,8858263643728722
+List Size: 80
+Former visit Predictions
+Correct Predictions: 34769
+Total Predictions: 49892
+0,696885272187926
+0,8934421147830787
+List Size: 90
+Former visit Predictions
+Correct Predictions: 34913
+Total Predictions: 49892
+0,6997715064539405
+0,9005946209148922
+List Size: 100
+
+
+foursquare_san_francisco
+Popular Predictions
+Correct Predictions: 2961
+Total Predictions: 49902
+0,0593362991463268
+0,691050320837557
+List Size: 10
+Popular Predictions
+Correct Predictions: 4164
+Total Predictions: 49902
+0,08344354935673921
+0,6869836695485098
+List Size: 20
+Popular Predictions
+Correct Predictions: 5060
+Total Predictions: 49902
+0,10139874153340547
+0,6849077733860407
+List Size: 30
+Popular Predictions
+Correct Predictions: 5764
+Total Predictions: 49902
+0,11550639252935754
+0,6880204718945133
+List Size: 40
+Popular Predictions
+Correct Predictions: 6461
+Total Predictions: 49902
+0,1294737685864294
+0,6816468039003322
+List Size: 50
+Popular Predictions
+Correct Predictions: 7078
+Total Predictions: 49902
+0,14183800248487036
+0,6789041160403053
+List Size: 60
+Popular Predictions
+Correct Predictions: 7646
+Total Predictions: 49902
+0,15322031181114987
+0,6766413811143162
+List Size: 70
+Popular Predictions
+Correct Predictions: 8190
+Total Predictions: 49902
+0,16412167848984008
+0,673972832722838
+List Size: 80
+Popular Predictions
+Correct Predictions: 8687
+Total Predictions: 49902
+0,17408119915033465
+0,6732179629842883
+List Size: 90
+Popular Predictions
+Correct Predictions: 9202
+Total Predictions: 49902
+0,1844014267965212
+0,6696000869376121
+List Size: 100
+Close Predictions
+Correct Predictions: 9403
+Total Predictions: 49902
+0,18842932147008135
+0,9493565883228728
+List Size: 10
+Close Predictions
+Correct Predictions: 10031
+Total Predictions: 49902
+0,20101398741533405
+0,9321004884856934
+List Size: 20
+Close Predictions
+Correct Predictions: 10538
+Total Predictions: 49902
+0,2111739008456575
+0,917289808312769
+List Size: 30
+Close Predictions
+Correct Predictions: 10865
+Total Predictions: 49902
+0,21772674441906137
+0,9138057984353462
+List Size: 40
+Close Predictions
+Correct Predictions: 11198
+Total Predictions: 49902
+0,22439982365436256
+0,9067833541703768
+List Size: 50
+Close Predictions
+Correct Predictions: 11498
+Total Predictions: 49902
+0,23041160674922848
+0,9010262654374701
+List Size: 60
+Close Predictions
+Correct Predictions: 11755
+Total Predictions: 49902
+0,2355617009338303
+0,8968341739077643
+List Size: 70
+Close Predictions
+Correct Predictions: 11980
+Total Predictions: 49902
+0,24007053825497976
+0,8939472036727886
+List Size: 80
+Close Predictions
+Correct Predictions: 12198
+Total Predictions: 49902
+0,244439100637249
+0,8906332549962659
+List Size: 90
+Close Predictions
+Correct Predictions: 12399
+Total Predictions: 49902
+0,24846699531080918
+0,8879078957980412
+List Size: 100
+Close Popular Predictions
+Correct Predictions: 3969
+Total Predictions: 49902
+0,07953589034507635
+0,6928445452254982
+List Size: 10
+Close Popular Predictions
+Correct Predictions: 5653
+Total Predictions: 49902
+0,11328203278425715
+0,6748363700689878
+List Size: 20
+Close Popular Predictions
+Correct Predictions: 7111
+Total Predictions: 49902
+0,1424992986253056
+0,6602353161768173
+List Size: 30
+Close Popular Predictions
+Correct Predictions: 8076
+Total Predictions: 49902
+0,16183720091379103
+0,6739258296186248
+List Size: 40
+Close Popular Predictions
+Correct Predictions: 8962
+Total Predictions: 49902
+0,17959200032062844
+0,6771122517295192
+List Size: 50
+Close Popular Predictions
+Correct Predictions: 9783
+Total Predictions: 49902
+0,1960442467235782
+0,6775511942485242
+List Size: 60
+Close Popular Predictions
+Correct Predictions: 10439
+Total Predictions: 49902
+0,20919001242435173
+0,6837587070463841
+List Size: 70
+Close Popular Predictions
+Correct Predictions: 11024
+Total Predictions: 49902
+0,22091298945934032
+0,6885023584905662
+List Size: 80
+Close Popular Predictions
+Correct Predictions: 11558
+Total Predictions: 49902
+0,23161396336820167
+0,6928072907654224
+List Size: 90
+Close Popular Predictions
+Correct Predictions: 12076
+Total Predictions: 49902
+0,24199430884533685
+0,6950124213315583
+List Size: 100
+Popular Close Predictions
+Correct Predictions: 7120
+Total Predictions: 49902
+0,1426796521181516
+0,9169241573033675
+List Size: 10
+Popular Close Predictions
+Correct Predictions: 8043
+Total Predictions: 49902
+0,16117590477335578
+0,8820216337187594
+List Size: 20
+Popular Close Predictions
+Correct Predictions: 8797
+Total Predictions: 49902
+0,17628551961845218
+0,8591868439998417
+List Size: 30
+Popular Close Predictions
+Correct Predictions: 9402
+Total Predictions: 49902
+0,18840928219309847
+0,8461524143799249
+List Size: 40
+Popular Close Predictions
+Correct Predictions: 9864
+Total Predictions: 49902
+0,19766742815919203
+0,841111111111102
+List Size: 50
+Popular Close Predictions
+Correct Predictions: 10273
+Total Predictions: 49902
+0,2058634924451926
+0,8368068399364055
+List Size: 60
+Popular Close Predictions
+Correct Predictions: 10617
+Total Predictions: 49902
+0,21275700372730552
+0,8346869575747835
+List Size: 70
+Popular Close Predictions
+Correct Predictions: 10937
+Total Predictions: 49902
+0,21916957236182918
+0,8323329066471584
+List Size: 80
+Popular Close Predictions
+Correct Predictions: 11247
+Total Predictions: 49902
+0,225381748226524
+0,8291870424705868
+List Size: 90
+Popular Close Predictions
+Correct Predictions: 11496
+Total Predictions: 49902
+0,23037152819526271
+0,829140570633255
+List Size: 100
+Category-based Predictions
+Correct Predictions: 4637
+Total Predictions: 49902
+0,0929221273696445
+0,7009273237006765
+List Size: 10
+Category-based Predictions
+Correct Predictions: 6787
+Total Predictions: 49902
+0,1360065728828504
+0,671659054073961
+List Size: 20
+Category-based Predictions
+Correct Predictions: 8651
+Total Predictions: 49902
+0,17335978517895073
+0,6480445420567909
+List Size: 30
+Category-based Predictions
+Correct Predictions: 10185
+Total Predictions: 49902
+0,20410003607069857
+0,635468826705941
+List Size: 40
+Category-based Predictions
+Correct Predictions: 11565
+Total Predictions: 49902
+0,2317542383070819
+0,6270229139645387
+List Size: 50
+Category-based Predictions
+Correct Predictions: 12886
+Total Predictions: 49902
+0,25822612320147487
+0,6189365719902692
+List Size: 60
+Category-based Predictions
+Correct Predictions: 14135
+Total Predictions: 49902
+0,2832551801531001
+0,6112153216433485
+List Size: 70
+Category-based Predictions
+Correct Predictions: 15237
+Total Predictions: 49902
+0,30533846338824094
+0,6046014635427014
+List Size: 80
+Category-based Predictions
+Correct Predictions: 16055
+Total Predictions: 49902
+0,32173059196024206
+0,6072009412090473
+List Size: 90
+Category-based Predictions
+Correct Predictions: 16832
+Total Predictions: 49902
+0,33730111017594483
+0,6092597433459948
+List Size: 100
+
+
+Former visit Predictions
+Correct Predictions: 19398
+Total Predictions: 49900
+0,3887374749498998
+0,775482008454439
+List Size: 10
+Former visit Predictions
+Correct Predictions: 23135
+Total Predictions: 49900
+0,46362725450901804
+0,7964836827318269
+List Size: 20
+Former visit Predictions
+Correct Predictions: 24941
+Total Predictions: 49900
+0,4998196392785571
+0,8157224382876983
+List Size: 30
+Former visit Predictions
+Correct Predictions: 26012
+Total Predictions: 49900
+0,5212825651302605
+0,832235122251265
+List Size: 40
+Former visit Predictions
+Correct Predictions: 26791
+Total Predictions: 49900
+0,5368937875751503
+0,8440983912506892
+List Size: 50
+Former visit Predictions
+Correct Predictions: 27391
+Total Predictions: 49900
+0,5489178356713427
+0,8531707495163255
+List Size: 60
+Former visit Predictions
+Correct Predictions: 27798
+Total Predictions: 49900
+0,5570741482965932
+0,862557429619895
+List Size: 70
+Former visit Predictions
+Correct Predictions: 28121
+Total Predictions: 49900
+0,5635470941883768
+0,8704237936061509
+List Size: 80
+Former visit Predictions
+Correct Predictions: 28329
+Total Predictions: 49900
+0,5677154308617235
+0,8788171524273338
+List Size: 90
+Former visit Predictions
+Correct Predictions: 28490
+Total Predictions: 49900
+0,5709418837675351
+0,8862249912250075
+List Size: 100
+
+
+foursquare_london
+Popular Predictions
+Correct Predictions: 2563
+Total Predictions: 49799
+0,051466896925641076
+0,6509949278189631
+List Size: 10
+Popular Predictions
+Correct Predictions: 3794
+Total Predictions: 49799
+0,07618626880057833
+0,6516736953083805
+List Size: 20
+Popular Predictions
+Correct Predictions: 4651
+Total Predictions: 49799
+0,09339544970782546
+0,6610979717623511
+List Size: 30
+Popular Predictions
+Correct Predictions: 5322
+Total Predictions: 49799
+0,10686961585574008
+0,6699032318677166
+List Size: 40
+Popular Predictions
+Correct Predictions: 5835
+Total Predictions: 49799
+0,11717102753067331
+0,6813333333333428
+List Size: 50
+Popular Predictions
+Correct Predictions: 6261
+Total Predictions: 49799
+0,12572541617301553
+0,6906058670073948
+List Size: 60
+Popular Predictions
+Correct Predictions: 6661
+Total Predictions: 49799
+0,1337577059780317
+0,6954018058206692
+List Size: 70
+Popular Predictions
+Correct Predictions: 6980
+Total Predictions: 49799
+0,14016345709753208
+0,7031464899713507
+List Size: 80
+Popular Predictions
+Correct Predictions: 7325
+Total Predictions: 49799
+0,14709130705435852
+0,7044171406901829
+List Size: 90
+Popular Predictions
+Correct Predictions: 7599
+Total Predictions: 49799
+0,15259342557079458
+0,7095446769311643
+List Size: 100
+Close Predictions
+Correct Predictions: 11151
+Total Predictions: 49799
+0,22392015903933815
+0,9326069410815114
+List Size: 10
+Close Predictions
+Correct Predictions: 12010
+Total Predictions: 49799
+0,24116950139561036
+0,918022481265611
+List Size: 20
+Close Predictions
+Correct Predictions: 12692
+Total Predictions: 49799
+0,2548645555131629
+0,904724761004302
+List Size: 30
+Close Predictions
+Correct Predictions: 13246
+Total Predictions: 49799
+0,2659892768931103
+0,8956911520459069
+List Size: 40
+Close Predictions
+Correct Predictions: 13685
+Total Predictions: 49799
+0,27480471495411557
+0,8906598465473013
+List Size: 50
+Close Predictions
+Correct Predictions: 14060
+Total Predictions: 49799
+0,2823349866463182
+0,8871467520151737
+List Size: 60
+Close Predictions
+Correct Predictions: 14420
+Total Predictions: 49799
+0,28956404747083275
+0,8826094709728686
+List Size: 70
+Close Predictions
+Correct Predictions: 14692
+Total Predictions: 49799
+0,29502600453824374
+0,8820225292676287
+List Size: 80
+Close Predictions
+Correct Predictions: 14944
+Total Predictions: 49799
+0,30008634711540394
+0,8812024149417205
+List Size: 90
+Close Predictions
+Correct Predictions: 15160
+Total Predictions: 49799
+0,30442378361011263
+0,8810679419524917
+List Size: 100
+Close Popular Predictions
+Correct Predictions: 4438
+Total Predictions: 49799
+0,08911825538665435
+0,6886435331230342
+List Size: 10
+Close Popular Predictions
+Correct Predictions: 5978
+Total Predictions: 49799
+0,12004257113596659
+0,698377383740379
+List Size: 20
+Close Popular Predictions
+Correct Predictions: 7322
+Total Predictions: 49799
+0,1470310648808209
+0,6879222434671748
+List Size: 30
+Close Popular Predictions
+Correct Predictions: 8456
+Total Predictions: 49799
+0,16980260647804174
+0,6829204115420997
+List Size: 40
+Close Popular Predictions
+Correct Predictions: 9226
+Total Predictions: 49799
+0,18526476435269784
+0,6938283112941568
+List Size: 50
+Close Popular Predictions
+Correct Predictions: 10005
+Total Predictions: 49799
+0,20090764874796682
+0,6944444444444364
+List Size: 60
+Close Popular Predictions
+Correct Predictions: 10630
+Total Predictions: 49799
+0,21345810156830458
+0,6991708103749595
+List Size: 70
+Close Popular Predictions
+Correct Predictions: 11234
+Total Predictions: 49799
+0,225586859173879
+0,7009157468399613
+List Size: 80
+Close Popular Predictions
+Correct Predictions: 11783
+Total Predictions: 49799
+0,23661117693126368
+0,7026940884702144
+List Size: 90
+Close Popular Predictions
+Correct Predictions: 12317
+Total Predictions: 49799
+0,24733428382096026
+0,7032256231224909
+List Size: 100
+Popular Close Predictions
+Correct Predictions: 6523
+Total Predictions: 49799
+0,13098656599530112
+0,9056875670703625
+List Size: 10
+Popular Close Predictions
+Correct Predictions: 7230
+Total Predictions: 49799
+0,14518363822566718
+0,8915421853388585
+List Size: 20
+Popular Close Predictions
+Correct Predictions: 7667
+Total Predictions: 49799
+0,15395891483764734
+0,8857701839050383
+List Size: 30
+Popular Close Predictions
+Correct Predictions: 7979
+Total Predictions: 49799
+0,16022410088555994
+0,8841584158415919
+List Size: 40
+Popular Close Predictions
+Correct Predictions: 8244
+Total Predictions: 49799
+0,16554549288138315
+0,8817467248908175
+List Size: 50
+Popular Close Predictions
+Correct Predictions: 8492
+Total Predictions: 49799
+0,17052551256049317
+0,8777555346208161
+List Size: 60
+Popular Close Predictions
+Correct Predictions: 8685
+Total Predictions: 49799
+0,1744010923914135
+0,8769833045480772
+List Size: 70
+Popular Close Predictions
+Correct Predictions: 8876
+Total Predictions: 49799
+0,1782365107733087
+0,8747648152320936
+List Size: 80
+Popular Close Predictions
+Correct Predictions: 9055
+Total Predictions: 49799
+0,18183096046105343
+0,872282962144919
+List Size: 90
+Popular Close Predictions
+Correct Predictions: 9258
+Total Predictions: 49799
+0,18590734753709914
+0,8668384100237526
+List Size: 100
+Category-based Predictions
+Correct Predictions: 3506
+Total Predictions: 49799
+0,07040302014096668
+0,6818596691386225
+List Size: 10
+Category-based Predictions
+Correct Predictions: 5439
+Total Predictions: 49799
+0,1092190606237073
+0,660930318073173
+List Size: 20
+Category-based Predictions
+Correct Predictions: 6859
+Total Predictions: 49799
+0,13773368943151468
+0,6546581134276177
+List Size: 30
+Category-based Predictions
+Correct Predictions: 8151
+Total Predictions: 49799
+0,1636779855017169
+0,6415071770334926
+List Size: 40
+Category-based Predictions
+Correct Predictions: 9252
+Total Predictions: 49799
+0,1857868631900239
+0,6361046260268031
+List Size: 50
+Category-based Predictions
+Correct Predictions: 10255
+Total Predictions: 49799
+0,20592782987610192
+0,6274207703559206
+List Size: 60
+Category-based Predictions
+Correct Predictions: 11174
+Total Predictions: 49799
+0,22438201570312657
+0,6191068551995761
+List Size: 70
+Category-based Predictions
+Correct Predictions: 11938
+Total Predictions: 49799
+0,23972368923070744
+0,6181102362204797
+List Size: 80
+Category-based Predictions
+Correct Predictions: 12754
+Total Predictions: 49799
+0,2561095604329404
+0,6116625720906793
+List Size: 90
+Category-based Predictions
+Correct Predictions: 13383
+Total Predictions: 49799
+0,26874033615132836
+0,6105058656504428
+List Size: 100
+
+Former visit Predictions
+Correct Predictions: 21751
+Total Predictions: 49820
+0,43659173022882375
+0,7794538182152169
+List Size: 10
+Former visit Predictions
+Correct Predictions: 25653
+Total Predictions: 49820
+0,5149136892814131
+0,8030015982536712
+List Size: 20
+Former visit Predictions
+Correct Predictions: 27580
+Total Predictions: 49820
+0,5535929345644319
+0,822249214406592
+List Size: 30
+Former visit Predictions
+Correct Predictions: 28706
+Total Predictions: 49820
+0,5761942994781213
+0,8386687452100434
+List Size: 40
+Former visit Predictions
+Correct Predictions: 29449
+Total Predictions: 49820
+0,5911079887595343
+0,8519515093889964
+List Size: 50
+Former visit Predictions
+Correct Predictions: 29906
+Total Predictions: 49820
+0,6002810116419108
+0,864737287946763
+List Size: 60
+Former visit Predictions
+Correct Predictions: 30276
+Total Predictions: 49820
+0,6077077478924127
+0,8742827888191631
+List Size: 70
+Former visit Predictions
+Correct Predictions: 30515
+Total Predictions: 49820
+0,6125050180650341
+0,8836068327051584
+List Size: 80
+Former visit Predictions
+Correct Predictions: 30696
+Total Predictions: 49820
+0,6161380971497391
+0,8916384328035115
+List Size: 90
+Former visit Predictions
+Correct Predictions: 30855
+Total Predictions: 49820
+0,6193295865114412
+0,8981127856101415
+List Size: 100
+
+Popular Predictions
+Correct Predictions: 1846
+Total Predictions: 48740
+0,03787443578169881
+0,6748104008667388
+List Size: 10
+Popular Predictions
+Correct Predictions: 2801
+Total Predictions: 48740
+0,05746819860484202
+0,6480899678686223
+List Size: 20
+Popular Predictions
+Correct Predictions: 3447
+Total Predictions: 48740
+0,07072219942552319
+0,6588047577603735
+List Size: 30
+Popular Predictions
+Correct Predictions: 4044
+Total Predictions: 48740
+0,08297086581862946
+0,654828140454991
+List Size: 40
+Popular Predictions
+Correct Predictions: 4623
+Total Predictions: 48740
+0,09485022568732047
+0,6468829764222424
+List Size: 50
+Popular Predictions
+Correct Predictions: 5127
+Total Predictions: 48740
+0,10519080837094788
+0,6455334503608317
+List Size: 60
+Popular Predictions
+Correct Predictions: 5584
+Total Predictions: 48740
+0,11456709068526877
+0,6453873311502283
+List Size: 70
+Popular Predictions
+Correct Predictions: 5982
+Total Predictions: 48740
+0,12273286828067295
+0,6485853393513888
+List Size: 80
+Popular Predictions
+Correct Predictions: 6418
+Total Predictions: 48740
+0,13167829298317604
+0,645138672483643
+List Size: 90
+Popular Predictions
+Correct Predictions: 6819
+Total Predictions: 48740
+0,13990562166598278
+0,6438891333039999
+List Size: 100
+Close Predictions
+Correct Predictions: 3140
+Total Predictions: 48740
+0,0644234714813295
+0,9021019108280304
+List Size: 10
+Close Predictions
+Correct Predictions: 3554
+Total Predictions: 48740
+0,07291752154288059
+0,8739448508722542
+List Size: 20
+Close Predictions
+Correct Predictions: 3904
+Total Predictions: 48740
+0,08009848173984407
+0,8513405054644857
+List Size: 30
+Close Predictions
+Correct Predictions: 4176
+Total Predictions: 48740
+0,0856791136643414
+0,8401460727969297
+List Size: 40
+Close Predictions
+Correct Predictions: 4420
+Total Predictions: 48740
+0,09068526877308165
+0,8304570135746653
+List Size: 50
+Close Predictions
+Correct Predictions: 4656
+Total Predictions: 48740
+0,09552728764874846
+0,8199169530355038
+List Size: 60
+Close Predictions
+Correct Predictions: 4867
+Total Predictions: 48740
+0,09985638079606073
+0,8122017082978709
+List Size: 70
+Close Predictions
+Correct Predictions: 5058
+Total Predictions: 48740
+0,10377513336068937
+0,8068060498220679
+List Size: 80
+Close Predictions
+Correct Predictions: 5275
+Total Predictions: 48740
+0,10822732868280673
+0,796817272248557
+List Size: 90
+Close Predictions
+Correct Predictions: 5429
+Total Predictions: 48740
+0,11138695116947066
+0,7954945662184495
+List Size: 100
+Close Popular Predictions
+Correct Predictions: 2066
+Total Predictions: 48740
+0,04238818219121871
+0,6615682478218791
+List Size: 10
+Close Popular Predictions
+Correct Predictions: 3007
+Total Predictions: 48740
+0,06169470660648338
+0,6640172929830406
+List Size: 20
+Close Popular Predictions
+Correct Predictions: 3704
+Total Predictions: 48740
+0,07599507591300779
+0,6661357091432725
+List Size: 30
+Close Popular Predictions
+Correct Predictions: 4361
+Total Predictions: 48740
+0,08947476405416496
+0,6587881219903685
+List Size: 40
+Close Popular Predictions
+Correct Predictions: 4883
+Total Predictions: 48740
+0,10018465326220763
+0,6618472250665656
+List Size: 50
+Close Popular Predictions
+Correct Predictions: 5334
+Total Predictions: 48740
+0,10943783340172343
+0,6653793275840486
+List Size: 60
+Close Popular Predictions
+Correct Predictions: 5733
+Total Predictions: 48740
+0,11762412802626179
+0,6691560140539758
+List Size: 70
+Close Popular Predictions
+Correct Predictions: 6079
+Total Predictions: 48740
+0,12472302010668855
+0,6739060700773175
+List Size: 80
+Close Popular Predictions
+Correct Predictions: 6426
+Total Predictions: 48740
+0,13184242921624947
+0,6752170003804053
+List Size: 90
+Close Popular Predictions
+Correct Predictions: 6752
+Total Predictions: 48740
+0,1385309807139926
+0,6761715047393297
+List Size: 100
+Popular Close Predictions
+Correct Predictions: 2496
+Total Predictions: 48740
+0,0512105047189167
+0,8216346153846166
+List Size: 10
+Popular Close Predictions
+Correct Predictions: 3148
+Total Predictions: 48740
+0,06458760771440296
+0,7810673443456166
+List Size: 20
+Popular Close Predictions
+Correct Predictions: 3737
+Total Predictions: 48740
+0,07667213787443578
+0,7490767995718526
+List Size: 30
+Popular Close Predictions
+Correct Predictions: 4261
+Total Predictions: 48740
+0,08742306114074681
+0,7294942501760117
+List Size: 40
+Popular Close Predictions
+Correct Predictions: 4748
+Total Predictions: 48740
+0,09741485432909315
+0,7146293176074175
+List Size: 50
+Popular Close Predictions
+Correct Predictions: 5164
+Total Predictions: 48740
+0,1059499384489126
+0,7080654531371011
+List Size: 60
+Popular Close Predictions
+Correct Predictions: 5590
+Total Predictions: 48740
+0,11469019286007386
+0,6989240991566594
+List Size: 70
+Popular Close Predictions
+Correct Predictions: 5939
+Total Predictions: 48740
+0,12185063602790316
+0,6973501431217387
+List Size: 80
+Popular Close Predictions
+Correct Predictions: 6281
+Total Predictions: 48740
+0,1288674599917932
+0,6944329459215658
+List Size: 90
+Popular Close Predictions
+Correct Predictions: 6583
+Total Predictions: 48740
+0,13506360279031596
+0,694262494303507
+List Size: 100
+Category-based Predictions
+Correct Predictions: 1709
+Total Predictions: 48740
+0,035063602790315965
+0,6684610883557638
+List Size: 10
+Category-based Predictions
+Correct Predictions: 2901
+Total Predictions: 48740
+0,05951990151826016
+0,6115477421578783
+List Size: 20
+Category-based Predictions
+Correct Predictions: 3768
+Total Predictions: 48740
+0,0773081657775954
+0,6133757961783458
+List Size: 30
+Category-based Predictions
+Correct Predictions: 4485
+Total Predictions: 48740
+0,09201887566680345
+0,6164381270902994
+List Size: 40
+Category-based Predictions
+Correct Predictions: 5174
+Total Predictions: 48740
+0,10615510874025441
+0,6135910320834974
+List Size: 50
+Category-based Predictions
+Correct Predictions: 5711
+Total Predictions: 48740
+0,1171727533853098
+0,6177989844160345
+List Size: 60
+Category-based Predictions
+Correct Predictions: 6267
+Total Predictions: 48740
+0,12858022158391466
+0,6175750529987063
+List Size: 70
+Category-based Predictions
+Correct Predictions: 6782
+Total Predictions: 48740
+0,13914649158801806
+0,6160516809200851
+List Size: 80
+Category-based Predictions
+Correct Predictions: 7287
+Total Predictions: 48740
+0,14950759130077965
+0,6145723739383706
+List Size: 90
+Category-based Predictions
+Correct Predictions: 7777
+Total Predictions: 48740
+0,1595609355765285
+0,6131053105310466
+List Size: 100
+
+
+Former visit Predictions
+Correct Predictions: 5632
+Total Predictions: 48800
+0,11540983606557377
+0,7235973011363727
+List Size: 10
+Former visit Predictions
+Correct Predictions: 7247
+Total Predictions: 48800
+0,14850409836065573
+0,7381951152200793
+List Size: 20
+Former visit Predictions
+Correct Predictions: 8224
+Total Predictions: 48800
+0,16852459016393442
+0,7505958171206105
+List Size: 30
+Former visit Predictions
+Correct Predictions: 8928
+Total Predictions: 48800
+0,18295081967213114
+0,75970262096775
+List Size: 40
+Former visit Predictions
+Correct Predictions: 9461
+Total Predictions: 48800
+0,19387295081967212
+0,7685889440862238
+List Size: 50
+Former visit Predictions
+Correct Predictions: 9882
+Total Predictions: 48800
+0,2025
+0,7768569115563567
+List Size: 60
+Former visit Predictions
+Correct Predictions: 10228
+Total Predictions: 48800
+0,20959016393442623
+0,7842030281021448
+List Size: 70
+Former visit Predictions
+Correct Predictions: 10474
+Total Predictions: 48800
+0,2146311475409836
+0,7937726751957351
+List Size: 80
+Former visit Predictions
+Correct Predictions: 10674
+Total Predictions: 48800
+0,21872950819672132
+0,8026107051402305
+List Size: 90
+Former visit Predictions
+Correct Predictions: 10821
+Total Predictions: 48800
+0,22174180327868853
+0,8119730154329219
+List Size: 100
+
+
+gowalla_dallas
+Popular Predictions
+Correct Predictions: 1223
+Total Predictions: 47809
+0,025580957560291995
+0,710711365494684
+List Size: 10
+Popular Predictions
+Correct Predictions: 1702
+Total Predictions: 47809
+0,03559999163337447
+0,6970916568742673
+List Size: 20
+Popular Predictions
+Correct Predictions: 2085
+Total Predictions: 47809
+0,04361103557907507
+0,6873061550759392
+List Size: 30
+Popular Predictions
+Correct Predictions: 2412
+Total Predictions: 47809
+0,05045075195046958
+0,6813432835820891
+List Size: 40
+Popular Predictions
+Correct Predictions: 2700
+Total Predictions: 47809
+0,0564747223326152
+0,6776370370370395
+List Size: 50
+Popular Predictions
+Correct Predictions: 2956
+Total Predictions: 47809
+0,061829362672300194
+0,6756032927379371
+List Size: 60
+Popular Predictions
+Correct Predictions: 3172
+Total Predictions: 47809
+0,06634734045890942
+0,6783912808502974
+List Size: 70
+Popular Predictions
+Correct Predictions: 3427
+Total Predictions: 47809
+0,07168106423476751
+0,6703421359789886
+List Size: 80
+Popular Predictions
+Correct Predictions: 3632
+Total Predictions: 47809
+0,07596895981928088
+0,6707537934410185
+List Size: 90
+Popular Predictions
+Correct Predictions: 3854
+Total Predictions: 47809
+0,08061243698885147
+0,6663907628437968
+List Size: 100
+Close Predictions
+Correct Predictions: 3405
+Total Predictions: 47809
+0,07122089983057583
+0,8886930983847314
+List Size: 10
+Close Predictions
+Correct Predictions: 3989
+Total Predictions: 47809
+0,08343617310548224
+0,8481825018801687
+List Size: 20
+Close Predictions
+Correct Predictions: 4439
+Total Predictions: 47809
+0,09284862682758477
+0,8260944657205104
+List Size: 30
+Close Predictions
+Correct Predictions: 4844
+Total Predictions: 47809
+0,10131983517747704
+0,8092124277456594
+List Size: 40
+Close Predictions
+Correct Predictions: 5232
+Total Predictions: 47809
+0,10943546194231211
+0,7927714067278346
+List Size: 50
+Close Predictions
+Correct Predictions: 5570
+Total Predictions: 47809
+0,11650526051580247
+0,7824536205864708
+List Size: 60
+Close Predictions
+Correct Predictions: 5894
+Total Predictions: 47809
+0,12328222719571628
+0,7731058219012109
+List Size: 70
+Close Predictions
+Correct Predictions: 6168
+Total Predictions: 47809
+0,1290133656842854
+0,7689263132295749
+List Size: 80
+Close Predictions
+Correct Predictions: 6388
+Total Predictions: 47809
+0,1336150097262022
+0,769282682808045
+List Size: 90
+Close Predictions
+Correct Predictions: 6636
+Total Predictions: 47809
+0,13880231755527203
+0,7648704038577407
+List Size: 100
+Close Popular Predictions
+Correct Predictions: 1627
+Total Predictions: 47809
+0,03403124934635738
+0,6599877074369986
+List Size: 10
+Close Popular Predictions
+Correct Predictions: 2352
+Total Predictions: 47809
+0,04919575812085591
+0,662903911564627
+List Size: 20
+Close Popular Predictions
+Correct Predictions: 3035
+Total Predictions: 47809
+0,06348177121462487
+0,6440746842394284
+List Size: 30
+Close Popular Predictions
+Correct Predictions: 3572
+Total Predictions: 47809
+0,07471396598966722
+0,6447158454647244
+List Size: 40
+Close Popular Predictions
+Correct Predictions: 4041
+Total Predictions: 47809
+0,08452383442448075
+0,6449492699826835
+List Size: 50
+Close Popular Predictions
+Correct Predictions: 4507
+Total Predictions: 47809
+0,09427095316781359
+0,6407773093706074
+List Size: 60
+Close Popular Predictions
+Correct Predictions: 4883
+Total Predictions: 47809
+0,10213558116672593
+0,6449021386150205
+List Size: 70
+Close Popular Predictions
+Correct Predictions: 5214
+Total Predictions: 47809
+0,10905896379342801
+0,6501030878404306
+List Size: 80
+Close Popular Predictions
+Correct Predictions: 5587
+Total Predictions: 47809
+0,11686084210085967
+0,6473937513672611
+List Size: 90
+Close Popular Predictions
+Correct Predictions: 5905
+Total Predictions: 47809
+0,12351230939781213
+0,6485469940728162
+List Size: 100
+Popular Close Predictions
+Correct Predictions: 2104
+Total Predictions: 47809
+0,044008450291786065
+0,8422528517110276
+List Size: 10
+Popular Close Predictions
+Correct Predictions: 2641
+Total Predictions: 47809
+0,05524064506682842
+0,7925217720560407
+List Size: 20
+Popular Close Predictions
+Correct Predictions: 3087
+Total Predictions: 47809
+0,06456943253362338
+0,7631357304826721
+List Size: 30
+Popular Close Predictions
+Correct Predictions: 3484
+Total Predictions: 47809
+0,0728733083729005
+0,7436567164179096
+List Size: 40
+Popular Close Predictions
+Correct Predictions: 3821
+Total Predictions: 47809
+0,07992219038256396
+0,7352630201517986
+List Size: 50
+Popular Close Predictions
+Correct Predictions: 4148
+Total Predictions: 47809
+0,08676190675395846
+0,7255745740919309
+List Size: 60
+Popular Close Predictions
+Correct Predictions: 4398
+Total Predictions: 47809
+0,09199104771068209
+0,7258006886247016
+List Size: 70
+Popular Close Predictions
+Correct Predictions: 4662
+Total Predictions: 47809
+0,09751302056098224
+0,7210853710853741
+List Size: 80
+Popular Close Predictions
+Correct Predictions: 4873
+Total Predictions: 47809
+0,10192641552845698
+0,7220626125818019
+List Size: 90
+Popular Close Predictions
+Correct Predictions: 5050
+Total Predictions: 47809
+0,10562864732581731
+0,7254039603960369
+List Size: 100
+Category-based Predictions
+Correct Predictions: 1218
+Total Predictions: 47809
+0,025476374741157524
+0,7188013136288982
+List Size: 10
+Category-based Predictions
+Correct Predictions: 1823
+Total Predictions: 47809
+0,038130895856428704
+0,6824465167306659
+List Size: 20
+Category-based Predictions
+Correct Predictions: 2347
+Total Predictions: 47809
+0,04909117530172143
+0,6596648203380204
+List Size: 30
+Category-based Predictions
+Correct Predictions: 2827
+Total Predictions: 47809
+0,059131125938630805
+0,6433321542270947
+List Size: 40
+Category-based Predictions
+Correct Predictions: 3341
+Total Predictions: 47809
+0,06988223974565458
+0,6221370847051808
+List Size: 50
+Category-based Predictions
+Correct Predictions: 3790
+Total Predictions: 47809
+0,07927377690393023
+0,610496921723836
+List Size: 60
+Category-based Predictions
+Correct Predictions: 4162
+Total Predictions: 47809
+0,08705473864753498
+0,6068339397267816
+List Size: 70
+Category-based Predictions
+Correct Predictions: 4494
+Total Predictions: 47809
+0,09399903783806396
+0,6060358255451698
+List Size: 80
+Category-based Predictions
+Correct Predictions: 4821
+Total Predictions: 47809
+0,10083875420945847
+0,6020788679158325
+List Size: 90
+Category-based Predictions
+Correct Predictions: 5153
+Total Predictions: 47809
+0,10778305339998745
+0,5985134872889579
+List Size: 100
+
+Former visit Predictions
+Correct Predictions: 5917
+Total Predictions: 47875
+0,12359268929503917
+0,7497718438397903
+List Size: 10
+Former visit Predictions
+Correct Predictions: 7403
+Total Predictions: 47875
+0,15463185378590077
+0,7617047143049969
+List Size: 20
+Former visit Predictions
+Correct Predictions: 8274
+Total Predictions: 47875
+0,17282506527415142
+0,7727499798565611
+List Size: 30
+Former visit Predictions
+Correct Predictions: 8773
+Total Predictions: 47875
+0,18324804177545692
+0,7906189444887827
+List Size: 40
+Former visit Predictions
+Correct Predictions: 9220
+Total Predictions: 47875
+0,19258485639686684
+0,7975184381778491
+List Size: 50
+Former visit Predictions
+Correct Predictions: 9566
+Total Predictions: 47875
+0,19981201044386424
+0,8045125095825432
+List Size: 60
+Former visit Predictions
+Correct Predictions: 9863
+Total Predictions: 47875
+0,20601566579634464
+0,8099636447907957
+List Size: 70
+Former visit Predictions
+Correct Predictions: 10050
+Total Predictions: 47875
+0,20992167101827677
+0,8194340796020062
+List Size: 80
+Former visit Predictions
+Correct Predictions: 10206
+Total Predictions: 47875
+0,21318015665796344
+0,8275839919872964
+List Size: 90
+Former visit Predictions
+Correct Predictions: 10359
+Total Predictions: 47875
+0,21637597911227155
+0,8332281108214742
+List Size: 100
+
+
+gowalla_san_francisco
+Popular Predictions
+Correct Predictions: 1624
+Total Predictions: 47609
+0,034111197462664625
+0,7088054187192112
+List Size: 10
+Popular Predictions
+Correct Predictions: 2331
+Total Predictions: 47609
+0,04896133084080741
+0,6798369798369814
+List Size: 20
+Popular Predictions
+Correct Predictions: 2920
+Total Predictions: 47609
+0,06133294125060388
+0,6655821917808226
+List Size: 30
+Popular Predictions
+Correct Predictions: 3385
+Total Predictions: 47609
+0,07110000210044319
+0,6657533234859654
+List Size: 40
+Popular Predictions
+Correct Predictions: 3781
+Total Predictions: 47609
+0,07941775714675797
+0,6674795027770484
+List Size: 50
+Popular Predictions
+Correct Predictions: 4129
+Total Predictions: 47609
+0,0867272994601861
+0,6700855735852079
+List Size: 60
+Popular Predictions
+Correct Predictions: 4454
+Total Predictions: 47609
+0,09355373983910605
+0,6708191673616026
+List Size: 70
+Popular Predictions
+Correct Predictions: 4749
+Total Predictions: 47609
+0,09975004725997186
+0,6719862076226594
+List Size: 80
+Popular Predictions
+Correct Predictions: 5042
+Total Predictions: 47609
+0,10590434581696738
+0,6709021993036298
+List Size: 90
+Popular Predictions
+Correct Predictions: 5347
+Total Predictions: 47609
+0,11231069755718456
+0,6668374789601613
+List Size: 100
+Close Predictions
+Correct Predictions: 3010
+Total Predictions: 47609
+0,06322334012476633
+0,8062458471760866
+List Size: 10
+Close Predictions
+Correct Predictions: 3574
+Total Predictions: 47609
+0,07506983973618434
+0,8059876888640196
+List Size: 20
+Close Predictions
+Correct Predictions: 4009
+Total Predictions: 47609
+0,0842067676279695
+0,7961669576785668
+List Size: 30
+Close Predictions
+Correct Predictions: 4414
+Total Predictions: 47609
+0,09271356256170052
+0,7826008155867589
+List Size: 40
+Close Predictions
+Correct Predictions: 4747
+Total Predictions: 47609
+0,09970803839610158
+0,7757404676637965
+List Size: 50
+Close Predictions
+Correct Predictions: 5058
+Total Predictions: 47609
+0,1062404167279296
+0,7688612099644039
+List Size: 60
+Close Predictions
+Correct Predictions: 5341
+Total Predictions: 47609
+0,11218467096557373
+0,7635916227565838
+List Size: 70
+Close Predictions
+Correct Predictions: 5565
+Total Predictions: 47609
+0,11688966371904472
+0,7640408805031493
+List Size: 80
+Close Predictions
+Correct Predictions: 5791
+Total Predictions: 47609
+0,12163666533638598
+0,7617874479556489
+List Size: 90
+Close Predictions
+Correct Predictions: 5992
+Total Predictions: 47609
+0,12585855615534877
+0,761191588785034
+List Size: 100
+Close Popular Predictions
+Correct Predictions: 1659
+Total Predictions: 47609
+0,034846352580394466
+0,6927064496684738
+List Size: 10
+Close Popular Predictions
+Correct Predictions: 2453
+Total Predictions: 47609
+0,051523871536894285
+0,6652262535670619
+List Size: 20
+Close Popular Predictions
+Correct Predictions: 3094
+Total Predictions: 47609
+0,06498771240731795
+0,6546541693600504
+List Size: 30
+Close Popular Predictions
+Correct Predictions: 3643
+Total Predictions: 47609
+0,07651914553970889
+0,6508715344496293
+List Size: 40
+Close Popular Predictions
+Correct Predictions: 4055
+Total Predictions: 47609
+0,08517297149698587
+0,6588508014796615
+List Size: 50
+Close Popular Predictions
+Correct Predictions: 4452
+Total Predictions: 47609
+0,09351173097523577
+0,6604110512129355
+List Size: 60
+Close Popular Predictions
+Correct Predictions: 4856
+Total Predictions: 47609
+0,10199752147703166
+0,6567692398211352
+List Size: 70
+Close Popular Predictions
+Correct Predictions: 5202
+Total Predictions: 47609
+0,10926505492658951
+0,6577566320645908
+List Size: 80
+Close Popular Predictions
+Correct Predictions: 5492
+Total Predictions: 47609
+0,11535634018777963
+0,6619972485231082
+List Size: 90
+Close Popular Predictions
+Correct Predictions: 5751
+Total Predictions: 47609
+0,12079648805898044
+0,6668840201704009
+List Size: 100
+Popular Close Predictions
+Correct Predictions: 2347
+Total Predictions: 47609
+0,04929740175176962
+0,8209203238176407
+List Size: 10
+Popular Close Predictions
+Correct Predictions: 2912
+Total Predictions: 47609
+0,06116490579512277
+0,7921875000000018
+List Size: 20
+Popular Close Predictions
+Correct Predictions: 3363
+Total Predictions: 47609
+0,07063790459787016
+0,7705520864307681
+List Size: 30
+Popular Close Predictions
+Correct Predictions: 3752
+Total Predictions: 47609
+0,07880862862063895
+0,7569363006396538
+List Size: 40
+Popular Close Predictions
+Correct Predictions: 4052
+Total Predictions: 47609
+0,08510995820118045
+0,7540375123395928
+List Size: 50
+Popular Close Predictions
+Correct Predictions: 4314
+Total Predictions: 47609
+0,09061311936818668
+0,7522021325915591
+List Size: 60
+Popular Close Predictions
+Correct Predictions: 4572
+Total Predictions: 47609
+0,09603226280745238
+0,7476721659792565
+List Size: 70
+Popular Close Predictions
+Correct Predictions: 4815
+Total Predictions: 47609
+0,10113633976769099
+0,743608515057116
+List Size: 80
+Popular Close Predictions
+Correct Predictions: 4983
+Total Predictions: 47609
+0,10466508433279421
+0,7481726759872473
+List Size: 90
+Popular Close Predictions
+Correct Predictions: 5189
+Total Predictions: 47609
+0,1089919973114327
+0,7449180959722419
+List Size: 100
+Category-based Predictions
+Correct Predictions: 1525
+Total Predictions: 47609
+0,032031758701085926
+0,6967213114754093
+List Size: 10
+Category-based Predictions
+Correct Predictions: 2186
+Total Predictions: 47609
+0,04591568821021236
+0,6857044830741114
+List Size: 20
+Category-based Predictions
+Correct Predictions: 2762
+Total Predictions: 47609
+0,05801424100485202
+0,6707579048998308
+List Size: 30
+Category-based Predictions
+Correct Predictions: 3295
+Total Predictions: 47609
+0,06920960322628074
+0,6561987860394527
+List Size: 40
+Category-based Predictions
+Correct Predictions: 3796
+Total Predictions: 47609
+0,07973282362578504
+0,6470389884088574
+List Size: 50
+Category-based Predictions
+Correct Predictions: 4156
+Total Predictions: 47609
+0,08729441912243484
+0,6497273018928443
+List Size: 60
+Category-based Predictions
+Correct Predictions: 4554
+Total Predictions: 47609
+0,09565418303261988
+0,6461917309743396
+List Size: 70
+Category-based Predictions
+Correct Predictions: 4913
+Total Predictions: 47609
+0,10319477409733453
+0,6434179727254252
+List Size: 80
+Category-based Predictions
+Correct Predictions: 5253
+Total Predictions: 47609
+0,11033628095528157
+0,6404530744336585
+List Size: 90
+Category-based Predictions
+Correct Predictions: 5663
+Total Predictions: 47609
+0,11894809804868828
+0,6320060038848646
+List Size: 100
+
+Former visit Predictions
+Correct Predictions: 4600
+Total Predictions: 47668
+0,09650079718049845
+0,7376086956521806
+List Size: 10
+Former visit Predictions
+Correct Predictions: 5832
+Total Predictions: 47668
+0,1223462280775363
+0,750488683127566
+List Size: 20
+Former visit Predictions
+Correct Predictions: 6537
+Total Predictions: 47668
+0,13713602416715617
+0,7659476824231312
+List Size: 30
+Former visit Predictions
+Correct Predictions: 7006
+Total Predictions: 47668
+0,14697490979273306
+0,7787574935769348
+List Size: 40
+Former visit Predictions
+Correct Predictions: 7406
+Total Predictions: 47668
+0,1553662834606025
+0,7846745881717403
+List Size: 50
+Former visit Predictions
+Correct Predictions: 7725
+Total Predictions: 47668
+0,16205840396072838
+0,7909039913699999
+List Size: 60
+Former visit Predictions
+Correct Predictions: 7946
+Total Predictions: 47668
+0,16669463791222622
+0,800262486066681
+List Size: 70
+Former visit Predictions
+Correct Predictions: 8096
+Total Predictions: 47668
+0,16984140303767728
+0,8112339426877548
+List Size: 80
+Former visit Predictions
+Correct Predictions: 8239
+Total Predictions: 47668
+0,1728413191239406
+0,8188143113376839
+List Size: 90
+Former visit Predictions
+Correct Predictions: 8345
+Total Predictions: 47668
+0,17506503314592597
+0,827037747153962
+List Size: 100
+
+gowalla_stockholm
+Popular Predictions
+Correct Predictions: 2212
+Total Predictions: 46610
+0,04745762711864407
+0,7014466546112124
+List Size: 10
+Popular Predictions
+Correct Predictions: 3288
+Total Predictions: 46610
+0,07054280197382536
+0,6662560827250632
+List Size: 20
+Popular Predictions
+Correct Predictions: 4163
+Total Predictions: 46610
+0,08931559751126368
+0,65337496997358
+List Size: 30
+Popular Predictions
+Correct Predictions: 4928
+Total Predictions: 46610
+0,1057283844668526
+0,6470829951298666
+List Size: 40
+Popular Predictions
+Correct Predictions: 5608
+Total Predictions: 46610
+0,1203175284273761
+0,643723252496442
+List Size: 50
+Popular Predictions
+Correct Predictions: 6217
+Total Predictions: 46610
+0,13338339412143316
+0,6430673958500864
+List Size: 60
+Popular Predictions
+Correct Predictions: 6748
+Total Predictions: 46610
+0,1447757991847243
+0,6455182487932954
+List Size: 70
+Popular Predictions
+Correct Predictions: 7266
+Total Predictions: 46610
+0,1558892941428878
+0,6455942058904509
+List Size: 80
+Popular Predictions
+Correct Predictions: 7722
+Total Predictions: 46610
+0,16567260244582707
+0,648110736999628
+List Size: 90
+Popular Predictions
+Correct Predictions: 8166
+Total Predictions: 46610
+0,17519845526711006
+0,6491489101151047
+List Size: 100
+Close Predictions
+Correct Predictions: 3531
+Total Predictions: 46610
+0,07575627547736537
+0,9003398470688251
+List Size: 10
+Close Predictions
+Correct Predictions: 4259
+Total Predictions: 46610
+0,09137524136451405
+0,8370039915473098
+List Size: 20
+Close Predictions
+Correct Predictions: 4645
+Total Predictions: 46610
+0,09965672602445827
+0,8317402224614309
+List Size: 30
+Close Predictions
+Correct Predictions: 4984
+Total Predictions: 46610
+0,10692984338124865
+0,823776083467094
+List Size: 40
+Close Predictions
+Correct Predictions: 5306
+Total Predictions: 46610
+0,11383823213902595
+0,8139653222766682
+List Size: 50
+Close Predictions
+Correct Predictions: 5555
+Total Predictions: 46610
+0,11918043338339412
+0,8111731173117284
+List Size: 60
+Close Predictions
+Correct Predictions: 5810
+Total Predictions: 46610
+0,12465136236859044
+0,804679124661927
+List Size: 70
+Close Predictions
+Correct Predictions: 6034
+Total Predictions: 46610
+0,12945719802617464
+0,8006670533642714
+List Size: 80
+Close Predictions
+Correct Predictions: 6227
+Total Predictions: 46610
+0,13359794035614675
+0,7992148885677142
+List Size: 90
+Close Predictions
+Correct Predictions: 6408
+Total Predictions: 46610
+0,13748122720446257
+0,7976560549313262
+List Size: 100
+Close Popular Predictions
+Correct Predictions: 2228
+Total Predictions: 46610
+0,0478009010941858
+0,6925942549371639
+List Size: 10
+Close Popular Predictions
+Correct Predictions: 3264
+Total Predictions: 46610
+0,07002789101051277
+0,6676011029411762
+List Size: 20
+Close Popular Predictions
+Correct Predictions: 4056
+Total Predictions: 46610
+0,08701995279982837
+0,6630424063116402
+List Size: 30
+Close Popular Predictions
+Correct Predictions: 4656
+Total Predictions: 46610
+0,09989272688264321
+0,6699205326460472
+List Size: 40
+Close Popular Predictions
+Correct Predictions: 5186
+Total Predictions: 46610
+0,11126367732246299
+0,6724103355187119
+List Size: 50
+Close Popular Predictions
+Correct Predictions: 5537
+Total Predictions: 46610
+0,11879425016090968
+0,6864848594304958
+List Size: 60
+Close Popular Predictions
+Correct Predictions: 5881
+Total Predictions: 46610
+0,12617464063505685
+0,6931498530376302
+List Size: 70
+Close Popular Predictions
+Correct Predictions: 6238
+Total Predictions: 46610
+0,13383394121433168
+0,6936337768515566
+List Size: 80
+Close Popular Predictions
+Correct Predictions: 6556
+Total Predictions: 46610
+0,14065651147822356
+0,6954070910446783
+List Size: 90
+Close Popular Predictions
+Correct Predictions: 6859
+Total Predictions: 46610
+0,14715726239004506
+0,6962093599650043
+List Size: 100
+Popular Close Predictions
+Correct Predictions: 2946
+Total Predictions: 46610
+0,0632053207466209
+0,8489816700611008
+List Size: 10
+Popular Close Predictions
+Correct Predictions: 3623
+Total Predictions: 46610
+0,07773010083673032
+0,8085840463704115
+List Size: 20
+Popular Close Predictions
+Correct Predictions: 4128
+Total Predictions: 46610
+0,08856468568976615
+0,78884043927649
+List Size: 30
+Popular Close Predictions
+Correct Predictions: 4565
+Total Predictions: 46610
+0,09794035614674962
+0,7745071193866352
+List Size: 40
+Popular Close Predictions
+Correct Predictions: 4976
+Total Predictions: 46610
+0,1067582063934778
+0,7609083601286233
+List Size: 50
+Popular Close Predictions
+Correct Predictions: 5348
+Total Predictions: 46610
+0,114739326324823
+0,7515644477686325
+List Size: 60
+Popular Close Predictions
+Correct Predictions: 5668
+Total Predictions: 46610
+0,12160480583565758
+0,7468066337332414
+List Size: 70
+Popular Close Predictions
+Correct Predictions: 6051
+Total Predictions: 46610
+0,12982192662518774
+0,7335151214675277
+List Size: 80
+Popular Close Predictions
+Correct Predictions: 6371
+Total Predictions: 46610
+0,13668740613602232
+0,7278379462495006
+List Size: 90
+Popular Close Predictions
+Correct Predictions: 6693
+Total Predictions: 46610
+0,14359579489379962
+0,7213775586433511
+List Size: 100
+Category-based Predictions
+Correct Predictions: 2346
+Total Predictions: 46610
+0,05033254666380605
+0,6971440750213137
+List Size: 10
+Category-based Predictions
+Correct Predictions: 3601
+Total Predictions: 46610
+0,07725809912036044
+0,6687170230491531
+List Size: 20
+Category-based Predictions
+Correct Predictions: 4617
+Total Predictions: 46610
+0,09905599656726025
+0,6584506533824331
+List Size: 30
+Category-based Predictions
+Correct Predictions: 5436
+Total Predictions: 46610
+0,11662733319030251
+0,659892384105958
+List Size: 40
+Category-based Predictions
+Correct Predictions: 6239
+Total Predictions: 46610
+0,13385539583780304
+0,6529924667414718
+List Size: 50
+Category-based Predictions
+Correct Predictions: 6879
+Total Predictions: 46610
+0,14758635485947222
+0,654298105344766
+List Size: 60
+Category-based Predictions
+Correct Predictions: 7476
+Total Predictions: 46610
+0,160394765071873
+0,6543854620499916
+List Size: 70
+Category-based Predictions
+Correct Predictions: 7987
+Total Predictions: 46610
+0,17135807766573696
+0,6554948666583212
+List Size: 80
+Category-based Predictions
+Correct Predictions: 8496
+Total Predictions: 46610
+0,18227848101265823
+0,6555647101904193
+List Size: 90
+Category-based Predictions
+Correct Predictions: 8962
+Total Predictions: 46610
+0,1922763355503111
+0,6555378263780341
+List Size: 100
+
+
+Former visit Predictions
+Correct Predictions: 5681
+Total Predictions: 46623
+0,12184973081955258
+0,7682274247491708
+List Size: 10
+Former visit Predictions
+Correct Predictions: 7017
+Total Predictions: 46623
+0,150505115500933
+0,7785948411001765
+List Size: 20
+Former visit Predictions
+Correct Predictions: 7659
+Total Predictions: 46623
+0,1642751431696802
+0,7973582277929964
+List Size: 30
+Former visit Predictions
+Correct Predictions: 8082
+Total Predictions: 46623
+0,17334791840936878
+0,8109255134867651
+List Size: 40
+Former visit Predictions
+Correct Predictions: 8360
+Total Predictions: 46623
+0,17931064067091348
+0,824260765550216
+List Size: 50
+Former visit Predictions
+Correct Predictions: 8589
+Total Predictions: 46623
+0,1842223795122579
+0,8333372142663019
+List Size: 60
+Former visit Predictions
+Correct Predictions: 8760
+Total Predictions: 46623
+0,18789009716234475
+0,8419471624266344
+List Size: 70
+Former visit Predictions
+Correct Predictions: 8873
+Total Predictions: 46623
+0,1903137936211741
+0,8516609376761081
+List Size: 80
+Former visit Predictions
+Correct Predictions: 8976
+Total Predictions: 46623
+0,19252300366771766
+0,858916369578143
+List Size: 90
+Former visit Predictions
+Correct Predictions: 9051
+Total Predictions: 46623
+0,19413165175986102
+0,8662667108606473
+List Size: 100
+
+Former visit Predictions
+Correct Predictions: 58779
+Total Predictions: 485975
+0,12095066618653223
+0,7262151448647625
+List Size: 10
+Former visit Predictions
+Correct Predictions: 82988
+Total Predictions: 485975
+0,17076598590462472
+0,7304369306405093
+List Size: 20
+Former visit Predictions
+Correct Predictions: 93501
+Total Predictions: 485975
+0,1923987859457791
+0,7502169317263372
+List Size: 30
+Former visit Predictions
+Correct Predictions: 100676
+Total Predictions: 485975
+0,2071629199032872
+0,7651304680360332
+List Size: 40
+Former visit Predictions
+Correct Predictions: 105284
+Total Predictions: 485975
+0,21664488914038788
+0,7814761977129401
+List Size: 50
+Former visit Predictions
+Correct Predictions: 108918
+Total Predictions: 485975
+0,2241226400535007
+0,7938505726018587
+List Size: 60
+Former visit Predictions
+Correct Predictions: 111213
+Total Predictions: 485975
+0,22884510520088483
+0,8080377294019534
+List Size: 70
+Former visit Predictions
+Correct Predictions: 112443
+Total Predictions: 485975
+0,2313760995936005
+0,8237697099865401
+List Size: 80
+Former visit Predictions
+Correct Predictions: 113523
+Total Predictions: 485975
+0,23359843613354597
+0,8359311426854317
+List Size: 90
+Former visit Predictions
+Correct Predictions: 114652
+Total Predictions: 485975
+0,23592160090539638
+0,8444943830026025
+List Size: 100
+
+
+
+dallas
+Former visit Predictions
+Correct Predictions: 37173
+Total Predictions: 294886
+0,12605888377203395
+0,7440211981815064
+List Size: 10
+Former visit Predictions
+Correct Predictions: 51244
+Total Predictions: 294886
+0,17377562854798126
+0,7463351807041195
+List Size: 20
+Former visit Predictions
+Correct Predictions: 57124
+Total Predictions: 294886
+0,19371553752975726
+0,7654465140164155
+List Size: 30
+Former visit Predictions
+Correct Predictions: 60565
+Total Predictions: 294886
+0,20538445365327618
+0,785867662841458
+List Size: 40
+Former visit Predictions
+Correct Predictions: 63347
+Total Predictions: 294886
+0,21481860786880352
+0,7975711556980137
+List Size: 50
+Former visit Predictions
+Correct Predictions: 64646
+Total Predictions: 294886
+0,21922370000610406
+0,8166218069691259
+List Size: 60
+Former visit Predictions
+Correct Predictions: 66126
+Total Predictions: 294886
+0,224242588661381
+0,8258925600911409
+List Size: 70
+Former visit Predictions
+Correct Predictions: 67545
+Total Predictions: 294886
+0,22905461771667696
+0,8311903175661184
+List Size: 80
+Former visit Predictions
+Correct Predictions: 67976
+Total Predictions: 294886
+0,2305161994804772
+0,845070318936355
+List Size: 90
+Former visit Predictions
+Correct Predictions: 68485
+Total Predictions: 294886
+0,23224229024097448
+0,8547303789151394
+List Size: 100
+
+
+Former visit Predictions
+Correct Predictions: 35006
+Total Predictions: 345695
+0,10126267374419648
+0,7387390733017514
+List Size: 10
+Former visit Predictions
+Correct Predictions: 48188
+Total Predictions: 345695
+0,13939455300192366
+0,7558520793558939
+List Size: 20
+Former visit Predictions
+Correct Predictions: 54160
+Total Predictions: 345695
+0,1566698968744124
+0,7662678483506862
+List Size: 30
+Former visit Predictions
+Correct Predictions: 57812
+Total Predictions: 345695
+0,16723412256468853
+0,782014114716576
+List Size: 40
+Former visit Predictions
+Correct Predictions: 60302
+Total Predictions: 345695
+0,1744370037171495
+0,7964525223044135
+List Size: 50
+Former visit Predictions
+Correct Predictions: 61733
+Total Predictions: 345695
+0,17857649083729876
+0,8132973180199806
+List Size: 60
+Former visit Predictions
+Correct Predictions: 62935
+Total Predictions: 345695
+0,18205354430929
+0,8256223541297708
+List Size: 70
+Former visit Predictions
+Correct Predictions: 63912
+Total Predictions: 345695
+0,18487973502654073
+0,8356343487921344
+List Size: 80
+Former visit Predictions
+Correct Predictions: 64620
+Total Predictions: 345695
+0,18692778316145736
+0,8452063344684161
+List Size: 90
+Former visit Predictions
+Correct Predictions: 65202
+Total Predictions: 345695
+0,18861134815371933
+0,8534819484065335
+List Size: 100
+
+
+Former visit Predictions
+Correct Predictions: 27400
+Total Predictions: 209861
+0,1305626104898004
+0,7643649635036507
+List Size: 10
+Former visit Predictions
+Correct Predictions: 36242
+Total Predictions: 209861
+0,1726952601960345
+0,7970821146736431
+List Size: 20
+Former visit Predictions
+Correct Predictions: 38796
+Total Predictions: 209861
+0,18486522031249256
+0,8221921503935578
+List Size: 30
+Former visit Predictions
+Correct Predictions: 40768
+Total Predictions: 209861
+0,19426191622073657
+0,8310323047487643
+List Size: 40
+Former visit Predictions
+Correct Predictions: 41635
+Total Predictions: 209861
+0,1983932221803956
+0,8490784195987948
+List Size: 50
+Former visit Predictions
+Correct Predictions: 42228
+Total Predictions: 209861
+0,2012189020351566
+0,8631129424394958
+List Size: 60
+Former visit Predictions
+Correct Predictions: 42631
+Total Predictions: 209861
+0,2031392207222876
+0,8749618821985778
+List Size: 70
+Former visit Predictions
+Correct Predictions: 43124
+Total Predictions: 209861
+0,20548839469934863
+0,8814749327520547
+List Size: 80
+Former visit Predictions
+Correct Predictions: 43499
+Total Predictions: 209861
+0,20727529174072362
+0,8872068578845352
+List Size: 90
+Former visit Predictions
+Correct Predictions: 43738
+Total Predictions: 209861
+0,20841414078842663
+0,8937800082308744
+List Size: 100
+
+
+Proposed Method Predictions
+Proposed Method Predictions
+Correct Predictions: 6504
+Total Predictions: 9990
+Accuracy: 0.6510510510510511
+Precision : 0.898385608856084
+List Size: 10
+Proposed Method Predictions
+Correct Predictions: 6768
+Total Predictions: 9990
+Accuracy: 0.6774774774774774
+Precision : 0.8824098699763415
+List Size: 20
+Proposed Method Predictions
+Correct Predictions: 6979
+Total Predictions: 9990
+Accuracy: 0.6985985985985986
+Precision : 0.8735348903854278
+List Size: 30
+Proposed Method Predictions
+Correct Predictions: 7145
+Total Predictions: 9990
+Accuracy: 0.7152152152152152
+Precision : 0.8685164450664868
+List Size: 40
+Proposed Method Predictions
+Correct Predictions: 7288
+Total Predictions: 9990
+Accuracy: 0.7295295295295295
+Precision : 0.8652771679472917
+List Size: 50
+Proposed Method Predictions
+Correct Predictions: 7419
+Total Predictions: 9990
+Accuracy: 0.7426426426426427
+Precision : 0.8627847418789492
+List Size: 60
+Proposed Method Predictions
+Correct Predictions: 7523
+Total Predictions: 9990
+Accuracy: 0.753053053053053
+Precision : 0.861645240310691
+List Size: 70
+Proposed Method Predictions
+Correct Predictions: 7613
+Total Predictions: 9990
+Accuracy: 0.7620620620620621
+Precision : 0.8612734795744272
+List Size: 80
+Proposed Method Predictions
+Correct Predictions: 7703
+Total Predictions: 9990
+Accuracy: 0.7710710710710711
+Precision : 0.8602175198696173
+List Size: 90
+Proposed Method Predictions
+Correct Predictions: 7774
+Total Predictions: 9990
+Accuracy: 0.7781781781781781
+Precision : 0.8600501672240498
+List Size: 100
+Proposed Method Predictions
+Correct Predictions: 192891
+Total Predictions: 262222
+Accuracy: 0.7356018945778767
+Precision : 0.865562208708789
 List Size: 50
