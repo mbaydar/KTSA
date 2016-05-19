@@ -39,7 +39,7 @@ public class Main {
 	static Place[] mostPopularPlaces = new Place[100];
 	static Place[] mostPopularNPlaces;
 	static Place mostPopularPlace;
-	static String database_name = "foursquare_austin";
+	static String database_name = "foursquare";
 	static String city = "Austin";
 	static int year = 110;
 
